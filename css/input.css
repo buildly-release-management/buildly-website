@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply font-sans antialiased text-gray-800;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold text-buildly-dark;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply inline-flex items-center px-6 py-3 bg-buildly-primary text-white font-semibold rounded-lg 
+               hover:bg-buildly-secondary transition-colors duration-300 shadow-sm;
+    }
+    
+    .btn-secondary {
+        @apply inline-flex items-center px-6 py-3 border-2 border-buildly-primary text-buildly-primary font-semibold 
+               rounded-lg hover:bg-buildly-primary hover:text-white transition-colors duration-300;
+    }
+    
+    .nav-link {
+        @apply text-gray-700 hover:text-buildly-primary font-medium transition-colors duration-200;
+    }
+    
+    .card {
+        @apply bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300;
+    }
+    
+    .animate-on-scroll {
+        @apply opacity-0 transition-all duration-700 transform translate-y-8;
+    }
+    
+    .animate-on-scroll.animated {
+        @apply opacity-100 transform translate-y-0;
+    }
+}
+
+@layer utilities {
+    .gradient-primary {
+        @apply bg-gradient-to-r from-buildly-primary to-buildly-secondary;
+    }
+}
