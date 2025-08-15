@@ -1,21 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Custom styles for Buildly website - GitHub Pages ready */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-@layer components {
-  .btn-primary {
-    @apply bg-buildly-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-buildly-secondary transition-colors duration-300;
-  }
-  
-  .nav-link {
-    @apply text-gray-700 hover:text-buildly-primary transition-colors duration-300;
-  }
-  
-  .section-title {
-    @apply text-3xl md:text-4xl font-bold text-buildly-dark mb-8;
-  }
-  
-  .card {
-    @apply bg-white rounded-xl shadow-lg p-6 transition-transform duration-300 hover:scale-105;
-  }
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation classes */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom hover effects */
+.hover-lift {
+    transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+/* Mobile menu styles */
+.mobile-nav {
+    transition: all 0.3s ease;
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+/* Form styles */
+.form-error {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 1px #ef4444;
 }

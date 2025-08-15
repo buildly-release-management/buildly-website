@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - Buildly Platform</title>
+    <meta name="description" content="Meet the innovators behind Buildly. Our team of experienced developers, product managers, and entrepreneurs.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'buildly': {
+                            primary: '#2563EB',
+                            secondary: '#1E40AF', 
+                            accent: '#10B981',
+                            dark: '#1F2937',
+                            light: '#F3F4F6',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html">
+                        <img src="media/logo.svg" alt="Buildly" class="h-8 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div style="display:none; width:120px; height:32px; background:#2563EB; color:white; display:flex; align-items:center; justify-content:center; font-weight:bold; border-radius:4px;">BUILDLY</div>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="labs.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Labs</a>
+                        <a href="use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
+                        <a href="pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
+                        <a href="team.html" class="text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Team</a>
+                        <a href="https://labs.buildly.io/register" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Try for Free</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 bg-gradient-to-br from-buildly-light to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-buildly-dark mb-6">
+                    Our Team
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-4xl mx-auto">
+                    Meet the innovators behind Buildly. Our team of experienced developers, product managers, and entrepreneurs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="text-center bg-buildly-light p-8 rounded-xl">
+                    <img src="media/team/greg-lind.jpg" alt="Gregory Lind" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;" class="w-32 h-32 rounded-full mx-auto mb-6 bg-buildly-primary flex items-center justify-center text-white font-bold text-2xl">GL</div>
+                    <h3 class="text-2xl font-semibold mb-2">Gregory Lind</h3>
+                    <p class="text-buildly-primary font-medium mb-4">CEO</p>
+                    <p class="text-gray-600">20+ year career in software development for Enterprise and Startups. Greg has led multiple successful product launches and has deep expertise in scalable architecture and team leadership.</p>
+                </div>
+                
+                <div class="text-center bg-buildly-light p-8 rounded-xl">
+                    <img src="media/team/radhika-patel.jpg" alt="Radhika Patel" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;" class="w-32 h-32 rounded-full mx-auto mb-6 bg-buildly-accent flex items-center justify-center text-white font-bold text-2xl">RP</div>
+                    <h3 class="text-2xl font-semibold mb-2">Radhika Patel</h3>
+                    <p class="text-buildly-primary font-medium mb-4">VP of Engineering AI/ML</p>
+                    <p class="text-gray-600">MA sc. AI/ML Experienced Full stack and Ops. Radhika specializes in machine learning algorithms and has extensive experience in building AI-powered development tools.</p>
+                </div>
+                
+                <div class="text-center bg-buildly-light p-8 rounded-xl">
+                    <img src="media/team/avinash-naganathan.jpg" alt="Avinash Naganathan" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;" class="w-32 h-32 rounded-full mx-auto mb-6 bg-buildly-secondary flex items-center justify-center text-white font-bold text-2xl">AN</div>
+                    <h3 class="text-2xl font-semibold mb-2">Avinash Naganathan</h3>
+                    <p class="text-buildly-primary font-medium mb-4">Chief Product Officer</p>
+                    <p class="text-gray-600">Product strategy expert with deep understanding of user experience and market needs. Avinash drives product vision and ensures our solutions meet real-world challenges.</p>
+                </div>
+                
+                <div class="text-center bg-buildly-light p-8 rounded-xl">
+                    <img src="media/team/peter-odeny.jpg" alt="Peter Odeny" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;" class="w-32 h-32 rounded-full mx-auto mb-6 bg-buildly-primary flex items-center justify-center text-white font-bold text-2xl">PO</div>
+                    <h3 class="text-2xl font-semibold mb-2">Peter Odeny</h3>
+                    <p class="text-buildly-primary font-medium mb-4">VP Engineering</p>
+                    <p class="text-gray-600">10 year Software Engineer with expertise in distributed systems and cloud architecture. Peter leads our engineering efforts and ensures technical excellence across all products.</p>
+                </div>
+                
+                <div class="text-center bg-buildly-light p-8 rounded-xl">
+                    <img src="media/team/ivy-mwonge.jpg" alt="Ivy Mwonge" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;" class="w-32 h-32 rounded-full mx-auto mb-6 bg-buildly-accent flex items-center justify-center text-white font-bold text-2xl">IM</div>
+                    <h3 class="text-2xl font-semibold mb-2">Ivy Mwonge</h3>
+                    <p class="text-buildly-primary font-medium mb-4">VP of Front End</p>
+                    <p class="text-gray-600">10 years in Design and UI with a focus on creating intuitive user experiences. Ivy ensures our platforms are both beautiful and functional for all users.</p>
+                </div>
+                
+                <div class="text-center bg-buildly-light p-8 rounded-xl">
+                    <img src="media/team/maryna-mishchenko.jpg" alt="Maryna Mishchenko" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none;" class="w-32 h-32 rounded-full mx-auto mb-6 bg-buildly-secondary flex items-center justify-center text-white font-bold text-2xl">MM</div>
+                    <h3 class="text-2xl font-semibold mb-2">Maryna Mishchenko</h3>
+                    <p class="text-buildly-primary font-medium mb-4">VP of Product and Marketing</p>
+                    <p class="text-gray-600">International Multiple Founder with extensive experience in product strategy and go-to-market execution. Maryna drives our marketing efforts and business development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="py-20 bg-buildly-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">Our Story</h2>
+            </div>
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-lg text-gray-600 mb-8">
+                    Our mission is to build inclusive communities where ideas are shared easily and teams work on innovative ideas rather than rebuilding the wheel. The founding of Buildly was based on several startups that most of the original founding team worked on, as well as the open source projects we built or contributed to over the last 10 years.
+                </p>
+                <p class="text-lg text-gray-600 mb-8">
+                    We are all passionate open source supporters and life long software developers and tech enthusiasts, and we have founded Buildly based on our previous experience and as an evolution of our desire to focus on user experience and craftsmanship in every phase of software development.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-buildly-primary">Built with our Community</h3>
+                        <p class="text-gray-600">for our community</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-buildly-primary">Reduce redundant processes</h3>
+                        <p class="text-gray-600">to 0</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-buildly-primary">Make it easy</h3>
+                        <p class="text-gray-600">for anyone to get started and feel comfortable</p>
+                    </div>
+                </div>
+                <p class="text-lg text-gray-600 mt-8">
+                    Not everyone understands what a microservice is, what Kubernetes means, or even how to pronounce it, but our team eats, sleeps, and dreams this stuff. We can help you get set up with tools to start building and migrating to the cloud faster than you ever thought possible.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-buildly-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">THE BUILDLY LIFECYCLE</h4>
+                    <p class="text-gray-300 text-sm">The Buildly Lifecycle process helps startups and SMBs document their ideas, translating business concepts into detailed technical documentation.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="labs.html" class="text-gray-300 hover:text-white transition-colors">Labs</a></li>
+                        <li><a href="use-cases.html" class="text-gray-300 hover:text-white transition-colors">Use Cases</a></li>
+                        <li><a href="pricing.html" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/articles" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="/contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="https://www.buildly.io/RAD-core" class="text-gray-300 hover:text-white transition-colors">RAD Core</a></li>
+                        <li><a href="https://market.buildly.io/" class="text-gray-300 hover:text-white transition-colors">Collab Hub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">OUR NEWSLETTER</h4>
+                    <p class="text-gray-300 text-sm mb-4">Sign up for the Buildly Lifecycle Newsletter</p>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-gray-700 text-white placeholder-gray-400 rounded focus:outline-none focus:ring-2 focus:ring-buildly-primary">
+                        <button type="submit" class="w-full bg-buildly-primary text-white py-2 rounded hover:bg-buildly-secondary transition-colors">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-300">&copy; Copyright Buildly, Inc. 2025 All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
