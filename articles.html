@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buildly Articles - Product Development Insights & Best Practices</title>
+    <meta name="description" content="Explore Buildly's comprehensive collection of articles on product management, AI, software development, and startup growth strategies.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'buildly': {
+                            primary: '#1b5fa3',
+                            secondary: '#144a84', 
+                            accent: '#f9943b',
+                            dark: '#1F2937',
+                            light: '#F3F4F6',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html">
+                        <img src="media/buildly-logo.svg" alt="Buildly" class="h-8 w-auto">
+                    </a>
+                </div>
+                <div class="block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="https://labs.buildly.io" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Labs</a>
+                        <a href="use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
+                        <a href="pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
+                        <a href="https://docs.buildly.io/" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Docs</a>
+                        <a href="articles.html" class="text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Articles</a>
+                        <a href="team.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Team</a>
+                        <a href="https://labs.buildly.io/register" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Try for Free</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 bg-gradient-to-br from-buildly-light to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-buildly-dark mb-4">
+                    Buildly Articles
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+                    From MVP to Market Leader: Navigate the Product Lifecycle with expert insights on AI, product management, and software development
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 mb-8">
+                    <span class="bg-buildly-primary text-white px-4 py-2 rounded-full text-sm">Product Management</span>
+                    <span class="bg-buildly-accent text-white px-4 py-2 rounded-full text-sm">AI & Machine Learning</span>
+                    <span class="bg-buildly-secondary text-white px-4 py-2 rounded-full text-sm">Software Development</span>
+                    <span class="bg-gray-600 text-white px-4 py-2 rounded-full text-sm">Startup Growth</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-buildly-primary to-buildly-secondary rounded-2xl p-8 text-white mb-16">
+                <div class="max-w-4xl">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="bg-buildly-accent px-3 py-1 rounded-full text-sm font-medium">Featured</span>
+                        <span class="text-sm opacity-90">Product Management • April 17, 2024</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">From MVP to Market Leader: Navigating the Product Lifecycle</h2>
+                    <p class="text-lg opacity-90 mb-6">This article examines every phase of the product lifecycle offering best practices to achieve market leadership and sustainable growth.</p>
+                    <a href="articles/product-lifecycle.html" class="inline-flex items-center bg-white text-buildly-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        Read More
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="py-16 bg-buildly-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">All Blog Posts</h2>
+                <p class="text-lg text-gray-600">Explore our comprehensive collection of insights and best practices</p>
+            </div>
+
+            <!-- Product Management Articles -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-buildly-primary mb-8 flex items-center">
+                    <span class="w-8 h-8 bg-buildly-primary rounded-full flex items-center justify-center text-white text-sm mr-3">PM</span>
+                    Product Management
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-primary text-white px-2 py-1 rounded text-xs">Product Management</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">How Product Strategy Changes as Your Startup Scales</h4>
+                        <p class="text-gray-600 text-sm mb-4">Navigate the evolving challenges of product strategy as your startup grows from idea to market leader.</p>
+                        <a href="articles/startup-scaling.html" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-primary text-white px-2 py-1 rounded text-xs">Product Management</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">No More Roadmap Chaos: How to Build a Living Product Plan with AI</h4>
+                        <p class="text-gray-600 text-sm mb-4">Transform your product planning with AI-driven roadmaps that adapt to changing market conditions.</p>
+                        <a href="https://www.buildly.io/articles/no-more-roadmap-chaos-how-to-build-a-living-product-plan-with-ai" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-primary text-white px-2 py-1 rounded text-xs">Product Management</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">How Product Managers Can Champion Ethical AI</h4>
+                        <p class="text-gray-600 text-sm mb-4">Lead ethical AI initiatives in your organization without needing to be a data scientist.</p>
+                        <a href="https://www.buildly.io/articles/how-product-managers-can-champion-ethical-ai-(without-being-a-data-scientist)" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-primary text-white px-2 py-1 rounded text-xs">Product Management</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">How to Prioritize Product Features Like a Pro</h4>
+                        <p class="text-gray-600 text-sm mb-4">Master the art of feature prioritization with proven frameworks and techniques.</p>
+                        <a href="articles/feature-prioritization.html" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-primary text-white px-2 py-1 rounded text-xs">Product Management</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">AI-Powered Product Management with Buildly</h4>
+                        <p class="text-gray-600 text-sm mb-4">Leverage AI to enhance your product management workflow and decision-making process.</p>
+                        <a href="https://www.buildly.io/articles/ai-powered-product-management-with-buildly" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-primary text-white px-2 py-1 rounded text-xs">Product Management</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">AI-Powered Release Planning: A Game-Changer</h4>
+                        <p class="text-gray-600 text-sm mb-4">Revolutionize your release planning process with AI-driven insights and automation.</p>
+                        <a href="https://www.buildly.io/articles/ai-powered-release-planning-a-game-changer" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Articles -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-buildly-accent mb-8 flex items-center">
+                    <span class="w-8 h-8 bg-buildly-accent rounded-full flex items-center justify-center text-white text-sm mr-3">AI</span>
+                    Artificial Intelligence
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-accent text-white px-2 py-1 rounded text-xs">AI</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">How Buildly Leverages AI for Smarter Decision-Making</h4>
+                        <p class="text-gray-600 text-sm mb-4">Discover how AI enhances decision-making processes in modern software development.</p>
+                        <a href="https://www.buildly.io/articles/how-buildly-leverages-ai-for-smarter-decision-making" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-accent text-white px-2 py-1 rounded text-xs">AI</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">AI-Powered Technical Debt Management</h4>
+                        <p class="text-gray-600 text-sm mb-4">Prevent code decay before it's too late with AI-driven technical debt management strategies.</p>
+                        <a href="https://www.buildly.io/articles/ai-powered-technical-debt-management-preventing-code-decay-before-it-s-too-late" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-accent text-white px-2 py-1 rounded text-xs">AI</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">AI and the Future of Software Maintenance</h4>
+                        <p class="text-gray-600 text-sm mb-4">Predict and prevent system failures using AI-powered maintenance strategies.</p>
+                        <a href="https://www.buildly.io/articles/ai-and-the-future-of-software-maintenance-predicting-and-preventing-system-failures" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-accent text-white px-2 py-1 rounded text-xs">AI</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">The Future of Work: AI and the Human Element</h4>
+                        <p class="text-gray-600 text-sm mb-4">Explore how AI transforms work while preserving the essential human element.</p>
+                        <a href="https://www.buildly.io/articles/the-future-of-work-ai-and-the-human-element" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-accent text-white px-2 py-1 rounded text-xs">AI</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">AI-Powered DevOps: Accelerating Software Delivery</h4>
+                        <p class="text-gray-600 text-sm mb-4">Transform your DevOps pipeline with AI-driven automation and optimization.</p>
+                        <a href="https://www.buildly.io/articles/ai-powered-devops-accelerating-software-delivery" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-accent text-white px-2 py-1 rounded text-xs">AI</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Building Ethical AI: Challenges and Best Practices</h4>
+                        <p class="text-gray-600 text-sm mb-4">Navigate the challenges of building ethical AI systems with proven best practices.</p>
+                        <a href="https://www.buildly.io/articles/ethical-ai" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Software Development Articles -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-buildly-secondary mb-8 flex items-center">
+                    <span class="w-8 h-8 bg-buildly-secondary rounded-full flex items-center justify-center text-white text-sm mr-3">DEV</span>
+                    Software Development
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-secondary text-white px-2 py-1 rounded text-xs">Software Development</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">How Positive Reinforcement Improves Software Development Efficiency</h4>
+                        <p class="text-gray-600 text-sm mb-4">Boost your team's productivity through positive reinforcement strategies.</p>
+                        <a href="https://www.buildly.io/articles/how-positive-reinforcement-improves-software-development-efficiency" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-secondary text-white px-2 py-1 rounded text-xs">Software Development</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Why Software Development Teams Fail (And How to Fix It)</h4>
+                        <p class="text-gray-600 text-sm mb-4">Identify common failure patterns and implement solutions for team success.</p>
+                        <a href="https://www.buildly.io/articles/why-software-development-teams-fail-(and-how-to-fix-it)" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-secondary text-white px-2 py-1 rounded text-xs">Software Development</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">The Future of Software Development: AI and Beyond</h4>
+                        <p class="text-gray-600 text-sm mb-4">Explore the evolving landscape of software development in the AI era.</p>
+                        <a href="https://www.buildly.io/articles/the-future-of-software-development-ai-and-beyond" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-secondary text-white px-2 py-1 rounded text-xs">Software Development</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">The Myth of the 10x Engineer: Why Diverse Teams Win</h4>
+                        <p class="text-gray-600 text-sm mb-4">Debunk the 10x engineer myth and discover why diversity drives innovation.</p>
+                        <a href="https://www.buildly.io/articles/the-myth-of-the-10x-engineer-why-diverse-teams-win" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-secondary text-white px-2 py-1 rounded text-xs">Software Development</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Optimizing Software for Performance and Scalability</h4>
+                        <p class="text-gray-600 text-sm mb-4">Master the techniques for building high-performance, scalable applications.</p>
+                        <a href="https://www.buildly.io/articles/optimizing-software-for-performance-and-scalability" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-buildly-secondary text-white px-2 py-1 rounded text-xs">Software Development</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Accelerating Software Delivery: Embracing Agile and DevOps</h4>
+                        <p class="text-gray-600 text-sm mb-4">Implement agile and DevOps practices for efficient software delivery.</p>
+                        <a href="https://www.buildly.io/articles/agile-and-devops" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business & Startup Articles -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-600 mb-8 flex items-center">
+                    <span class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-white text-sm mr-3">BIZ</span>
+                    Business & Startups
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-gray-600 text-white px-2 py-1 rounded text-xs">Business</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Buildly's Marketplace for Technical Co-Founders</h4>
+                        <p class="text-gray-600 text-sm mb-4">Find the right technical partner for your startup through Buildly's marketplace.</p>
+                        <a href="https://www.buildly.io/articles/buildly-s-marketplace-for-technical-co-founders-how-to-find-the-right-partner" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-gray-600 text-white px-2 py-1 rounded text-xs">Startup</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Inside Buildly Foundry: How Startups Can Accelerate Product Development</h4>
+                        <p class="text-gray-600 text-sm mb-4">Accelerate your startup's growth with Buildly Foundry's development solutions.</p>
+                        <a href="https://www.buildly.io/articles/inside-buildly-foundry-how-startups-can-accelerate-product-development" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-gray-600 text-white px-2 py-1 rounded text-xs">Startup</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">The Future of SaaS: Predictions and Opportunities for Startup Growth</h4>
+                        <p class="text-gray-600 text-sm mb-4">Explore future trends and opportunities in the SaaS landscape for startups.</p>
+                        <a href="https://www.buildly.io/articles/saas-future" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-gray-600 text-white px-2 py-1 rounded text-xs">Business</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">AI in Startup Growth Strategies: Revolutionizing Business Dynamics</h4>
+                        <p class="text-gray-600 text-sm mb-4">Leverage AI to revolutionize your startup's growth strategy and business dynamics.</p>
+                        <a href="https://www.buildly.io/articles/ai-startup-growth" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-gray-600 text-white px-2 py-1 rounded text-xs">Startup</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Prioritizing Features: Techniques for Startups</h4>
+                        <p class="text-gray-600 text-sm mb-4">Focus on what matters most with proven feature prioritization techniques for startups.</p>
+                        <a href="https://www.buildly.io/articles/prioritizing-features-techniques-for-startups" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-gray-600 text-white px-2 py-1 rounded text-xs">Book Release</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Radical Therapy for Software Development Teams - Book Release 2024</h4>
+                        <p class="text-gray-600 text-sm mb-4">Discover revolutionary approaches to team dynamics and software development.</p>
+                        <a href="https://www.buildly.io/articles/radical-therapy-for-software-development-teams" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">Ready to Transform Your Product Development?</h2>
+            <p class="text-xl text-gray-600 mb-8">Join thousands of teams already using Buildly to build better software faster</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://labs.buildly.io/register" class="bg-buildly-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-buildly-secondary transition-colors">
+                    Try for Free
+                </a>
+                <a href="https://labs.buildly.io" class="border border-buildly-primary text-buildly-primary px-8 py-3 rounded-lg font-semibold hover:bg-buildly-primary hover:text-white transition-colors">
+                    Explore Labs Platform
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-buildly-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">THE BUILDLY LIFECYCLE</h4>
+                    <p class="text-gray-300 text-sm">The Buildly Lifecycle process helps startups and SMBs document their ideas, translating business concepts into detailed technical documentation.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="https://labs.buildly.io" class="text-gray-300 hover:text-white transition-colors">Labs</a></li>
+                        <li><a href="use-cases.html" class="text-gray-300 hover:text-white transition-colors">Use Cases</a></li>
+                        <li><a href="pricing.html" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="articles.html" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="/contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="rad-core.html" class="text-gray-300 hover:text-white transition-colors">RAD Core</a></li>
+                        <li><a href="https://market.buildly.io/" class="text-gray-300 hover:text-white transition-colors">Collab Hub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">OUR NEWSLETTER</h4>
+                    <p class="text-gray-300 text-sm mb-4">Sign up for the Buildly Lifecycle Newsletter</p>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-gray-700 text-white placeholder-gray-400 rounded focus:outline-none focus:ring-2 focus:ring-buildly-primary">
+                        <button type="submit" class="w-full bg-buildly-primary text-white py-2 rounded hover:bg-buildly-secondary transition-colors">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-300">&copy; Copyright Buildly, Inc. 2025 All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
