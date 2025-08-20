@@ -22,6 +22,15 @@
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
                     },
+                    animation: {
+                        'scroll': 'scroll 30s linear infinite',
+                    },
+                    keyframes: {
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
                 }
             }
         }
@@ -417,37 +426,70 @@
         </div>
     </section>
 
-    <!-- Foundry Customers and Partners Section -->
-    <section class="py-20 bg-buildly-light">
+    <!-- Our Customers Section -->
+    <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-6">Foundry Customers and Partners</h2>
-                <div class="max-w-4xl mx-auto">
-                    <p class="text-lg text-gray-600 mb-6">
-                        Our goal is to help every team and product that joins Buildly, both at the Foundry and Partner levels as well as the free open source and enterprise plans.
-                    </p>
-                    <p class="text-lg text-gray-600">
-                        Here we list some of the early adopters who have helped us get started and we couldn't get on without.
-                    </p>
-                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">Foundry customers and partners</h2>
+                <p class="text-xl text-gray-600 mb-4">Our goal is to help every team and product that joins Buildly, both at the Foundry and Partner levels as well as the free open source and enterprise plans.</p>
+                <p class="text-lg text-gray-600">Here we list some of the early adopters who have helped us get started and we couldn't get on without.</p>
             </div>
-            
-            <!-- Partner Logos -->
-            <div class="grid grid-cols-2 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center">
-                    <img src="https://framerusercontent.com/images/gz5qhQKlBhEYweQB4XsuF6wtAxY.png?scale-down-to=512" alt="DesignRush" class="h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300">
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center">
-                    <img src="media/TopAITools.svg" alt="Top AI Tools" class="h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300">
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center">
-                    <img src="https://framerusercontent.com/images/2QRlmFYVh64OsW8jdkaJ3LTFUw.jpg?scale-down-to=512" alt="Transparent Path" class="h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300">
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center">
-                    <img src="https://framerusercontent.com/images/Y9czgrYXlVjBlRfPof3jVTwbifU.svg" alt="DrunR" class="h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300">
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center">
-                    <img src="https://framerusercontent.com/images/9N5E53cr39BzLQdOLSnw6sCos.png?scale-down-to=512" alt="Uprising" class="h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300">
+            <div class="overflow-hidden">
+                <div class="flex animate-scroll gap-3 lg:gap-4">
+                    <!-- First set of logos -->
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <img src="media/customers/ajackus.jpg" alt="Ajackus" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <img src="media/customers/american family life insurance.png" alt="American Family Life Insurance" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <img src="media/customers/age_of_peers.png" alt="Age of Peers" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <img src="media/customers/drunr.jpg" alt="Drunr" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <img src="media/customers/Kurent.webp" alt="Kurent" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <a href="https://www.designrush.com/agency/hr-outsourcing/trends/ai-productivity-tools" target="_blank" rel="noopener noreferrer">
+                            <img src="media/customers/TOP ai productivity tools.png" alt="Buildly as AI Productivity Tool on DesignRush" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                        </a>
+                    </div>
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <img src="media/customers/transparent_path.jpg" alt="Transparent Path" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <img src="media/customers/uprising_global_logo.jpeg" alt="Uprising Global" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <img src="media/customers/ajackus.jpg" alt="Ajackus" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <img src="media/customers/american family life insurance.png" alt="American Family Life Insurance" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <img src="media/customers/age_of_peers.png" alt="Age of Peers" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <img src="media/customers/drunr.jpg" alt="Drunr" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <img src="media/customers/Kurent.webp" alt="Kurent" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <a href="https://www.designrush.com/agency/hr-outsourcing/trends/ai-productivity-tools" target="_blank" rel="noopener noreferrer">
+                            <img src="media/customers/TOP ai productivity tools.png" alt="Buildly as AI Productivity Tool on DesignRush" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                        </a>
+                    </div>
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <img src="media/customers/transparent_path.jpg" alt="Transparent Path" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
+                        <img src="media/customers/uprising_global_logo.jpeg" alt="Uprising Global" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                    </div>
                 </div>
             </div>
         </div>
