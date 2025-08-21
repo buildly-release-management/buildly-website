@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prioritizing Features: Techniques for Startups - Buildly</title>
+    <meta name="description" content="Learn essential feature prioritization techniques for startups including impact vs effort analysis, user feedback integration, and data-driven decision making frameworks.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'buildly': {
+                            primary: '#1b5fa3',
+                            secondary: '#144a84', 
+                            accent: '#f9943b',
+                            dark: '#1F2937',
+                            light: '#F3F4F6',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../index.html">
+                        <img src="../media/buildly-logo.svg" alt="Buildly" class="h-8 w-auto">
+                    </a>
+                </div>
+                <div class="block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="../index.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="https://labs.buildly.io" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Labs</a>
+                        <a href="../use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
+                        <a href="../pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
+                        <a href="../team.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Team</a>
+                        <a href="../articles.html" class="text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Articles</a>
+                        <a href="https://labs.buildly.io/register" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Try for Free</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <section class="pt-20 bg-gradient-to-br from-buildly-light to-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center mb-8">
+                <div class="flex justify-center items-center gap-4 mb-4">
+                    <span class="bg-buildly-primary text-white px-3 py-1 rounded-full text-sm font-medium">Product Management</span>
+                    <span class="text-gray-600">•</span>
+                    <span class="text-gray-600">February 15, 2024</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-buildly-dark mb-4">
+                    Prioritizing Features: Techniques for Startups
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Master the art of feature prioritization with proven frameworks and techniques that help startups build the right features at the right time for maximum impact.
+                </p>
+            </div>
+            
+            <!-- Back to Articles -->
+            <div class="mb-8">
+                <a href="../articles.html" class="inline-flex items-center text-buildly-primary hover:text-buildly-secondary font-medium">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Articles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg max-w-none">
+                <div class="bg-buildly-light p-8 rounded-xl mb-8">
+                    <p class="text-lg text-gray-700 mb-4">
+                        Feature prioritization is one of the most critical challenges startups face. With limited resources, tight timelines, and endless feature requests, determining what to build next can make or break a product.
+                    </p>
+                    <p class="text-gray-700">
+                        This comprehensive guide explores proven techniques and frameworks that successful startups use to make strategic feature prioritization decisions that drive growth and user satisfaction.
+                    </p>
+                </div>
+
+                <h2 class="text-3xl font-bold text-buildly-dark mb-6">Why Feature Prioritization Matters for Startups</h2>
+                
+                <p class="text-gray-700 mb-6">
+                    For startups, every development decision counts. Unlike established companies with abundant resources, startups must maximize the impact of every feature they build. Poor prioritization can lead to wasted time, missed opportunities, and ultimately, product failure.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-red-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-red-800 mb-3">Consequences of Poor Prioritization</h4>
+                        <ul class="text-red-700 space-y-2">
+                            <li>• Delayed time-to-market</li>
+                            <li>• Resource misallocation</li>
+                            <li>• Feature bloat and complexity</li>
+                            <li>• Missed competitive opportunities</li>
+                            <li>• Decreased user satisfaction</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-green-800 mb-3">Benefits of Strategic Prioritization</h4>
+                        <ul class="text-green-700 space-y-2">
+                            <li>• Faster product-market fit</li>
+                            <li>• Efficient resource utilization</li>
+                            <li>• Clear product vision alignment</li>
+                            <li>• Enhanced user experience</li>
+                            <li>• Increased competitive advantage</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-buildly-dark mb-6">Essential Prioritization Frameworks</h2>
+
+                <h3 class="text-2xl font-bold text-buildly-dark mb-4">1. Impact vs. Effort Matrix</h3>
+                
+                <p class="text-gray-700 mb-6">
+                    The Impact vs. Effort matrix is one of the most popular prioritization techniques. It helps teams visualize features based on their expected impact and the effort required to implement them.
+                </p>
+
+                <div class="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+                    <h4 class="text-lg font-semibold text-blue-800 mb-2">📊 Matrix Quadrants</h4>
+                    <div class="grid grid-cols-2 gap-4 mt-4">
+                        <div class="bg-green-100 p-3 rounded">
+                            <strong class="text-green-800">High Impact, Low Effort</strong>
+                            <p class="text-green-700 text-sm mt-1">Quick wins - prioritize first</p>
+                        </div>
+                        <div class="bg-yellow-100 p-3 rounded">
+                            <strong class="text-yellow-800">High Impact, High Effort</strong>
+                            <p class="text-yellow-700 text-sm mt-1">Major projects - plan carefully</p>
+                        </div>
+                        <div class="bg-orange-100 p-3 rounded">
+                            <strong class="text-orange-800">Low Impact, Low Effort</strong>
+                            <p class="text-orange-700 text-sm mt-1">Fill-ins - do when time permits</p>
+                        </div>
+                        <div class="bg-red-100 p-3 rounded">
+                            <strong class="text-red-800">Low Impact, High Effort</strong>
+                            <p class="text-red-700 text-sm mt-1">Time wasters - avoid or eliminate</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold text-buildly-dark mb-4">2. MoSCoW Method</h3>
+                
+                <p class="text-gray-700 mb-6">
+                    MoSCoW prioritization categorizes features into four groups: Must have, Should have, Could have, and Won't have (this time). This method helps teams focus on essential features first.
+                </p>
+
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-4 mt-1">
+                            <span class="text-white text-sm font-semibold">M</span>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-buildly-dark mb-2">Must Have</h4>
+                            <p class="text-gray-700">Critical features without which the product cannot function or meet basic user needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                            <span class="text-white text-sm font-semibold">S</span>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-buildly-dark mb-2">Should Have</h4>
+                            <p class="text-gray-700">Important features that add significant value but aren't absolutely critical for the initial release.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                            <span class="text-white text-sm font-semibold">C</span>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-buildly-dark mb-2">Could Have</h4>
+                            <p class="text-gray-700">Nice-to-have features that can enhance the user experience but aren't essential.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                            <span class="text-white text-sm font-semibold">W</span>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-buildly-dark mb-2">Won't Have</h4>
+                            <p class="text-gray-700">Features that are explicitly excluded from the current development cycle but might be considered later.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold text-buildly-dark mb-4">3. Kano Model</h3>
+                
+                <p class="text-gray-700 mb-6">
+                    The Kano Model categorizes features based on customer satisfaction and functionality. It helps identify which features will delight users versus those that are simply expected.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Basic Needs</h4>
+                        <p class="text-gray-700 text-sm">Features users expect by default. Absence causes dissatisfaction, but presence doesn't increase satisfaction.</p>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-blue-800 mb-3">Performance Needs</h4>
+                        <p class="text-blue-700 text-sm">Features that increase satisfaction proportionally. More is better, but there's a point of diminishing returns.</p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-green-800 mb-3">Excitement Needs</h4>
+                        <p class="text-green-700 text-sm">Unexpected features that delight users. These create competitive advantages and emotional connections.</p>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-buildly-dark mb-6">Data-Driven Prioritization Techniques</h2>
+
+                <h3 class="text-2xl font-bold text-buildly-dark mb-4">User Feedback Integration</h3>
+                
+                <p class="text-gray-700 mb-6">
+                    Successful startups systematically collect and analyze user feedback to inform their prioritization decisions. This includes surveys, user interviews, support tickets, and usage analytics.
+                </p>
+
+                <div class="bg-indigo-50 border-l-4 border-indigo-400 p-6 mb-8">
+                    <h4 class="text-lg font-semibold text-indigo-800 mb-2">🔍 Key Feedback Sources</h4>
+                    <ul class="text-indigo-700 space-y-2">
+                        <li>• User interviews and surveys</li>
+                        <li>• Product usage analytics</li>
+                        <li>• Customer support interactions</li>
+                        <li>• Feature request tracking</li>
+                        <li>• A/B testing results</li>
+                        <li>• Competitor analysis</li>
+                    </ul>
+                </div>
+
+                <h3 class="text-2xl font-bold text-buildly-dark mb-4">Quantitative Scoring Methods</h3>
+                
+                <p class="text-gray-700 mb-6">
+                    Numerical scoring systems help remove bias and subjectivity from prioritization decisions. Popular methods include weighted scoring and RICE (Reach, Impact, Confidence, Effort) frameworks.
+                </p>
+
+                <h4 class="text-xl font-semibold text-buildly-dark mb-4">RICE Framework</h4>
+                
+                <div class="bg-purple-50 p-6 rounded-lg mb-8">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-white font-semibold">R</span>
+                            </div>
+                            <h5 class="font-semibold text-purple-800">Reach</h5>
+                            <p class="text-purple-700 text-sm">How many users will be affected?</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-white font-semibold">I</span>
+                            </div>
+                            <h5 class="font-semibold text-purple-800">Impact</h5>
+                            <p class="text-purple-700 text-sm">How much will it improve the outcome?</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-white font-semibold">C</span>
+                            </div>
+                            <h5 class="font-semibold text-purple-800">Confidence</h5>
+                            <p class="text-purple-700 text-sm">How sure are you about the estimates?</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <span class="text-white font-semibold">E</span>
+                            </div>
+                            <h5 class="font-semibold text-purple-800">Effort</h5>
+                            <p class="text-purple-700 text-sm">How much work is required?</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-purple-700 font-medium">RICE Score = (Reach × Impact × Confidence) ÷ Effort</p>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-buildly-dark mb-6">Strategic Considerations for Startups</h2>
+
+                <h3 class="text-2xl font-bold text-buildly-dark mb-4">Balancing Short-term and Long-term Goals</h3>
+                
+                <p class="text-gray-700 mb-6">
+                    Startups must balance immediate needs (user acquisition, revenue generation, problem-solving) with long-term vision (scalability, market expansion, competitive positioning).
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-buildly-light p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-buildly-dark mb-3">Short-term Priorities</h4>
+                        <ul class="text-gray-700 space-y-2">
+                            <li>• Core functionality completion</li>
+                            <li>• Critical bug fixes</li>
+                            <li>• User onboarding improvements</li>
+                            <li>• Revenue-generating features</li>
+                            <li>• Security and compliance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-blue-800 mb-3">Long-term Considerations</h4>
+                        <ul class="text-blue-700 space-y-2">
+                            <li>• Platform scalability</li>
+                            <li>• Market expansion features</li>
+                            <li>• Advanced analytics and insights</li>
+                            <li>• Integration capabilities</li>
+                            <li>• Technical debt management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold text-buildly-dark mb-4">Resource Constraints and Trade-offs</h3>
+                
+                <p class="text-gray-700 mb-8">
+                    Startups must make difficult trade-offs due to limited resources. Understanding opportunity costs and making transparent decisions helps maintain team alignment and product focus.
+                </p>
+
+                <h2 class="text-3xl font-bold text-buildly-dark mb-6">Implementation Best Practices</h2>
+
+                <div class="space-y-6 mb-8">
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-buildly-primary rounded-full flex items-center justify-center mr-4 mt-1">
+                            <span class="text-white text-sm font-semibold">1</span>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-buildly-dark mb-2">Establish Clear Criteria</h4>
+                            <p class="text-gray-700">Define specific, measurable criteria for evaluating features. Include business impact, user value, technical complexity, and strategic alignment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-buildly-accent rounded-full flex items-center justify-center mr-4 mt-1">
+                            <span class="text-white text-sm font-semibold">2</span>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-buildly-dark mb-2">Involve Cross-Functional Teams</h4>
+                            <p class="text-gray-700">Include perspectives from product, engineering, design, marketing, and customer success to ensure comprehensive evaluation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-buildly-secondary rounded-full flex items-center justify-center mr-4 mt-1">
+                            <span class="text-white text-sm font-semibold">3</span>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-buildly-dark mb-2">Regular Review and Adjustment</h4>
+                            <p class="text-gray-700">Prioritization is not a one-time activity. Schedule regular reviews to adjust priorities based on new data, market changes, and learning.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center mr-4 mt-1">
+                            <span class="text-white text-sm font-semibold">4</span>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-buildly-dark mb-2">Document Decisions</h4>
+                            <p class="text-gray-700">Keep records of prioritization decisions and rationale. This helps with future planning and ensures consistency in decision-making.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-buildly-dark mb-6">Common Pitfalls to Avoid</h2>
+                
+                <div class="bg-red-50 border-l-4 border-red-400 p-6 mb-8">
+                    <h4 class="text-lg font-semibold text-red-800 mb-2">⚠️ Prioritization Mistakes</h4>
+                    <ul class="text-red-700 space-y-2">
+                        <li>• Building features based solely on the loudest customer voices</li>
+                        <li>• Focusing only on competitor features without considering user needs</li>
+                        <li>• Ignoring technical debt and infrastructure improvements</li>
+                        <li>• Making decisions without sufficient data or validation</li>
+                        <li>• Changing priorities too frequently without clear justification</li>
+                        <li>• Not considering the cumulative effect of small improvements</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-r from-buildly-primary to-buildly-secondary text-white p-8 rounded-xl mb-8">
+                    <h3 class="text-2xl font-bold mb-4">The Path to Effective Prioritization</h3>
+                    <p class="text-lg opacity-90 mb-4">
+                        Effective feature prioritization is both an art and a science. It requires combining analytical frameworks with intuitive understanding of users, market dynamics, and business goals.
+                    </p>
+                    <p class="text-lg font-semibold">
+                        The most successful startups are those that can consistently identify and build the features that matter most to their users and business success.
+                    </p>
+                </div>
+
+                <h2 class="text-3xl font-bold text-buildly-dark mb-6">Conclusion</h2>
+                
+                <p class="text-gray-700 mb-6">
+                    Feature prioritization is a critical skill that can determine the success or failure of a startup product. By employing proven frameworks, gathering comprehensive data, and maintaining a clear focus on user value and business impact, startups can make informed decisions that drive growth and success.
+                </p>
+                
+                <p class="text-gray-700 mb-8">
+                    Remember that prioritization is an ongoing process that requires regular review and adjustment. As your startup grows and evolves, so too should your approach to feature prioritization. The key is to remain flexible while maintaining a systematic, data-driven approach to decision-making.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Articles -->
+    <section class="py-16 bg-buildly-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-buildly-dark mb-8 text-center">Related Articles</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-buildly-primary text-white px-2 py-1 rounded text-xs">Product Management</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">AI-Powered Product Management: Transforming Development Workflows</h4>
+                    <p class="text-gray-600 text-sm mb-4">Discover how AI is revolutionizing product management through enhanced decision-making and workflow optimization.</p>
+                    <a href="ai-powered-product-management.html" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-buildly-accent text-white px-2 py-1 rounded text-xs">Strategy</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">Product Strategy for Startup Scaling: Building for Growth</h4>
+                    <p class="text-gray-600 text-sm mb-4">Learn essential product strategy principles for startups looking to scale effectively and sustainably.</p>
+                    <a href="product-strategy-startup-scaling.html" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Lifecycle</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">Mastering the Product Lifecycle: From Idea to Sunset</h4>
+                    <p class="text-gray-600 text-sm mb-4">A comprehensive guide to managing products through every stage of their lifecycle for maximum impact.</p>
+                    <a href="product-lifecycle.html" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">Ready to Master Feature Prioritization?</h2>
+            <p class="text-xl text-gray-600 mb-8">Discover how Buildly's tools can help you make data-driven prioritization decisions for your startup.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://labs.buildly.io/register" class="bg-buildly-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-buildly-secondary transition-colors">
+                    Try Buildly Tools
+                </a>
+                <a href="../product-manager.html" class="border border-buildly-primary text-buildly-primary px-8 py-3 rounded-lg font-semibold hover:bg-buildly-primary hover:text-white transition-colors">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-buildly-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">THE BUILDLY LIFECYCLE</h4>
+                    <p class="text-gray-300 text-sm">The Buildly Lifecycle process helps startups and SMBs document their ideas, translating business concepts into detailed technical documentation.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="https://labs.buildly.io" class="text-gray-300 hover:text-white transition-colors">Labs</a></li>
+                        <li><a href="../use-cases.html" class="text-gray-300 hover:text-white transition-colors">Use Cases</a></li>
+                        <li><a href="../pricing.html" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../articles.html" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="/contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="../rad-core.html" class="text-gray-300 hover:text-white transition-colors">RAD Core</a></li>
+                        <li><a href="https://market.buildly.io/" class="text-gray-300 hover:text-white transition-colors">Collab Hub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">OUR NEWSLETTER</h4>
+                    <p class="text-gray-300 text-sm mb-4">Sign up for the Buildly Lifecycle Newsletter</p>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-gray-700 text-white placeholder-gray-400 rounded focus:outline-none focus:ring-2 focus:ring-buildly-primary">
+                        <button type="submit" class="w-full bg-buildly-primary text-white py-2 rounded hover:bg-buildly-secondary transition-colors">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-300">&copy; Copyright Buildly, Inc. 2025 All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

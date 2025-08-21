@@ -1,0 +1,87 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#bgGradient)" opacity="0.1"/>
+  
+  <!-- Rocket Body -->
+  <ellipse cx="100" cy="90" rx="25" ry="60" fill="url(#bodyGradient)"/>
+  
+  <!-- Rocket Nose Cone -->
+  <path d="M100 30 L85 75 L115 75 Z" fill="url(#noseGradient)"/>
+  
+  <!-- Main Window -->
+  <circle cx="100" cy="65" r="12" fill="url(#windowGradient)" stroke="#1E40AF" stroke-width="2"/>
+  <circle cx="100" cy="65" r="6" fill="#0F172A" opacity="0.4"/>
+  <circle cx="98" cy="63" r="2" fill="#FFFFFF" opacity="0.8"/>
+  
+  <!-- Side Windows -->
+  <circle cx="88" cy="85" r="4" fill="#3B82F6" opacity="0.6"/>
+  <circle cx="112" cy="85" r="4" fill="#3B82F6" opacity="0.6"/>
+  
+  <!-- Wing Fins -->
+  <path d="M75 110 L65 140 L80 135 L82 115 Z" fill="url(#finGradient)"/>
+  <path d="M125 110 L135 140 L120 135 L118 115 Z" fill="url(#finGradient)"/>
+  
+  <!-- Engine Base -->
+  <ellipse cx="100" cy="150" rx="20" ry="8" fill="#4B5563"/>
+  
+  <!-- Rocket Flame -->
+  <path d="M85 158 L95 175 L100 170 L105 175 L115 158 L100 185 L85 158 Z" fill="url(#flameGradient1)"/>
+  <path d="M88 160 L96 173 L100 168 L104 173 L112 160 L100 180 L88 160 Z" fill="url(#flameGradient2)"/>
+  <path d="M92 162 L98 170 L100 167 L102 170 L108 162 L100 175 L92 162 Z" fill="#FEF3C7"/>
+  
+  <!-- Decorative Elements -->
+  <rect x="95" y="95" width="10" height="3" rx="1.5" fill="#1E40AF"/>
+  <rect x="95" y="105" width="10" height="3" rx="1.5" fill="#1E40AF"/>
+  <rect x="95" y="115" width="10" height="3" rx="1.5" fill="#1E40AF"/>
+  
+  <!-- Stars and Sparkles -->
+  <g fill="#FCD34D">
+    <path d="M35 45 L37 50 L42 48 L37 52 L39 57 L35 54 L31 57 L33 52 L28 48 L33 50 Z"/>
+    <path d="M165 35 L166 38 L169 37 L166 40 L167 43 L165 42 L163 43 L164 40 L161 37 L164 38 Z"/>
+    <circle cx="40" cy="80" r="1.5"/>
+    <circle cx="160" cy="75" r="1"/>
+    <circle cx="45" cy="120" r="1"/>
+    <circle cx="155" cy="115" r="1.5"/>
+    <circle cx="35" cy="140" r="1"/>
+    <circle cx="165" cy="130" r="1"/>
+  </g>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    
+    <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E5E7EB"/>
+      <stop offset="50%" stop-color="#F9FAFB"/>
+      <stop offset="100%" stop-color="#D1D5DB"/>
+    </linearGradient>
+    
+    <linearGradient id="noseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+    
+    <linearGradient id="windowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DBEAFE"/>
+      <stop offset="100%" stop-color="#93C5FD"/>
+    </linearGradient>
+    
+    <linearGradient id="finGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    
+    <linearGradient id="flameGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+    
+    <linearGradient id="flameGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Product Strategy Changes as Your Startup Scales - Buildly</title>
+    <meta name="description" content="What shifts between MVP, Product-Market Fit, and Growth — and how to keep up">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'buildly': {
+                            primary: '#1b5fa3',
+                            secondary: '#144a84', 
+                            accent: '#f9943b',
+                            dark: '#1F2937',
+                            light: '#F3F4F6',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../index.html">
+                        <img src="../media/buildly-logo.svg" alt="Buildly" class="h-8 w-auto">
+                    </a>
+                </div>
+                <div class="block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="../index.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="https://labs.buildly.io" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Labs</a>
+                        <a href="../use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
+                        <a href="../pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
+                        <a href="../team.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Team</a>
+                        <a href="../articles.html" class="text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Articles</a>
+                        <a href="https://labs.buildly.io/register" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Try for Free</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <section class="pt-20 bg-gradient-to-br from-buildly-light to-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center mb-8">
+                <div class="flex justify-center items-center gap-4 mb-4">
+                    <span class="bg-buildly-accent text-white px-3 py-1 rounded-full text-sm font-medium">Product Management</span>
+                    <span class="text-gray-600">•</span>
+                    <span class="text-gray-600">June 26, 2025</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-buildly-dark mb-4">
+                    How Product Strategy Changes as Your Startup Scales
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    What shifts between MVP, Product-Market Fit, and Growth — and how to keep up
+                </p>
+            </div>
+            
+            <!-- Back to Articles -->
+            <div class="mb-8">
+                <a href="../articles.html" class="inline-flex items-center text-buildly-primary hover:text-buildly-secondary font-medium">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Articles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg max-w-none">
+                
+                <p class="text-lg text-gray-700 mb-8">
+                    When you're just starting a company, having a "product strategy" might sound like a luxury — something you'll get to once you've shipped the thing, landed a few users, and found your footing.
+                </p>
+
+                <p class="text-gray-700 mb-8">
+                    But as your startup grows, the way you approach product strategy has to change. What worked during your MVP phase won't work when you're trying to scale. The questions change. The goals shift. And if you don't adjust your mindset, your team ends up building fast… but not building smart.
+                </p>
+
+                <p class="text-gray-700 mb-8">
+                    In this post, let's walk through how product strategy evolves across three key stages: MVP → Product-Market Fit → Growth — and how tools like Buildly Labs help you stay focused, fast, and aligned as things get more complex.
+                </p>
+
+                <h2 class="text-3xl font-bold text-buildly-dark mb-6">MVP: Build to Learn</h2>
+                
+                <p class="text-gray-700 mb-6">
+                    At the very beginning, your product strategy should be ridiculously simple: learn as fast as possible.
+                </p>
+
+                <p class="text-gray-700 mb-6">
+                    You're not building a company yet. You're testing a hypothesis. The goal isn't to scale — it's to prove that what you're building solves a real problem for real people.
+                </p>
+
+                <!-- MVP Section -->
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-xl mb-8">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Mindset Shift</h3>
+                    
+                    <div class="bg-white p-6 rounded-lg mb-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <span class="text-gray-700">You're not building the full product. You're building the smallest possible version that helps you learn.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <span class="text-gray-700">Manual work is fine. Incomplete UX is fine. Your roadmap is short because it should be.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-blue-800 mb-3">What matters right now:</h4>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">•</span>
+                            <span class="text-gray-700">Can people understand what the product does?</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">•</span>
+                            <span class="text-gray-700">Do they want to use it again?</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2">•</span>
+                            <span class="text-gray-700">Can you learn something useful from early adopters?</span>
+                        </li>
+                    </ul>
+
+                    <div class="bg-blue-100 p-4 rounded-lg">
+                        <h5 class="font-semibold text-blue-800 mb-2">How Buildly Labs helps:</h5>
+                        <p class="text-blue-700 text-sm mb-3">In the MVP stage, speed and clarity are everything. Buildly Labs helps you:</p>
+                        <ul class="space-y-1 text-sm text-blue-700">
+                            <li>• Generate AI-assisted user stories, features, issues, technical documentation and AI release management</li>
+                            <li>• Plan and track your MVP without bloated processes</li>
+                            <li>• Keep the focus on validating, not overbuilding</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-buildly-dark mb-6">Product-Market Fit: Find Your Traction</h2>
+                
+                <p class="text-gray-700 mb-6">
+                    If MVP is about testing your idea, PMF is about building the right version of that idea — and proving people actually want it.
+                </p>
+
+                <p class="text-gray-700 mb-6">
+                    This is the messy middle: you're getting real users, some are sticking around, some aren't. Now it's about improving the experience, reducing friction, and getting to a point where you can say, "Yes, we solve this problem, and people keep coming back."
+                </p>
+
+                <!-- PMF Section -->
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-xl mb-8">
+                    <h3 class="text-2xl font-bold text-green-800 mb-4">Mindset Shift</h3>
+                    
+                    <div class="bg-white p-6 rounded-lg mb-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <span class="text-gray-700">From "build fast" to "build what matters"</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <span class="text-gray-700">Strategy becomes about refinement — figuring out what your product really is</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <span class="text-gray-700">Feedback becomes fuel, not noise</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-green-800 mb-3">What matters now:</h4>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            <span class="text-gray-700">Retention and engagement metrics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            <span class="text-gray-700">Core feature usability</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            <span class="text-gray-700">Lightweight but real customer feedback loops</span>
+                        </li>
+                    </ul>
+
+                    <div class="bg-green-100 p-4 rounded-lg">
+                        <h5 class="font-semibold text-green-800 mb-2">How Buildly Labs helps:</h5>
+                        <p class="text-green-700 text-sm mb-3">At this stage, Labs becomes your operational backbone. It helps you:</p>
+                        <ul class="space-y-1 text-sm text-green-700">
+                            <li>• Group features and fixes into smart releases</li>
+                            <li>• Adjust your roadmap as user feedback comes in</li>
+                            <li>• Keep documentation, budgets, and team tasks synced — without relying on 6 different tools</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-buildly-dark mb-6">Growth: Scale (Without Breaking Everything)</h2>
+                
+                <p class="text-gray-700 mb-6">
+                    If you've hit PMF, congrats — most startups never get this far. But here's where things get tricky: now you have more users, more requests, more teams, and more pressure.
+                </p>
+
+                <p class="text-gray-700 mb-6">
+                    Your strategy can't be reactive anymore. It needs to align people, prioritize clearly, and support scale — without burning your team out or building things no one needs.
+                </p>
+
+                <!-- Growth Section -->
+                <div class="bg-gradient-to-r from-purple-50 to-violet-50 p-8 rounded-xl mb-8">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-4">Mindset Shift</h3>
+                    
+                    <div class="bg-white p-6 rounded-lg mb-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <span class="text-gray-700">Strategy = focus. Not everything is a priority.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <span class="text-gray-700">You go from building features to building systems.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <span class="text-gray-700">PMs now manage alignment, not just tasks.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-purple-800 mb-3">What matters now:</h4>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">•</span>
+                            <span class="text-gray-700">Clear goals tied to outcomes, not just outputs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">•</span>
+                            <span class="text-gray-700">Scalable planning and release workflows</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-500 mr-2">•</span>
+                            <span class="text-gray-700">Collaboration across product, design, and engineering</span>
+                        </li>
+                    </ul>
+
+                    <div class="bg-purple-100 p-4 rounded-lg">
+                        <h5 class="font-semibold text-purple-800 mb-2">How Buildly Labs helps:</h5>
+                        <p class="text-purple-700 text-sm mb-3">Labs makes it easier to scale by giving you:</p>
+                        <ul class="space-y-1 text-sm text-purple-700">
+                            <li>• A living roadmap that updates as your team builds</li>
+                            <li>• Smart budget forecasting and team capacity planning</li>
+                            <li>• AI-generated release notes, docs, and planning insights that keep everyone on the same page</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-buildly-dark mb-6">Final Thoughts: Strategy Isn't Set-and-Forget</h2>
+                
+                <p class="text-gray-700 mb-6">
+                    If there's one thing to take away, it's this: your strategy has to grow with your startup. What worked when you had 10 users won't cut it at 10,000.
+                </p>
+
+                <p class="text-gray-700 mb-6">
+                    As your goals shift from learning → retaining → scaling, your product tools and mindset need to shift too.
+                </p>
+
+                <div class="bg-buildly-light p-8 rounded-xl mb-8">
+                    <h3 class="text-2xl font-bold text-buildly-dark mb-4">The Evolution of Product Strategy</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-lg">
+                            <h4 class="text-lg font-bold text-blue-600 mb-3">MVP Stage</h4>
+                            <p class="text-gray-700 text-sm mb-3"><strong>Focus:</strong> Learn fast</p>
+                            <p class="text-gray-700 text-sm"><strong>Goal:</strong> Validate hypothesis</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg">
+                            <h4 class="text-lg font-bold text-green-600 mb-3">PMF Stage</h4>
+                            <p class="text-gray-700 text-sm mb-3"><strong>Focus:</strong> Build what matters</p>
+                            <p class="text-gray-700 text-sm"><strong>Goal:</strong> Find retention</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg">
+                            <h4 class="text-lg font-bold text-purple-600 mb-3">Growth Stage</h4>
+                            <p class="text-gray-700 text-sm mb-3"><strong>Focus:</strong> Scale systems</p>
+                            <p class="text-gray-700 text-sm"><strong>Goal:</strong> Manage alignment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-200 pt-8">
+                    <p class="text-lg text-gray-700 mb-4">
+                        That's why we built Buildly Labs — to give teams the structure and clarity to evolve without slowing down. Whether you're in MVP mode or gearing up to scale, Labs helps you move with purpose.
+                    </p>
+                    <p class="text-lg font-medium text-buildly-primary">
+                        Your strategy has to grow with your startup. What worked when you had 10 users won't cut it at 10,000.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Articles -->
+    <section class="py-16 bg-buildly-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-buildly-dark mb-8 text-center">Related Articles</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-buildly-primary text-white px-2 py-1 rounded text-xs">Product Management</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">No More Roadmap Chaos: How to Build a Living Product Plan with AI</h4>
+                    <p class="text-gray-600 text-sm mb-4">Learn how AI-powered roadmap planning can eliminate chaos and create living, adaptable product strategies.</p>
+                    <a href="roadmap-chaos-ai-solution.html" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-buildly-primary text-white px-2 py-1 rounded text-xs">Product Management</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">How to Prioritize Product Features Like a Pro</h4>
+                    <p class="text-gray-600 text-sm mb-4">Master the art of feature prioritization with proven frameworks and strategies.</p>
+                    <a href="feature-prioritization.html" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-buildly-primary text-white px-2 py-1 rounded text-xs">Startup</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">How Product Strategy Changes as Your Startup Scales</h4>
+                    <p class="text-gray-600 text-sm mb-4">Navigate the challenges of scaling your startup with strategic product planning.</p>
+                    <a href="startup-scaling.html" class="text-buildly-primary font-medium hover:text-buildly-secondary">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">Ready to Scale Your Product Strategy?</h2>
+            <p class="text-xl text-gray-600 mb-8">See how Buildly Labs helps teams evolve from MVP to growth</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://labs.buildly.io/register" class="bg-buildly-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-buildly-secondary transition-colors">
+                    Try Labs for Free
+                </a>
+                <a href="https://labs.buildly.io" class="border border-buildly-primary text-buildly-primary px-8 py-3 rounded-lg font-semibold hover:bg-buildly-primary hover:text-white transition-colors">
+                    Explore Platform
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-buildly-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">THE BUILDLY LIFECYCLE</h4>
+                    <p class="text-gray-300 text-sm">The Buildly Lifecycle process helps startups and SMBs document their ideas, translating business concepts into detailed technical documentation.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="https://labs.buildly.io" class="text-gray-300 hover:text-white transition-colors">Labs</a></li>
+                        <li><a href="../use-cases.html" class="text-gray-300 hover:text-white transition-colors">Use Cases</a></li>
+                        <li><a href="../pricing.html" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../articles.html" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="/contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="../rad-core.html" class="text-gray-300 hover:text-white transition-colors">RAD Core</a></li>
+                        <li><a href="https://market.buildly.io/" class="text-gray-300 hover:text-white transition-colors">Collab Hub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">OUR NEWSLETTER</h4>
+                    <p class="text-gray-300 text-sm mb-4">Sign up for the Buildly Lifecycle Newsletter</p>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-gray-700 text-white placeholder-gray-400 rounded focus:outline-none focus:ring-2 focus:ring-buildly-primary">
+                        <button type="submit" class="w-full bg-buildly-primary text-white py-2 rounded hover:bg-buildly-secondary transition-colors">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-300">&copy; Copyright Buildly, Inc. 2025 All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
