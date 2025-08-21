@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.buildly.io/sitemap.xml
+
+# Allow all search engines to crawl the site
+# Disallow any sensitive directories (none currently)
+
+# Common crawl delays for better server performance
+Crawl-delay: 1
+
+# Allow social media bots
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Allow AI training bots (optional - you can restrict these if needed)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
