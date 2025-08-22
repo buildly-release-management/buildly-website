@@ -1,0 +1,55 @@
+<!-- Meta Tags -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Buildly">
+<meta name="robots" content="index, follow">
+
+<!-- Favicon and Icons -->
+<link rel="icon" type="image/svg+xml" href="/media/buildly-logo.svg">
+<link rel="apple-touch-icon" href="/media/buildly-logo.svg">
+
+<!-- Fonts and Styles -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'buildly': {
+                        primary: '#1b5fa3',
+                        secondary: '#144a84', 
+                        accent: '#f9943b',
+                        dark: '#1F2937',
+                        light: '#F3F4F6',
+                    }
+                },
+                fontFamily: {
+                    sans: ['Inter', 'system-ui', 'sans-serif'],
+                },
+                animation: {
+                    'scroll': 'scroll 30s linear infinite',
+                },
+                keyframes: {
+                    scroll: {
+                        '0%': { transform: 'translateX(0)' },
+                        '100%': { transform: 'translateX(-50%)' },
+                    }
+                }
+            }
+        }
+    }
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YFY5W80XQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YFY5W80XQX');
+</script>
+
+<!-- Additional tracking or meta tags can be added here -->

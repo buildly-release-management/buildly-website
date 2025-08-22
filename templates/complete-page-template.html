@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ========================================
+         STEP 1: LOAD COMMON ELEMENTS 
+         ======================================== -->
+    <!-- This single line loads: Google Analytics, Tailwind CSS, fonts, common meta tags, favicon -->
+    <script src="/js/buildly-head.js"></script>
+    
+    <!-- ========================================
+         STEP 2: PAGE-SPECIFIC CUSTOMIZATIONS
+         ======================================== -->
+    
+    <!-- REQUIRED: Page Title and Description -->
+    <title>Your Page Title Here - Buildly</title>
+    <meta name="description" content="Your unique page description for SEO and social sharing.">
+    <meta name="keywords" content="your, page, specific, keywords, buildly">
+    <link rel="canonical" href="https://www.buildly.io/your-page-url.html">
+    
+    <!-- OPTIONAL: AMP Version (if you create one) -->
+    <link rel="amphtml" href="https://www.buildly.io/your-page-url.amp.html">
+    
+    <!-- SOCIAL SHARING: Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:type" content="article">  <!-- or "website" for non-articles -->
+    <meta property="og:url" content="https://www.buildly.io/your-page-url.html">
+    <meta property="og:title" content="Your Page Title for Social Sharing">
+    <meta property="og:description" content="Description that appears when shared on social media.">
+    <meta property="og:image" content="https://www.buildly.io/media/your-page-image.jpg">
+    <meta property="og:site_name" content="Buildly">
+    
+    <!-- SOCIAL SHARING: Twitter Cards -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.buildly.io/your-page-url.html">
+    <meta property="twitter:title" content="Your Page Title for Twitter">
+    <meta property="twitter:description" content="Description for Twitter sharing.">
+    <meta property="twitter:image" content="https://www.buildly.io/media/your-page-image.jpg">
+    
+    <!-- SEO: Structured Data (Choose the type that fits your page) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",  /* Change to "WebPage", "Product", "Organization", etc. as needed */
+      "headline": "Your Article Headline",
+      "description": "Your article description",
+      "image": "https://www.buildly.io/media/your-page-image.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Buildly"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Buildly",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.buildly.io/media/buildly-logo.svg"
+        }
+      },
+      "datePublished": "2025-08-22",
+      "dateModified": "2025-08-22",
+      "url": "https://www.buildly.io/your-page-url.html"
+    }
+    </script>
+    
+    <!-- OPTIONAL: Page-specific CSS -->
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #1b5fa3 0%, #f9943b 100%);
+        }
+        .custom-button {
+            background-color: #f9943b;
+            transition: all 0.3s ease;
+        }
+    </style>
+    
+    <!-- OPTIONAL: Page-specific JavaScript that needs to load early -->
+    <script>
+        // Any page-specific JavaScript that needs to run before the page loads
+        window.pageSpecificData = {
+            pageType: 'article',
+            category: 'ai-development'
+        };
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Your page content here -->
+    <main>
+        <h1>Your Page Content</h1>
+    </main>
+    
+    <!-- OPTIONAL: Page-specific JavaScript that loads after content -->
+    <script>
+        // Page-specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Page-specific JavaScript loaded');
+        });
+    </script>
+</body>
+</html>
