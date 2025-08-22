@@ -84,17 +84,17 @@
     `;
     document.head.appendChild(tailwindConfig);
     
-    // Load Google Analytics
+    // Load Google Analytics - Following Google's exact specification
     function loadGoogleAnalytics() {
-        // Create gtag script
+        // First, create gtag script with async attribute (Google's specification)
         const gtagScript = document.createElement('script');
         gtagScript.async = true;
         gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-YFY5W80XQX';
         document.head.appendChild(gtagScript);
         
-        // Initialize gtag
+        // Initialize gtag immediately after (Google's specification)
         const initScript = document.createElement('script');
-        initScript.textContent = `
+        initScript.innerHTML = `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -103,7 +103,7 @@
         document.head.appendChild(initScript);
     }
     
-    // Load Google Analytics after a short delay to ensure gtag script loads first
-    setTimeout(loadGoogleAnalytics, 100);
+    // Load Google Analytics immediately (no delay needed)
+    loadGoogleAnalytics();
     
 })();
