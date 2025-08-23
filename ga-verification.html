@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Google Analytics Verification Test</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 50px auto; 
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover { background: #0056b3; }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Google Analytics Live Test</h1>
+    <p>This page will test if Google Analytics is working on your production site.</p>
+    
+    <div class="test-box">
+        <h3>Step 1: Load Production Site Analytics</h3>
+        <iframe src="https://www.buildly.io" width="100%" height="300" style="border: 1px solid #ddd; border-radius: 4px;"></iframe>
+        <p><em>The production site is loaded above. If GA is working, it should track this visit.</em></p>
+    </div>
+
+    <div class="test-box">
+        <h3>Step 2: Manual GA Check</h3>
+        <button onclick="checkGA()">Check Google Analytics Status</button>
+        <div id="ga-status"></div>
+    </div>
+
+    <div class="test-box">
+        <h3>Step 3: Browser Console Test</h3>
+        <p>Open your browser's Developer Tools (F12) and paste this in the Console:</p>
+        <pre>// Check if Google Analytics is loaded
+if (typeof gtag === 'function') {
+    console.log('✅ gtag function is available');
+    gtag('event', 'test_event', {
+        'event_category': 'verification',
+        'event_label': 'manual_test'
+    });
+    console.log('✅ Test event sent');
+} else {
+    console.log('❌ gtag function not found');
+}
+
+// Check dataLayer
+if (typeof dataLayer !== 'undefined') {
+    console.log('✅ dataLayer exists:', dataLayer);
+} else {
+    console.log('❌ dataLayer not found');
+}</pre>
+    </div>
+
+    <div class="test-box">
+        <h3>Step 4: Real-Time Verification</h3>
+        <ol>
+            <li>Go to <a href="https://analytics.google.com" target="_blank">Google Analytics</a></li>
+            <li>Select your property (G-YFY5W80XQX)</li>
+            <li>Go to <strong>Reports</strong> → <strong>Real-time</strong> → <strong>Overview</strong></li>
+            <li>Visit <a href="https://www.buildly.io" target="_blank">https://www.buildly.io</a> in a new tab</li>
+            <li>You should see activity in real-time reports within 30 seconds</li>
+        </ol>
+    </div>
+
+    <div class="test-box">
+        <h3>Step 5: Common Issues</h3>
+        <div class="warning">
+            <strong>If GA isn't working, check these:</strong>
+            <ul>
+                <li><strong>Ad Blockers:</strong> Disable ad blockers (uBlock Origin, AdBlock Plus, etc.)</li>
+                <li><strong>Privacy Settings:</strong> Disable "Prevent Cross-site Tracking" in Safari</li>
+                <li><strong>Browser Extensions:</strong> Try in incognito/private mode</li>
+                <li><strong>Network:</strong> Corporate firewalls might block Google's servers</li>
+                <li><strong>Time:</strong> New implementations take 24-48 hours to show in standard reports</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function checkGA() {
+            const statusDiv = document.getElementById('ga-status');
+            let results = [];
+            
+            // Check for gtag
+            if (typeof gtag === 'function') {
+                results.push('<div class="status success">✅ gtag function is available</div>');
+            } else {
+                results.push('<div class="status error">❌ gtag function not found</div>');
+            }
+            
+            // Check for dataLayer
+            if (typeof dataLayer !== 'undefined' && Array.isArray(dataLayer)) {
+                results.push(`<div class="status success">✅ dataLayer exists with ${dataLayer.length} items</div>`);
+            } else {
+                results.push('<div class="status error">❌ dataLayer not found</div>');
+            }
+            
+            // Check for GA script
+            const gaScripts = document.querySelectorAll('script[src*="googletagmanager.com"]');
+            if (gaScripts.length > 0) {
+                results.push(`<div class="status success">✅ Found ${gaScripts.length} Google Analytics script(s)</div>`);
+            } else {
+                results.push('<div class="status error">❌ No Google Analytics scripts found</div>');
+            }
+            
+            statusDiv.innerHTML = results.join('');
+        }
+        
+        // Auto-check on load
+        setTimeout(checkGA, 1000);
+    </script>
+</body>
+</html>
