@@ -1,0 +1,3 @@
+# Buildly Website Redirects
+RewriteEngine On
+RewriteRule ^demo/?$ /demo.html [R=301,L]

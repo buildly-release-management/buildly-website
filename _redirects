@@ -1,0 +1,3 @@
+# Buildly Website Redirects
+/demo /demo.html 301
+/demo/ /demo.html 301
