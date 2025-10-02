@@ -5,7 +5,7 @@
 
 // Configuration
 const CONFIG = {
-    // Google Apps Script Web App URL - deployed script URL
+    // Google Apps Script Web App URL - updated deployment with CORS support
     GOOGLE_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzqPRvpiCQM99uuIit1djETda_B1I0s-oAddIriRetY0_WHV7QhsVcOWv7S397wslKd/exec',
     
     // Spreadsheet configuration
