@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Load common elements -->
-    <script src="/js/buildly-head.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Page-specific customization -->
     <title>Unsubscribe - Buildly Newsletter</title>
     <meta name="description" content="Unsubscribe from Buildly newsletter and marketing communications.">
     <meta name="keywords" content="unsubscribe, newsletter, buildly, email preferences">
-    <link rel="canonical" href="https://www.buildly.io/unsubscribe.html">
+    <meta name="author" content="Buildly">
     <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://www.buildly.io/unsubscribe.html">
+    
+    <!-- Favicon and icons -->
+    <link rel="icon" type="image/svg+xml" href="/media/buildly-logo.svg">
+    <link rel="alternate icon" href="/favicon.ico">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'buildly': {
+                            primary: '#1b5fa3',
+                            secondary: '#144a84', 
+                            accent: '#f9943b',
+                            dark: '#1F2937',
+                            light: '#F3F4F6',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFY5W80XQX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YFY5W80XQX');
+    </script>
 </head>
 <body class="font-sans bg-gray-50">
     <!-- Navigation -->

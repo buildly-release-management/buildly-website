@@ -35,7 +35,7 @@ function doPost(e) {
     
     // Validate input
     if (!email || !isValidEmail(email)) {
-      return createResponse(false, 'Invalid email address');
+      return createCorsResponse(false, 'Invalid email address');
     }
     
     // Handle different actions
@@ -45,13 +45,28 @@ function doPost(e) {
       case 'unsubscribe':
         return handleUnsubscribe(email, requestData);
       default:
-        return createResponse(false, 'Invalid action');
+        return createCorsResponse(false, 'Invalid action');
     }
     
   } catch (error) {
     console.error('Error in doPost:', error);
-    return createResponse(false, 'Internal server error: ' + error.message);
+    return createCorsResponse(false, 'Internal server error: ' + error.message);
   }
+}
+
+/**
+ * Handle OPTIONS requests for CORS
+ */
+function doOptions(e) {
+  return ContentService
+    .createTextOutput('')
+    .setMimeType(ContentService.MimeType.TEXT)
+    .setHeaders({
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Max-Age': '86400'
+    });
 }
 
 /**
@@ -78,11 +93,11 @@ function handleCheckEmail(email) {
       row[0] && row[0].toString().toLowerCase().trim() === normalizedEmail
     );
     
-    return createResponse(true, 'Email check completed', { exists: emailExists });
+    return createCorsResponse(true, 'Email check completed', { exists: emailExists });
     
   } catch (error) {
     console.error('Error checking email:', error);
-    return createResponse(false, 'Error checking email: ' + error.message);
+    return createCorsResponse(false, 'Error checking email: ' + error.message);
   }
 }
 
@@ -98,7 +113,7 @@ function handleUnsubscribe(email, requestData) {
     const emailRow = findEmailRow(sheet, normalizedEmail);
     
     if (emailRow === -1) {
-      return createResponse(false, 'Email address not found in newsletter list');
+      return createCorsResponse(false, 'Email address not found in newsletter list');
     }
     
     // Update the unsubscribed status
@@ -121,14 +136,14 @@ function handleUnsubscribe(email, requestData) {
     // Log the unsubscribe (optional)
     console.log(`Email unsubscribed: ${normalizedEmail} at ${new Date()}`);
     
-    return createResponse(true, 'Successfully unsubscribed', {
+    return createCorsResponse(true, 'Successfully unsubscribed', {
       email: normalizedEmail,
       timestamp: new Date().toISOString()
     });
     
   } catch (error) {
     console.error('Error processing unsubscribe:', error);
-    return createResponse(false, 'Error processing unsubscribe: ' + error.message);
+    return createCorsResponse(false, 'Error processing unsubscribe: ' + error.message);
   }
 }
 
@@ -186,6 +201,30 @@ function createResponse(success, message, data = null) {
   return ContentService
     .createTextOutput(JSON.stringify(response))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+/**
+ * Create a CORS-enabled JSON response
+ */
+function createCorsResponse(success, message, data = null) {
+  const response = {
+    success: success,
+    message: message,
+    timestamp: new Date().toISOString()
+  };
+  
+  if (data) {
+    response.data = data;
+  }
+  
+  return ContentService
+    .createTextOutput(JSON.stringify(response))
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeaders({
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type'
+    });
 }
 
 /**
