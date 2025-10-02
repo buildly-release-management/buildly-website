@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Load common elements -->
+    <script src="/js/buildly-head.js"></script>
+    
+    <!-- Page-specific customization -->
+    <title>Unsubscribe - Buildly Newsletter</title>
+    <meta name="description" content="Unsubscribe from Buildly newsletter and marketing communications.">
+    <meta name="keywords" content="unsubscribe, newsletter, buildly, email preferences">
+    <link rel="canonical" href="https://www.buildly.io/unsubscribe.html">
+    <meta name="robots" content="noindex, nofollow">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html">
+                        <img src="media/buildly-logo.svg" alt="Buildly" class="h-12 w-auto" style="filter: brightness(0) saturate(100%) invert(21%) sepia(47%) saturate(1765%) hue-rotate(198deg) brightness(97%) contrast(93%);">
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                    <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Try for Free</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="min-h-screen py-12">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Unsubscribe Form -->
+            <div id="unsubscribe-form" class="bg-white rounded-lg shadow-lg p-8">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold text-buildly-dark mb-4">Unsubscribe from Buildly Newsletter</h1>
+                    <p class="text-gray-600">We're sorry to see you go! Please confirm your email address to unsubscribe from our newsletter and marketing communications.</p>
+                </div>
+
+                <form id="unsubscribe-email-form" class="space-y-6">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-buildly-primary focus:border-buildly-primary transition-colors"
+                            placeholder="Enter your email address"
+                        >
+                        <p class="text-sm text-gray-500 mt-2">This should be the email address where you receive our newsletter.</p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button 
+                            type="submit" 
+                            class="flex-1 bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            <span class="submit-text">Unsubscribe</span>
+                            <span class="loading-text hidden">Processing...</span>
+                        </button>
+                        <a 
+                            href="index.html" 
+                            class="flex-1 bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors text-center"
+                        >
+                            Keep Subscription
+                        </a>
+                    </div>
+                </form>
+
+                <!-- Loading State -->
+                <div id="loading-state" class="hidden text-center py-8">
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-buildly-primary"></div>
+                    <p class="mt-4 text-gray-600">Processing your request...</p>
+                </div>
+            </div>
+
+            <!-- Success Message -->
+            <div id="success-message" class="hidden bg-white rounded-lg shadow-lg p-8 text-center">
+                <div class="mb-6">
+                    <svg class="mx-auto h-16 w-16 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-buildly-dark mb-4">Successfully Unsubscribed</h2>
+                <p class="text-gray-600 mb-6">You have been successfully unsubscribed from the Buildly newsletter. You will no longer receive marketing emails from us.</p>
+                <p class="text-sm text-gray-500 mb-6">If you change your mind, you can always resubscribe by visiting our website and signing up again.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="index.html" class="bg-buildly-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-buildly-secondary transition-colors">
+                        Return to Homepage
+                    </a>
+                    <a href="articles.html" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                        Browse Articles
+                    </a>
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div id="error-message" class="hidden bg-white rounded-lg shadow-lg p-8 text-center">
+                <div class="mb-6">
+                    <svg class="mx-auto h-16 w-16 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16c-.77.833.192 2.5 1.732 2.5z" />
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-buildly-dark mb-4">Unable to Process Request</h2>
+                <p class="text-gray-600 mb-6" id="error-text">We encountered an error while processing your unsubscribe request. Please try again or contact our support team.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button 
+                        onclick="showUnsubscribeForm()" 
+                        class="bg-buildly-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-buildly-secondary transition-colors"
+                    >
+                        Try Again
+                    </button>
+                    <a href="mailto:team@buildly.io" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                        Contact Support
+                    </a>
+                </div>
+            </div>
+
+            <!-- Information Section -->
+            <div class="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-blue-900 mb-3">What happens when you unsubscribe?</h3>
+                <ul class="space-y-2 text-blue-800">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        You'll stop receiving our weekly newsletter
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        You'll no longer receive product updates and announcements
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        You may still receive transactional emails related to your account
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        You can resubscribe anytime by signing up again
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-buildly-dark text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-300">&copy; Copyright Buildly, Inc. 2025 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="js/unsubscribe.js"></script>
+</body>
+</html>
