@@ -29,9 +29,34 @@ const COLUMNS = {
  */
 function doPost(e) {
   try {
-    // Parse the request
-    const requestData = JSON.parse(e.postData.contents);
-    const { action, email } = requestData;
+    // Log the incoming request for debugging
+    console.log('Received POST request');
+    console.log('Request data:', e.postData ? e.postData.contents : 'No post data');
+    console.log('Parameters:', e.parameter);
+    
+    let requestData;
+    let action, email;
+    
+    // Try to parse as JSON first, then fall back to form data
+    try {
+      requestData = JSON.parse(e.postData.contents);
+      action = requestData.action;
+      email = requestData.email;
+    } catch (jsonError) {
+      // Handle form data
+      console.log('Not JSON, trying form data');
+      action = e.parameter.action;
+      email = e.parameter.email;
+      requestData = {
+        action: action,
+        email: email,
+        timestamp: e.parameter.timestamp,
+        source: e.parameter.source,
+        userAgent: 'form-data-request'
+      };
+    }
+    
+    console.log('Action:', action, 'Email:', email);
     
     // Validate input
     if (!email || !isValidEmail(email)) {
@@ -113,7 +138,17 @@ function handleUnsubscribe(email, requestData) {
     const emailRow = findEmailRow(sheet, normalizedEmail);
     
     if (emailRow === -1) {
-      return createCorsResponse(false, 'Email address not found in newsletter list');
+      // Check if email already has an unsubscribe record or doesn't exist at all
+      return createCorsResponse(false, 'Email address not found in our newsletter list. You may already be unsubscribed or never subscribed with this email address.');
+    }
+    
+    // Check if already unsubscribed
+    const currentStatus = sheet.getRange(emailRow + 1, COLUMNS.UNSUBSCRIBED + 1).getValue();
+    if (currentStatus === true || currentStatus === 'TRUE') {
+      return createCorsResponse(true, 'Email address is already unsubscribed', {
+        email: normalizedEmail,
+        alreadyUnsubscribed: true
+      });
     }
     
     // Update the unsubscribed status

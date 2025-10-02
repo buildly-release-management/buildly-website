@@ -75,22 +75,20 @@ async function handleUnsubscribe(event) {
     setFormLoading(true);
     
     try {
-        // First check if email exists in the sheet
-        const emailExists = await checkEmailExists(email);
-        
-        if (!emailExists) {
-            showError('Email address not found in our newsletter list. You may already be unsubscribed or never subscribed with this email address.');
-            return;
-        }
-        
-        // Process unsubscribe
+        // Process unsubscribe directly (the script will check if email exists)
         await processUnsubscribe(email);
         showSuccess();
         trackUnsubscribe(email);
         
     } catch (error) {
         console.error('Unsubscribe error:', error);
-        showError('Unable to process your request. Please try again later or contact support at team@buildly.io');
+        
+        // Check if it's a CORS error and provide specific guidance
+        if (error.message.includes('Failed to fetch') || error.message.includes('CORS')) {
+            showError('Network error: Unable to process your request due to a technical issue. Please contact support at team@buildly.io with your email address for manual unsubscribe.');
+        } else {
+            showError('Unable to process your request. Please try again later or contact support at team@buildly.io');
+        }
     } finally {
         setFormLoading(false);
     }
@@ -118,33 +116,69 @@ async function checkEmailExists(email) {
 }
 
 async function processUnsubscribe(email) {
-    const response = await fetch(CONFIG.GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            action: CONFIG.ACTIONS.UNSUBSCRIBE,
-            email: email,
-            timestamp: new Date().toISOString(),
-            source: 'website-unsubscribe-page',
-            userAgent: navigator.userAgent,
-            referrer: document.referrer || 'direct'
-        })
-    });
-    
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+    try {
+        // Use a simple POST request without explicit CORS mode
+        const response = await fetch(CONFIG.GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'text/plain', // Use text/plain to avoid preflight
+            },
+            body: JSON.stringify({
+                action: CONFIG.ACTIONS.UNSUBSCRIBE,
+                email: email,
+                timestamp: new Date().toISOString(),
+                source: 'website-unsubscribe-page',
+                userAgent: navigator.userAgent,
+                referrer: document.referrer || 'direct'
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        
+        if (!result.success) {
+            throw new Error(result.message || 'Unsubscribe failed');
+        }
+        
+        return result;
+        
+    } catch (error) {
+        // If the first attempt fails, try a fallback approach
+        console.log('Primary request failed, trying fallback approach:', error);
+        
+        try {
+            // Fallback: Use form data approach
+            const formData = new FormData();
+            formData.append('email', email);
+            formData.append('action', 'unsubscribe');
+            formData.append('timestamp', new Date().toISOString());
+            formData.append('source', 'website-unsubscribe-page-fallback');
+            
+            const fallbackResponse = await fetch(CONFIG.GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                body: formData
+            });
+            
+            if (!fallbackResponse.ok) {
+                throw new Error(`Fallback request failed! status: ${fallbackResponse.status}`);
+            }
+            
+            const fallbackResult = await fallbackResponse.json();
+            
+            if (!fallbackResult.success) {
+                throw new Error(fallbackResult.message || 'Fallback unsubscribe failed');
+            }
+            
+            return fallbackResult;
+            
+        } catch (fallbackError) {
+            console.error('Both primary and fallback requests failed:', fallbackError);
+            throw error; // Throw the original error
+        }
     }
-    
-    const result = await response.json();
-    
-    if (!result.success) {
-        throw new Error(result.message || 'Unsubscribe failed');
-    }
-    
-    return result;
 }
 
 function setFormLoading(loading) {
