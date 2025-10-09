@@ -338,19 +338,20 @@ class FileManager {
         return `<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load common elements -->
+    <script src="/js/buildly-head.js"></script>
+    
+    <!-- Page-specific customization -->
     <title>${title} - Buildly</title>
     <meta name="description" content="TODO: Add description for ${title}">
     <meta name="keywords" content="TODO: Add keywords">
-    <meta name="author" content="Buildly">
     <link rel="canonical" href="https://www.buildly.io/articles/${slug}.html">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.buildly.io/articles/${slug}.html">
     <meta property="og:title" content="${title}">
-    <meta property="og:description" content="TODO: Add description">
+    <meta property="og:description" content="TODO: Add description for ${title}">
     <meta property="og:image" content="https://www.buildly.io/media/buildly-logo.svg">
     <meta property="og:site_name" content="Buildly">
     
@@ -358,7 +359,7 @@ class FileManager {
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.buildly.io/articles/${slug}.html">
     <meta property="twitter:title" content="${title}">
-    <meta property="twitter:description" content="TODO: Add description">
+    <meta property="twitter:description" content="TODO: Add description for ${title}">
     <meta property="twitter:image" content="https://www.buildly.io/media/buildly-logo.svg">
     
     <!-- Structured Data -->
@@ -367,11 +368,12 @@ class FileManager {
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "${title}",
-      "description": "TODO: Add description",
+      "description": "TODO: Add description for ${title}",
       "image": "https://www.buildly.io/media/buildly-logo.svg",
       "author": {
-        "@type": "Organization",
-        "name": "Buildly"
+        "@type": "Person",
+        "name": "Buildly Team",
+        "url": "https://www.buildly.io/team.html"
       },
       "publisher": {
         "@type": "Organization",
@@ -412,35 +414,19 @@ class FileManager {
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="font-sans">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <a href="../index.html" class="flex items-center">
-                            <img class="h-8 w-auto" src="../media/buildly-logo.svg" alt="Buildly">
-                            <span class="ml-2 text-xl font-bold text-buildly-primary">Buildly</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="https://labs.buildly.io" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Labs</a>
-                        <a href="../use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
-                        <a href="../pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
-                        <a href="https://docs.buildly.io/" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Docs</a>
-                        <a href="../articles.html" class="text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Articles</a>
-                        <a href="../team.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Team</a>
-                        <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary">Try for Free</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- Include Navigation -->
+    <script>
+        // Load navigation include
+        fetch('../includes/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+    </script>
 
     <!-- Article Header -->
-    <header class="bg-gradient-to-br from-buildly-primary to-buildly-secondary pt-24 pb-16">
+    <header class="bg-gradient-to-br from-buildly-primary to-buildly-secondary pt-32 pb-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -466,8 +452,64 @@ class FileManager {
 
     <!-- Article Content -->
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <article class="prose prose-lg max-w-none prose-headings:text-buildly-dark prose-a:text-buildly-primary hover:prose-a:text-buildly-secondary prose-strong:text-buildly-dark">
-            ${content || '<p>Your article content goes here...</p>'}
+        <article class="prose prose-lg max-w-none prose-headings:text-buildly-dark prose-a:text-buildly-primary hover:prose-a:text-buildly-secondary prose-strong:text-buildly-dark prose-p:text-gray-700 prose-p:leading-relaxed">
+            
+            <!-- Author Byline -->
+            <div class="mb-12 pb-8 border-b border-gray-200">
+                <h3 class="text-xl font-semibold text-buildly-dark mb-2">By <a href="https://www.buildly.io/team.html" class="text-buildly-primary hover:text-buildly-secondary">Buildly Team</a></h3>
+                <p class="text-gray-600 italic">AI-powered product development platform providing superior alternatives to vibe coding with intelligent automation and developer oversight.</p>
+            </div>
+
+            <!-- Article Body -->
+            <div class="space-y-6">
+                ${content || `
+                <p class="text-lg text-gray-700 leading-relaxed">Your article content goes here. This template provides a professional, consistent design that matches the Buildly brand with proper paragraph structure.</p>
+                
+                <p class="text-lg text-gray-700 leading-relaxed">Each paragraph should contain multiple related sentences to create logical content blocks. This improves readability and reduces excessive white space between individual sentences.</p>
+                
+                <h2 class="text-3xl font-bold text-buildly-dark mb-6 mt-8">Section Heading</h2>
+                
+                <p class="text-lg text-gray-700 leading-relaxed">Use this structure for well-formatted articles with proper typography and spacing. Remember to group related sentences together into coherent paragraphs rather than breaking every sentence into its own paragraph element.</p>
+                
+                <blockquote class="border-l-4 border-buildly-accent pl-6 py-4 bg-buildly-light rounded-r-lg my-8">
+                    <p class="text-lg text-gray-800 italic">Use blockquotes for important quotes or callouts that deserve special emphasis.</p>
+                </blockquote>
+                
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm my-8">
+                    <h4 class="text-xl font-semibold text-buildly-dark mb-3">💡 Key Point</h4>
+                    <p class="text-gray-700 leading-relaxed">Use cards like this to highlight important information or key takeaways that readers should pay special attention to.</p>
+                </div>
+                
+                <ul class="space-y-3 my-6">
+                    <li class="flex items-start">
+                        <span class="text-buildly-accent font-bold mr-3">•</span>
+                        <span class="text-gray-700">Styled bullet points using Buildly colors</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-buildly-accent font-bold mr-3">•</span>
+                        <span class="text-gray-700">Consistent spacing and typography throughout</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-buildly-accent font-bold mr-3">•</span>
+                        <span class="text-gray-700">Professional design that matches the Buildly brand</span>
+                    </li>
+                </ul>
+                `}
+            </div>
+
+            <!-- Call-to-Action Section -->
+            <div class="bg-gradient-to-r from-buildly-primary to-buildly-secondary rounded-lg p-8 text-white my-12">
+                <h3 class="text-2xl font-semibold mb-4">Ready to Transform Your Development Process?</h3>
+                <p class="text-lg leading-relaxed mb-6">Discover how Buildly can help your team build faster with AI-powered automation and intelligent architecture.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://labs.buildly.io" class="inline-flex items-center justify-center bg-white text-buildly-primary px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                        Try Buildly Labs Free
+                    </a>
+                    <a href="https://www.buildly.io/use-cases.html" class="inline-flex items-center justify-center border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-buildly-primary transition-colors">
+                        Explore Use Cases
+                    </a>
+                </div>
+            </div>
         </article>
     </main>
 

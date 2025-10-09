@@ -77,32 +77,18 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="font-sans">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <a href="../index.html" class="flex items-center">
-                            <img class="h-8 w-auto" src="../media/buildly-logo.svg" alt="Buildly">
-                            <span class="ml-2 text-xl font-bold text-buildly-primary">Buildly</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="https://labs.buildly.io" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Labs</a>
-                        <a href="../use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
-                        <a href="../pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
-                        <a href="https://docs.buildly.io/" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Docs</a>
-                        <a href="../articles.html" class="text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Articles</a>
-                        <a href="../team.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Team</a>
-                        <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary">Try for Free</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- Include Navigation -->
+    <div id="navigation-placeholder"></div>
+    
+    <script>
+        // Load navigation include
+        fetch('../includes/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+    </script>
 
     <!-- Article Header -->
     <header class="bg-gradient-to-br from-buildly-primary to-buildly-secondary pt-32 pb-16">
@@ -141,25 +127,13 @@
 
             <!-- Article Body -->
             <div class="space-y-6">
-                <p class="text-lg text-gray-700 leading-relaxed">I've been an Agile evangelist and a Scrum team member — if you will — on many projects and in many organizations over the years.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">I've been an Agile evangelist and a Scrum team member — if you will — on many projects and in many organizations over the years. I've stood on both sides of the aisle, or maybe more accurately, both sides of the stand-up circle.</p>
                 
-                <p class="text-lg text-gray-700 leading-relaxed">I've stood on both sides of the aisle, or maybe more accurately, both sides of the stand-up circle.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">I've been the <strong class="text-buildly-dark">developer</strong> just wanting to get to work, quietly hoping that the promise of fewer meetings and fewer artifacts would one day come true. And I've been the <strong class="text-buildly-dark">Project Manager</strong> and <strong class="text-buildly-dark">Scrum Master</strong>, hoping the developers might show just a little more flexibility — maybe include an estimate (even a wild guess), or at least show up on time for stand-up.</p>
                 
-                <p class="text-lg text-gray-700 leading-relaxed">I've been the <strong class="text-buildly-dark">developer</strong> just wanting to get to work, quietly hoping that the promise of fewer meetings and fewer artifacts would one day come true.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">What I know is that the <strong class="text-buildly-dark">reaction to waterfall and big-up-front design</strong> was absolutely correct in most cases. Agile, in all its flavors and customizations, helped bring countless projects back to life and get delivered on time. But it didn't solve every problem, and it created plenty of new ones — with its own detractors and dysfunctions that still linger today.</p>
                 
-                <p class="text-lg text-gray-700 leading-relaxed">And I've been the <strong class="text-buildly-dark">Project Manager</strong> and <strong class="text-buildly-dark">Scrum Master</strong>, hoping the developers might show just a little more flexibility — maybe include an estimate (even a wild guess), or at least show up on time for stand-up.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">What I know is that the <strong class="text-buildly-dark">reaction to waterfall and big-up-front design</strong> was absolutely correct in most cases.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">Agile, in all its flavors and customizations, helped bring countless projects back to life and get delivered on time.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">But it didn't solve every problem, and it created plenty of new ones — with its own detractors and dysfunctions that still linger today.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">And now, I believe it's time — in most cases — for Agile to <strong class="text-buildly-dark">die</strong>.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">Some teams have already taken the axe to it. Others are trimming carefully with scalpels.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">Many are searching for alternatives in <strong class="text-buildly-dark">Lean</strong>, <strong class="text-buildly-dark">Six Sigma</strong>, or new home-grown versions of Agile — and that's fine. In fact, that's exactly in the spirit of the original manifesto.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">And now, I believe it's time — in most cases — for Agile to <strong class="text-buildly-dark">die</strong>. Some teams have already taken the axe to it. Others are trimming carefully with scalpels. Many are searching for alternatives in <strong class="text-buildly-dark">Lean</strong>, <strong class="text-buildly-dark">Six Sigma</strong>, or new home-grown versions of Agile — and that's fine. In fact, that's exactly in the spirit of the original manifesto.</p>
                 
                 <p class="text-lg text-gray-700 leading-relaxed">As the <strong class="text-buildly-dark">12th Principle</strong> of the <em>Agile Manifesto</em> reminds us:</p>
                 
@@ -167,11 +141,7 @@
                     <p class="text-lg text-gray-800 italic">"At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly."</p>
                 </blockquote>
                 
-                <p class="text-lg text-gray-700 leading-relaxed">For many of us now working with <strong class="text-buildly-dark">AI</strong>, <strong class="text-buildly-dark">aggressive CI/CD</strong>, or even older <strong class="text-buildly-dark">component-driven architectures</strong>, the pace of real work has outgrown Agile's cycles and ceremonies.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">We've hit that regular interval again — and it's time to tune and adjust.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">In other words: it's time to <strong class="text-buildly-dark">kill Agile</strong>, or at least start hacking away until there's almost nothing left.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">For many of us now working with <strong class="text-buildly-dark">AI</strong>, <strong class="text-buildly-dark">aggressive CI/CD</strong>, or even older <strong class="text-buildly-dark">component-driven architectures</strong>, the pace of real work has outgrown Agile's cycles and ceremonies. We've hit that regular interval again — and it's time to tune and adjust. In other words: it's time to <strong class="text-buildly-dark">kill Agile</strong>, or at least start hacking away until there's almost nothing left.</p>
             </div>
 
             <hr class="my-12 border-gray-300" />
@@ -179,17 +149,11 @@
             <h2 class="text-3xl font-bold text-buildly-dark mb-6">The Radical Shift</h2>
             
             <div class="space-y-6">
-                <p class="text-lg text-gray-700 leading-relaxed">After two decades helping teams find the balance between structure and flow, I've watched Agile grow from revolutionary to routine — and now, to restrictive.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">After two decades helping teams find the balance between structure and flow, I've watched Agile grow from revolutionary to routine — and now, to restrictive. At <a href="https://www.buildly.io" class="text-buildly-primary hover:text-buildly-secondary font-medium">Buildly</a> and inside <a href="https://labs.buildly.io" class="text-buildly-primary hover:text-buildly-secondary font-medium">Buildly Labs</a>, we've spent the last few years stripping back what doesn't serve us anymore.</p>
                 
-                <p class="text-lg text-gray-700 leading-relaxed">At <a href="https://www.buildly.io" class="text-buildly-primary hover:text-buildly-secondary font-medium">Buildly</a> and inside <a href="https://labs.buildly.io" class="text-buildly-primary hover:text-buildly-secondary font-medium">Buildly Labs</a>, we've spent the last few years stripping back what doesn't serve us anymore.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">What's left we call the <strong class="text-buildly-dark">Radical Process</strong>, an evolution of the ideas I first explored in <em><a href="https://www.apress.com/gp/book/9781484294933" class="text-buildly-primary hover:text-buildly-secondary">Radical Therapy for Software Teams</a></em>. It's still rooted in trust, collaboration, and reflection — but now it's enhanced with automation, AI, and a deep understanding of how modern remote and hybrid teams actually work.</p>
                 
-                <p class="text-lg text-gray-700 leading-relaxed">What's left we call the <strong class="text-buildly-dark">Radical Process</strong>, an evolution of the ideas I first explored in <em><a href="https://www.apress.com/gp/book/9781484294933" class="text-buildly-primary hover:text-buildly-secondary">Radical Therapy for Software Teams</a></em>.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">It's still rooted in trust, collaboration, and reflection — but now it's enhanced with automation, AI, and a deep understanding of how modern remote and hybrid teams actually work.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">This isn't an anti-Agile rant.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">It's the natural continuation of what the manifesto asked us to do: <strong class="text-buildly-dark">reflect, adapt, and evolve</strong>.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">This isn't an anti-Agile rant. It's the natural continuation of what the manifesto asked us to do: <strong class="text-buildly-dark">reflect, adapt, and evolve</strong>.</p>
             </div>
 
             <hr class="my-12 border-gray-300" />
@@ -197,13 +161,7 @@
             <h2 class="text-3xl font-bold text-buildly-dark mb-6">How Buildly Labs and AI Changed the Process</h2>
             
             <div class="space-y-6">
-                <p class="text-lg text-gray-700 leading-relaxed">At Buildly, we didn't throw Agile out overnight. We just started trimming.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">Meetings that produced no new insight were cut.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">Ceremonies that slowed real work were automated or absorbed into daily flow.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">And the result was a process that moves as fast as the teams — and the tools — driving it.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">At Buildly, we didn't throw Agile out overnight. We just started trimming. Meetings that produced no new insight were cut. Ceremonies that slowed real work were automated or absorbed into daily flow. And the result was a process that moves as fast as the teams — and the tools — driving it.</p>
             </div>
 
             <h3 class="text-2xl font-semibold text-buildly-dark mt-10 mb-6">Key Shifts</h3>
@@ -233,21 +191,11 @@
             <h2 class="text-3xl font-bold text-buildly-dark mb-6">Radical in Practice</h2>
             
             <div class="space-y-6">
-                <p class="text-lg text-gray-700 leading-relaxed">The tipping point came when we realized most sprint cycles were already <strong class="text-buildly-dark">outdated the moment they started</strong>.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">The tipping point came when we realized most sprint cycles were already <strong class="text-buildly-dark">outdated the moment they started</strong>. By the time a story moved from grooming to development, an AI-assisted prototype was often already in place.</p>
                 
-                <p class="text-lg text-gray-700 leading-relaxed">By the time a story moved from grooming to development, an AI-assisted prototype was often already in place.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">So we experimented with what we now call <strong class="text-buildly-dark">Radical Intervals</strong> — micro-loops of continuous planning and delivery. AI monitors code activity, meetings, and issue threads, surfacing new features or blockers automatically. Teams can react and deploy in real time, without waiting for a new sprint to start.</p>
                 
-                <p class="text-lg text-gray-700 leading-relaxed">So we experimented with what we now call <strong class="text-buildly-dark">Radical Intervals</strong> — micro-loops of continuous planning and delivery.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">AI monitors code activity, meetings, and issue threads, surfacing new features or blockers automatically.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">Teams can react and deploy in real time, without waiting for a new sprint to start.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">Retrospectives still happen — but asynchronously, inside the workflow.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">AI summarizes what's working, what's slowing teams down, and even recommends changes.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">The outcome is a <strong class="text-buildly-dark">self-correcting process</strong> — one that adapts itself, rather than waiting for a manager to call a meeting.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">Retrospectives still happen — but asynchronously, inside the workflow. AI summarizes what's working, what's slowing teams down, and even recommends changes. The outcome is a <strong class="text-buildly-dark">self-correcting process</strong> — one that adapts itself, rather than waiting for a manager to call a meeting.</p>
                 
                 <p class="text-lg text-gray-700 leading-relaxed">It's not Agile. It's not Lean. It's something leaner still: <strong class="text-buildly-dark">Radical</strong>.</p>
                 
@@ -257,11 +205,7 @@
                     <p class="text-lg text-gray-800 italic">"Once you put a capital A in Agile, it stops being agile."</p>
                 </blockquote>
                 
-                <p class="text-lg text-gray-700 leading-relaxed">That line has aged like fine wine.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">What began as a movement of freedom became a bureaucracy of certifications and checklists.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">Even mainstream business writers agree:</p>
+                <p class="text-lg text-gray-700 leading-relaxed">That line has aged like fine wine. What began as a movement of freedom became a bureaucracy of certifications and checklists. Even mainstream business writers agree:</p>
                 
                 <ul class="space-y-3 my-6">
                     <li class="flex items-start">
@@ -286,19 +230,9 @@
             <h2 class="text-3xl font-bold text-buildly-dark mb-6">Conclusion: Reflection, Not Rebellion</h2>
             
             <div class="space-y-6">
-                <p class="text-lg text-gray-700 leading-relaxed">Agile isn't the enemy. It was a necessary correction to the rigidity of waterfall.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">Agile isn't the enemy. It was a necessary correction to the rigidity of waterfall. But software development has changed again. AI, automation, and continuous deployment have permanently altered the rhythm of building. We can't afford processes designed for slower, more predictable cycles.</p>
                 
-                <p class="text-lg text-gray-700 leading-relaxed">But software development has changed again.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">AI, automation, and continuous deployment have permanently altered the rhythm of building.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">We can't afford processes designed for slower, more predictable cycles.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">The <strong class="text-buildly-dark">Radical Process</strong> is simply the next reflection — the next adjustment — in the spirit of that 12th principle.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">It's about cutting back to what really matters: communication, clarity, and constant adaptation.</p>
-                
-                <p class="text-lg text-gray-700 leading-relaxed">It's about letting automation handle the repetition, so humans can focus on creation.</p>
+                <p class="text-lg text-gray-700 leading-relaxed">The <strong class="text-buildly-dark">Radical Process</strong> is simply the next reflection — the next adjustment — in the spirit of that 12th principle. It's about cutting back to what really matters: communication, clarity, and constant adaptation. It's about letting automation handle the repetition, so humans can focus on creation.</p>
                 
                 <p class="text-lg text-gray-700 leading-relaxed">If Agile helped us crawl out of waterfall, maybe Radical will finally let us <strong class="text-buildly-dark">stand upright again</strong>.</p>
             </div>
