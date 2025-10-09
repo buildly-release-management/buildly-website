@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Load common elements -->
+    <script src="/js/buildly-head.js"></script>
+    
+    <title>Buildly AI Content Manager - Admin Dashboard</title>
+    <meta name="description" content="AI-powered content management system for Buildly website administration.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Admin-specific styles -->
+    <link rel="stylesheet" href="css/admin.css">
+    
+    <style>
+        .admin-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            height: 100vh;
+            background: #f8fafc;
+        }
+        
+        .sidebar {
+            background: linear-gradient(135deg, #1b5fa3 0%, #144a84 100%);
+            color: white;
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+        
+        .sidebar h1 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .nav-item {
+            display: block;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .nav-item:hover, .nav-item.active {
+            background: rgba(255,255,255,0.15);
+            color: white;
+        }
+        
+        .main-content {
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .ai-status {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .status-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            min-width: 150px;
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+        
+        .status-online { background: #10b981; }
+        .status-offline { background: #ef4444; }
+        .status-loading { background: #f59e0b; animation: pulse 2s infinite; }
+        
+        .file-browser {
+            background: white;
+            border-radius: 0.75rem;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .file-browser-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: between;
+            align-items: center;
+        }
+        
+        .search-box {
+            padding: 0.5rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            width: 300px;
+        }
+        
+        .file-list {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .file-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #f3f4f6;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .file-item:hover {
+            background: #f9fafb;
+        }
+        
+        .file-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 1rem;
+            opacity: 0.6;
+        }
+        
+        .file-info {
+            flex: 1;
+        }
+        
+        .file-name {
+            font-weight: 500;
+            color: #1f2937;
+        }
+        
+        .file-path {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .file-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: #1b5fa3;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #144a84;
+        }
+        
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+        }
+        
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+        
+        .btn-accent {
+            background: #f9943b;
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background: #f97316;
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .action-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .action-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            background: #f3f4f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+        }
+        
+        .error {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .success {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #16a34a;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .file-section {
+            margin-bottom: 2rem;
+        }
+        
+        .file-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .file-section .file-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h1>AI Content Manager</h1>
+            
+            <nav>
+                <a href="#dashboard" class="nav-item active" data-view="dashboard">
+                    <span>Dashboard</span>
+                </a>
+                <a href="#files" class="nav-item" data-view="files">
+                    <span>File Browser</span>
+                </a>
+                <a href="editor.html" class="nav-item">
+                    <span>Content Editor</span>
+                </a>
+                <a href="articles-manager.html" class="nav-item">
+                    <span>Articles Manager</span>
+                </a>
+                <a href="social.html" class="nav-item">
+                    <span>Social Media</span>
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span>Settings</span>
+                </a>
+            </nav>
+            
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                <div style="font-size: 0.875rem; color: rgba(255,255,255,0.7);">
+                    <div>Version: 1.0.0</div>
+                    <div>Last Update: <span id="lastUpdate">--</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Dashboard View -->
+            <div id="dashboard-view">
+                <div class="header">
+                    <div>
+                        <h2 class="text-2xl font-bold text-buildly-dark">AI Content Manager Dashboard</h2>
+                        <p class="text-gray-600">Manage your website content with AI assistance</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="refreshStatus()">
+                        <span id="refresh-icon">Refresh</span> 
+                    </button>
+                </div>
+                
+                <!-- AI Status -->
+                <div class="ai-status">
+                    <div class="status-card">
+                        <div class="flex items-center mb-2">
+                            <span class="status-indicator status-loading" id="ollama-status"></span>
+                            <strong>Ollama (Local)</strong>
+                        </div>
+                        <div class="text-sm text-gray-600" id="ollama-info">Checking connection...</div>
+                    </div>
+                    
+                    <div class="status-card">
+                        <div class="flex items-center mb-2">
+                            <span class="status-indicator status-offline" id="openai-status"></span>
+                            <strong>OpenAI</strong>
+                        </div>
+                        <div class="text-sm text-gray-600" id="openai-info">API key not configured</div>
+                    </div>
+                    
+                    <div class="status-card">
+                        <div class="flex items-center mb-2">
+                            <span class="status-indicator status-offline" id="gemini-status"></span>
+                            <strong>Google Gemini</strong>
+                        </div>
+                        <div class="text-sm text-gray-600" id="gemini-info">API key not configured</div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <span style="font-size: 24px;">Write</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Create New Article</h3>
+                        <p class="text-gray-600 mb-4">Start writing a new blog post with AI assistance</p>
+                        <button class="btn btn-primary" onclick="createNewArticle()">Create Article</button>
+                    </div>
+                    
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <span style="font-size: 24px;">Edit</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Edit Existing Content</h3>
+                        <p class="text-gray-600 mb-4">Improve existing articles with AI suggestions</p>
+                        <button class="btn btn-secondary" onclick="showFileBrowser()">Browse Files</button>
+                    </div>
+                    
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <span style="font-size: 24px;">Social</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Generate Social Posts</h3>
+                        <p class="text-gray-600 mb-4">Create social media content from your articles</p>
+                        <button class="btn btn-accent" onclick="openSocialManager()">Create Posts</button>
+                    </div>
+                    
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <span style="font-size: 24px;">Settings</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Configure AI Providers</h3>
+                        <p class="text-gray-600 mb-4">Set up your AI services and preferences</p>
+                        <button class="btn btn-secondary" onclick="openSettings()">Settings</button>
+                    </div>
+                </div>
+                
+                <!-- Recent Activity -->
+                <div class="file-browser">
+                    <div class="file-browser-header">
+                        <h3 class="text-lg font-semibold">Recent Activity</h3>
+                    </div>
+                    <div id="recent-activity" class="p-6 text-center text-gray-500">
+                        Loading recent activity...
+                    </div>
+                </div>
+            </div>
+            
+            <!-- File Browser View -->
+            <div id="files-view" style="display: none;">
+                <div class="header">
+                    <div>
+                        <h2 class="text-2xl font-bold text-buildly-dark">File Browser</h2>
+                        <p class="text-gray-600">Browse and manage your website content files</p>
+                    </div>
+                </div>
+                
+                <div class="file-browser">
+                    <div class="file-browser-header">
+                        <h3 class="text-lg font-semibold">Website Files</h3>
+                        <div class="flex gap-2">
+                            <input type="text" class="search-box" placeholder="Search files..." id="file-search">
+                            <button class="btn btn-primary" onclick="loadFiles()">
+                                <span>Refresh</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="loading" id="files-loading">
+                        <div>Loading files...</div>
+                    </div>
+                    
+                    <div class="file-list" id="file-list">
+                        <!-- Files will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/ai-service.js"></script>
+    <script src="js/file-manager.js"></script>
+    <script src="js/app.js"></script>
+    
+    <script>
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
+        
+        // Navigation handling
+        document.querySelectorAll('.nav-item[data-view]').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const view = this.dataset.view;
+                showView(view);
+                
+                // Update active state
+                document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        function showView(viewName) {
+            // Hide all views
+            document.querySelectorAll('[id$="-view"]').forEach(view => {
+                view.style.display = 'none';
+            });
+            
+            // Show selected view
+            const targetView = document.getElementById(viewName + '-view');
+            if (targetView) {
+                targetView.style.display = 'block';
+                
+                // Load view-specific data
+                if (viewName === 'files') {
+                    loadFiles();
+                }
+            }
+        }
+        
+        // Edit existing file
+        function editFile(filePath) {
+            const editorUrl = `editor.html?file=${encodeURIComponent(filePath)}`;
+            window.location.href = editorUrl;
+        }
+        
+        // Generate social media posts for existing file
+        function generateSocial(filePath) {
+            const socialUrl = `social.html?file=${encodeURIComponent(filePath)}`;
+            window.open(socialUrl, '_blank');
+        }
+        
+        function createNewArticle() {
+            const title = prompt('Enter article title:');
+            if (title) {
+                const filename = title.toLowerCase()
+                    .replace(/[^a-z0-9]+/g, '-')
+                    .replace(/^-+|-+$/g, '') + '.html';
+                
+                window.location.href = `editor.html?new=true&title=${encodeURIComponent(title)}&filename=${encodeURIComponent(filename)}`;
+            }
+        }
+        
+        function showFileBrowser() {
+            showView('files');
+            document.querySelector('.nav-item[data-view="files"]').classList.add('active');
+            document.querySelector('.nav-item[data-view="dashboard"]').classList.remove('active');
+        }
+        
+        function openSocialManager() {
+            window.location.href = 'social.html';
+        }
+        
+        function openSettings() {
+            window.location.href = 'settings.html';
+        }
+        
+        async function refreshStatus() {
+            const refreshIcon = document.getElementById('refresh-icon');
+            refreshIcon.style.animation = 'spin 1s linear infinite';
+            
+            // Check AI service status
+            await checkAIServiceStatus();
+            
+            // Load recent activity
+            await loadRecentActivity();
+            
+            setTimeout(() => {
+                refreshIcon.style.animation = '';
+            }, 1000);
+        }
+        
+        async function initializeApp() {
+            console.log('Initializing AI Content Manager...');
+            
+            // Load configuration
+            await loadConfiguration();
+            
+            // Check AI services
+            await checkAIServiceStatus();
+            
+            // Load recent activity
+            await loadRecentActivity();
+            
+            // Update last update time
+            document.getElementById('lastUpdate').textContent = new Date().toLocaleTimeString();
+        }
+        
+        // File search functionality
+        document.getElementById('file-search')?.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const fileItems = document.querySelectorAll('.file-item');
+            
+            fileItems.forEach(item => {
+                const fileName = item.querySelector('.file-name').textContent.toLowerCase();
+                const filePath = item.querySelector('.file-path').textContent.toLowerCase();
+                
+                if (fileName.includes(searchTerm) || filePath.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+        
+        // CSS for spin animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

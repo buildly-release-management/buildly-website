@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Load common elements -->
+    <script src="/js/buildly-head.js"></script>
+    
+    <!-- Page-specific customization -->
+    <title>AI-Powered Content Management: Local vs Cloud Solutions for Modern Development Teams - Buildly</title>
+    <meta name="description" content="Explore building intelligent content management systems with local Ollama models vs cloud APIs. Learn how AI can streamline content creation, editing, and social media distribution for development teams.">
+    <meta name="keywords" content="AI content management, Ollama local AI, OpenAI content creation, Google Gemini, AI writing tools, content automation, local AI deployment, buildly">
+    <link rel="canonical" href="https://www.buildly.io/articles/ai-powered-content-management-local-vs-cloud.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.buildly.io/articles/ai-powered-content-management-local-vs-cloud.html">
+    <meta property="og:title" content="AI-Powered Content Management: Local vs Cloud Solutions">
+    <meta property="og:description" content="Build intelligent content management systems with local Ollama models or cloud APIs for streamlined content creation and distribution.">
+    <meta property="og:image" content="https://www.buildly.io/media/buildly-logo.svg">
+    <meta property="og:site_name" content="Buildly">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.buildly.io/articles/ai-powered-content-management-local-vs-cloud.html">
+    <meta property="twitter:title" content="AI-Powered Content Management: Local vs Cloud Solutions">
+    <meta property="twitter:description" content="Build intelligent content management systems with AI assistance.">
+    <meta property="twitter:image" content="https://www.buildly.io/media/buildly-logo.svg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "AI-Powered Content Management: Local vs Cloud Solutions for Modern Development Teams",
+      "description": "Explore building intelligent content management systems with local Ollama models vs cloud APIs for streamlined content creation and distribution.",
+      "image": "https://www.buildly.io/media/buildly-logo.svg",
+      "author": {
+        "@type": "Organization",
+        "name": "Buildly"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Buildly",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.buildly.io/media/buildly-logo.svg"
+        }
+      },
+      "datePublished": "2025-10-08",
+      "dateModified": "2025-10-08",
+      "url": "https://www.buildly.io/articles/ai-powered-content-management-local-vs-cloud.html"
+    }
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="/" class="flex items-center">
+                            <img class="h-8 w-auto" src="/media/buildly-logo.svg" alt="Buildly">
+                            <span class="ml-2 text-xl font-bold text-buildly-primary">Buildly</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/labs.html" class="text-buildly-primary hover:text-buildly-secondary px-3 py-2 rounded-md text-sm font-medium">Labs</a>
+                        <a href="/pricing.html" class="text-buildly-dark hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
+                        <a href="/use-cases.html" class="text-buildly-dark hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Use Cases</a>
+                        <a href="/articles.html" class="text-buildly-dark hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Articles</a>
+                        <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary">Try for Free</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="bg-gradient-to-br from-buildly-primary to-buildly-secondary pt-24 pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    AI-Powered Content Management: Local vs Cloud Solutions
+                </h1>
+                <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                    Build intelligent content management systems that streamline creation, editing, and distribution with AI assistance—comparing local Ollama deployments with cloud-based solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-blue-100">
+                    <span class="flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                        </svg>
+                        Buildly Team
+                    </span>
+                    <span class="flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                        </svg>
+                        October 8, 2025
+                    </span>
+                    <span class="flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                        </svg>
+                        8 min read
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <article class="prose prose-lg max-w-none">
+            <div class="bg-buildly-light border-l-4 border-buildly-accent p-6 mb-8 rounded-r-lg">
+                <p class="text-buildly-dark font-semibold mb-2">Key Takeaways</p>
+                <ul class="text-buildly-dark space-y-1 m-0">
+                    <li>AI content management reduces content creation time by 60-70%</li>
+                    <li>Local Ollama provides privacy and control, cloud APIs offer scalability</li>
+                    <li>Hybrid approaches combine the best of both worlds for different use cases</li>
+                    <li>Social media integration streamlines distribution workflows</li>
+                </ul>
+            </div>
+
+            <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                Modern development teams face an overwhelming content creation challenge. From technical documentation and blog posts to social media updates and marketing materials, the volume of content required to maintain a competitive edge continues to grow exponentially. Traditional content management approaches are no longer sufficient—teams need intelligent, AI-powered systems that can assist with creation, editing, and distribution.
+            </p>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">The Content Management Challenge</h2>
+
+            <p class="mb-6">
+                Development teams today juggle multiple content responsibilities:
+            </p>
+
+            <ul class="mb-8 space-y-2">
+                <li><strong>Technical Documentation:</strong> API docs, user guides, and implementation examples</li>
+                <li><strong>Marketing Content:</strong> Blog posts, case studies, and product announcements</li>
+                <li><strong>Social Media:</strong> Regular updates, engagement content, and community building</li>
+                <li><strong>Internal Communication:</strong> Team updates, project documentation, and knowledge sharing</li>
+            </ul>
+
+            <p class="mb-8">
+                The manual approach to managing this content creation pipeline leads to bottlenecks, inconsistent quality, and missed opportunities for engagement. This is where AI-powered content management systems become game-changers, offering intelligent assistance that amplifies human creativity rather than replacing it.
+            </p>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Local AI with Ollama: Privacy-First Content Creation</h2>
+
+            <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
+                <h3 class="text-lg font-semibold text-green-800 mb-4">Benefits of Local AI Deployment</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold text-green-700 mb-2">Privacy & Security</h4>
+                        <ul class="text-green-700 space-y-1 text-sm">
+                            <li>• Content never leaves your network</li>
+                            <li>• Full control over sensitive information</li>
+                            <li>• Compliance with data regulations</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-green-700 mb-2">Cost Control</h4>
+                        <ul class="text-green-700 space-y-1 text-sm">
+                            <li>• No per-token API costs</li>
+                            <li>• Predictable infrastructure expenses</li>
+                            <li>• Unlimited usage within hardware limits</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <p class="mb-6">
+                <strong>Ollama</strong> provides an excellent foundation for local AI deployment, supporting models like Llama 2, Code Llama, and other open-source language models. For content management, this means:
+            </p>
+
+            <ul class="mb-8 space-y-2">
+                <li><strong>Customizable Models:</strong> Fine-tune models for your specific content style and terminology</li>
+                <li><strong>Offline Operation:</strong> Continue content creation even without internet connectivity</li>
+                <li><strong>Integration Flexibility:</strong> Direct API access for seamless tool integration</li>
+                <li><strong>Resource Control:</strong> Scale hardware based on your team's needs and budget</li>
+            </ul>
+
+            <div class="bg-gray-100 rounded-lg p-6 mb-8">
+                <h4 class="font-semibold text-gray-800 mb-3">Sample Ollama Integration Code</h4>
+                <pre class="text-sm text-gray-700 overflow-x-auto"><code>// Simple Ollama API integration for content generation
+const generateContent = async (prompt, model = 'llama2') => {
+  const response = await fetch('http://localhost:11434/api/generate', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: model,
+      prompt: prompt,
+      stream: false
+    })
+  });
+  
+  const data = await response.json();
+  return data.response;
+};</code></pre>
+            </div>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Cloud AI Solutions: OpenAI and Google Gemini</h2>
+
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+                <h3 class="text-lg font-semibold text-blue-800 mb-4">Cloud AI Advantages</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold text-blue-700 mb-2">Advanced Capabilities</h4>
+                        <ul class="text-blue-700 space-y-1 text-sm">
+                            <li>• State-of-the-art model performance</li>
+                            <li>• Multimodal content generation</li>
+                            <li>• Specialized tools and functions</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-blue-700 mb-2">Scalability</h4>
+                        <ul class="text-blue-700 space-y-1 text-sm">
+                            <li>• Instant access to latest models</li>
+                            <li>• No hardware maintenance</li>
+                            <li>• Global availability and reliability</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <p class="mb-6">
+                Cloud-based AI services like <strong>OpenAI's GPT models</strong> and <strong>Google's Gemini</strong> offer cutting-edge capabilities for content creation:
+            </p>
+
+            <h3 class="text-xl font-semibold text-buildly-dark mb-4">OpenAI Integration Benefits</h3>
+            <ul class="mb-6 space-y-2">
+                <li><strong>GPT-4 Turbo:</strong> Superior reasoning and context understanding for complex content</li>
+                <li><strong>Function Calling:</strong> Integrate with your existing tools and workflows</li>
+                <li><strong>Vision Capabilities:</strong> Analyze and generate content based on images</li>
+                <li><strong>Code Interpreter:</strong> Generate and execute code for data-driven content</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-buildly-dark mb-4">Google Gemini Advantages</h3>
+            <ul class="mb-8 space-y-2">
+                <li><strong>Multimodal Native:</strong> Seamlessly work with text, images, and code</li>
+                <li><strong>Long Context:</strong> Handle extensive documents and conversations</li>
+                <li><strong>Google Integration:</strong> Connect with Google Workspace and services</li>
+                <li><strong>Real-time Information:</strong> Access to current web data for timely content</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Building Your AI Content Management System</h2>
+
+            <p class="mb-6">
+                An effective AI content management system should provide a unified interface that can leverage different AI providers based on the task at hand. Here's how to architect such a system:
+            </p>
+
+            <h3 class="text-xl font-semibold text-buildly-dark mb-4">Core System Components</h3>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                    <h4 class="font-semibold text-buildly-primary mb-3">Content Editor Interface</h4>
+                    <ul class="text-gray-700 space-y-1 text-sm">
+                        <li>• Rich text editor with AI suggestions</li>
+                        <li>• Real-time collaboration features</li>
+                        <li>• Version control and change tracking</li>
+                        <li>• Template and style guide integration</li>
+                    </ul>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                    <h4 class="font-semibold text-buildly-primary mb-3">AI Provider Management</h4>
+                    <ul class="text-gray-700 space-y-1 text-sm">
+                        <li>• Multi-provider API abstraction</li>
+                        <li>• Automatic failover and load balancing</li>
+                        <li>• Cost tracking and usage analytics</li>
+                        <li>• Model selection based on content type</li>
+                    </ul>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                    <h4 class="font-semibold text-buildly-primary mb-3">Content Distribution</h4>
+                    <ul class="text-gray-700 space-y-1 text-sm">
+                        <li>• Social media sharing automation</li>
+                        <li>• SEO optimization suggestions</li>
+                        <li>• Multi-format publishing</li>
+                        <li>• Analytics and performance tracking</li>
+                    </ul>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                    <h4 class="font-semibold text-buildly-primary mb-3">File Management</h4>
+                    <ul class="text-gray-700 space-y-1 text-sm">
+                        <li>• Git integration for version control</li>
+                        <li>• Asset management and optimization</li>
+                        <li>• Automated backup and recovery</li>
+                        <li>• Content organization and tagging</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-buildly-dark mb-4">Implementation Strategy</h3>
+
+            <div class="bg-buildly-light border-l-4 border-buildly-accent p-6 mb-8 rounded-r-lg">
+                <h4 class="font-semibold text-buildly-dark mb-3">Hybrid Approach: Best of Both Worlds</h4>
+                <p class="text-buildly-dark mb-4">
+                    The most effective content management systems use a hybrid approach that leverages different AI providers based on specific needs:
+                </p>
+                <ul class="text-buildly-dark space-y-2">
+                    <li><strong>Local Ollama:</strong> Draft generation, brainstorming, sensitive content</li>
+                    <li><strong>OpenAI GPT-4:</strong> Final editing, complex analysis, technical documentation</li>
+                    <li><strong>Google Gemini:</strong> Research integration, multimodal content, real-time data</li>
+                </ul>
+            </div>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Social Media Integration and Distribution</h2>
+
+            <p class="mb-6">
+                Modern content management extends beyond creation to distribution. Your AI system should automatically generate social media content optimized for different platforms:
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4 mb-8">
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <h4 class="font-semibold text-blue-800 mb-2">Twitter/X</h4>
+                    <ul class="text-blue-700 text-sm space-y-1">
+                        <li>• Thread generation from long-form content</li>
+                        <li>• Hashtag optimization</li>
+                        <li>• Character limit compliance</li>
+                    </ul>
+                </div>
+                <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+                    <h4 class="font-semibold text-indigo-800 mb-2">LinkedIn</h4>
+                    <ul class="text-indigo-700 text-sm space-y-1">
+                        <li>• Professional tone adaptation</li>
+                        <li>• Industry-specific terminology</li>
+                        <li>• Engagement-focused formatting</li>
+                    </ul>
+                </div>
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                    <h4 class="font-semibold text-purple-800 mb-2">Facebook</h4>
+                    <ul class="text-purple-700 text-sm space-y-1">
+                        <li>• Visual content suggestions</li>
+                        <li>• Community-building focus</li>
+                        <li>• Event and update integration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Security and Privacy Considerations</h2>
+
+            <p class="mb-6">
+                When implementing AI content management, security must be a primary consideration:
+            </p>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6 mb-8">
+                <h3 class="text-lg font-semibold text-red-800 mb-4">Security Best Practices</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-red-700 mb-2">Data Protection</h4>
+                        <ul class="text-red-700 space-y-1 text-sm">
+                            <li>• Encrypt sensitive content at rest and in transit</li>
+                            <li>• Implement role-based access controls</li>
+                            <li>• Regular security audits and updates</li>
+                            <li>• Secure API key management</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-red-700 mb-2">Compliance</h4>
+                        <ul class="text-red-700 space-y-1 text-sm">
+                            <li>• GDPR compliance for user data</li>
+                            <li>• Industry-specific regulations</li>
+                            <li>• Data residency requirements</li>
+                            <li>• Audit trail maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Measuring Success: KPIs for AI Content Management</h2>
+
+            <p class="mb-6">
+                To validate the effectiveness of your AI content management system, track these key metrics:
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h4 class="font-semibold text-green-800 mb-3">Efficiency Metrics</h4>
+                    <ul class="text-green-700 space-y-2 text-sm">
+                        <li><strong>Content Creation Time:</strong> 60-70% reduction typical</li>
+                        <li><strong>Publishing Frequency:</strong> 3-5x increase in output</li>
+                        <li><strong>Editing Cycles:</strong> Fewer revisions needed</li>
+                        <li><strong>Time to Publication:</strong> Streamlined workflow</li>
+                    </ul>
+                </div>
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h4 class="font-semibold text-blue-800 mb-3">Quality Metrics</h4>
+                    <ul class="text-blue-700 space-y-2 text-sm">
+                        <li><strong>Engagement Rates:</strong> Higher social media interaction</li>
+                        <li><strong>SEO Performance:</strong> Better search rankings</li>
+                        <li><strong>Content Consistency:</strong> Brand voice alignment</li>
+                        <li><strong>Error Reduction:</strong> Fewer grammatical/factual errors</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">The Future of AI Content Management</h2>
+
+            <p class="mb-6">
+                As AI technology continues to evolve, content management systems will become increasingly sophisticated:
+            </p>
+
+            <ul class="mb-8 space-y-2">
+                <li><strong>Predictive Content Planning:</strong> AI suggests content topics based on trends and audience behavior</li>
+                <li><strong>Automated A/B Testing:</strong> Generate and test multiple content variations automatically</li>
+                <li><strong>Cross-Platform Optimization:</strong> Tailor content automatically for different channels and audiences</li>
+                <li><strong>Real-Time Personalization:</strong> Dynamic content adaptation based on reader preferences</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Getting Started with AI Content Management</h2>
+
+            <div class="bg-buildly-light border-l-4 border-buildly-accent p-6 mb-8 rounded-r-lg">
+                <h3 class="font-semibold text-buildly-dark mb-4">Implementation Roadmap</h3>
+                <ol class="text-buildly-dark space-y-3">
+                    <li><strong>1. Assess Current Workflow:</strong> Identify content creation bottlenecks and pain points</li>
+                    <li><strong>2. Choose AI Provider Strategy:</strong> Decide between local, cloud, or hybrid approach</li>
+                    <li><strong>3. Develop MVP:</strong> Start with basic content generation and editing features</li>
+                    <li><strong>4. Integrate Distribution:</strong> Add social media and publishing automation</li>
+                    <li><strong>5. Measure and Optimize:</strong> Track KPIs and refine the system based on results</li>
+                    <li><strong>6. Scale and Enhance:</strong> Add advanced features like predictive planning and personalization</li>
+                </ol>
+            </div>
+
+            <p class="text-xl font-semibold text-buildly-dark mb-6">
+                AI-powered content management isn't about replacing human creativity—it's about amplifying it. By intelligently combining local and cloud AI solutions, development teams can create more content, maintain higher quality, and reach broader audiences while focusing on strategic thinking and innovation.
+            </p>
+
+            <div class="bg-gradient-to-r from-buildly-primary to-buildly-secondary rounded-lg p-8 text-white text-center mt-12">
+                <h3 class="text-2xl font-bold mb-4">Ready to Transform Your Content Management?</h3>
+                <p class="mb-6 text-lg">
+                    Buildly's AI-powered platform provides the tools and insights you need to streamline your content creation workflow while maintaining the human oversight that ensures quality and brand alignment.
+                </p>
+                <a href="https://labs.buildly.io" class="bg-white text-buildly-primary px-8 py-3 rounded-lg font-semibold hover:bg-buildly-light transition-colors inline-block">
+                    Explore Buildly Labs
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-buildly-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img class="h-8 w-auto" src="/media/buildly-logo.svg" alt="Buildly">
+                        <span class="ml-2 text-xl font-bold">Buildly</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        AI-powered product development platform providing superior alternatives to vibe coding with intelligent automation and developer oversight.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/labs.html" class="hover:text-white">Buildly Labs</a></li>
+                        <li><a href="/rad-core.html" class="hover:text-white">RAD Core</a></li>
+                        <li><a href="https://collab.buildly.io" class="hover:text-white">Collab Hub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/articles.html" class="hover:text-white">Articles</a></li>
+                        <li><a href="https://docs.buildly.io" class="hover:text-white">Documentation</a></li>
+                        <li><a href="/use-cases.html" class="hover:text-white">Use Cases</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 Buildly. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

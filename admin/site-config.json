@@ -1,0 +1,67 @@
+{
+    "site": {
+        "name": "Buildly",
+        "url": "https://www.buildly.io",
+        "description": "AI-powered product development platform",
+        "logo": "/media/buildly-logo.svg",
+        "favicon": "/favicon.ico"
+    },
+    "content": {
+        "articlesFolder": "articles/",
+        "indexFile": "articles.html",
+        "defaultCategory": "General",
+        "categories": [
+            {"id": "AI", "name": "Artificial Intelligence", "color": "buildly-accent"},
+            {"id": "Product Management", "name": "Product Management", "color": "buildly-primary"},
+            {"id": "Development", "name": "Development", "color": "buildly-primary"},
+            {"id": "Business", "name": "Business", "color": "buildly-primary"},
+            {"id": "Technology", "name": "Technology", "color": "buildly-primary"}
+        ],
+        "folders": [
+            {"id": "articles/", "name": "articles/", "description": "Main articles folder"},
+            {"id": "", "name": "root folder", "description": "Website root"},
+            {"id": "blog/", "name": "blog/", "description": "Blog posts"},
+            {"id": "content/", "name": "content/", "description": "General content"}
+        ]
+    },
+    "branding": {
+        "primaryColor": "#1b5fa3",
+        "secondaryColor": "#144a84", 
+        "accentColor": "#f9943b",
+        "darkColor": "#1F2937",
+        "lightColor": "#F3F4F6",
+        "font": "Inter"
+    },
+    "social": {
+        "defaultHashtags": ["#BuildlyAI", "#ContentManagement", "#AI"],
+        "platforms": {
+            "twitter": {
+                "enabled": true,
+                "characterLimit": 280,
+                "template": "New article: \"{title}\"\n\n{description}\n\n{hashtags}"
+            },
+            "linkedin": {
+                "enabled": true,
+                "characterLimit": 3000,
+                "template": "Just published: \"{title}\"\n\n{description}\n\nWhat are your thoughts on this topic?\n\n{hashtags}"
+            },
+            "facebook": {
+                "enabled": true,
+                "characterLimit": 63206,
+                "template": "Check out our latest article: \"{title}\"\n\n{description}\n\nWhat's your experience with this? Share your thoughts below!\n\n{hashtags}"
+            }
+        }
+    },
+    "features": {
+        "aiEnabled": true,
+        "socialEnabled": true,
+        "fileEditing": true,
+        "autoSave": true,
+        "indexUpdating": true
+    },
+    "development": {
+        "serverPort": 8000,
+        "saveEndpoint": "/save-file",
+        "corsEnabled": true
+    }
+}
