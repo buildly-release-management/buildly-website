@@ -1,49 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Development Use Cases - Vibe Coding & Product Management Solutions | Buildly</title>
-    <meta name="description" content="Discover how startups, enterprises, and development teams use Buildly's AI-powered platform for vibe coding, product management, and accelerated software development across industries.">
-    <meta name="keywords" content="AI development use cases, vibe coding applications, product management solutions, software development examples, AI tools for startups, enterprise AI development">
-    <meta name="author" content="Buildly">
+    <!-- Load common elements -->
+    <script src="/js/buildly-head.js"></script>
+    
+    <!-- Page-specific customization -->
+    <title>AI Development Use Cases | Buildly</title>
+    <meta name="description" content="Discover how startups, enterprises, and development teams use Buildly's AI-powered platform for product management and accelerated software development across industries.">
+    <meta name="keywords" content="AI development use cases, product management solutions, software development examples, AI tools for startups, enterprise AI development">
     <link rel="canonical" href="https://www.buildly.io/use-cases.html">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.buildly.io/use-cases.html">
-    <meta property="og:title" content="AI Development Use Cases - Vibe Coding & Product Management Solutions">
-    <meta property="og:description" content="See how teams across industries accelerate development with Buildly's AI-powered vibe coding and product management platform.">
+    <meta property="og:title" content="AI Development Use Cases">
+    <meta property="og:description" content="See how teams across industries accelerate development with Buildly's AI-powered platform.">
     <meta property="og:image" content="https://www.buildly.io/media/buildly-logo.svg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.buildly.io/use-cases.html">
-    <meta property="twitter:title" content="AI Development Use Cases - Vibe Coding & Product Management Solutions">
+    <meta property="twitter:title" content="AI Development Use Cases">
     <meta property="twitter:description" content="See how teams across industries accelerate development with Buildly's AI-powered platform.">
     <meta property="twitter:image" content="https://www.buildly.io/media/buildly-logo.svg">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'buildly': {
-                            primary: '#1b5fa3',
-                            secondary: '#144a84', 
-                            accent: '#f9943b',
-                            dark: '#1F2937',
-                            light: '#F3F4F6',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="font-sans">
     <!-- Navigation -->
@@ -57,11 +36,39 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#product" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Product</a>
-<a href="labs.amp.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Labs</a>
-<a href="use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
-<a href="pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
-<a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Try for Free</a>
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                                Products
+                                <svg class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                <div class="py-1">
+                                    <a href="labs.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Labs Platform</a>
+                                    <a href="rad-core.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">RAD Core</a>
+                                    <a href="rad-process.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">RAD Process</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="use-cases.html" class="text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors font-semibold">Use Cases</a>
+                        <a href="articles.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Articles</a>
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                                For Developers
+                                <svg class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                <div class="py-1">
+                                    <a href="developer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Developer Platform</a>
+                                    <a href="product-manager.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Product Managers</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
+                        <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Try for Free</a>
                     </div>
                 </div>
             </div>

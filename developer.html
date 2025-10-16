@@ -1,49 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Development Platform for Developers - Vibe Coding & Advanced Tools | Buildly</title>
-    <meta name="description" content="Join Buildly's AI-powered development platform. Access vibe coding tools, connect with innovative startups, and accelerate your software development career with cutting-edge AI technology.">
-    <meta name="keywords" content="AI development platform, vibe coding tools, developer platform, AI software development, programming tools, developer marketplace, AI coding assistance">
-    <meta name="author" content="Buildly">
+    <!-- Load common elements -->
+    <script src="/js/buildly-head.js"></script>
+    
+    <!-- Page-specific customization -->
+    <title>AI Development Platform for Developers | Buildly</title>
+    <meta name="description" content="Join Buildly's AI-powered development platform. Access advanced development tools, connect with innovative startups, and accelerate your software development career with cutting-edge AI technology.">
+    <meta name="keywords" content="AI development platform, developer platform, AI software development, programming tools, developer marketplace, AI coding assistance">
     <link rel="canonical" href="https://www.buildly.io/developer.html">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.buildly.io/developer.html">
-    <meta property="og:title" content="AI Development Platform for Developers - Vibe Coding & Advanced Tools">
-    <meta property="og:description" content="Join Buildly's AI-powered development platform with vibe coding tools and connect with innovative startups.">
+    <meta property="og:title" content="AI Development Platform for Developers">
+    <meta property="og:description" content="Join Buildly's AI-powered development platform and connect with innovative startups.">
     <meta property="og:image" content="https://www.buildly.io/media/buildly-logo.svg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.buildly.io/developer.html">
-    <meta property="twitter:title" content="AI Development Platform for Developers - Vibe Coding & Advanced Tools">
-    <meta property="twitter:description" content="Join Buildly's AI-powered development platform with vibe coding tools.">
+    <meta property="twitter:title" content="AI Development Platform for Developers">
+    <meta property="twitter:description" content="Join Buildly's AI-powered development platform.">
     <meta property="twitter:image" content="https://www.buildly.io/media/buildly-logo.svg">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'buildly': {
-                            primary: '#1b5fa3',
-                            secondary: '#144a84', 
-                            accent: '#f9943b',
-                            dark: '#1F2937',
-                            light: '#F3F4F6',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="font-sans">
     <!-- Navigation -->
@@ -57,15 +36,68 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="index.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
-                        <a href="https://labs.buildly.io" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Labs</a>
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                                Products
+                                <svg class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                <div class="py-1">
+                                    <a href="labs.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Labs Platform</a>
+                                    <a href="rad-core.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">RAD Core</a>
+                                    <a href="rad-process.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">RAD Process</a>
+                                </div>
+                            </div>
+                        </div>
                         <a href="use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
-                        <a href="pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
-                        <a href="https://docs.buildly.io/" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Docs</a>
                         <a href="articles.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Articles</a>
-                        <a href="team.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Team</a>
+                        <div class="relative group">
+                            <button class="text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center font-semibold">
+                                For Developers
+                                <svg class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                <div class="py-1">
+                                    <a href="developer.html" class="block px-4 py-2 text-sm text-buildly-primary font-semibold hover:bg-buildly-light">Developer Platform</a>
+                                    <a href="product-manager.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Product Managers</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
                         <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Try for Free</a>
                     </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="mobile-menu-button text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div class="mobile-nav hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <div class="space-y-1">
+                        <div class="text-gray-600 px-3 py-1 text-xs font-semibold uppercase tracking-wider">Products</div>
+                        <a href="labs.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">Labs Platform</a>
+                        <a href="rad-core.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">RAD Core</a>
+                        <a href="rad-process.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">RAD Process</a>
+                    </div>
+                    <a href="use-cases.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Use Cases</a>
+                    <a href="articles.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Articles</a>
+                    <div class="space-y-1">
+                        <div class="text-buildly-primary px-3 py-1 text-xs font-semibold uppercase tracking-wider">For Developers</div>
+                        <a href="developer.html" class="text-buildly-primary block px-6 py-2 rounded-md text-base font-medium font-semibold">Developer Platform</a>
+                        <a href="product-manager.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">Product Managers</a>
+                    </div>
+                    <a href="pricing.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+                    <a href="https://labs.buildly.io" class="bg-buildly-primary text-white block px-3 py-2 rounded-md text-base font-medium text-center">Try for Free</a>
                 </div>
             </div>
         </div>
@@ -301,6 +333,20 @@
         </div>
     </footer>
 
+    <script>
+    // Mobile menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileNav = document.querySelector('.mobile-nav');
+        
+        if (mobileMenuButton && mobileNav) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileNav.classList.toggle('hidden');
+            });
+        }
+    });
+    </script>
+    
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -19,20 +19,78 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg">
+    <nav class="bg-white shadow-lg fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+            <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="/">
-                        <img src="/media/buildly-logo.svg" alt="Buildly" class="h-8 w-auto">
+                    <a href="index.html">
+                        <img src="media/buildly-logo.svg" alt="Buildly" class="h-12 w-auto" style="filter: brightness(0) saturate(100%) invert(21%) sepia(47%) saturate(1765%) hue-rotate(198deg) brightness(97%) contrast(93%);">
                     </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="/" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                    <a href="/labs.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Labs</a>
-                    <a href="/use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Use Cases</a>
-                    <a href="/pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
-                    <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md hover:bg-buildly-secondary">Try for Free</a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                                Products
+                                <svg class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                <div class="py-1">
+                                    <a href="labs.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Labs Platform</a>
+                                    <a href="rad-core.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">RAD Core</a>
+                                    <a href="rad-process.html" class="block px-4 py-2 text-sm text-buildly-primary font-semibold hover:bg-buildly-light">RAD Process</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
+                        <a href="articles.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Articles</a>
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                                For Developers
+                                <svg class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                <div class="py-1">
+                                    <a href="developer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Developer Platform</a>
+                                    <a href="product-manager.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Product Managers</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
+                        <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Try for Free</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="mobile-menu-button text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div class="mobile-nav hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <div class="space-y-1">
+                        <div class="text-gray-600 px-3 py-1 text-xs font-semibold uppercase tracking-wider">Products</div>
+                        <a href="labs.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">Labs Platform</a>
+                        <a href="rad-core.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">RAD Core</a>
+                        <a href="rad-process.html" class="text-buildly-primary block px-6 py-2 rounded-md text-base font-medium font-semibold">RAD Process</a>
+                    </div>
+                    <a href="use-cases.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Use Cases</a>
+                    <a href="articles.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Articles</a>
+                    <div class="space-y-1">
+                        <div class="text-gray-600 px-3 py-1 text-xs font-semibold uppercase tracking-wider">For Developers</div>
+                        <a href="developer.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">Developer Platform</a>
+                        <a href="product-manager.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">Product Managers</a>
+                    </div>
+                    <a href="pricing.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+                    <a href="https://labs.buildly.io" class="bg-buildly-primary text-white block px-3 py-2 rounded-md text-base font-medium text-center">Try for Free</a>
                 </div>
             </div>
         </div>
@@ -40,7 +98,7 @@
 
     <!-- Main Content -->
 	 <!-- Hero -->
-  <header class="relative">
+  <header class="relative pt-16">
     <div class="mx-auto max-w-7xl px-6 pt-16 pb-12 lg:px-8">
       <div class="mx-auto max-w-3xl text-center">
         <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1 text-xs font-medium text-slate-600">
@@ -226,5 +284,19 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    // Mobile menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileNav = document.querySelector('.mobile-nav');
+        
+        if (mobileMenuButton && mobileNav) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileNav.classList.toggle('hidden');
+            });
+        }
+    });
+    </script>
 </body>
 </html>

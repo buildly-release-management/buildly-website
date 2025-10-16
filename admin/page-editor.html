@@ -313,6 +313,16 @@
             constructor(pageEditor) {
                 this.pageEditor = pageEditor;
                 this.isProcessing = false;
+                
+                // Initialize and show status
+                console.log('🤖 AI Assistant initialized');
+                this.updateStatus('AI Ready');
+                
+                // Add initialization message after a brief delay
+                setTimeout(() => {
+                    this.addMessage('assistant', 'AI Assistant is ready! You can ask me to help with:\n\n• Creating hero sections\n• Adding new content sections\n• Modifying existing elements\n• Applying Buildly design system\n\nJust type your request and I\'ll provide specific HTML code!', null, 'info');
+                }, 500);
+                
                 this.buildlyDesignSystem = {
                     colors: {
                         primary: '#1b5fa3',
@@ -342,8 +352,15 @@
                 const promptInput = document.getElementById('aiPrompt');
                 const prompt = promptInput.value.trim();
                 
-                if (!prompt) return;
-                if (this.isProcessing) return;
+                if (!prompt) {
+                    this.addMessage('assistant', 'Please enter a prompt to get help!', null, 'info');
+                    return;
+                }
+                
+                if (this.isProcessing) {
+                    this.addMessage('assistant', 'Please wait, I\'m still processing your previous request...', null, 'info');
+                    return;
+                }
 
                 this.isProcessing = true;
                 this.updateStatus('Processing...');
@@ -356,6 +373,7 @@
                     const response = await this.processPrompt(prompt);
                     this.addMessage('assistant', response.message, response.code);
                 } catch (error) {
+                    console.error('AI Assistant Error:', error);
                     this.addMessage('assistant', `Sorry, I encountered an error: ${error.message}`, null, 'error');
                 } finally {
                     this.isProcessing = false;
@@ -545,9 +563,11 @@ What specific changes would you like to make to ${currentFile || 'this page'}?`,
                 const messageDiv = document.createElement('div');
                 
                 const bgColor = sender === 'user' ? 'bg-gray-50 border-gray-200' : 
-                               type === 'error' ? 'bg-red-50 border-red-200' : 'bg-blue-50 border-blue-200';
+                               type === 'error' ? 'bg-red-50 border-red-200' : 
+                               type === 'info' ? 'bg-green-50 border-green-200' : 'bg-blue-50 border-blue-200';
                 const textColor = sender === 'user' ? 'text-gray-600' : 
-                                 type === 'error' ? 'text-red-600' : 'text-blue-600';
+                                 type === 'error' ? 'text-red-600' : 
+                                 type === 'info' ? 'text-green-600' : 'text-blue-600';
                 
                 messageDiv.className = `${bgColor} border rounded-lg p-3`;
                 
