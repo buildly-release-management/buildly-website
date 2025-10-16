@@ -1,0 +1,17 @@
+{
+  "linkedin": {
+    "company": "buildlyio",
+    "personal": "greg-lind",
+    "template": "Check out this article from Buildly: {title} {url} #AI #ProductDevelopment"
+  },
+  "bluesky": {
+    "handle": "buildly.bsky.social",
+    "display": "Buildly",
+    "template": "New from Buildly: {title} {url} #AI #ProductDevelopment #StartupTech"
+  },
+  "mastodon": {
+    "instance": "mastadon.social",
+    "username": "buildly",
+    "template": "Fresh insights from Buildly: {title} {url} #AI #ProductDevelopment #OpenSource"
+  }
+}

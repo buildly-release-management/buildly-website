@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "label": "Product",
+    "href": "#product",
+    "type": "internal",
+    "order": 1,
+    "showInDesktop": true,
+    "showInMobile": true
+  },
+  {
+    "id": 2,
+    "label": "Labs",
+    "href": "labs.amp.html",
+    "type": "internal",
+    "order": 2,
+    "showInDesktop": true,
+    "showInMobile": true
+  },
+  {
+    "id": 3,
+    "label": "Use Cases",
+    "href": "use-cases.html",
+    "type": "internal",
+    "order": 3,
+    "showInDesktop": true,
+    "showInMobile": true
+  },
+  {
+    "id": 4,
+    "label": "Pricing",
+    "href": "pricing.html",
+    "type": "internal",
+    "order": 4,
+    "showInDesktop": true,
+    "showInMobile": true
+  },
+  {
+    "id": 5,
+    "label": "Try for Free",
+    "href": "https://labs.buildly.io",
+    "type": "cta",
+    "order": 5,
+    "showInDesktop": true,
+    "showInMobile": true
+  }
+]

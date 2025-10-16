@@ -148,7 +148,27 @@ class FileManager {
     async discoverFiles() {
         const files = [];
         
-        // Add known HTML files from the workspace structure
+        // Try to get dynamic file list from our API first
+        try {
+            const response = await fetch('/api/list-html-files');
+            if (response.ok) {
+                const data = await response.json();
+                const knownFiles = data.files.map(file => file.filename);
+                
+                console.log(`📁 Discovered ${knownFiles.length} HTML files from API`);
+                files.push(...knownFiles);
+                
+                // Get article files
+                const articleFiles = await this.discoverArticleFiles();
+                files.push(...articleFiles);
+                
+                return files;
+            }
+        } catch (error) {
+            console.warn('Failed to get dynamic file list, falling back to static list:', error);
+        }
+        
+        // Fallback to known HTML files from the workspace structure
         const knownFiles = [
             'index.html',
             'labs.html',
@@ -161,30 +181,8 @@ class FileManager {
             'rad-core.html'
         ];
 
-        // Add articles - get actual file list from server if possible
-        let articleFiles = [];
-        
-        try {
-            // Try to get dynamic file list from server
-            const response = await fetch('/articles', {
-                method: 'GET',
-                headers: { 'Accept': 'application/json' }
-            });
-            
-            if (response.ok) {
-                const fileList = await response.text();
-                // Parse directory listing for .html files
-                const htmlFiles = fileList.match(/href="([^"]+\.html)"/g);
-                if (htmlFiles) {
-                    articleFiles = htmlFiles
-                        .map(match => match.match(/href="([^"]+\.html)"/)[1])
-                        .filter(file => !file.includes('..') && file.endsWith('.html'))
-                        .map(file => `articles/${file}`);
-                }
-            }
-        } catch (error) {
-            console.log('Could not fetch dynamic file list, using static list');
-        }
+        // Get articles using fallback method
+        const articleFiles = await this.discoverArticleFiles();
         
         // Fallback to static list if dynamic doesn't work
         if (articleFiles.length === 0) {
@@ -206,6 +204,53 @@ class FileManager {
         files.push(...knownFiles, ...articleFiles);
         
         return files;
+    }
+
+    /**
+     * Discover article files using various methods
+     */
+    async discoverArticleFiles() {
+        let articleFiles = [];
+        
+        try {
+            // Try to get dynamic file list from server
+            const response = await fetch('/articles', {
+                method: 'GET',
+                headers: { 'Accept': 'application/json' }
+            });
+            
+            if (response.ok) {
+                const fileList = await response.text();
+                // Parse directory listing for .html files
+                const htmlFiles = fileList.match(/href="([^"]+\.html)"/g);
+                if (htmlFiles) {
+                    articleFiles = htmlFiles
+                        .map(match => match.match(/href="([^"]+\.html)"/)[1])
+                        .filter(file => !file.includes('..') && file.endsWith('.html'))
+                        .map(file => `articles/${file}`);
+                }
+            }
+        } catch (error) {
+            console.log('Could not fetch dynamic article list, using static list');
+        }
+        
+        // Fallback to static list if dynamic doesn't work
+        if (articleFiles.length === 0) {
+            articleFiles = [
+                'articles/ai-powered-product-management.html',
+                'articles/ai-powered-content-management-local-vs-cloud.html',
+                'articles/ai-powered-devops.html',
+                'articles/ai-powered-release-planning.html',
+                'articles/future-of-software-development.html',
+                'articles/startup-scaling.html',
+                'articles/product-lifecycle.html',
+                'articles/feature-prioritization.html',
+                'articles/building-ethical-ai.html',
+                'articles/it-s-time-to-kill-agile-for-most-use-cases.html'
+            ];
+        }
+
+        return articleFiles;
     }
 
     /**
@@ -242,7 +287,8 @@ class FileManager {
         if (cached) return cached;
 
         try {
-            const url = this.resolveUrl(filePath);
+            // Use the API endpoint for reading files for editing
+            const url = `/api/read-file?file=${encodeURIComponent(filePath)}`;
             const response = await fetch(url);
             
             if (!response.ok) {

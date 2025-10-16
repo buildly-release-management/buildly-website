@@ -361,7 +361,13 @@
                     <span>File Browser</span>
                 </a>
                 <a href="#" class="nav-item" style="background: rgba(255,255,255,0.15);">
-                    <span>Content Editor</span>
+                    <span>Article Editor</span>
+                </a>
+                <a href="page-editor.html" class="nav-item">
+                    <span>Page Editor</span>
+                </a>
+                <a href="articles-manager.html" class="nav-item">
+                    <span>Articles Manager</span>
                 </a>
                 <a href="social.html" class="nav-item">
                     <span>Social Media</span>
@@ -700,8 +706,14 @@ Summarize your key takeaways...`;
         async function loadExistingFile(filePath) {
             try {
                 console.log(`📖 Loading existing file: ${filePath}`);
+                
+                if (!window.fileManager) {
+                    throw new Error('FileManager not initialized');
+                }
+                
                 const content = await fileManager.readFile(filePath);
                 console.log(`📄 File content loaded: ${content.length} characters`);
+                console.log(`📄 First 500 chars:`, content.substring(0, 500));
                 
                 const metadata = fileManager.extractMetadata(content);
                 console.log('🏷️ Extracted metadata:', metadata);
@@ -719,14 +731,30 @@ Summarize your key takeaways...`;
                 const articleMatch = content.match(/<article[^>]*>(.*?)<\/article>/s);
                 let articleContent = '';
                 
+                console.log('🔍 Body match found:', !!bodyMatch);
+                console.log('🔍 Article match found:', !!articleMatch);
+                
                 if (articleMatch) {
                     articleContent = articleMatch[1];
+                    console.log('📝 Using article content:', articleContent.substring(0, 200));
                 } else if (bodyMatch) {
                     articleContent = bodyMatch[1];
+                    console.log('📝 Using body content:', articleContent.substring(0, 200));
+                } else {
+                    // Fallback: try to find any content between body tags
+                    const fallbackMatch = content.match(/<body[^>]*>(.*?)<\/body>/s);
+                    if (fallbackMatch) {
+                        articleContent = fallbackMatch[1];
+                        console.log('📝 Using fallback body content:', articleContent.substring(0, 200));
+                    }
                 }
+                
+                console.log('📝 Raw article content length:', articleContent.length);
                 
                 // Convert HTML to Markdown (simplified)
                 articleContent = htmlToMarkdown(articleContent);
+                console.log('📝 Converted markdown length:', articleContent.length);
+                console.log('📝 First 200 chars of markdown:', articleContent.substring(0, 200));
                 
                 // Update UI
                 console.log('🔄 Updating UI with metadata...');

@@ -274,7 +274,13 @@
                     <span>File Browser</span>
                 </a>
                 <a href="editor.html" class="nav-item">
-                    <span>Content Editor</span>
+                    <span>Article Editor</span>
+                </a>
+                <a href="page-editor.html" class="nav-item">
+                    <span>Page Editor</span>
+                </a>
+                <a href="articles-manager.html" class="nav-item">
+                    <span>Articles Manager</span>
                 </a>
                 <a href="#" class="nav-item" style="background: rgba(255,255,255,0.15);">
                     <span>Social Media</span>
@@ -349,6 +355,83 @@
                 </div>
             </div>
             
+            <!-- Social Media Accounts Configuration (moved to top) -->
+            <div class="social-accounts-config" style="background: white; border-radius: 0.5rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <div class="platform-header">
+                    <h3 class="text-lg font-semibold">Social Media Accounts</h3>
+                    <button id="save-accounts" class="btn btn-primary" style="margin-left: auto;">Save Accounts</button>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <div class="accounts-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem;">
+                        <!-- LinkedIn Account -->
+                        <div class="account-card" style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem;">
+                            <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                <div style="font-size: 1.5rem; margin-right: 0.75rem; color: #0077b5;">📘</div>
+                                <h4 class="font-semibold">LinkedIn</h4>
+                            </div>
+                            <div style="space-y: 0.75rem;">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Company Page</label>
+                                    <input type="text" id="linkedin-company" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" placeholder="buildly-io">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Personal Account</label>
+                                    <input type="text" id="linkedin-personal" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" placeholder="greg-lind-buildly">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Sharing Template</label>
+                                    <textarea id="linkedin-template" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" rows="3" placeholder="Check out this article from @buildly-io: {title} {url} #AI #ProductDevelopment"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BlueSky Account -->
+                        <div class="account-card" style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem;">
+                            <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                <div style="font-size: 1.5rem; margin-right: 0.75rem; color: #00a8e6;">🦋</div>
+                                <h4 class="font-semibold">BlueSky</h4>
+                            </div>
+                            <div style="space-y: 0.75rem;">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Handle</label>
+                                    <input type="text" id="bluesky-handle" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" placeholder="buildly.bsky.social">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Display Name</label>
+                                    <input type="text" id="bluesky-display" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" placeholder="Buildly">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Sharing Template</label>
+                                    <textarea id="bluesky-template" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" rows="3" placeholder="New from Buildly: {title} {url} #AI #ProductDevelopment #StartupTech"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mastodon Account -->
+                        <div class="account-card" style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem;">
+                            <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                <div style="font-size: 1.5rem; margin-right: 0.75rem; color: #6364ff;">🐘</div>
+                                <h4 class="font-semibold">Mastodon</h4>
+                            </div>
+                            <div style="space-y: 0.75rem;">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Instance</label>
+                                    <input type="text" id="mastodon-instance" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" placeholder="mastodon.social">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+                                    <input type="text" id="mastodon-username" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" placeholder="buildly">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Sharing Template</label>
+                                    <textarea id="mastodon-template" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm" rows="3" placeholder="Fresh insights from @buildly@mastodon.social: {title} {url} #AI #ProductDevelopment #OpenSource"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <!-- Social Posts -->
             <div id="social-posts" class="social-posts">
                 <!-- Posts will be generated here -->
@@ -370,6 +453,7 @@
         // Initialize the page
         document.addEventListener('DOMContentLoaded', async function() {
             await loadFileOptions();
+            await loadSocialAccounts();
             setupEventListeners();
             
             // Check if file is specified in URL
@@ -385,6 +469,100 @@
             document.getElementById('file-select').addEventListener('change', handleFileSelection);
             document.getElementById('generate-posts').addEventListener('click', generatePosts);
             document.getElementById('clear-selection').addEventListener('click', clearSelection);
+            document.getElementById('save-accounts').addEventListener('click', saveSocialAccounts);
+        }
+
+        // Social Media Account Management
+        async function loadSocialAccounts() {
+            try {
+                const response = await fetch('/api/social-accounts');
+                if (response.ok) {
+                    const accounts = await response.json();
+                    
+                    // LinkedIn
+                    if (accounts.linkedin) {
+                        document.getElementById('linkedin-company').value = accounts.linkedin.company || '';
+                        document.getElementById('linkedin-personal').value = accounts.linkedin.personal || '';
+                        document.getElementById('linkedin-template').value = accounts.linkedin.template || '';
+                    }
+                    
+                    // BlueSky
+                    if (accounts.bluesky) {
+                        document.getElementById('bluesky-handle').value = accounts.bluesky.handle || '';
+                        document.getElementById('bluesky-display').value = accounts.bluesky.display || '';
+                        document.getElementById('bluesky-template').value = accounts.bluesky.template || '';
+                    }
+                    
+                    // Mastodon
+                    if (accounts.mastodon) {
+                        document.getElementById('mastodon-instance').value = accounts.mastodon.instance || '';
+                        document.getElementById('mastodon-username').value = accounts.mastodon.username || '';
+                        document.getElementById('mastodon-template').value = accounts.mastodon.template || '';
+                    }
+                }
+            } catch (error) {
+                console.log('No existing social accounts found, using defaults');
+            }
+        }
+
+        async function saveSocialAccounts() {
+            const accounts = {
+                linkedin: {
+                    company: document.getElementById('linkedin-company').value,
+                    personal: document.getElementById('linkedin-personal').value,
+                    template: document.getElementById('linkedin-template').value
+                },
+                bluesky: {
+                    handle: document.getElementById('bluesky-handle').value,
+                    display: document.getElementById('bluesky-display').value,
+                    template: document.getElementById('bluesky-template').value
+                },
+                mastodon: {
+                    instance: document.getElementById('mastodon-instance').value,
+                    username: document.getElementById('mastodon-username').value,
+                    template: document.getElementById('mastodon-template').value
+                }
+            };
+            
+            try {
+                const response = await fetch('/api/social-accounts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(accounts)
+                });
+                
+                if (response.ok) {
+                    showNotification('Social media accounts saved successfully!', 'success');
+                } else {
+                    throw new Error('Failed to save accounts');
+                }
+            } catch (error) {
+                console.error('Error saving social accounts:', error);
+                showNotification('Failed to save social media accounts', 'error');
+            }
+        }
+
+        // Get social accounts for sharing
+        function getSocialAccounts() {
+            return {
+                linkedin: {
+                    company: document.getElementById('linkedin-company').value,
+                    personal: document.getElementById('linkedin-personal').value,
+                    template: document.getElementById('linkedin-template').value
+                },
+                bluesky: {
+                    handle: document.getElementById('bluesky-handle').value,
+                    display: document.getElementById('bluesky-display').value,
+                    template: document.getElementById('bluesky-template').value
+                },
+                mastodon: {
+                    instance: document.getElementById('mastodon-instance').value,
+                    username: document.getElementById('mastodon-username').value,
+                    template: document.getElementById('mastodon-template').value
+                }
+            };
         }
         
         // Load file options into select

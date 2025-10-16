@@ -49,30 +49,30 @@
         .notification.info { background-color: #3b82f6; }
     </style>
 </head>
-<body class="bg-gray-100">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <h1 class="text-xl font-bold text-admin-primary">📑 Articles Manager</h1>
+<body class="bg-gray-100" data-page="articles-manager">
+    <div class="flex h-screen">
+        <!-- Navigation Sidebar -->
+        <div id="admin-nav" class="h-full"></div>
+        
+        <!-- Main Content -->
+        <div class="flex-1 overflow-y-auto">
+            <!-- Header -->
+            <header class="bg-white shadow-sm border-b border-gray-200">
+                <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between items-center h-16">
+                        <div class="flex items-center">
+                            <h1 class="text-xl font-bold text-admin-primary">📑 Articles Manager</h1>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <a href="../articles.html" target="_blank" class="bg-admin-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-admin-secondary">
+                                👁️ View Articles Page
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <a href="index.html" class="text-gray-600 hover:text-admin-primary px-3 py-2 rounded-md text-sm font-medium">
-                        🏠 Dashboard
-                    </a>
-                    <a href="editor.html" class="text-gray-600 hover:text-admin-primary px-3 py-2 rounded-md text-sm font-medium">
-                        ✏️ Editor
-                    </a>
-                    <a href="../articles.html" target="_blank" class="bg-admin-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-admin-secondary">
-                        👁️ View Articles Page
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            </header>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <!-- Featured Article Section -->
         <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
             <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -145,6 +145,8 @@
                 <button onclick="regenerateArticlesPage()" class="bg-admin-success text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors">
                     🚀 Regenerate Articles Page
                 </button>
+            </div>
+        </div>
             </div>
         </div>
     </div>
@@ -348,7 +350,20 @@
         }
 
         // Initialize when page loads
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Load navigation
+            try {
+                const response = await fetch('includes/nav.html');
+                if (response.ok) {
+                    const navHtml = await response.text();
+                    document.getElementById('admin-nav').innerHTML = navHtml;
+                }
+            } catch (error) {
+                console.error('Failed to load navigation:', error);
+            }
+            
+            init();
+        });
     </script>
 </body>
 </html>
