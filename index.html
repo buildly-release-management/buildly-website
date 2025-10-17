@@ -151,7 +151,13 @@
                 <div class="relative lg:block hidden">
                     <div class="rocket-container animate-hover">
                         <img src="media/rocket_labs.png" alt="Buildly AI-Powered Development Platform - Vibe Coding Innovation" class="w-full max-w-xs mx-auto h-auto drop-shadow-xl">
+                        
+                        <!-- Buildly Rabbit in Rocket Window -->
+                        <div class="rabbit-in-window absolute animate-hover-delayed">
+                            <img src="media/buildly-rabbit-square-transparent copy.png" alt="Buildly Rabbit Pilot" class="w-7 h-7 opacity-10">
+                        </div>
                     </div>
+                    
                     <!-- Floating elements with site colors -->
                     <div class="absolute top-8 left-8 w-3 h-3 bg-buildly-primary rounded-full animate-pulse opacity-70"></div>
                     <div class="absolute bottom-16 right-16 w-4 h-4 bg-buildly-accent rounded-full animate-ping opacity-60"></div>
@@ -178,13 +184,61 @@
                     transform: translateY(-8px) translateX(-2px) rotate(-1deg); 
                 }
             }
+
+            @keyframes hoverDelayed {
+                0%, 100% { 
+                    transform: translateX(-50%) translateY(-50%) scale(1); 
+                }
+                25% { 
+                    transform: translateX(-50%) translateY(-55%) scale(1.05); 
+                }
+                50% { 
+                    transform: translateX(-50%) translateY(-60%) scale(1); 
+                }
+                75% { 
+                    transform: translateX(-50%) translateY(-55%) scale(1.05); 
+                }
+            }
+
+            @keyframes rabbitBounce {
+                0%, 100% { 
+                    transform: translateX(-50%) translateY(-50%) scale(1) rotate(0deg); 
+                }
+                25% { 
+                    transform: translateX(-52%) translateY(-48%) scale(1.05) rotate(1deg); 
+                }
+                50% { 
+                    transform: translateX(-50%) translateY(-52%) scale(1) rotate(0deg); 
+                }
+                75% { 
+                    transform: translateX(-48%) translateY(-48%) scale(1.05) rotate(-1deg); 
+                }
+            }
             
             .animate-hover {
                 animation: hover 4s ease-in-out infinite;
             }
+
+            .animate-hover-delayed {
+                animation: rabbitBounce 4s ease-in-out infinite 0.2s;
+            }
             
             .rocket-container {
                 filter: drop-shadow(0 15px 35px rgba(249, 148, 59, 0.3));
+                position: relative;
+            }
+
+            /* Rabbit positioning - positioned in rocket window */
+            .rabbit-in-window {
+                top: calc(38% - 25px); /* Moved up 140px */
+                left: calc(48% + 25px); /* Moved right 100px */
+                transform: translateX(-50%) translateY(-50%);
+                z-index: 10;
+            }
+
+            /* Subtle effects for the rabbit */
+            .rabbit-in-window img {
+                filter: drop-shadow(0 2px 4px rgba(27, 95, 163, 0.3));
             }
         </style>
     </section>

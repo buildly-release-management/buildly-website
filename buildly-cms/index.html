@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buildly CMS - Dashboard</title>
+    <meta name="description" content="AI-powered content management system">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Self-contained CSS -->
+    <link rel="stylesheet" href="css/buildly-cms.css">
+    
+    <!-- Self-contained JavaScript -->
+    <script src="buildly-cms-config.js"></script>
+    
+    <style>
+        /* Additional dashboard-specific styles */
+        .cms-dashboard {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+            background: var(--cms-gray-50);
+        }
+        
+        .cms-main-content {
+            padding: var(--cms-space-6);
+            overflow-y: auto;
+        }
+        
+        .cms-header {
+            background: white;
+            padding: var(--cms-space-4) var(--cms-space-6);
+            border-bottom: 1px solid var(--cms-gray-200);
+            margin-bottom: var(--cms-space-6);
+            border-radius: var(--cms-radius-lg);
+        }
+        
+        .cms-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--cms-space-4);
+            margin-bottom: var(--cms-space-6);
+        }
+        
+        .cms-stat-card {
+            background: white;
+            padding: var(--cms-space-6);
+            border-radius: var(--cms-radius-lg);
+            box-shadow: var(--cms-shadow);
+            border-left: 4px solid var(--cms-primary);
+        }
+        
+        .cms-recent-files {
+            background: white;
+            border-radius: var(--cms-radius-lg);
+            box-shadow: var(--cms-shadow);
+        }
+        
+        .cms-file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--cms-space-4);
+            border-bottom: 1px solid var(--cms-gray-100);
+        }
+        
+        .cms-file-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cms-file-item:hover {
+            background: var(--cms-gray-50);
+        }
+        
+        .cms-file-info {
+            display: flex;
+            align-items: center;
+            gap: var(--cms-space-3);
+        }
+        
+        .cms-file-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: var(--cms-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .cms-file-icon.html { background: var(--cms-accent); }
+        .cms-file-icon.md { background: var(--cms-primary); }
+        .cms-file-icon.txt { background: var(--cms-gray-500); }
+        
+        .cms-status-badge {
+            padding: var(--cms-space-1) var(--cms-space-2);
+            border-radius: var(--cms-radius-full);
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .cms-status-published {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--cms-success);
+        }
+        
+        .cms-status-draft {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--cms-warning);
+        }
+        
+        .cms-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cms-modal.active {
+            display: flex;
+        }
+        
+        .cms-modal-content {
+            background: white;
+            border-radius: var(--cms-radius-lg);
+            box-shadow: var(--cms-shadow-xl);
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .cms-dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .cms-nav {
+                order: 2;
+            }
+            
+            .cms-main-content {
+                order: 1;
+            }
+            
+            .cms-stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cms-dashboard">
+        <!-- Sidebar Navigation -->
+        <nav class="cms-nav">
+            <h1 class="cms-text-xl cms-font-bold cms-mb-6 cms-pb-4" style="border-bottom: 1px solid rgba(255,255,255,0.2);">
+                <span id="site-name">Buildly CMS</span>
+            </h1>
+            
+            <div class="cms-mb-6">
+                <a href="#dashboard" class="cms-nav-item active" data-section="dashboard">
+                    <span>📊 Dashboard</span>
+                </a>
+                <a href="#content" class="cms-nav-item" data-section="content">
+                    <span>📄 Content</span>
+                </a>
+                <a href="#files" class="cms-nav-item" data-section="files">
+                    <span>📁 Files</span>
+                </a>
+                <a href="#ai-tools" class="cms-nav-item" data-section="ai-tools">
+                    <span>🤖 AI Tools</span>
+                </a>
+                <a href="#media" class="cms-nav-item" data-section="media">
+                    <span>🖼️ Media</span>
+                </a>
+                <a href="#seo" class="cms-nav-item" data-section="seo">
+                    <span>🔍 SEO</span>
+                </a>
+                <a href="#social" class="cms-nav-item" data-section="social">
+                    <span>📱 Social</span>
+                </a>
+                <a href="#settings" class="cms-nav-item" data-section="settings">
+                    <span>⚙️ Settings</span>
+                </a>
+                <a href="#github-setup" class="cms-nav-item" data-section="github-setup">
+                    <span>📚 GitHub Pages Setup</span>
+                </a>
+            </div>
+            
+            <div class="cms-text-xs" style="opacity: 0.7; border-top: 1px solid rgba(255,255,255,0.2); padding-top: var(--cms-space-4);">
+                <div>Version: <span id="cms-version">1.0.0</span></div>
+                <div>Status: <span id="cms-status">Online</span></div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="cms-main-content">
+            <!-- Dashboard Section -->
+            <section id="section-dashboard" class="cms-section active">
+                <div class="cms-header">
+                    <h2 class="cms-text-2xl cms-font-bold cms-text-dark">Dashboard</h2>
+                    <p class="cms-text-gray-600 cms-mb-4">Welcome to your AI-powered content management system</p>
+                    <button class="cms-btn cms-btn-primary" onclick="openModal('new-content-modal')">
+                        ➕ New Content
+                    </button>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="cms-stats-grid">
+                    <div class="cms-stat-card">
+                        <div class="cms-flex cms-justify-between cms-items-center">
+                            <div>
+                                <h3 class="cms-text-lg cms-font-semibold cms-text-dark">Total Pages</h3>
+                                <p class="cms-text-3xl cms-font-bold cms-text-primary" id="total-pages">0</p>
+                            </div>
+                            <div class="cms-text-4xl">📄</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cms-stat-card">
+                        <div class="cms-flex cms-justify-between cms-items-center">
+                            <div>
+                                <h3 class="cms-text-lg cms-font-semibold cms-text-dark">Published Articles</h3>
+                                <p class="cms-text-3xl cms-font-bold cms-text-success" id="published-articles">0</p>
+                            </div>
+                            <div class="cms-text-4xl">✅</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cms-stat-card">
+                        <div class="cms-flex cms-justify-between cms-items-center">
+                            <div>
+                                <h3 class="cms-text-lg cms-font-semibold cms-text-dark">Draft Articles</h3>
+                                <p class="cms-text-3xl cms-font-bold cms-text-warning" id="draft-articles">0</p>
+                            </div>
+                            <div class="cms-text-4xl">📝</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cms-stat-card">
+                        <div class="cms-flex cms-justify-between cms-items-center">
+                            <div>
+                                <h3 class="cms-text-lg cms-font-semibold cms-text-dark">AI Assists</h3>
+                                <p class="cms-text-3xl cms-font-bold cms-text-accent" id="ai-assists">0</p>
+                            </div>
+                            <div class="cms-text-4xl">🤖</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Files -->
+                <div class="cms-recent-files">
+                    <div class="cms-p-6 cms-border-b cms-border-gray-200">
+                        <h3 class="cms-text-lg cms-font-semibold cms-text-dark">Recent Files</h3>
+                    </div>
+                    <div id="recent-files-list">
+                        <!-- Files will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Section -->
+            <section id="section-content" class="cms-section" style="display: none;">
+                <div class="cms-header">
+                    <h2 class="cms-text-2xl cms-font-bold cms-text-dark">Content Management</h2>
+                    <p class="cms-text-gray-600 cms-mb-4">Manage your articles, pages, and content</p>
+                    <div class="cms-flex cms-gap-2">
+                        <button class="cms-btn cms-btn-primary" onclick="createNewContent()">➕ New Article</button>
+                        <button class="cms-btn cms-btn-secondary" onclick="importContent()">📥 Import</button>
+                    </div>
+                </div>
+                
+                <div class="cms-card">
+                    <div class="cms-mb-4">
+                        <input type="text" class="cms-input" placeholder="Search content..." id="content-search">
+                    </div>
+                    <div id="content-list">
+                        <p class="cms-text-gray-500 cms-text-center cms-py-8">Loading content...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Tools Section -->
+            <section id="section-ai-tools" class="cms-section" style="display: none;">
+                <div class="cms-header">
+                    <h2 class="cms-text-2xl cms-font-bold cms-text-dark">AI Content Tools</h2>
+                    <p class="cms-text-gray-600 cms-mb-4">Leverage AI for content creation and optimization</p>
+                </div>
+                
+                <div class="cms-grid cms-grid-cols-2 cms-gap-4">
+                    <div class="cms-card">
+                        <h3 class="cms-text-lg cms-font-semibold cms-mb-4">Content Generator</h3>
+                        <p class="cms-text-gray-600 cms-mb-4">Generate articles, blog posts, and web content using AI</p>
+                        <button class="cms-btn cms-btn-primary cms-w-full">Start Generating</button>
+                    </div>
+                    
+                    <div class="cms-card">
+                        <h3 class="cms-text-lg cms-font-semibold cms-mb-4">SEO Optimizer</h3>
+                        <p class="cms-text-gray-600 cms-mb-4">Optimize your content for search engines</p>
+                        <button class="cms-btn cms-btn-accent cms-w-full">Optimize Content</button>
+                    </div>
+                    
+                    <div class="cms-card">
+                        <h3 class="cms-text-lg cms-font-semibold cms-mb-4">Language Translator</h3>
+                        <p class="cms-text-gray-600 cms-mb-4">Translate content to multiple languages</p>
+                        <button class="cms-btn cms-btn-secondary cms-w-full">Translate</button>
+                    </div>
+                    
+                    <div class="cms-card">
+                        <h3 class="cms-text-lg cms-font-semibold cms-mb-4">Content Analyzer</h3>
+                        <p class="cms-text-gray-600 cms-mb-4">Analyze readability, tone, and engagement</p>
+                        <button class="cms-btn cms-btn-secondary cms-w-full">Analyze</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="section-settings" class="cms-section" style="display: none;">
+                <div class="cms-header">
+                    <h2 class="cms-text-2xl cms-font-bold cms-text-dark">Settings</h2>
+                    <p class="cms-text-gray-600 cms-mb-4">Configure your CMS installation</p>
+                </div>
+                
+                <div class="cms-grid cms-gap-6">
+                    <div class="cms-card">
+                        <h3 class="cms-text-lg cms-font-semibold cms-mb-4">Site Configuration</h3>
+                        <div class="cms-grid cms-gap-4">
+                            <div>
+                                <label class="cms-label" for="site-name-input">Site Name</label>
+                                <input type="text" id="site-name-input" class="cms-input" value="Your Website">
+                            </div>
+                            <div>
+                                <label class="cms-label" for="site-url-input">Site URL</label>
+                                <input type="url" id="site-url-input" class="cms-input">
+                            </div>
+                            <div>
+                                <label class="cms-label" for="site-description-input">Description</label>
+                                <textarea id="site-description-input" class="cms-textarea" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cms-card">
+                        <h3 class="cms-text-lg cms-font-semibold cms-mb-4">AI Configuration</h3>
+                        <div class="cms-grid cms-gap-4">
+                            <div>
+                                <label class="cms-label" for="ai-provider">AI Provider</label>
+                                <select id="ai-provider" class="cms-select">
+                                    <option value="openai">OpenAI</option>
+                                    <option value="ollama">Ollama (Local)</option>
+                                    <option value="gemini">Google Gemini</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="cms-label" for="api-key">API Key</label>
+                                <input type="password" id="api-key" class="cms-input" placeholder="Enter API key">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cms-card">
+                        <h3 class="cms-text-lg cms-font-semibold cms-mb-4">Theme Configuration</h3>
+                        <div class="cms-grid cms-grid-cols-2 cms-gap-4">
+                            <div>
+                                <label class="cms-label" for="primary-color">Primary Color</label>
+                                <input type="color" id="primary-color" class="cms-input" value="#1B5FA3">
+                            </div>
+                            <div>
+                                <label class="cms-label" for="accent-color">Accent Color</label>
+                                <input type="color" id="accent-color" class="cms-input" value="#F9943B">
+                            </div>
+                        </div>
+                        <button class="cms-btn cms-btn-primary cms-mt-4" onclick="updateTheme()">Update Theme</button>
+                    </div>
+                </div>
+                
+                <div class="cms-flex cms-justify-end cms-mt-6">
+                    <button class="cms-btn cms-btn-primary cms-mr-4" onclick="saveSettings()">Save Settings</button>
+                    <button class="cms-btn cms-btn-secondary" onclick="resetSettings()">Reset to Defaults</button>
+                </div>
+            </section>
+
+            <!-- GitHub Pages Setup Section -->
+            <section id="section-github-setup" class="cms-section" style="display: none;">
+                <div class="cms-header">
+                    <h2 class="cms-text-2xl cms-font-bold cms-text-dark">GitHub Pages Setup</h2>
+                    <p class="cms-text-gray-600 cms-mb-4">Easy step-by-step guide to deploy your CMS-powered website on GitHub Pages</p>
+                    <div id="github-status" class="cms-mb-4"></div>
+                </div>
+                
+                <div class="cms-grid cms-gap-6">
+                    <!-- Step 1: Repository Setup -->
+                    <div class="cms-card">
+                        <div class="cms-flex cms-items-center cms-mb-4">
+                            <div class="cms-bg-primary cms-text-white cms-w-8 cms-h-8 cms-rounded-full cms-flex cms-items-center cms-justify-center cms-mr-4 cms-font-bold">1</div>
+                            <h3 class="cms-text-lg cms-font-semibold">Create GitHub Repository</h3>
+                        </div>
+                        <div class="cms-mb-4">
+                            <p class="cms-text-gray-600 cms-mb-3">Create a new repository on GitHub for your website:</p>
+                            <div class="cms-bg-gray-100 cms-p-4 cms-rounded">
+                                <p class="cms-font-medium cms-mb-2">Repository naming options:</p>
+                                <ul class="cms-text-sm cms-text-gray-700">
+                                    <li class="cms-mb-1">• <strong>username.github.io</strong> - For your main personal/org site</li>
+                                    <li class="cms-mb-1">• <strong>project-name</strong> - For project sites (will be at username.github.io/project-name)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="cms-btn cms-btn-primary" onclick="openGitHubRepo()">
+                            🚀 Create Repository on GitHub
+                        </button>
+                    </div>
+
+                    <!-- Step 2: Upload Files -->
+                    <div class="cms-card">
+                        <div class="cms-flex cms-items-center cms-mb-4">
+                            <div class="cms-bg-primary cms-text-white cms-w-8 cms-h-8 cms-rounded-full cms-flex cms-items-center cms-justify-center cms-mr-4 cms-font-bold">2</div>
+                            <h3 class="cms-text-lg cms-font-semibold">Upload Your Website Files</h3>
+                        </div>
+                        <div class="cms-mb-4">
+                            <p class="cms-text-gray-600 cms-mb-3">Upload your website files including the buildly-cms folder:</p>
+                            <div class="cms-bg-gray-100 cms-p-4 cms-rounded cms-text-sm">
+                                <pre class="cms-text-gray-700">your-website/
+├── index.html
+├── admin.html (your admin page)
+├── buildly-cms/
+│   ├── index.html
+│   ├── buildly-cms-config.js
+│   ├── css/buildly-cms.css
+│   └── js/buildly-cms-core.js
+└── other-files...</pre>
+                            </div>
+                        </div>
+                        <div class="cms-flex cms-gap-2">
+                            <button class="cms-btn cms-btn-primary" onclick="downloadCMSFiles()">
+                                📦 Download CMS Files
+                            </button>
+                            <button class="cms-btn cms-btn-secondary" onclick="showGitCommands()">
+                                💻 Show Git Commands
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Enable GitHub Pages -->
+                    <div class="cms-card">
+                        <div class="cms-flex cms-items-center cms-mb-4">
+                            <div class="cms-bg-primary cms-text-white cms-w-8 cms-h-8 cms-rounded-full cms-flex cms-items-center cms-justify-center cms-mr-4 cms-font-bold">3</div>
+                            <h3 class="cms-text-lg cms-font-semibold">Enable GitHub Pages</h3>
+                        </div>
+                        <div class="cms-mb-4">
+                            <p class="cms-text-gray-600 cms-mb-3">Configure GitHub Pages in your repository settings:</p>
+                            <ol class="cms-text-sm cms-text-gray-700 cms-mb-4">
+                                <li class="cms-mb-2">1. Go to your repository on GitHub</li>
+                                <li class="cms-mb-2">2. Click "Settings" tab</li>
+                                <li class="cms-mb-2">3. Scroll down to "Pages" section</li>
+                                <li class="cms-mb-2">4. Under "Source", select "Deploy from a branch"</li>
+                                <li class="cms-mb-2">5. Choose "main" branch and "/ (root)" folder</li>
+                                <li class="cms-mb-2">6. Click "Save"</li>
+                            </ol>
+                            <div class="cms-bg-blue-50 cms-border cms-border-blue-200 cms-p-3 cms-rounded">
+                                <p class="cms-text-blue-800 cms-text-sm">
+                                    <strong>💡 Tip:</strong> It may take a few minutes for your site to become available after enabling GitHub Pages.
+                                </p>
+                            </div>
+                        </div>
+                        <button class="cms-btn cms-btn-primary" onclick="openGitHubPagesSettings()">
+                            ⚙️ Open GitHub Pages Settings
+                        </button>
+                        <div class="cms-mt-4">
+                            <button onclick="downloadWorkflowFiles()" class="cms-btn cms-btn-sm cms-bg-blue-600 cms-text-white hover:cms-bg-blue-700">
+                                📥 Download Workflow Files
+                            </button>
+                            <button onclick="generateDeployScript()" class="cms-btn cms-btn-sm cms-bg-green-600 cms-text-white hover:cms-bg-green-700 cms-ml-2">
+                                🚀 Generate Deploy Script
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Configure CMS -->
+                    <div class="cms-card">
+                        <div class="cms-flex cms-items-center cms-mb-4">
+                            <div class="cms-bg-primary cms-text-white cms-w-8 cms-h-8 cms-rounded-full cms-flex cms-items-center cms-justify-center cms-mr-4 cms-font-bold">4</div>
+                            <h3 class="cms-text-lg cms-font-semibold">Configure CMS for GitHub Pages</h3>
+                        </div>
+                        <div class="cms-mb-4">
+                            <p class="cms-text-gray-600 cms-mb-3">Update your admin page configuration:</p>
+                            <div class="cms-bg-gray-100 cms-p-4 cms-rounded">
+                                <p class="cms-font-medium cms-mb-2">Add to your admin.html:</p>
+                                <pre class="cms-text-sm cms-text-gray-700"><code id="github-config-code">// Auto-detected configuration for GitHub Pages
+BuildlyCMS.init({
+    site: {
+        name: "My GitHub Pages Site",
+        url: "https://username.github.io/repo-name"
+    },
+    system: {
+        basePath: "/repo-name/buildly-cms/",
+        githubPages: true
+    }
+});</code></pre>
+                            </div>
+                        </div>
+                        <div class="cms-flex cms-gap-2">
+                            <button class="cms-btn cms-btn-primary" onclick="generateGitHubConfig()">
+                                🔧 Generate My Config
+                            </button>
+                            <button class="cms-btn cms-btn-secondary" onclick="copyConfigToClipboard()">
+                                📋 Copy to Clipboard
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Current Detection -->
+                    <div class="cms-card" id="github-detection-card">
+                        <h3 class="cms-text-lg cms-font-semibold cms-mb-4">🔍 Current Environment Detection</h3>
+                        <div id="detection-results" class="cms-text-sm cms-text-gray-700">
+                            <p>Detecting current environment...</p>
+                        </div>
+                    </div>
+
+                    <!-- Troubleshooting -->
+                    <div class="cms-card">
+                        <h3 class="cms-text-lg cms-font-semibold cms-mb-4">🔧 Troubleshooting</h3>
+                        <div class="cms-text-sm cms-text-gray-700">
+                            <h4 class="cms-font-semibold cms-mb-2">Common Issues:</h4>
+                            <ul class="cms-mb-4">
+                                <li class="cms-mb-2"><strong>404 Error:</strong> Check that buildly-cms folder is in the root of your repository</li>
+                                <li class="cms-mb-2"><strong>Path Issues:</strong> Ensure all links use relative paths (no leading /)</li>
+                                <li class="cms-mb-2"><strong>CORS Errors:</strong> GitHub Pages automatically handles CORS for same-origin requests</li>
+                                <li class="cms-mb-2"><strong>Changes Not Showing:</strong> It may take 5-10 minutes for changes to deploy</li>
+                            </ul>
+                            
+                            <h4 class="cms-font-semibold cms-mb-2">Testing Locally:</h4>
+                            <div class="cms-bg-gray-100 cms-p-3 cms-rounded cms-mb-4">
+                                <pre class="cms-text-gray-700"># Serve locally to test
+python -m http.server 8080
+# or
+npx serve .
+# or
+php -S localhost:8080</pre>
+                            </div>
+                            
+                            <h4 class="cms-font-semibold cms-mb-2">Custom Domain (Optional):</h4>
+                            <p class="cms-mb-2">To use a custom domain like yoursite.com:</p>
+                            <ol class="cms-mb-4">
+                                <li>1. Add a CNAME file to your repo root with your domain</li>
+                                <li>2. Configure DNS to point to username.github.io</li>
+                                <li>3. Enable HTTPS in GitHub Pages settings</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- New Content Modal -->
+    <div id="new-content-modal" class="cms-modal">
+        <div class="cms-modal-content">
+            <div class="cms-p-6 cms-border-b cms-border-gray-200">
+                <h3 class="cms-text-lg cms-font-semibold">Create New Content</h3>
+            </div>
+            <div class="cms-p-6">
+                <div class="cms-grid cms-gap-4">
+                    <div>
+                        <label class="cms-label" for="content-type">Content Type</label>
+                        <select id="content-type" class="cms-select">
+                            <option value="article">Article</option>
+                            <option value="page">Page</option>
+                            <option value="blog">Blog Post</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="cms-label" for="content-title">Title</label>
+                        <input type="text" id="content-title" class="cms-input" placeholder="Enter content title">
+                    </div>
+                    <div>
+                        <label class="cms-label" for="content-category">Category</label>
+                        <select id="content-category" class="cms-select">
+                            <option value="general">General</option>
+                            <option value="technology">Technology</option>
+                            <option value="ai">AI & Innovation</option>
+                            <option value="business">Business</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="cms-flex cms-justify-end cms-gap-2 cms-mt-6">
+                    <button class="cms-btn cms-btn-secondary" onclick="closeModal('new-content-modal')">Cancel</button>
+                    <button class="cms-btn cms-btn-primary" onclick="createContent()">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/buildly-cms-core.js"></script>
+    
+    <script>
+        // Initialize CMS with site-specific configuration
+        document.addEventListener('DOMContentLoaded', function() {
+            // You can override default config here
+            const siteConfig = {
+                site: {
+                    name: "Your Website",
+                    url: window.location.origin,
+                    description: "Powered by Buildly CMS"
+                },
+                theme: {
+                    colors: {
+                        primary: "#1B5FA3",
+                        accent: "#F9943B"
+                    }
+                }
+            };
+            
+            // Initialize CMS
+            BuildlyCMS.init(siteConfig);
+            
+            // Initialize dashboard
+            if (window.CMSCore) {
+                CMSCore.init();
+            }
+            
+            console.log('Buildly CMS initialized successfully!');
+        });
+    </script>
+</body>
+</html>

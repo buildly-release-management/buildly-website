@@ -1,0 +1,71 @@
+{
+  "name": "buildly-cms",
+  "version": "1.0.0",
+  "description": "Universal AI-powered content management system that drops into any HTML website",
+  "main": "buildly-cms-config.js",
+  "files": [
+    "css/",
+    "js/",
+    "themes/",
+    "index.html",
+    "demo.html",
+    "buildly-cms-config.js",
+    "README.md"
+  ],
+  "scripts": {
+    "demo": "python -m http.server 8080",
+    "build": "echo 'Building Buildly CMS...' && npm run minify",
+    "minify": "echo 'Minification would happen here in production'",
+    "test": "echo 'Tests would run here'"
+  },
+  "keywords": [
+    "cms",
+    "content-management",
+    "ai",
+    "html",
+    "javascript",
+    "website",
+    "drop-in",
+    "self-contained",
+    "responsive",
+    "buildly"
+  ],
+  "author": {
+    "name": "Buildly Team",
+    "email": "team@buildly.io",
+    "url": "https://buildly.io"
+  },
+  "license": "MIT",
+  "homepage": "https://buildly.io/products/cms",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buildly-release-management/buildly-cms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/buildly-release-management/buildly-cms/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "devDependencies": {
+    "serve": "^14.0.0"
+  },
+  "peerDependencies": {},
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/buildly"
+  },
+  "cdn": "https://cdn.buildly.io/cms/v1/",
+  "unpkg": "buildly-cms-config.js",
+  "jsdelivr": "buildly-cms-config.js",
+  "config": {
+    "defaultTheme": "buildly",
+    "supportedBrowsers": ["chrome", "firefox", "safari", "edge"],
+    "minNodeVersion": "14.0.0"
+  }
+}

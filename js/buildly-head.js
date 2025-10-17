@@ -69,7 +69,7 @@
                                         'buildly-light': '#F3F4F6',
                                     },
                                     fontFamily: {
-                                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Noto Color Emoji"', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Android Emoji"', '"EmojiSymbols"', 'sans-serif'],
                                     },
                                     animation: {
                                         'scroll': 'scroll 30s linear infinite',

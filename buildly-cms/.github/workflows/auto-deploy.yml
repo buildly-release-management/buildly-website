@@ -1,0 +1,187 @@
+# Auto-Deploy Script
+# This script automatically sets up GitHub Pages deployment for the Buildly CMS
+
+name: Auto-Deploy Buildly CMS
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deploy environment'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+        - production
+        - staging
+        - development
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  auto-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install Buildly CMS
+        run: |
+          echo "🚀 Setting up Buildly CMS auto-deployment..."
+          
+          # Create deployment configuration
+          mkdir -p .buildly-cms/config
+          
+          cat > .buildly-cms/config/deploy.json << EOF
+          {
+            "environment": "${{ github.event.inputs.environment }}",
+            "repository": "${{ github.repository }}",
+            "pages_url": "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}",
+            "admin_url": "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/admin.html",
+            "cms_demo_url": "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/buildly-cms/demo.html",
+            "auto_detection": true,
+            "github_pages": {
+              "enabled": true,
+              "base_path": "/${{ github.event.repository.name }}",
+              "asset_path": "/${{ github.event.repository.name }}/buildly-cms"
+            }
+          }
+          EOF
+          
+          echo "✅ Deployment configuration created"
+          
+      - name: Enable GitHub Pages
+        run: |
+          echo "📄 Enabling GitHub Pages..."
+          
+          # Use GitHub CLI to enable Pages if available
+          if command -v gh &> /dev/null; then
+            echo "Using GitHub CLI to configure Pages..."
+            gh api repos/${{ github.repository }}/pages \
+              --method POST \
+              --field source='{"branch":"main","path":"/"}' \
+              --field build_type="workflow" || echo "Pages might already be enabled"
+          else
+            echo "GitHub CLI not available, please enable Pages manually:"
+            echo "1. Go to https://github.com/${{ github.repository }}/settings/pages"
+            echo "2. Select 'GitHub Actions' as the source"
+            echo "3. Save the configuration"
+          fi
+          
+      - name: Create integration files
+        run: |
+          echo "🔧 Creating integration files..."
+          
+          # Create admin.html if it doesn't exist
+          if [ ! -f "admin.html" ]; then
+            cat > admin.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Admin Dashboard - Buildly CMS</title>
+              <link rel="stylesheet" href="buildly-cms/css/buildly-cms.css">
+              <script src="buildly-cms/buildly-cms-config.js"></script>
+          </head>
+          <body class="bg-gray-50">
+              <div class="container mx-auto p-6">
+                  <h1 class="text-3xl font-bold mb-6">Site Administration</h1>
+                  <div class="bg-white rounded-lg shadow p-6">
+                      <p class="mb-4">Welcome to your Buildly CMS admin panel.</p>
+                      <a href="buildly-cms/" class="btn btn-primary">Open CMS Dashboard</a>
+                  </div>
+              </div>
+              <script src="buildly-cms/js/buildly-cms-core.js"></script>
+          </body>
+          </html>
+          EOF
+            echo "✅ Created admin.html"
+          fi
+          
+          # Create _config.yml for Jekyll compatibility
+          if [ ! -f "_config.yml" ]; then
+            cat > _config.yml << 'EOF'
+          # GitHub Pages configuration for Buildly CMS
+          title: "Buildly CMS Site"
+          description: "AI-powered content management system"
+          
+          # Include all files
+          include:
+            - buildly-cms
+            - admin.html
+            - .well-known
+          
+          # Exclude build files
+          exclude:
+            - node_modules
+            - package.json
+            - package-lock.json
+            - .git
+            - .github
+            - README.md
+          
+          # Plugins
+          plugins:
+            - jekyll-sitemap
+            - jekyll-feed
+          
+          # Build settings
+          markdown: kramdown
+          highlighter: rouge
+          
+          # Buildly CMS settings
+          buildly_cms:
+            enabled: true
+            admin_path: "/admin.html"
+            demo_path: "/buildly-cms/demo.html"
+          EOF
+            echo "✅ Created _config.yml for Jekyll compatibility"
+          fi
+          
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          
+          git add .
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🚀 Auto-deploy: Setup Buildly CMS for GitHub Pages"
+            git push
+            echo "✅ Changes pushed to repository"
+          fi
+          
+      - name: Deploy to Pages
+        uses: actions/deploy-pages@v4
+        if: github.ref == 'refs/heads/main'
+        
+      - name: Post-deployment summary
+        run: |
+          echo "🎉 Buildly CMS Auto-Deployment Complete!"
+          echo ""
+          echo "📊 Site Information:"
+          echo "Repository: ${{ github.repository }}"
+          echo "Environment: ${{ github.event.inputs.environment }}"
+          echo ""
+          echo "🔗 URLs:"
+          echo "Main Site: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          echo "Admin Panel: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/admin.html"
+          echo "CMS Dashboard: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/buildly-cms/"
+          echo "Demo Page: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/buildly-cms/demo.html"
+          echo ""
+          echo "⚙️ Next Steps:"
+          echo "1. Visit your admin panel to configure the CMS"
+          echo "2. Review the GitHub Pages setup guide: /buildly-cms/GITHUB_PAGES_SETUP.md"
+          echo "3. Check deployment logs if you encounter any issues"
+          echo ""
+          echo "📚 Documentation: https://github.com/buildly-release-management/buildly-cms"
