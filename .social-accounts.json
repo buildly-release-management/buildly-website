@@ -1,4 +1,8 @@
 {
+  "twitter": {
+    "handle": "buildlyio",
+    "template": "Check out this article from @buildlyio: {title} {url} #AI #ProductDevelopment #BuildlyLabs"
+  },
   "linkedin": {
     "company": "buildlyio",
     "personal": "greg-lind",

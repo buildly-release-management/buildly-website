@@ -37,6 +37,7 @@ This automatically includes:
 After the header script, add page-specific elements:
 ```html
 <head>
+    <meta charset="UTF-8">
     <!-- Load common elements -->
     <script src="/js/buildly-head.js"></script>
     

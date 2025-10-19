@@ -9,8 +9,7 @@
     
     // Common head elements that should be on every page
     const commonHeadElements = [
-        // Meta tags
-        { tag: 'meta', attrs: { charset: 'UTF-8' } },
+        // Meta tags (charset is now added directly to HTML for early loading)
         { tag: 'meta', attrs: { name: 'viewport', content: 'width=device-width, initial-scale=1.0' } },
         { tag: 'meta', attrs: { name: 'author', content: 'Buildly' } },
         { tag: 'meta', attrs: { name: 'robots', content: 'index, follow' } },
@@ -24,11 +23,17 @@
             rel: 'stylesheet' 
         }},
         
+        // Emoji font support - ensures consistent emoji rendering across platforms
+        { tag: 'link', attrs: { 
+            href: 'https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap', 
+            rel: 'stylesheet' 
+        }},
+        
         // Critical inline CSS to prevent FOUC completely
         { tag: 'style', content: `
             * { box-sizing: border-box; }
             body { 
-                font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; 
+                font-family: 'Inter', 'Noto Color Emoji', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; 
                 margin: 0; 
                 line-height: 1.6; 
             }

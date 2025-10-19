@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+    <title>Buildly AI Development Blog</title>
+    <link>https://www.buildly.io/articles.html</link>
+    <description>Expert insights on AI development, vibe coding methodologies, product management best practices, and software innovation from Buildly's team of experienced developers and product managers.</description>
+    <language>en-us</language>
+    <managingEditor>contact@buildly.io (Buildly Team)</managingEditor>
+    <webMaster>contact@buildly.io (Buildly Team)</webMaster>
+    <copyright>Copyright 2025 Buildly, Inc. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 19 Oct 2025 00:00:00 GMT</lastBuildDate>
+    <category>Technology</category>
+    <category>AI Development</category>
+    <category>Product Management</category>
+    <category>Software Engineering</category>
+    <generator>Buildly RSS Generator</generator>
+    <atom:link href="https://www.buildly.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+        <url>https://www.buildly.io/media/buildly-logo.svg</url>
+        <title>Buildly AI Development Blog</title>
+        <link>https://www.buildly.io/articles.html</link>
+        <description>Buildly - AI-Powered Product Development Platform</description>
+        <width>144</width>
+        <height>144</height>
+    </image>
+
+    <!-- AI-Powered DevOps: Revolutionizing Software Delivery & Vibe Coding -->
+    <item>
+        <title>AI-Powered DevOps: Revolutionizing Software Delivery &amp; Vibe Coding</title>
+        <link>https://www.buildly.io/articles/ai-powered-devops.html</link>
+        <description>Discover how AI-powered DevOps transforms software delivery with intelligent automation and vibe coding methodologies. Learn about predictive analytics, automated testing, and continuous deployment optimization.</description>
+        <pubDate>Thu, 17 Oct 2025 00:00:00 GMT</pubDate>
+        <guid>https://www.buildly.io/articles/ai-powered-devops.html</guid>
+        <category>AI</category>
+        <category>DevOps</category>
+        <category>Vibe Coding</category>
+        <dc:creator>Buildly Team</dc:creator>
+    </item>
+
+    <!-- AI-Powered Product Management: Smart Workflows & Automation -->
+    <item>
+        <title>AI-Powered Product Management: Smart Workflows &amp; Automation</title>
+        <link>https://www.buildly.io/articles/ai-powered-product-management.html</link>
+        <description>Transform product management with AI automation. Discover intelligent workflow optimization, automated feature prioritization, and data-driven product decisions that accelerate development cycles.</description>
+        <pubDate>Wed, 16 Oct 2025 00:00:00 GMT</pubDate>
+        <guid>https://www.buildly.io/articles/ai-powered-product-management.html</guid>
+        <category>Product Management</category>
+        <category>AI</category>
+        <category>Automation</category>
+        <dc:creator>Buildly Team</dc:creator>
+    </item>
+
+    <!-- AI-Powered Release Planning: Predictable Software Delivery -->
+    <item>
+        <title>AI-Powered Release Planning: Predictable Software Delivery</title>
+        <link>https://www.buildly.io/articles/ai-powered-release-planning.html</link>
+        <description>Revolutionize release planning with AI automation. Learn how intelligent algorithms optimize release schedules, predict delivery timelines, and minimize deployment risks for consistent software delivery.</description>
+        <pubDate>Tue, 15 Oct 2025 00:00:00 GMT</pubDate>
+        <guid>https://www.buildly.io/articles/ai-powered-release-planning.html</guid>
+        <category>Release Management</category>
+        <category>AI</category>
+        <category>Software Delivery</category>
+        <dc:creator>Buildly Team</dc:creator>
+    </item>
+
+    <!-- AI-Powered Feature Prioritization: Smart Product Roadmaps -->
+    <item>
+        <title>AI-Powered Feature Prioritization: Smart Product Roadmaps</title>
+        <link>https://www.buildly.io/articles/feature-prioritization.html</link>
+        <description>Master feature prioritization with AI-driven insights. Discover how machine learning algorithms analyze user data, market trends, and business impact to create intelligent product roadmaps.</description>
+        <pubDate>Mon, 14 Oct 2025 00:00:00 GMT</pubDate>
+        <guid>https://www.buildly.io/articles/feature-prioritization.html</guid>
+        <category>Feature Management</category>
+        <category>AI</category>
+        <category>Product Strategy</category>
+        <dc:creator>Buildly Team</dc:creator>
+    </item>
+
+    <!-- Future of Software Development: AI Innovation Revolution -->
+    <item>
+        <title>Future of Software Development: AI Innovation Revolution</title>
+        <link>https://www.buildly.io/articles/future-of-software-development.html</link>
+        <description>Explore the future of software development with AI innovation. Learn about emerging technologies, development methodologies, and how AI is reshaping the software engineering landscape.</description>
+        <pubDate>Sun, 13 Oct 2025 00:00:00 GMT</pubDate>
+        <guid>https://www.buildly.io/articles/future-of-software-development.html</guid>
+        <category>Future Tech</category>
+        <category>AI Innovation</category>
+        <category>Software Engineering</category>
+        <dc:creator>Buildly Team</dc:creator>
+    </item>
+
+    <!-- Startup Scaling with AI Development & Vibe Coding Strategies -->
+    <item>
+        <title>Startup Scaling with AI Development &amp; Vibe Coding Strategies</title>
+        <link>https://www.buildly.io/articles/startup-scaling.html</link>
+        <description>Scale your startup effectively with AI-powered development and vibe coding methodologies. Learn proven strategies for building scalable teams, processes, and technology architecture.</description>
+        <pubDate>Sat, 12 Oct 2025 00:00:00 GMT</pubDate>
+        <guid>https://www.buildly.io/articles/startup-scaling.html</guid>
+        <category>Startup Growth</category>
+        <category>AI Development</category>
+        <category>Vibe Coding</category>
+        <dc:creator>Buildly Team</dc:creator>
+    </item>
+
+    <!-- AI Technical Debt Management: Vibe Coding & Preventive Code Optimization -->
+    <item>
+        <title>AI Technical Debt Management: Vibe Coding &amp; Preventive Code Optimization</title>
+        <link>https://www.buildly.io/articles/ai-technical-debt-management.html</link>
+        <description>Eliminate technical debt with AI-powered code analysis and vibe coding practices. Discover automated refactoring, predictive maintenance, and intelligent code quality management.</description>
+        <pubDate>Fri, 11 Oct 2025 00:00:00 GMT</pubDate>
+        <guid>https://www.buildly.io/articles/ai-technical-debt-management.html</guid>
+        <category>Technical Debt</category>
+        <category>Code Quality</category>
+        <category>AI Optimization</category>
+        <dc:creator>Buildly Team</dc:creator>
+    </item>
+
+    <!-- Why Software Teams Fail: AI Development Success Strategies -->
+    <item>
+        <title>Why Software Teams Fail: AI Development Success Strategies</title>
+        <link>https://www.buildly.io/articles/why-software-teams-fail.html</link>
+        <description>Transform struggling software teams with AI-powered strategies. Learn about common failure patterns, team dynamics, and how AI tools can improve collaboration and productivity.</description>
+        <pubDate>Thu, 10 Oct 2025 00:00:00 GMT</pubDate>
+        <guid>https://www.buildly.io/articles/why-software-teams-fail.html</guid>
+        <category>Team Management</category>
+        <category>AI Strategy</category>
+        <category>Software Leadership</category>
+        <dc:creator>Buildly Team</dc:creator>
+    </item>
+
+    <!-- It's Time to Kill Agile (for Most Use Cases) -->
+    <item>
+        <title>🪓 It's Time to Kill Agile (for Most Use Cases)</title>
+        <link>https://www.buildly.io/articles/time-to-kill-agile.html</link>
+        <description>Explore why Agile methodologies may be outdated for modern AI-powered development and discover the Radical Process. A controversial perspective on methodology evolution from Buildly's CEO.</description>
+        <pubDate>Wed, 09 Oct 2025 00:00:00 GMT</pubDate>
+        <guid>https://www.buildly.io/articles/time-to-kill-agile.html</guid>
+        <category>Methodology</category>
+        <category>Radical Process</category>
+        <category>AI Development</category>
+        <dc:creator>Gregory Lind</dc:creator>
+    </item>
+
+    <!-- AI Software Maintenance: Predictive Systems & Optimization -->
+    <item>
+        <title>AI Software Maintenance: Predictive Systems &amp; Optimization</title>
+        <link>https://www.buildly.io/articles/ai-software-maintenance.html</link>
+        <description>Revolutionize software maintenance with AI prediction. Learn about predictive maintenance algorithms, automated optimization, and intelligent system monitoring for robust applications.</description>
+        <pubDate>Tue, 08 Oct 2025 00:00:00 GMT</pubDate>
+        <guid>https://www.buildly.io/articles/ai-software-maintenance.html</guid>
+        <category>Software Maintenance</category>
+        <category>Predictive Analytics</category>
+        <category>System Optimization</category>
+        <dc:creator>Buildly Team</dc:creator>
+    </item>
+
+</channel>
+</rss>

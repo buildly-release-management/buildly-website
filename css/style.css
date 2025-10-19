@@ -18,6 +18,14 @@ body {
     line-height: 1.6;
 }
 
+/* Enhanced emoji rendering for cross-platform consistency */
+.emoji {
+    font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", sans-serif;
+    font-variant-emoji: emoji;
+    font-size: 1.2em;
+    line-height: 1;
+}
+
 /* Essential Tailwind-like utilities for immediate rendering */
 .bg-white { background-color: #ffffff; }
 .bg-buildly-primary { background-color: var(--buildly-primary); }

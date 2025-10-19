@@ -32,6 +32,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.buildly.io/vlog.html</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.buildly.io/feed.xml</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.buildly.io/product-manager.html</loc>
     <lastmod>2025-08-21</lastmod>
     <changefreq>monthly</changefreq>
