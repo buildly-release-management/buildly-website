@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Load common elements -->
+    <script src="/js/buildly-head.js"></script>
+    
+    <!-- Page-specific customization -->
+    <title>Buildly Platform Overview: Complete Ecosystem Review | Buildly</title>
+    <meta name="description" content="Comprehensive review of the entire Buildly platform ecosystem - from open source Buildly Core to Collab Hub, Forge Marketplace, FirstCityFoundry, and OpenBuild. Discover the complete AI-powered development solution.">
+    <meta name="keywords" content="Buildly platform, Buildly Core, Collab Hub, Forge Marketplace, FirstCityFoundry, OpenBuild, AI development platform, microservices, open source">
+    <link rel="canonical" href="https://www.buildly.io/platform">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.buildly.io/platform">
+    <meta property="og:title" content="Buildly Platform Overview: Complete Ecosystem Review">
+    <meta property="og:description" content="Explore the comprehensive Buildly ecosystem - from open source foundations to enterprise marketplace solutions.">
+    <meta property="og:image" content="https://www.buildly.io/media/buildly-logo.svg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.buildly.io/platform">
+    <meta property="twitter:title" content="Buildly Platform Overview: Complete Ecosystem Review">
+    <meta property="twitter:description" content="Comprehensive review of the Buildly platform ecosystem.">
+    <meta property="twitter:image" content="https://www.buildly.io/media/buildly-logo.svg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Buildly Platform Overview",
+      "description": "Comprehensive review of the entire Buildly platform ecosystem",
+      "url": "https://www.buildly.io/platform",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Buildly",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.buildly.io/media/buildly-logo.svg"
+        }
+      }
+    }
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/index.html">
+                        <img src="/media/buildly-logo.svg" alt="Buildly" class="h-12 w-auto" style="filter: brightness(0) saturate(100%) invert(21%) sepia(47%) saturate(1765%) hue-rotate(198deg) brightness(97%) contrast(93%);">
+                    </a>
+                </div>
+                <div class="block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/index.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="https://labs.buildly.io" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Labs</a>
+                        <a href="/use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
+                        <a href="/platform" class="text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Platform</a>
+                        <a href="/pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
+                        <a href="/team.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Team</a>
+                        <a href="/articles.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Articles</a>
+                        <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Start Building</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-buildly-primary to-buildly-secondary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center py-12">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    🚀 The Complete Buildly Platform
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
+                    A comprehensive ecosystem spanning from open source foundations to business marketplace solutions. Discover how Buildly's integrated platform accelerates software development across every stage of your journey.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://labs.buildly.io" class="bg-white text-buildly-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        Start Building
+                    </a>
+                    <a href="#platform-overview" class="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-buildly-primary transition-colors">
+                        Platform Overview
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Connection Overview -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-6">Where Developer Tools Meet Business Success</h2>
+                <p class="text-xl text-gray-700 mb-8">
+                    The Buildly platform is more than just developer tools—it's a complete ecosystem designed to help your business build better products faster. While our developer platform provides the technical foundation, everything connects back to <strong>Buildly Labs</strong>, where AI-powered product management transforms how you plan, build, and scale your software.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8 text-left">
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <div class="text-buildly-primary text-2xl mb-3">🛠️</div>
+                        <h3 class="text-lg font-semibold text-buildly-dark mb-2">Developer Platform</h3>
+                        <p class="text-gray-600">Open source tools, microservices, and components that accelerate development</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <div class="text-buildly-accent text-2xl mb-3">🤖</div>
+                        <h3 class="text-lg font-semibold text-buildly-dark mb-2">AI-Powered Management</h3>
+                        <p class="text-gray-600">Buildly Labs provides intelligent product planning, release management, and insights</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <div class="text-buildly-secondary text-2xl mb-3">📈</div>
+                        <h3 class="text-lg font-semibold text-buildly-dark mb-2">Business Results</h3>
+                        <p class="text-gray-600">Better products, faster delivery, reduced costs, and improved team efficiency</p>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-buildly-secondary transition-colors">
+                        Experience Buildly Labs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Overview -->
+    <section id="platform-overview" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">Platform Ecosystem Overview</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Buildly offers a complete software development ecosystem, from open source tools to business marketplace solutions, designed to accelerate your development process at every stage.</p>
+            </div>
+
+            <!-- Platform Architecture Diagram -->
+            <div class="bg-gray-50 rounded-xl p-8 mb-16">
+                <h3 class="text-2xl font-bold text-center mb-8 text-buildly-dark">Buildly Ecosystem Architecture</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-buildly-primary text-white rounded-lg p-6 mb-4">
+                            <h4 class="text-lg font-semibold">🏗️ Foundation Layer</h4>
+                            <p class="text-sm opacity-90">Open Source Core</p>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Buildly Core</li>
+                            <li>• RAD Core</li>
+                            <li>• Microservices Gateway</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-buildly-accent text-white rounded-lg p-6 mb-4">
+                            <h4 class="text-lg font-semibold">🤝 Collaboration Layer</h4>
+                            <p class="text-sm opacity-90">Community & Marketplace</p>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Collab Hub</li>
+                            <li>• Forge Marketplace</li>
+                            <li>• Component Library</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-buildly-secondary text-white rounded-lg p-6 mb-4">
+                            <h4 class="text-lg font-semibold">🚀 Business Layer</h4>
+                            <p class="text-sm opacity-90">Production & Scale</p>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• FirstCityFoundry</li>
+                            <li>• OpenBuild</li>
+                            <li>• Business Solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buildly Core - Open Source Foundation -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-6">🏗️ Buildly Core: Open Source Foundation</h2>
+                    <p class="text-xl text-gray-700 mb-6">The open source heart of the Buildly ecosystem. Buildly Core provides the foundational microservices architecture and gateway that powers scalable, component-driven applications.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-buildly-primary text-white rounded p-2 mr-4">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-buildly-dark">Microservices Gateway</h4>
+                                <p class="text-gray-600">Centralized API management and routing for distributed architectures</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-buildly-primary text-white rounded p-2 mr-4">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-buildly-dark">Component Architecture</h4>
+                                <p class="text-gray-600">Modular, reusable components for rapid application development</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-buildly-primary text-white rounded p-2 mr-4">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-buildly-dark">Open Source License</h4>
+                                <p class="text-gray-600">Free to use, modify, and distribute under open source licensing</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="/rad-core.html" class="bg-buildly-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-buildly-secondary transition-colors">
+                            Explore RAD Core
+                        </a>
+                        <a href="https://github.com/buildlyio" class="border border-buildly-primary text-buildly-primary px-6 py-3 rounded-lg font-semibold hover:bg-buildly-primary hover:text-white transition-colors">
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-xl font-bold mb-4 text-buildly-dark">Core Components</h3>
+                    <div class="space-y-4">
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-buildly-dark mb-2">Buildly Gateway</h4>
+                            <p class="text-sm text-gray-600">Central API gateway for microservice orchestration and management</p>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-buildly-dark mb-2">Component Registry</h4>
+                            <p class="text-sm text-gray-600">Searchable catalog of reusable application components</p>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-buildly-dark mb-2">Data Models</h4>
+                            <p class="text-sm text-gray-600">Standardized data structures for cross-service compatibility</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collab Hub & Forge Marketplace -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">🤝 Collab Hub & Forge Marketplace</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Connect with technical co-founders, discover pre-built components, and accelerate your development through our collaborative ecosystem.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Collab Hub -->
+                <div class="bg-gradient-to-br from-buildly-light to-white rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-buildly-accent text-white rounded-lg p-3 mr-4">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-buildly-dark">Collab Hub</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-6">A network of technical co-founders and development agencies ready to bring your ideas to life. Find the right expertise for your project and scale your development capacity.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <span class="text-buildly-accent mr-3">•</span>
+                            <span class="text-gray-700">Vetted technical co-founders</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-buildly-accent mr-3">•</span>
+                            <span class="text-gray-700">Development agency partnerships</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-buildly-accent mr-3">•</span>
+                            <span class="text-gray-700">Project matching algorithms</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-buildly-accent mr-3">•</span>
+                            <span class="text-gray-700">Collaborative development tools</span>
+                        </div>
+                    </div>
+
+                    <a href="https://collab.buildly.io" class="bg-buildly-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors inline-block">
+                        Explore Collab Hub
+                    </a>
+                </div>
+
+                <!-- Forge Marketplace -->
+                <div class="bg-gradient-to-br from-buildly-light to-white rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-buildly-primary text-white rounded-lg p-3 mr-4">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-buildly-dark">Forge Marketplace</h3>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-6">Discover, share, and monetize pre-built components, microservices, and application templates. Accelerate development with battle-tested solutions from the community.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <span class="text-buildly-primary mr-3">•</span>
+                            <span class="text-gray-700">Pre-built microservices</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-buildly-primary mr-3">•</span>
+                            <span class="text-gray-700">Application templates</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-buildly-primary mr-3">•</span>
+                            <span class="text-gray-700">Component monetization</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-buildly-primary mr-3">•</span>
+                            <span class="text-gray-700">Quality assurance & testing</span>
+                        </div>
+                    </div>
+
+                    <a href="https://market.buildly.io" class="bg-buildly-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-buildly-secondary transition-colors inline-block">
+                        Browse Marketplace
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FirstCityFoundry & OpenBuild -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">🚀 Business Solutions: FirstCityFoundry & OpenBuild</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Enterprise-grade solutions for scaling teams and accelerating startup growth through structured development processes and foundry programs.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- FirstCityFoundry -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-buildly-secondary to-buildly-primary text-white p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3 mr-4">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a1 1 0 00.364.098l.818-.35v4.457a8.97 8.97 0 00-.7.61zm4.7.398A8.98 8.98 0 0015 15.847v-4.792l1.388-.596a1 1 0 00.612-.9v-.6a1 1 0 00-.62-.92l-7-3a1 1 0 00-.76 0l-7 3a1 1 0 00-.62.92v.6a1 1 0 00.612.9L9 12.102v3.85a9 9 0 004.7.398z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold">FirstCityFoundry</h3>
+                        </div>
+                        <p class="text-xl opacity-90">Accelerating startup success through structured development and foundry programs</p>
+                    </div>
+                    
+                    <div class="p-8">
+                        <p class="text-gray-700 mb-6">FirstCityFoundry combines venture capital principles with Buildly's technical expertise to accelerate startup growth through structured development programs and foundry initiatives.</p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start">
+                                <div class="bg-buildly-secondary text-white rounded p-1 mr-3 mt-1">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-buildly-dark">Startup Acceleration</h4>
+                                    <p class="text-gray-600 text-sm">Structured programs to accelerate startup development and market entry</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-buildly-secondary text-white rounded p-1 mr-3 mt-1">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-buildly-dark">Technical Mentorship</h4>
+                                    <p class="text-gray-600 text-sm">Expert guidance on architecture, scaling, and best practices</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-buildly-secondary text-white rounded p-1 mr-3 mt-1">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-buildly-dark">Foundry Programs</h4>
+                                    <p class="text-gray-600 text-sm">Comprehensive development programs for high-potential startups</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                            <h4 class="font-semibold text-buildly-dark mb-2">Success Metrics</h4>
+                            <div class="grid grid-cols-2 gap-4 text-center">
+                                <div>
+                                    <div class="text-2xl font-bold text-buildly-secondary">50+</div>
+                                    <div class="text-sm text-gray-600">Startups Accelerated</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-buildly-secondary">75%</div>
+                                    <div class="text-sm text-gray-600">Success Rate</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="/articles/buildly-foundry-startup-acceleration.html" class="bg-buildly-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- OpenBuild -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-buildly-accent to-red-500 text-white p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3 mr-4">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold">OpenBuild</h3>
+                        </div>
+                        <p class="text-xl opacity-90">Open source development platform for collaborative software creation</p>
+                    </div>
+                    
+                    <div class="p-8">
+                        <p class="text-gray-700 mb-6">OpenBuild provides an open source platform for collaborative software development, enabling teams to build, share, and scale applications using Buildly's component-driven architecture.</p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start">
+                                <div class="bg-buildly-accent text-white rounded p-1 mr-3 mt-1">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-buildly-dark">Collaborative Development</h4>
+                                    <p class="text-gray-600 text-sm">Multi-team development with shared components and resources</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-buildly-accent text-white rounded p-1 mr-3 mt-1">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-buildly-dark">Open Source Foundation</h4>
+                                    <p class="text-gray-600 text-sm">Built on open source principles with community contributions</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-buildly-accent text-white rounded p-1 mr-3 mt-1">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-buildly-dark">Scalable Architecture</h4>
+                                    <p class="text-gray-600 text-sm">Enterprise-ready scaling with microservices and cloud-native design</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                            <h4 class="font-semibold text-buildly-dark mb-2">Platform Features</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm text-gray-600">
+                                <div>• Code collaboration tools</div>
+                                <div>• Component library</div>
+                                <div>• CI/CD integration</div>
+                                <div>• Project templates</div>
+                                <div>• Team management</div>
+                                <div>• Quality assurance</div>
+                            </div>
+                        </div>
+
+                        <a href="https://github.com/buildlyio" class="bg-buildly-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors inline-block">
+                            View OpenBuild
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buildly Labs Integration -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-6">🧪 Buildly Labs: AI-Powered Product Management</h2>
+                    <p class="text-xl text-gray-700 mb-6">The intelligent layer that connects all platform components. Buildly Labs provides AI-driven product management, release planning, and development insights across the entire ecosystem.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-buildly-primary text-white rounded p-2 mr-4">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-buildly-dark">AI Release Planning</h4>
+                                <p class="text-gray-600">Intelligent release scheduling and feature prioritization across all platform components</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-buildly-primary text-white rounded p-2 mr-4">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-buildly-dark">Cross-Platform Integration</h4>
+                                <p class="text-gray-600">Seamless integration with Core, Collab Hub, and business solutions</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-buildly-primary text-white rounded p-2 mr-4">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-buildly-dark">Development Analytics</h4>
+                                <p class="text-gray-600">Real-time insights and metrics across your entire development ecosystem</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-buildly-primary to-buildly-secondary rounded-lg p-6 text-white mb-8">
+                        <h4 class="text-lg font-semibold mb-2">🎯 Platform Metrics</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <div class="text-2xl font-bold">50%</div>
+                                <div class="text-sm opacity-90">Faster Development</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold">75%</div>
+                                <div class="text-sm opacity-90">Better Planning</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold">90%</div>
+                                <div class="text-sm opacity-90">Team Satisfaction</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold">40%</div>
+                                <div class="text-sm opacity-90">Cost Reduction</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-buildly-secondary transition-colors">
+                        Start Building
+                    </a>
+                </div>
+                <div class="bg-gradient-to-br from-buildly-light to-white rounded-xl p-8 shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 text-buildly-dark">Platform Integration Flow</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 bg-white rounded-lg border border-gray-200">
+                            <div class="bg-buildly-primary text-white rounded-lg p-2 mr-4">
+                                <span class="text-sm font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Start with Buildly Core</h4>
+                                <p class="text-sm text-gray-600">Foundation microservices architecture</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-lg border border-gray-200">
+                            <div class="bg-buildly-accent text-white rounded-lg p-2 mr-4">
+                                <span class="text-sm font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Connect via Collab Hub</h4>
+                                <p class="text-sm text-gray-600">Find partners and components</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-lg border border-gray-200">
+                            <div class="bg-buildly-secondary text-white rounded-lg p-2 mr-4">
+                                <span class="text-sm font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Scale with Enterprise</h4>
+                                <p class="text-sm text-gray-600">FirstCityFoundry & OpenBuild</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white rounded-lg border border-gray-200">
+                            <div class="bg-green-500 text-white rounded-lg p-2 mr-4">
+                                <span class="text-sm font-bold">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Optimize with Labs</h4>
+                                <p class="text-sm text-gray-600">AI-powered management layer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Comparison -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">📊 Platform Comparison</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">See how Buildly's integrated ecosystem compares to traditional development approaches and competing platforms.</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-buildly-primary text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left">Feature</th>
+                                <th class="px-6 py-4 text-center">Traditional Development</th>
+                                <th class="px-6 py-4 text-center">Other Platforms</th>
+                                <th class="px-6 py-4 text-center">Buildly Ecosystem</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 font-semibold">Development Speed</td>
+                                <td class="px-6 py-4 text-center text-red-600">Slow</td>
+                                <td class="px-6 py-4 text-center text-yellow-600">Moderate</td>
+                                <td class="px-6 py-4 text-center text-green-600">50% Faster</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">Component Reusability</td>
+                                <td class="px-6 py-4 text-center text-red-600">Limited</td>
+                                <td class="px-6 py-4 text-center text-yellow-600">Basic</td>
+                                <td class="px-6 py-4 text-center text-green-600">Extensive</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-semibold">AI Integration</td>
+                                <td class="px-6 py-4 text-center text-red-600">None</td>
+                                <td class="px-6 py-4 text-center text-yellow-600">Limited</td>
+                                <td class="px-6 py-4 text-center text-green-600">Native AI</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">Marketplace Access</td>
+                                <td class="px-6 py-4 text-center text-red-600">No</td>
+                                <td class="px-6 py-4 text-center text-yellow-600">Separate</td>
+                                <td class="px-6 py-4 text-center text-green-600">Integrated</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-semibold">Open Source Foundation</td>
+                                <td class="px-6 py-4 text-center text-yellow-600">Varies</td>
+                                <td class="px-6 py-4 text-center text-red-600">Proprietary</td>
+                                <td class="px-6 py-4 text-center text-green-600">Complete</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-semibold">Enterprise Support</td>
+                                <td class="px-6 py-4 text-center text-red-600">Custom</td>
+                                <td class="px-6 py-4 text-center text-yellow-600">Add-on</td>
+                                <td class="px-6 py-4 text-center text-green-600">Built-in</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">🚀 Get Started with Buildly Platform</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose your entry point into the Buildly ecosystem based on your project needs and team structure.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Developers -->
+                <div class="bg-gradient-to-br from-buildly-light to-white rounded-xl p-8 shadow-lg border border-gray-200">
+                    <div class="text-center mb-6">
+                        <div class="bg-buildly-primary text-white rounded-full p-4 inline-block mb-4">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-buildly-dark">For Developers</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">Start with Buildly Core and explore the open source foundation</p>
+                    <ul class="space-y-2 mb-8 text-sm text-gray-600">
+                        <li>• Download Buildly Core</li>
+                        <li>• Explore RAD Core components</li>
+                        <li>• Join the developer community</li>
+                        <li>• Contribute to open source projects</li>
+                    </ul>
+                    <a href="/rad-core.html" class="bg-buildly-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-buildly-secondary transition-colors block text-center">
+                        Start with Core
+                    </a>
+                </div>
+
+                <!-- Startups -->
+                <div class="bg-gradient-to-br from-buildly-accent/10 to-white rounded-xl p-8 shadow-lg border border-buildly-accent">
+                    <div class="text-center mb-6">
+                        <div class="bg-buildly-accent text-white rounded-full p-4 inline-block mb-4">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-buildly-dark">For Startups</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">Connect with technical co-founders and accelerate your development</p>
+                    <ul class="space-y-2 mb-8 text-sm text-gray-600">
+                        <li>• Join Collab Hub network</li>
+                        <li>• Find technical co-founders</li>
+                        <li>• Access Forge Marketplace</li>
+                        <li>• Apply to FirstCityFoundry</li>
+                    </ul>
+                    <a href="https://collab.buildly.io" class="bg-buildly-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors block text-center">
+                        Join Collab Hub
+                    </a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="bg-gradient-to-br from-buildly-secondary/10 to-white rounded-xl p-8 shadow-lg border border-buildly-secondary">
+                    <div class="text-center mb-6">
+                        <div class="bg-buildly-secondary text-white rounded-full p-4 inline-block mb-4">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a1 1 0 00.364.098l.818-.35v4.457a8.97 8.97 0 00-.7.61zm4.7.398A8.98 8.98 0 0015 15.847v-4.792l1.388-.596a1 1 0 00.612-.9v-.6a1 1 0 00-.62-.92l-7-3a1 1 0 00-.76 0l-7 3a1 1 0 00-.62.92v.6a1 1 0 00.612.9L9 12.102v3.85a9 9 0 004.7.398z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-buildly-dark">For Enterprise</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">Scale with AI-powered management and business solutions</p>
+                    <ul class="space-y-2 mb-8 text-sm text-gray-600">
+                        <li>• Start with Buildly Labs</li>
+                        <li>• Integrate existing systems</li>
+                        <li>• Access enterprise features</li>
+                        <li>• Scale with OpenBuild</li>
+                    </ul>
+                    <a href="https://labs.buildly.io" class="bg-buildly-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors block text-center">
+                        Try Buildly Labs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-r from-buildly-primary to-buildly-secondary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Development Process?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Join thousands of developers, startups, and enterprises already building better software with Buildly's comprehensive platform ecosystem.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                <a href="https://labs.buildly.io" class="bg-white text-buildly-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Start Building
+                </a>
+                <a href="/articles.html" class="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-buildly-primary transition-colors">
+                    Read Success Stories
+                </a>
+                <a href="/team.html" class="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-buildly-primary transition-colors">
+                    Contact Our Team
+                </a>
+            </div>
+            <div class="text-sm opacity-75">
+                ✨ Start building in minutes
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-buildly-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">THE BUILDLY ECOSYSTEM</h4>
+                    <p class="text-gray-300 text-sm">Complete platform ecosystem for accelerated software development, from open source foundations to business solutions.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Platform</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/rad-core.html" class="hover:text-white">Buildly Core</a></li>
+                        <li><a href="https://collab.buildly.io" class="hover:text-white">Collab Hub</a></li>
+                        <li><a href="https://market.buildly.io" class="hover:text-white">Forge Marketplace</a></li>
+                        <li><a href="https://labs.buildly.io" class="hover:text-white">Buildly Labs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Enterprise</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/articles/buildly-foundry-startup-acceleration.html" class="hover:text-white">FirstCityFoundry</a></li>
+                        <li><a href="https://github.com/buildlyio" class="hover:text-white">OpenBuild</a></li>
+                        <li><a href="/pricing.html" class="hover:text-white">Enterprise Plans</a></li>
+                        <li><a href="/team.html" class="hover:text-white">Contact Sales</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/articles.html" class="hover:text-white">Articles</a></li>
+                        <li><a href="https://docs.buildly.io" class="hover:text-white">Documentation</a></li>
+                        <li><a href="/use-cases.html" class="hover:text-white">Use Cases</a></li>
+                        <li><a href="/team.html" class="hover:text-white">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 Buildly. All rights reserved. | <a href="/platform" class="hover:text-white">Platform Overview</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
