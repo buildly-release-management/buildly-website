@@ -390,12 +390,15 @@
                             const url = encodeURIComponent(window.location.href);
                             window.open(`https://bsky.app/intent/compose?text=${text} ${url}`, '_blank', 'width=550,height=420');
                         },
-                        'share-mastodon': () => {
-                            const text = encodeURIComponent("AI-Powered Product Management: Smart Workflows & Automation - Transforming product development");
-                            const url = encodeURIComponent(window.location.href);
+                        "share-mastodon": () => {
+                            const text = "<title>AI-Powered Product Management: Smart Workflows & Automation | Buildly</title> - Essential reading from Buildly";
+                            const url = window.location.href;
                             const mastodonInstance = prompt("Enter your Mastodon instance (e.g., mastodon.social):");
                             if (mastodonInstance) {
-                                window.open(`https://${mastodonInstance}/share?text=${text} ${url}`, '_blank', 'width=550,height=420');
+                                // Clean the instance name (remove https:// if user added it)
+                                const cleanInstance = mastodonInstance.replace(/^https?:\/\//, "");
+                                const shareText = encodeURIComponent(`${text}\n\n${url}`);
+                                window.open(`https://${cleanInstance}/share?text=${shareText}`, "_blank", "width=550,height=420");
                             }
                         },
                         'copy-link': async () => {
