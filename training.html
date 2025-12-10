@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Load common elements -->
+    <script src="/js/buildly-head.js"></script>
+    
+    <!-- Page-specific customization -->
+    <title>Buildly Talent Development Suite - Enterprise Developer Training | Buildly</title>
+    <meta name="description" content="Transform your team with Buildly's comprehensive training in cloud-native architecture, microservices, and AI-driven development. Powered by CollabHub and Open.Build partnership.">
+    <meta name="keywords" content="buildly training, cloud native training, microservices training, AI development, developer onboarding, enterprise training, collab hub, open.build">
+    <link rel="canonical" href="https://www.buildly.io/training.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Buildly Talent Development Suite - Enterprise Developer Training">
+    <meta property="og:description" content="Transform your team with comprehensive training in cloud-native architecture, microservices, and AI-driven development practices.">
+    <meta property="og:url" content="https://www.buildly.io/training.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.buildly.io/media/buildly-logo.svg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Buildly Talent Development Suite - Enterprise Developer Training">
+    <meta name="twitter:description" content="Transform your team with comprehensive training in cloud-native architecture, microservices, and AI-driven development practices.">
+    <meta name="twitter:image" content="https://www.buildly.io/media/buildly-logo.svg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Buildly Talent Development Suite",
+        "description": "Comprehensive training in cloud-native architecture, microservices, and AI-driven development practices",
+        "provider": {
+            "@type": "Organization",
+            "name": "Buildly",
+            "url": "https://www.buildly.io"
+        },
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "lowPrice": "5000",
+            "highPrice": "9000"
+        }
+    }
+    </script>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center">
+                        <img src="/media/buildly-logo.svg" alt="Buildly Logo" class="h-8">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="/labs.html" class="text-gray-700 hover:text-buildly-primary transition-colors">Labs</a>
+                    <a href="/rad-core.html" class="text-gray-700 hover:text-buildly-primary transition-colors">RAD Core</a>
+                    <a href="/pricing.html" class="text-gray-700 hover:text-buildly-primary transition-colors">Pricing</a>
+                    <a href="/use-cases.html" class="text-gray-700 hover:text-buildly-primary transition-colors">Use Cases</a>
+                    <a href="/training.html" class="text-buildly-primary font-semibold">Training</a>
+                    <a href="https://docs.buildly.io" class="text-gray-700 hover:text-buildly-primary transition-colors">Docs</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-buildly-secondary transition-colors">
+                        Try for Free
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-buildly-primary to-buildly-secondary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    Buildly Talent Development Suite
+                </h1>
+                <p class="text-xl md:text-2xl mb-4 text-blue-100">
+                    The Future of Enterprise Development
+                </p>
+                <p class="text-lg md:text-xl mb-8 text-blue-100">
+                    Transform your team into experts in cloud-native architecture, microservices, and AI-driven development practices
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://collab.buildly.io" class="bg-white text-buildly-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        Explore CollabHub
+                    </a>
+                    <a href="#pricing" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-buildly-primary transition-colors">
+                        View Pricing
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">
+                    Powered by CollabHub & Open.Build
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A comprehensive, structured pathway powered by our partnership with <a href="https://www.open.build" class="text-buildly-primary hover:underline" target="_blank">Open.Build</a>, integrating open-source first principles directly into your team's daily operations.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-buildly-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-buildly-dark mb-2">Open Source First</h3>
+                    <p class="text-gray-600">Built on Buildly's open-source foundation with contributions to Open.Build OSS</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-buildly-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-buildly-dark mb-2">Mentorship Driven</h3>
+                    <p class="text-gray-600">Structured mentorship and collaboration through CollabHub platform</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-buildly-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-buildly-dark mb-2">AI-Driven Best Practices</h3>
+                    <p class="text-gray-600">Guardrail-based AI with human-in-the-middle development workflows</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Components -->
+    <section class="py-20 bg-buildly-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">Core Components and Benefits</h2>
+                <p class="text-xl text-gray-600">Comprehensive training designed for real-world impact</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Structured Onboarding -->
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <div class="mb-4">
+                        <svg class="w-12 h-12 text-buildly-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-buildly-dark mb-3">Structured Onboarding and Mentorship</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span><strong>Rapid Integration:</strong> New hires productive within weeks, not months</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span><strong>CollabHub:</strong> Central platform for tracking progress and managing mentorship</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Architectural Proficiency -->
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <div class="mb-4">
+                        <svg class="w-12 h-12 text-buildly-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-buildly-dark mb-3">Architectural Proficiency</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span><strong>Gateway and Microservices:</strong> Hands-on training in resilient architecture</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span><strong>RAD Process:</strong> Flow-based delivery and continuous decomposition</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Full-Circle Development -->
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <div class="mb-4">
+                        <svg class="w-12 h-12 text-buildly-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-buildly-dark mb-3">Full-Circle Development</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span><strong>Testing and DevOps:</strong> Automated tests and CI/CD pipelines</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span><strong>OSS Contribution:</strong> Clear pathway to contributing to Open.Build</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Universal Training Checklist -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">Universal Training Checklist</h2>
+                <p class="text-xl text-gray-600">All Plans Include These Core Phases</p>
+            </div>
+            <div class="max-w-5xl mx-auto">
+                <div class="overflow-x-auto">
+                    <table class="w-full bg-white rounded-lg shadow-md overflow-hidden">
+                        <thead class="bg-buildly-primary text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left font-semibold">Phase</th>
+                                <th class="px-6 py-4 text-left font-semibold">Duration</th>
+                                <th class="px-6 py-4 text-left font-semibold">Key Topics</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold text-buildly-dark">Core Foundations</td>
+                                <td class="px-6 py-4 text-gray-600">2-4 Weeks</td>
+                                <td class="px-6 py-4 text-gray-600">CollabHub profile, Gateway architecture, microservice boundaries, Git workflow</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold text-buildly-dark">Applied RAD Practice</td>
+                                <td class="px-6 py-4 text-gray-600">4-8 Weeks</td>
+                                <td class="px-6 py-4 text-gray-600">Buildly Labs workflow, feature decomposition, punchlist integration, Agile adaptations</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold text-buildly-dark">Certification Readiness</td>
+                                <td class="px-6 py-4 text-gray-600">Ongoing</td>
+                                <td class="px-6 py-4 text-gray-600">Automated testing, CI/CD, PR reviews, communication standards</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Programs -->
+    <section class="py-20 bg-buildly-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">Enterprise Program Options</h2>
+                <p class="text-xl text-gray-600">Flexible programs designed for your team's needs</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Foundations Track -->
+                <div class="bg-white rounded-lg shadow-md p-8 border-2 border-buildly-primary">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-buildly-dark mb-2">Foundations Track</h3>
+                        <p class="text-buildly-primary font-semibold text-lg">3 Months</p>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-buildly-dark mb-2">Target Audience:</h4>
+                        <p class="text-gray-600">New Hires, Junior Developers</p>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-buildly-dark mb-2">Focus:</h4>
+                        <p class="text-gray-600">Full curriculum up to independent feature delivery and Labs competency test</p>
+                    </div>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>CollabHub access and profile setup</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Gateway and microservice fundamentals</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>RAD Process and Buildly Labs workflow</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Foundations certification upon completion</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Senior Readiness Track -->
+                <div class="bg-white rounded-lg shadow-md p-8 border-2 border-buildly-accent">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-buildly-dark mb-2">Senior Readiness Track</h3>
+                        <p class="text-buildly-accent font-semibold text-lg">6 Months</p>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-buildly-dark mb-2">Target Audience:</h4>
+                        <p class="text-gray-600">Mid-Level Developers, Emerging Leaders</p>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-buildly-dark mb-2">Focus:</h4>
+                        <p class="text-gray-600">Full curriculum plus architecture ownership, mentoring, and improving microservice patterns</p>
+                    </div>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>All Foundations Track content</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Architecture ownership and design patterns</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Mentorship and leadership training</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Mid-Level certification pathway</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Paths -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">Certification Paths</h2>
+                <p class="text-xl text-gray-600">Validate proficiency and ensure industry-standard training</p>
+            </div>
+            <div class="max-w-5xl mx-auto space-y-6">
+                <!-- Foundations Certification -->
+                <div class="bg-gradient-to-r from-buildly-primary to-buildly-secondary rounded-lg shadow-md p-8 text-white">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="mb-4 md:mb-0 md:flex-1">
+                            <h3 class="text-2xl font-bold mb-2">Buildly Developer Foundations</h3>
+                            <p class="text-blue-100 mb-2"><strong>Requirement:</strong> 3-Month Program Completion</p>
+                            <p class="text-blue-100"><strong>Validation:</strong> Proficiency in process, workflow, cloud native basics</p>
+                        </div>
+                        <div class="md:ml-6">
+                            <div class="bg-white text-buildly-primary rounded-full px-6 py-3 font-bold text-center">
+                                Level 1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mid-Level Certification -->
+                <div class="bg-gradient-to-r from-buildly-accent to-orange-600 rounded-lg shadow-md p-8 text-white">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="mb-4 md:mb-0 md:flex-1">
+                            <h3 class="text-2xl font-bold mb-2">Buildly Mid-Level Certification</h3>
+                            <p class="text-orange-100 mb-2"><strong>Requirement:</strong> 6-Month Program Completion</p>
+                            <p class="text-orange-100"><strong>Validation:</strong> Own large feature sets, participate in architecture discussions</p>
+                        </div>
+                        <div class="md:ml-6">
+                            <div class="bg-white text-buildly-accent rounded-full px-6 py-3 font-bold text-center">
+                                Level 2
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Senior Certification -->
+                <div class="bg-gradient-to-r from-buildly-secondary to-blue-900 rounded-lg shadow-md p-8 text-white">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="mb-4 md:mb-0 md:flex-1">
+                            <h3 class="text-2xl font-bold mb-2">Buildly Senior Developer Certification</h3>
+                            <p class="text-blue-100 mb-2"><strong>Requirement:</strong> Final Assessment and Project Lead Role</p>
+                            <p class="text-blue-100"><strong>Validation:</strong> Lead service decomposition, improve logic modules, mentor junior team members</p>
+                        </div>
+                        <div class="md:ml-6">
+                            <div class="bg-white text-buildly-secondary rounded-full px-6 py-3 font-bold text-center">
+                                Level 3
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-buildly-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">Pricing & Tools</h2>
+                <p class="text-xl text-gray-600">Per-seat licensing for CollabHub and specialized Buildly Labs environments</p>
+                <p class="text-lg text-gray-500 mt-2">Enterprise Pricing (Annual Commitment)</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Foundations Tier -->
+                <div class="bg-white rounded-lg shadow-lg p-8 border-2 border-gray-200 hover:border-buildly-primary transition-all">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-buildly-dark mb-2">Foundations Tier</h3>
+                        <div class="text-4xl font-bold text-buildly-primary mb-2">$5,000</div>
+                        <p class="text-gray-600">per developer/year</p>
+                        <p class="text-sm text-gray-500 mt-2">Optional extension available</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">CollabHub Access</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">3-Month Curriculum</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Foundations Certification</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Core training materials</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Progress tracking</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full bg-buildly-primary text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-buildly-secondary transition-colors">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Advanced Tier -->
+                <div class="bg-white rounded-lg shadow-xl p-8 border-2 border-buildly-accent transform md:scale-105">
+                    <div class="absolute top-0 right-0 bg-buildly-accent text-white px-4 py-1 rounded-bl-lg rounded-tr-lg text-sm font-semibold">
+                        POPULAR
+                    </div>
+                    <div class="text-center mb-6 mt-4">
+                        <h3 class="text-2xl font-bold text-buildly-dark mb-2">Advanced Tier</h3>
+                        <div class="text-4xl font-bold text-buildly-accent mb-2">$9,000</div>
+                        <p class="text-gray-600">per developer/year</p>
+                        <p class="text-sm text-gray-500 mt-2">Optional extension available</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600 font-semibold">All Foundations features</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">6-Month Curriculum</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Mentorship Module Access</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Architecture training</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Mid-Level Certification pathway</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full bg-buildly-accent text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Custom Enterprise -->
+                <div class="bg-white rounded-lg shadow-lg p-8 border-2 border-gray-200 hover:border-buildly-secondary transition-all">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-buildly-dark mb-2">Custom Enterprise</h3>
+                        <div class="text-4xl font-bold text-buildly-secondary mb-2">Custom</div>
+                        <p class="text-gray-600">Contact for pricing</p>
+                        <p class="text-sm text-gray-500 mt-2">Tailored to your needs</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600 font-semibold">All Advanced features</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Dedicated Onboarding</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Custom LogicModule Training</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Architecture Review Workshops</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-buildly-accent mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-600">Priority support</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full bg-buildly-secondary text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-blue-900 transition-colors">
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">Relevant Tools and Resources</h2>
+                <p class="text-xl text-gray-600">Everything your team needs to succeed</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <a href="https://collab.buildly.io" target="_blank" class="bg-buildly-light rounded-lg p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-buildly-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-buildly-dark mb-2">CollabHub Learning Platform</h3>
+                        <p class="text-gray-600 mb-4">Central hub for tracking progress, managing mentorship, and accessing resources</p>
+                        <span class="text-buildly-primary font-semibold hover:underline">Visit CollabHub →</span>
+                    </div>
+                </a>
+
+                <a href="https://labs.buildly.io" target="_blank" class="bg-buildly-light rounded-lg p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-buildly-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-buildly-dark mb-2">Buildly Labs Environment</h3>
+                        <p class="text-gray-600 mb-4">Hands-on platform for practicing RAD Process and AI-driven development</p>
+                        <span class="text-buildly-accent font-semibold hover:underline">Explore Labs →</span>
+                    </div>
+                </a>
+
+                <a href="https://www.github.com/buildly-release-management" target="_blank" class="bg-buildly-light rounded-lg p-8 hover:shadow-lg transition-shadow">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-buildly-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-buildly-dark mb-2">Open.Build OSS Repository</h3>
+                        <p class="text-gray-600 mb-4">Contribute to open-source projects and learn from production code</p>
+                        <span class="text-buildly-secondary font-semibold hover:underline">View on GitHub →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/CTA Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-buildly-primary to-buildly-secondary text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Get Started Today</h2>
+            <p class="text-xl mb-8 text-blue-100">
+                Start building a future-proof development team. For a custom quote or to schedule an enterprise walkthrough, contact us today.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a href="https://labs.buildly.io" class="bg-white text-buildly-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-lg">
+                    Try Labs for Free
+                </a>
+                <a href="mailto:sales@buildly.io" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-buildly-primary transition-colors text-lg">
+                    Contact Sales
+                </a>
+            </div>
+            <p class="text-blue-100">
+                Questions? Email us at <a href="mailto:training@buildly.io" class="underline hover:text-white">training@buildly.io</a> or <a href="mailto:sales@buildly.io" class="underline hover:text-white">sales@buildly.io</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-buildly-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="/media/buildly-logo.svg" alt="Buildly Logo" class="h-8 mb-4 brightness-0 invert">
+                    <p class="text-gray-400 text-sm">AI-powered product development platform</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/labs.html" class="hover:text-white transition-colors">Buildly Labs</a></li>
+                        <li><a href="/rad-core.html" class="hover:text-white transition-colors">RAD Core</a></li>
+                        <li><a href="https://collab.buildly.io" class="hover:text-white transition-colors">Collab Hub</a></li>
+                        <li><a href="/training.html" class="hover:text-white transition-colors">Training</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="https://docs.buildly.io" class="hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="/articles.html" class="hover:text-white transition-colors">Articles</a></li>
+                        <li><a href="/pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="/use-cases.html" class="hover:text-white transition-colors">Use Cases</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/team.html" class="hover:text-white transition-colors">Team</a></li>
+                        <li><a href="/privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="mailto:sales@buildly.io" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 Buildly. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
