@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Load common elements -->
+    <script src="/js/buildly-head.js"></script>
+    
+    <!-- Page-specific customization -->
+    <title>Building Scalable Applications with Microservices Frameworks | Buildly</title>
+    <meta name="description" content="Comprehensive guide to microservices frameworks - learn architecture patterns, best practices, and implementation strategies for building scalable, maintainable applications.">
+    <meta name="keywords" content="microservices framework, cloud-native architecture, scalable applications, API gateway, service mesh, microservices patterns">
+    <link rel="canonical" href="https://www.buildly.io/articles/microservices-framework-architecture.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.buildly.io/articles/microservices-framework-architecture.html">
+    <meta property="og:title" content="Building Scalable Applications with Microservices Frameworks">
+    <meta property="og:description" content="Comprehensive guide to microservices frameworks and architecture patterns.">
+    <meta property="og:image" content="https://www.buildly.io/media/buildly-logo.svg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.buildly.io/articles/microservices-framework-architecture.html">
+    <meta property="twitter:title" content="Building Scalable Applications with Microservices Frameworks">
+    <meta property="twitter:description" content="Comprehensive guide to microservices frameworks and architecture patterns.">
+    <meta property="twitter:image" content="https://www.buildly.io/media/buildly-logo.svg">
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../index.html">
+                        <img src="../media/buildly-logo.svg" alt="Buildly" class="h-12 w-auto" style="filter: brightness(0) saturate(100%) invert(21%) sepia(47%) saturate(1765%) hue-rotate(198deg) brightness(97%) contrast(93%);">
+                    </a>
+                </div>
+                <div class="block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="../index.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="https://labs.buildly.io" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Labs</a>
+                        <a href="../use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
+                        <a href="../pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
+                        <a href="../articles.html" class="text-buildly-primary px-3 py-2 rounded-md text-sm font-medium">Articles</a>
+                        <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Try for Free</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <section class="pt-20 bg-gradient-to-br from-buildly-light to-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center mb-8">
+                <div class="flex justify-center items-center gap-4 mb-4">
+                    <span class="bg-buildly-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Backend</span>
+                    <span class="text-gray-600">•</span>
+                    <span class="text-gray-600">December 16, 2025</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-buildly-dark mb-6">
+                    Building Scalable Applications with Microservices Frameworks
+                </h1>
+                <p class="text-xl text-gray-600">
+                    A comprehensive guide to microservices architecture, framework selection, and implementation patterns for modern cloud-native applications
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="prose prose-lg max-w-none">
+            
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Introduction to Microservices Frameworks</h2>
+            <p class="text-gray-700 mb-6">
+                Microservices architecture has revolutionized how we build and deploy modern applications. Unlike monolithic systems where all functionality is tightly coupled, microservices break applications into independent, loosely-coupled services that can be developed, deployed, and scaled independently. A well-designed microservices framework provides the foundation, patterns, and tooling needed to implement this architecture effectively.
+            </p>
+            <p class="text-gray-700 mb-6">
+                The shift to microservices isn't just about technology—it's about enabling teams to move faster, innovate more freely, and scale more efficiently. Organizations like Netflix, Amazon, and Uber have demonstrated the power of microservices to handle massive scale while maintaining agility. However, success requires understanding the fundamental principles and choosing the right framework for your needs.
+            </p>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Core Principles of Microservices Architecture</h2>
+            
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">1. Service Autonomy and Independence</h3>
+            <p class="text-gray-700 mb-4">
+                Each microservice should be independently deployable and maintainable. This means:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2"><strong>Separate databases:</strong> Each service manages its own data store, avoiding tight coupling through shared databases</li>
+                <li class="mb-2"><strong>Independent deployment:</strong> Services can be updated without coordinating releases across the entire system</li>
+                <li class="mb-2"><strong>Technology flexibility:</strong> Different services can use different programming languages, frameworks, and databases as appropriate</li>
+                <li class="mb-2"><strong>Team ownership:</strong> Small teams can own services end-to-end, from development to production</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">2. API-First Design</h3>
+            <p class="text-gray-700 mb-6">
+                All inter-service communication happens through well-defined APIs, typically REST or gRPC. This creates clear contracts between services and enables:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">Versioning and backward compatibility</li>
+                <li class="mb-2">Independent evolution of service implementations</li>
+                <li class="mb-2">Clear documentation and discoverability</li>
+                <li class="mb-2">Easier testing and mocking</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">3. Decentralized Data Management</h3>
+            <p class="text-gray-700 mb-6">
+                Rather than centralizing data in a single database, each microservice manages its own data. This pattern, known as database-per-service, provides isolation and autonomy but introduces challenges around data consistency and transactions that must be addressed through patterns like:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">Event-driven architecture and eventual consistency</li>
+                <li class="mb-2">Saga pattern for distributed transactions</li>
+                <li class="mb-2">CQRS (Command Query Responsibility Segregation)</li>
+                <li class="mb-2">Event sourcing for audit trails and state reconstruction</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Essential Components of a Microservices Framework</h2>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">API Gateway</h3>
+            <p class="text-gray-700 mb-6">
+                The API Gateway serves as the single entry point for all client requests, providing:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2"><strong>Request routing:</strong> Directs requests to appropriate microservices based on URL patterns</li>
+                <li class="mb-2"><strong>Authentication and authorization:</strong> Centralizes security concerns before requests reach internal services</li>
+                <li class="mb-2"><strong>Rate limiting and throttling:</strong> Protects services from overload</li>
+                <li class="mb-2"><strong>Request/response transformation:</strong> Adapts data formats between clients and services</li>
+                <li class="mb-2"><strong>Protocol translation:</strong> Bridges different protocols (HTTP to gRPC, WebSocket to REST)</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Service Registry and Discovery</h3>
+            <p class="text-gray-700 mb-6">
+                In dynamic cloud environments where service instances come and go, service discovery is critical. Solutions include:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2"><strong>Client-side discovery:</strong> Clients query a service registry (like Consul, Eureka) to find available instances</li>
+                <li class="mb-2"><strong>Server-side discovery:</strong> Load balancers or API gateways handle service lookup</li>
+                <li class="mb-2"><strong>Health checks:</strong> Continuous monitoring to remove unhealthy instances from rotation</li>
+                <li class="mb-2"><strong>Load balancing:</strong> Distributes requests across available service instances</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Configuration Management</h3>
+            <p class="text-gray-700 mb-6">
+                Centralized configuration management allows services to retrieve environment-specific settings without redeployment. Key capabilities include:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">Environment-specific configuration (dev, staging, production)</li>
+                <li class="mb-2">Dynamic configuration updates without service restarts</li>
+                <li class="mb-2">Secrets management and encryption</li>
+                <li class="mb-2">Configuration versioning and rollback</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Observability and Monitoring</h3>
+            <p class="text-gray-700 mb-6">
+                Understanding system behavior across distributed services requires comprehensive observability:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2"><strong>Distributed tracing:</strong> Track requests across multiple services (Jaeger, Zipkin)</li>
+                <li class="mb-2"><strong>Centralized logging:</strong> Aggregate logs from all services (ELK Stack, Splunk)</li>
+                <li class="mb-2"><strong>Metrics collection:</strong> Monitor performance, resource usage, and business metrics (Prometheus, Grafana)</li>
+                <li class="mb-2"><strong>Alerting:</strong> Proactive notification of issues before they impact users</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Inter-Service Communication Patterns</h2>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Synchronous Communication</h3>
+            <p class="text-gray-700 mb-4">
+                <strong>REST APIs:</strong> The most common pattern, using HTTP/HTTPS with JSON payloads. Benefits include widespread tooling support, easy debugging, and human-readable formats. Consider REST when:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">Client-server communication patterns are sufficient</li>
+                <li class="mb-2">Operations map naturally to HTTP verbs (GET, POST, PUT, DELETE)</li>
+                <li class="mb-2">Human readability and debugging ease are priorities</li>
+            </ul>
+
+            <p class="text-gray-700 mb-4">
+                <strong>gRPC:</strong> Google's high-performance RPC framework using Protocol Buffers for serialization. Advantages include:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">Significantly better performance than REST</li>
+                <li class="mb-2">Strong typing and code generation</li>
+                <li class="mb-2">Built-in streaming support</li>
+                <li class="mb-2">Smaller message sizes</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Asynchronous Communication</h3>
+            <p class="text-gray-700 mb-4">
+                <strong>Message Queues:</strong> Services communicate through queues (RabbitMQ, AWS SQS), enabling:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">Decoupling of producers and consumers</li>
+                <li class="mb-2">Load leveling and buffering</li>
+                <li class="mb-2">Guaranteed delivery and retry logic</li>
+                <li class="mb-2">Ordered processing when needed</li>
+            </ul>
+
+            <p class="text-gray-700 mb-4">
+                <strong>Event Streaming:</strong> Platforms like Apache Kafka or AWS Kinesis provide:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">High-throughput event processing</li>
+                <li class="mb-2">Event replay capabilities</li>
+                <li class="mb-2">Multiple consumers per event stream</li>
+                <li class="mb-2">Event sourcing and CQRS patterns</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Data Management Strategies</h2>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Database Per Service Pattern</h3>
+            <p class="text-gray-700 mb-6">
+                Each microservice owns its data and exposes it only through its API. This ensures loose coupling but requires careful handling of:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2"><strong>Distributed transactions:</strong> Use the Saga pattern to coordinate multi-service operations</li>
+                <li class="mb-2"><strong>Data consistency:</strong> Embrace eventual consistency where immediate consistency isn't required</li>
+                <li class="mb-2"><strong>Data duplication:</strong> Accept some denormalization for service independence</li>
+                <li class="mb-2"><strong>Query complexity:</strong> Implement API composition or CQRS for complex queries</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Saga Pattern for Distributed Transactions</h3>
+            <p class="text-gray-700 mb-6">
+                When a business operation spans multiple services, use sagas to maintain data consistency:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2"><strong>Choreography:</strong> Services publish events that trigger actions in other services</li>
+                <li class="mb-2"><strong>Orchestration:</strong> A central coordinator manages the transaction flow</li>
+                <li class="mb-2"><strong>Compensation:</strong> Define rollback operations for each step</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">CQRS (Command Query Responsibility Segregation)</h3>
+            <p class="text-gray-700 mb-6">
+                Separate read and write operations to optimize each independently:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">Write models focus on business logic and data validation</li>
+                <li class="mb-2">Read models are optimized for specific query patterns</li>
+                <li class="mb-2">Different data stores can be used for reads and writes</li>
+                <li class="mb-2">Scales read and write workloads independently</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Security in Microservices</h2>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Authentication and Authorization</h3>
+            <p class="text-gray-700 mb-6">
+                Implement security at multiple levels:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2"><strong>API Gateway authentication:</strong> Verify user identity at the edge</li>
+                <li class="mb-2"><strong>JWT tokens:</strong> Pass user context and permissions between services</li>
+                <li class="mb-2"><strong>OAuth 2.0/OIDC:</strong> Standard protocols for delegated authorization</li>
+                <li class="mb-2"><strong>Service-to-service authentication:</strong> Mutual TLS or service mesh for internal communication</li>
+                <li class="mb-2"><strong>Zero trust architecture:</strong> Verify every request, even internal ones</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Secrets Management</h3>
+            <p class="text-gray-700 mb-6">
+                Never hardcode sensitive information. Use tools like HashiCorp Vault, AWS Secrets Manager, or Kubernetes Secrets to:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">Centrally store and rotate credentials</li>
+                <li class="mb-2">Encrypt secrets at rest and in transit</li>
+                <li class="mb-2">Provide fine-grained access control</li>
+                <li class="mb-2">Audit secret access</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Deployment and DevOps Practices</h2>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Containerization and Orchestration</h3>
+            <p class="text-gray-700 mb-6">
+                Docker containers package services with their dependencies, while Kubernetes orchestrates them:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2"><strong>Container images:</strong> Reproducible builds ensuring consistency across environments</li>
+                <li class="mb-2"><strong>Kubernetes deployments:</strong> Declarative configuration for desired state</li>
+                <li class="mb-2"><strong>Service mesh:</strong> Istio or Linkerd for advanced networking, security, and observability</li>
+                <li class="mb-2"><strong>Auto-scaling:</strong> Horizontal and vertical scaling based on metrics</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">CI/CD Pipelines</h3>
+            <p class="text-gray-700 mb-6">
+                Automated pipelines enable rapid, reliable deployments:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2"><strong>Continuous Integration:</strong> Automated builds and tests on every commit</li>
+                <li class="mb-2"><strong>Continuous Deployment:</strong> Automated deployment to staging and production</li>
+                <li class="mb-2"><strong>Blue-green deployments:</strong> Zero-downtime releases</li>
+                <li class="mb-2"><strong>Canary releases:</strong> Gradual rollout to detect issues early</li>
+                <li class="mb-2"><strong>Feature flags:</strong> Enable/disable features without deployment</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Resilience and Fault Tolerance</h2>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Circuit Breaker Pattern</h3>
+            <p class="text-gray-700 mb-6">
+                Prevent cascading failures by failing fast when a service is unavailable:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">Monitor failure rates and response times</li>
+                <li class="mb-2">Open the circuit when thresholds are exceeded</li>
+                <li class="mb-2">Periodically test if the service has recovered</li>
+                <li class="mb-2">Return fallback responses or cached data</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Retry and Timeout Policies</h3>
+            <p class="text-gray-700 mb-6">
+                Handle transient failures gracefully:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2"><strong>Exponential backoff:</strong> Increase wait time between retries</li>
+                <li class="mb-2"><strong>Jitter:</strong> Add randomness to prevent thundering herd</li>
+                <li class="mb-2"><strong>Timeouts:</strong> Set appropriate timeouts for all external calls</li>
+                <li class="mb-2"><strong>Idempotency:</strong> Design operations to be safely retried</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Bulkhead Pattern</h3>
+            <p class="text-gray-700 mb-6">
+                Isolate resources to prevent failures from spreading:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">Separate thread pools for different operations</li>
+                <li class="mb-2">Resource quotas per client or tenant</li>
+                <li class="mb-2">Isolated failure domains</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Testing Strategies</h2>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Testing Pyramid for Microservices</h3>
+            <p class="text-gray-700 mb-6">
+                A comprehensive testing strategy includes:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2"><strong>Unit tests:</strong> Test individual components in isolation (70% of tests)</li>
+                <li class="mb-2"><strong>Integration tests:</strong> Test service interactions with databases and message queues (20%)</li>
+                <li class="mb-2"><strong>Contract tests:</strong> Verify API contracts between services</li>
+                <li class="mb-2"><strong>End-to-end tests:</strong> Test complete user journeys (10%)</li>
+                <li class="mb-2"><strong>Chaos testing:</strong> Deliberately introduce failures to test resilience</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Contract Testing</h3>
+            <p class="text-gray-700 mb-6">
+                Tools like Pact enable consumer-driven contract testing:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">Consumers define expected API behavior</li>
+                <li class="mb-2">Providers verify they meet all consumer expectations</li>
+                <li class="mb-2">Catches breaking changes before deployment</li>
+                <li class="mb-2">Enables independent service evolution</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Performance Optimization</h2>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Caching Strategies</h3>
+            <p class="text-gray-700 mb-6">
+                Implement caching at multiple levels:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2"><strong>API Gateway caching:</strong> Cache responses for frequently requested data</li>
+                <li class="mb-2"><strong>Service-level caching:</strong> Redis or Memcached for application data</li>
+                <li class="mb-2"><strong>CDN:</strong> Cache static assets and API responses at the edge</li>
+                <li class="mb-2"><strong>Database query caching:</strong> Reduce load on databases</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Database Optimization</h3>
+            <p class="text-gray-700 mb-6">
+                Choose the right database for each service's needs:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2"><strong>SQL databases:</strong> PostgreSQL, MySQL for transactional data</li>
+                <li class="mb-2"><strong>NoSQL databases:</strong> MongoDB, Cassandra for flexible schemas and scale</li>
+                <li class="mb-2"><strong>In-memory databases:</strong> Redis for high-performance caching</li>
+                <li class="mb-2"><strong>Search engines:</strong> Elasticsearch for complex queries</li>
+                <li class="mb-2"><strong>Time-series databases:</strong> InfluxDB for metrics and monitoring</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Migration Strategies</h2>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Strangler Fig Pattern</h3>
+            <p class="text-gray-700 mb-6">
+                Gradually migrate from monolith to microservices:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2">Identify bounded contexts in the monolith</li>
+                <li class="mb-2">Extract one service at a time</li>
+                <li class="mb-2">Use API gateway to route to new services</li>
+                <li class="mb-2">Maintain backward compatibility during transition</li>
+                <li class="mb-2">Gradually decommission monolith functionality</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Framework Selection Considerations</h2>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Evaluating Microservices Frameworks</h3>
+            <p class="text-gray-700 mb-6">
+                When selecting a framework, consider:
+            </p>
+            <ul class="list-disc pl-6 mb-6 text-gray-700">
+                <li class="mb-2"><strong>Language and ecosystem:</strong> Python (Flask, FastAPI), Java (Spring Boot), Node.js (Express, NestJS), Go</li>
+                <li class="mb-2"><strong>Built-in features:</strong> Service discovery, configuration management, circuit breakers</li>
+                <li class="mb-2"><strong>Cloud-native support:</strong> Kubernetes integration, 12-factor app principles</li>
+                <li class="mb-2"><strong>Developer experience:</strong> Documentation, tooling, debugging capabilities</li>
+                <li class="mb-2"><strong>Performance requirements:</strong> Latency, throughput, resource usage</li>
+                <li class="mb-2"><strong>Community and support:</strong> Active development, commercial support options</li>
+                <li class="mb-2"><strong>Integration capabilities:</strong> Third-party service integrations, middleware options</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Common Pitfalls and How to Avoid Them</h2>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Pitfall 1: Over-Engineering</h3>
+            <p class="text-gray-700 mb-6">
+                <strong>Problem:</strong> Creating too many microservices too early increases complexity without clear benefits.
+            </p>
+            <p class="text-gray-700 mb-6">
+                <strong>Solution:</strong> Start with a modular monolith and extract services only when clear benefits emerge (team scaling, independent deployment needs, different scaling requirements).
+            </p>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Pitfall 2: Distributed Monolith</h3>
+            <p class="text-gray-700 mb-6">
+                <strong>Problem:</strong> Services are technically separate but still tightly coupled through shared databases or synchronous call chains.
+            </p>
+            <p class="text-gray-700 mb-6">
+                <strong>Solution:</strong> Ensure services are truly independent with their own data stores and prefer asynchronous communication where possible.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Pitfall 3: Inadequate Monitoring</h3>
+            <p class="text-gray-700 mb-6">
+                <strong>Problem:</strong> Difficult to diagnose issues across distributed systems without proper observability.
+            </p>
+            <p class="text-gray-700 mb-6">
+                <strong>Solution:</strong> Invest in comprehensive monitoring, tracing, and logging from day one. Make observability a first-class concern.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-buildly-dark mt-8 mb-4">Pitfall 4: Ignoring Data Consistency</h3>
+            <p class="text-gray-700 mb-6">
+                <strong>Problem:</strong> Naively splitting data without considering transactional requirements.
+            </p>
+            <p class="text-gray-700 mb-6">
+                <strong>Solution:</strong> Identify true transactional boundaries, use saga patterns for distributed transactions, and embrace eventual consistency where appropriate.
+            </p>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Best Practices Summary</h2>
+            
+            <div class="bg-buildly-light p-8 rounded-lg mb-8">
+                <h3 class="text-2xl font-semibold text-buildly-dark mb-4">Key Takeaways</h3>
+                <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                    <li><strong>Start simple:</strong> Begin with a well-structured monolith and extract services as needs emerge</li>
+                    <li><strong>Design for failure:</strong> Implement circuit breakers, retries, and fallbacks from the beginning</li>
+                    <li><strong>Embrace automation:</strong> CI/CD, automated testing, and infrastructure as code are essential</li>
+                    <li><strong>Prioritize observability:</strong> Comprehensive monitoring, logging, and tracing are non-negotiable</li>
+                    <li><strong>Define clear boundaries:</strong> Use domain-driven design to identify service boundaries</li>
+                    <li><strong>Choose the right communication pattern:</strong> Synchronous for simple request-response, asynchronous for decoupling</li>
+                    <li><strong>Security at every layer:</strong> Authentication, authorization, encryption, and secrets management</li>
+                    <li><strong>Test comprehensively:</strong> Unit, integration, contract, and end-to-end tests</li>
+                    <li><strong>Document everything:</strong> API documentation, architecture diagrams, runbooks</li>
+                    <li><strong>Plan for evolution:</strong> Services will change; design for versioning and backward compatibility</li>
+                </ul>
+            </div>
+
+            <h2 class="text-3xl font-bold text-buildly-dark mt-12 mb-6">Conclusion</h2>
+            <p class="text-gray-700 mb-6">
+                Microservices frameworks provide the foundation for building scalable, resilient, cloud-native applications. Success requires understanding core principles, selecting appropriate patterns, and implementing comprehensive operational practices. While the complexity of distributed systems presents challenges, the benefits of independent scalability, technology flexibility, and team autonomy make microservices a compelling architecture for modern applications.
+            </p>
+            <p class="text-gray-700 mb-6">
+                The key is to adopt microservices thoughtfully—start with clear business drivers, invest in automation and observability, and evolve your architecture as your understanding and requirements grow. By following established patterns and best practices, teams can build microservices systems that deliver on the promise of agility, scalability, and resilience.
+            </p>
+
+            <div class="bg-gradient-to-br from-buildly-primary to-buildly-secondary rounded-lg p-8 mt-12 text-white">
+                <h3 class="text-2xl font-bold mb-4">Build Microservices with Confidence</h3>
+                <p class="mb-6">
+                    Buildly provides a comprehensive framework for building and managing microservices applications with built-in best practices, gateway architecture, and cloud-native patterns.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://labs.buildly.io" class="bg-white text-buildly-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center">
+                        Try Buildly Labs
+                    </a>
+                    <a href="https://docs.buildly.io" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-buildly-primary transition-colors text-center">
+                        View Documentation
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-buildly-dark text-white py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="../media/buildly-logo.svg" alt="Buildly" class="h-8 mb-4 brightness-0 invert">
+                    <p class="text-gray-400 text-sm">AI-powered product development platform</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Products</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../labs.html" class="hover:text-white transition-colors">Buildly Labs</a></li>
+                        <li><a href="../rad-core.html" class="hover:text-white transition-colors">RAD Core</a></li>
+                        <li><a href="https://collab.buildly.io" class="hover:text-white transition-colors">Collab Hub</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="https://docs.buildly.io" class="hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="../articles.html" class="hover:text-white transition-colors">Articles</a></li>
+                        <li><a href="../use-cases.html" class="hover:text-white transition-colors">Use Cases</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../team.html" class="hover:text-white transition-colors">Team</a></li>
+                        <li><a href="../privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Buildly. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
