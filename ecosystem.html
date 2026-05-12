@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-no-nav-loader>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/media/buildly-logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{'buildly-primary':'#1b5fa3','buildly-secondary':'#144a84','buildly-accent':'#f9943b','buildly-dark':'#1F2937','buildly-light':'#F3F4F6'}}}}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFY5W80XQX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YFY5W80XQX');</script>
+    <title>Ecosystem Map — Buildly</title>
+    <meta name="description" content="How the Buildly ecosystem fits together: CollabHub, Forge Marketplace, Buildly Labs, and Buildly Deploy — a collaborative AI-native software platform.">
+    <link rel="canonical" href="https://www.buildly.io/ecosystem.html">
+    <style>
+        :root { --bg-base: #070d1a; --bg-card: #0e1729; --border-subtle: rgba(255,255,255,0.07); }
+        body { background-color: var(--bg-base); color: #e2e8f0; }
+        .nav-dark { background: rgba(7,13,26,0.88); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-subtle); }
+        .glass-card { background: var(--bg-card); border: 1px solid var(--border-subtle); transition: border-color 0.3s; }
+        .glass-card:hover { border-color: rgba(255,255,255,0.12); }
+        .gradient-text { background: linear-gradient(135deg, #60a5fa 0%, #f9943b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .badge { display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border-subtle), transparent); }
+        .node-blue { background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(27,95,163,0.1)); border: 1px solid rgba(59,130,246,0.3); }
+        .node-orange { background: linear-gradient(135deg, rgba(249,148,59,0.2), rgba(234,88,12,0.1)); border: 1px solid rgba(249,148,59,0.3); }
+        .node-indigo { background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(67,56,202,0.1)); border: 1px solid rgba(99,102,241,0.3); }
+        .node-green { background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(22,163,74,0.1)); border: 1px solid rgba(34,197,94,0.3); }
+        /* SVG flow arrows */
+        .flow-arrow { stroke: rgba(255,255,255,0.15); stroke-width: 2; fill: none; stroke-dasharray: 6 4; }
+        @keyframes dash { to { stroke-dashoffset: -20; } }
+        .flow-arrow-animated { animation: dash 1.5s linear infinite; }
+        .fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .fade-in-up.visible { opacity: 1; transform: none; }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-dark fixed w-full z-50 top-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <a href="/" class="flex items-center">
+                <img src="media/buildly-logo.svg" alt="Buildly" class="h-9 w-auto" style="filter: brightness(0) invert(1);">
+            </a>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="/" class="text-slate-300 hover:text-white text-sm transition-colors">&larr; Home</a>
+                <a href="https://labs.buildly.io" class="bg-buildly-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-500 transition-colors">Join the Ecosystem</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-28 pb-16 px-4" style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(27,95,163,0.2) 0%, transparent 70%), #070d1a;">
+    <div class="max-w-4xl mx-auto text-center">
+        <div class="badge border border-white/10 text-slate-400 mb-5">Ecosystem Map</div>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-5 leading-tight">
+            One ecosystem.<br><span class="gradient-text">Four connected layers.</span>
+        </h1>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+            Buildly is not a single product. It's a collaborative network of platforms, communities, and tools — each useful independently, exponentially more powerful together.
+        </p>
+    </div>
+</section>
+
+<!-- ECOSYSTEM DIAGRAM -->
+<section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+
+        <!-- Primary 4-node flow -->
+        <div class="text-center mb-10">
+            <span class="text-slate-500 text-sm uppercase tracking-widest">Core Platform Stack</span>
+        </div>
+
+        <!-- Desktop flow diagram -->
+        <div class="hidden lg:block relative mb-16">
+            <div class="grid grid-cols-4 gap-6 relative z-10">
+
+                <!-- Node 1 -->
+                <div class="node-blue rounded-2xl p-7 text-center fade-in-up">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <div class="badge bg-blue-500/10 border border-blue-400/20 text-blue-300 mb-3">Layer 01</div>
+                    <h3 class="text-xl font-bold text-white mb-3">CollabHub</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Community &amp; collaboration. The human layer of the ecosystem — where builders meet, co-found, and grow together.</p>
+                    <div class="space-y-1.5 text-left text-xs text-slate-400">
+                        <div class="flex items-center gap-2"><span class="text-blue-400">&#x25CF;</span> Builder Network</div>
+                        <div class="flex items-center gap-2"><span class="text-blue-400">&#x25CF;</span> Technical Co-founders</div>
+                        <div class="flex items-center gap-2"><span class="text-blue-400">&#x25CF;</span> Agency Partners</div>
+                        <div class="flex items-center gap-2"><span class="text-blue-400">&#x25CF;</span> Peer Mentorship</div>
+                    </div>
+                    <a href="https://collab.buildly.io" class="mt-5 block text-blue-400 text-sm font-semibold hover:text-blue-300 transition-colors">collab.buildly.io &rarr;</a>
+                </div>
+
+                <!-- Node 2 -->
+                <div class="node-orange rounded-2xl p-7 text-center fade-in-up" style="transition-delay: 0.1s">
+                    <div class="text-4xl mb-4">🛒</div>
+                    <div class="badge bg-orange-500/10 border border-orange-400/20 text-orange-300 mb-3">Layer 02</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Forge Marketplace</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Reusable software marketplace. Community-published components, templates, and production-ready app starters.</p>
+                    <div class="space-y-1.5 text-left text-xs text-slate-400">
+                        <div class="flex items-center gap-2"><span class="text-orange-400">&#x25CF;</span> Microservice Components</div>
+                        <div class="flex items-center gap-2"><span class="text-orange-400">&#x25CF;</span> SaaS Templates</div>
+                        <div class="flex items-center gap-2"><span class="text-orange-400">&#x25CF;</span> AI-Ready Scaffolds</div>
+                        <div class="flex items-center gap-2"><span class="text-orange-400">&#x25CF;</span> Revenue Sharing</div>
+                    </div>
+                    <a href="https://market.buildly.io" class="mt-5 block text-orange-400 text-sm font-semibold hover:text-orange-300 transition-colors">market.buildly.io &rarr;</a>
+                </div>
+
+                <!-- Node 3 -->
+                <div class="node-indigo rounded-2xl p-7 text-center fade-in-up" style="transition-delay: 0.2s">
+                    <div class="text-4xl mb-4">🧠</div>
+                    <div class="badge bg-indigo-500/10 border border-indigo-400/20 text-indigo-300 mb-3">Layer 03</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Buildly Labs</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">AI-native product operating system. Release planning, intelligent backlogs, team alignment — guided by AI, owned by you.</p>
+                    <div class="space-y-1.5 text-left text-xs text-slate-400">
+                        <div class="flex items-center gap-2"><span class="text-indigo-400">&#x25CF;</span> Release Planning</div>
+                        <div class="flex items-center gap-2"><span class="text-indigo-400">&#x25CF;</span> AI Backlog Management</div>
+                        <div class="flex items-center gap-2"><span class="text-indigo-400">&#x25CF;</span> Radical Agile Process</div>
+                        <div class="flex items-center gap-2"><span class="text-indigo-400">&#x25CF;</span> Human Oversight</div>
+                    </div>
+                    <a href="https://labs.buildly.io" class="mt-5 block text-indigo-400 text-sm font-semibold hover:text-indigo-300 transition-colors">labs.buildly.io &rarr;</a>
+                </div>
+
+                <!-- Node 4 -->
+                <div class="node-green rounded-2xl p-7 text-center fade-in-up" style="transition-delay: 0.3s">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <div class="badge bg-green-500/10 border border-green-400/20 text-green-300 mb-3">Layer 04</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Buildly Deploy</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Shared operational infrastructure. Open-source-aligned hosting, CI/CD pipelines, and microservice deployment layer.</p>
+                    <div class="space-y-1.5 text-left text-xs text-slate-400">
+                        <div class="flex items-center gap-2"><span class="text-green-400">&#x25CF;</span> Shared Infrastructure</div>
+                        <div class="flex items-center gap-2"><span class="text-green-400">&#x25CF;</span> CI/CD Pipelines</div>
+                        <div class="flex items-center gap-2"><span class="text-green-400">&#x25CF;</span> Open-Source Gateway</div>
+                        <div class="flex items-center gap-2"><span class="text-green-400">&#x25CF;</span> API Management</div>
+                    </div>
+                    <a href="rad-core.html" class="mt-5 block text-green-400 text-sm font-semibold hover:text-green-300 transition-colors">RAD Core &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Flow arrows between nodes (SVG overlay) -->
+            <svg class="absolute top-1/2 left-0 right-0 w-full pointer-events-none" style="top: 45%; height: 30px;" viewBox="0 0 900 30" preserveAspectRatio="none">
+                <defs>
+                    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <polygon points="0 0, 8 3, 0 6" fill="rgba(249,148,59,0.5)" />
+                    </marker>
+                </defs>
+                <line x1="235" y1="15" x2="290" y2="15" stroke="rgba(249,148,59,0.4)" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrowhead)" class="flow-arrow-animated"/>
+                <line x1="460" y1="15" x2="515" y2="15" stroke="rgba(249,148,59,0.4)" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrowhead)" class="flow-arrow-animated"/>
+                <line x1="685" y1="15" x2="740" y2="15" stroke="rgba(249,148,59,0.4)" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrowhead)" class="flow-arrow-animated"/>
+            </svg>
+        </div>
+
+        <!-- Mobile vertical flow -->
+        <div class="lg:hidden space-y-4 mb-16">
+            <div class="node-blue rounded-2xl p-6 fade-in-up">
+                <div class="flex items-start gap-4">
+                    <div class="text-3xl flex-shrink-0">🤝</div>
+                    <div>
+                        <div class="badge bg-blue-500/10 border border-blue-400/20 text-blue-300 mb-2 text-xs">Layer 01</div>
+                        <h3 class="text-lg font-bold text-white mb-2">CollabHub</h3>
+                        <p class="text-slate-400 text-sm">Community &amp; collaboration layer. Builder Network, technical co-founders, agency partners.</p>
+                        <a href="https://collab.buildly.io" class="text-blue-400 text-sm font-semibold mt-2 block">collab.buildly.io &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center"><div class="w-px h-8 bg-white/10"></div></div>
+            <div class="node-orange rounded-2xl p-6 fade-in-up">
+                <div class="flex items-start gap-4">
+                    <div class="text-3xl flex-shrink-0">🛒</div>
+                    <div>
+                        <div class="badge bg-orange-500/10 border border-orange-400/20 text-orange-300 mb-2 text-xs">Layer 02</div>
+                        <h3 class="text-lg font-bold text-white mb-2">Forge Marketplace</h3>
+                        <p class="text-slate-400 text-sm">Reusable components, templates, and app starters. Community-published, revenue-shared.</p>
+                        <a href="https://market.buildly.io" class="text-orange-400 text-sm font-semibold mt-2 block">market.buildly.io &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center"><div class="w-px h-8 bg-white/10"></div></div>
+            <div class="node-indigo rounded-2xl p-6 fade-in-up">
+                <div class="flex items-start gap-4">
+                    <div class="text-3xl flex-shrink-0">🧠</div>
+                    <div>
+                        <div class="badge bg-indigo-500/10 border border-indigo-400/20 text-indigo-300 mb-2 text-xs">Layer 03</div>
+                        <h3 class="text-lg font-bold text-white mb-2">Buildly Labs</h3>
+                        <p class="text-slate-400 text-sm">AI-native product operations. Release planning, backlogs, agile process, team alignment.</p>
+                        <a href="https://labs.buildly.io" class="text-indigo-400 text-sm font-semibold mt-2 block">labs.buildly.io &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center"><div class="w-px h-8 bg-white/10"></div></div>
+            <div class="node-green rounded-2xl p-6 fade-in-up">
+                <div class="flex items-start gap-4">
+                    <div class="text-3xl flex-shrink-0">🚀</div>
+                    <div>
+                        <div class="badge bg-green-500/10 border border-green-400/20 text-green-300 mb-2 text-xs">Layer 04</div>
+                        <h3 class="text-lg font-bold text-white mb-2">Buildly Deploy</h3>
+                        <p class="text-slate-400 text-sm">Operational infrastructure, CI/CD, open-source gateway, API management.</p>
+                        <a href="rad-core.html" class="text-green-400 text-sm font-semibold mt-2 block">RAD Core &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Extended community nodes -->
+        <div class="py-16">
+            <div class="text-center mb-10">
+                <span class="text-slate-500 text-sm uppercase tracking-widest">Founder &amp; Community Layer</span>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div class="glass-card rounded-2xl p-7 fade-in-up">
+                    <div class="text-3xl mb-4">🎙️</div>
+                    <h3 class="text-xl font-bold text-white mb-2">FirstCityFoundry</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Founder conversations, podcasts, and AI-native startup education. Storytelling for the builder community.</p>
+                    <div class="space-y-1.5 text-xs text-slate-400">
+                        <div>&#x25CF; Long-form founder interviews</div>
+                        <div>&#x25CF; AI-native startup education</div>
+                        <div>&#x25CF; Ecosystem storytelling</div>
+                    </div>
+                    <a href="firstcityfoundry.html" class="mt-4 inline-block text-orange-400 text-sm font-semibold hover:text-orange-300 transition-colors">Visit FirstCityFoundry &rarr;</a>
+                </div>
+                <div class="glass-card rounded-2xl p-7 fade-in-up" style="transition-delay: 0.1s">
+                    <div class="text-3xl mb-4">🔥</div>
+                    <h3 class="text-xl font-bold text-white mb-2">StartupGrind PDX</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Portland's local founder community. Part of the global StartupGrind network. Real events, real relationships.</p>
+                    <div class="space-y-1.5 text-xs text-slate-400">
+                        <div>&#x25CF; Monthly founder meetups</div>
+                        <div>&#x25CF; Fireside chats &amp; speakers</div>
+                        <div>&#x25CF; Global SG network access</div>
+                    </div>
+                    <a href="startupgrind.html" class="mt-4 inline-block text-red-400 text-sm font-semibold hover:text-red-300 transition-colors">Join StartupGrind PDX &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- How they connect -->
+        <div class="py-16 max-w-3xl mx-auto fade-in-up">
+            <div class="text-center mb-10">
+                <span class="text-slate-500 text-sm uppercase tracking-widest">How It All Connects</span>
+            </div>
+            <div class="space-y-6">
+                <div class="glass-card rounded-xl p-5 flex items-start gap-4">
+                    <div class="text-2xl flex-shrink-0">🔁</div>
+                    <div>
+                        <div class="text-white font-semibold mb-1">CollabHub feeds Forge</div>
+                        <div class="text-slate-400 text-sm">Builders in the community publish components to Forge Marketplace, earning revenue and building reputation.</div>
+                    </div>
+                </div>
+                <div class="glass-card rounded-xl p-5 flex items-start gap-4">
+                    <div class="text-2xl flex-shrink-0">⚡</div>
+                    <div>
+                        <div class="text-white font-semibold mb-1">Labs orchestrates everything</div>
+                        <div class="text-slate-400 text-sm">Buildly Labs is where product operations happen — it can reference Forge components, coordinate CollabHub teams, and track Deploy releases.</div>
+                    </div>
+                </div>
+                <div class="glass-card rounded-xl p-5 flex items-start gap-4">
+                    <div class="text-2xl flex-shrink-0">🏗️</div>
+                    <div>
+                        <div class="text-white font-semibold mb-1">Deploy runs what you build</div>
+                        <div class="text-slate-400 text-sm">Buildly Deploy provides shared infrastructure, lowering costs for indie builders while maintaining production-grade reliability.</div>
+                    </div>
+                </div>
+                <div class="glass-card rounded-xl p-5 flex items-start gap-4">
+                    <div class="text-2xl flex-shrink-0">🎙️</div>
+                    <div>
+                        <div class="text-white font-semibold mb-1">Stories and community amplify the ecosystem</div>
+                        <div class="text-slate-400 text-sm">FirstCityFoundry and StartupGrind PDX bring new founders and builders into the network — and give existing members visibility and voice.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center py-16 fade-in-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to be part of it?</h2>
+            <p class="text-slate-400 mb-8 max-w-xl mx-auto">Start with any layer of the ecosystem. They all connect.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://labs.buildly.io" class="bg-buildly-accent text-white px-8 py-4 rounded-xl font-semibold hover:bg-orange-500 transition-colors">Start with Labs &rarr;</a>
+                <a href="https://collab.buildly.io" class="border border-white/20 text-slate-300 px-8 py-4 rounded-xl font-semibold hover:bg-white/5 hover:text-white transition-colors">Join CollabHub</a>
+                <a href="https://market.buildly.io" class="border border-white/20 text-slate-300 px-8 py-4 rounded-xl font-semibold hover:bg-white/5 hover:text-white transition-colors">Browse Forge</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <a href="/"><img src="media/buildly-logo.svg" alt="Buildly" class="h-7 w-auto" style="filter: brightness(0) invert(1);"></a>
+        <p class="text-slate-600 text-sm">&copy; 2025 Buildly, Inc. — A collaborative AI-native software ecosystem.</p>
+        <div class="flex gap-4 text-sm text-slate-500">
+            <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+            <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in-up').forEach(function(el) { observer.observe(el); });
+})();
+</script>
+</body>
+</html>

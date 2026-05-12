@@ -13,6 +13,13 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 
 class AdminHTTPRequestHandler(SimpleHTTPRequestHandler):
+    def end_headers(self):
+        """Add no-cache headers to all responses to prevent stale JS/CSS during development"""
+        self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
+        self.send_header('Pragma', 'no-cache')
+        self.send_header('Expires', '0')
+        super().end_headers()
+
     def do_GET(self):
         print(f"GET request: {self.path}")
         if self.path == '/api/articles-list':
@@ -271,7 +278,15 @@ class AdminHTTPRequestHandler(SimpleHTTPRequestHandler):
                 'brand-guidelines.html': 'Brand Guidelines',
                 'cloud-native-hosting.html': 'Cloud Native Hosting',
                 'migrating-legacy-systems.html': 'Legacy Systems Migration',
-                'unsubscribe.html': 'Unsubscribe Page'
+                'unsubscribe.html': 'Unsubscribe Page',
+                'ecosystem.html': 'Ecosystem Map Page',
+                'firstcityfoundry.html': 'FirstCityFoundry — Media & Podcasts',
+                'startupgrind.html': 'StartupGrind PDX — Community',
+                'rad-process.html': 'RAD Process Page',
+                'training.html': 'Training Page',
+                'vlog.html': 'Vlog Page',
+                'privacy.html': 'Privacy Policy',
+                'terms.html': 'Terms of Service'
             }
             
             # Find all HTML files in root directory

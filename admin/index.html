@@ -361,8 +361,53 @@
                         <p class="text-gray-600 mb-4">Set up your AI services and preferences</p>
                         <button class="btn btn-secondary" onclick="openSettings()">Settings</button>
                     </div>
+
+                    <div class="action-card" style="border: 2px solid #1b5fa3;">
+                        <div class="action-icon" style="background: #e8f0fb;">
+                            <span style="font-size: 24px;">🌐</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Preview Site</h3>
+                        <p class="text-gray-600 mb-4">Open the live site or preview any page inline</p>
+                        <div class="flex gap-2 justify-center flex-wrap">
+                            <a href="http://localhost:8000" target="_blank" class="btn btn-primary">Open Site</a>
+                            <button class="btn btn-secondary" onclick="toggleSitePreview()">Inline Preview</button>
+                        </div>
+                    </div>
                 </div>
-                
+
+                <!-- Site Preview Panel -->
+                <div id="site-preview-panel" style="display:none; margin-bottom:2rem;" class="file-browser">
+                    <div class="file-browser-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                        <div>
+                            <h3 class="text-lg font-semibold">Site Preview</h3>
+                            <p class="text-sm text-gray-500">Live preview — localhost:8000</p>
+                        </div>
+                        <div class="flex gap-2 items-center flex-wrap">
+                            <select id="preview-page-select" class="search-box" style="width:auto;" onchange="updatePreviewPage()">
+                                <option value="/">Homepage</option>
+                                <option value="/ecosystem.html">Ecosystem Map</option>
+                                <option value="/firstcityfoundry.html">FirstCityFoundry</option>
+                                <option value="/startupgrind.html">StartupGrind PDX</option>
+                                <option value="/labs.html">Labs</option>
+                                <option value="/pricing.html">Pricing</option>
+                                <option value="/use-cases.html">Use Cases</option>
+                                <option value="/team.html">Team</option>
+                                <option value="/articles.html">Articles</option>
+                                <option value="/developer.html">Developer</option>
+                                <option value="/product-manager.html">Product Manager</option>
+                                <option value="/rad-core.html">RAD Core</option>
+                                <option value="/training.html">Training</option>
+                            </select>
+                            <button class="btn btn-secondary" onclick="reloadPreview()">↺ Reload</button>
+                            <a id="preview-open-link" href="http://localhost:8000/" target="_blank" class="btn btn-primary">↗ Open</a>
+                            <button class="btn btn-secondary" onclick="toggleSitePreview()">✕ Close</button>
+                        </div>
+                    </div>
+                    <div style="padding:0;">
+                        <iframe id="site-preview-iframe" src="http://localhost:8000/" style="width:100%; height:620px; border:none; border-radius:0 0 0.75rem 0.75rem; display:block;"></iframe>
+                    </div>
+                </div>
+
                 <!-- Recent Activity -->
                 <div class="file-browser">
                     <div class="file-browser-header">
@@ -487,7 +532,32 @@
             const socialUrl = `social.html?file=${encodeURIComponent(filePath)}`;
             window.open(socialUrl, '_blank');
         }
-        
+
+        // Site preview panel controls
+        function toggleSitePreview() {
+            const panel = document.getElementById('site-preview-panel');
+            if (panel.style.display === 'none') {
+                panel.style.display = 'block';
+                panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                panel.style.display = 'none';
+            }
+        }
+
+        function updatePreviewPage() {
+            const select = document.getElementById('preview-page-select');
+            const iframe = document.getElementById('site-preview-iframe');
+            const openLink = document.getElementById('preview-open-link');
+            const url = 'http://localhost:8000' + select.value;
+            iframe.src = url;
+            openLink.href = url;
+        }
+
+        function reloadPreview() {
+            const iframe = document.getElementById('site-preview-iframe');
+            iframe.src = iframe.src;
+        }
+
         function createNewArticle() {
             const title = prompt('Enter article title:');
             if (title) {

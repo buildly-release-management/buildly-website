@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-no-nav-loader>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/media/buildly-logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{'buildly-primary':'#1b5fa3','buildly-secondary':'#144a84','buildly-accent':'#f9943b','buildly-dark':'#1F2937','buildly-light':'#F3F4F6'}}}}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFY5W80XQX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YFY5W80XQX');</script>
+    <title>FirstCityFoundry — Founder Conversations &amp; Podcasts | Buildly Ecosystem</title>
+    <meta name="description" content="FirstCityFoundry is the media and storytelling arm of the Buildly ecosystem. Long-form founder conversations, podcasts, and AI-native startup education.">
+    <link rel="canonical" href="https://www.buildly.io/firstcityfoundry.html">
+    <style>
+        :root { --bg-base: #070d1a; --bg-card: #0e1729; --border-subtle: rgba(255,255,255,0.07); }
+        body { background-color: var(--bg-base); color: #e2e8f0; }
+        .nav-dark { background: rgba(7,13,26,0.88); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.07); }
+        .glass-card { background: var(--bg-card); border: 1px solid var(--border-subtle); transition: border-color 0.3s; }
+        .glass-card:hover { border-color: rgba(255,255,255,0.12); }
+        .gradient-text { background: linear-gradient(135deg, #fb923c 0%, #f9943b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .badge { display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent); }
+        .fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .fade-in-up.visible { opacity: 1; transform: none; }
+        .podcast-card { background: #0e1729; border: 1px solid rgba(249,148,59,0.15); border-radius: 16px; transition: border-color 0.3s, background 0.3s; }
+        .podcast-card:hover { border-color: rgba(249,148,59,0.3); background: #131e33; }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-dark fixed w-full z-50 top-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <a href="/" class="flex items-center"><img src="media/buildly-logo.svg" alt="Buildly" class="h-9 w-auto" style="filter: brightness(0) invert(1);"></a>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="/" class="text-slate-300 hover:text-white text-sm transition-colors">&larr; Home</a>
+                <a href="ecosystem.html" class="text-slate-300 hover:text-white text-sm transition-colors">Ecosystem Map</a>
+                <a href="https://labs.buildly.io" class="bg-buildly-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-500 transition-colors">Join the Ecosystem</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-28 pb-20 px-4" style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(249,148,59,0.12) 0%, transparent 70%), #070d1a;">
+    <div class="max-w-4xl mx-auto text-center">
+        <div class="text-6xl mb-6">🎙️</div>
+        <div class="badge border border-orange-400/30 text-orange-300 bg-orange-500/5 mb-5">Buildly Ecosystem — Media Layer</div>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <span class="gradient-text">FirstCityFoundry</span>
+        </h1>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-4">
+            Founder conversations, podcasts, and AI-native startup education — for builders who are making something real.
+        </p>
+        <p class="text-slate-500 max-w-xl mx-auto">
+            Part of the Buildly ecosystem. Not a media company — a community telling its own story.
+        </p>
+    </div>
+</section>
+
+<div class="divider max-w-7xl mx-auto"></div>
+
+<!-- WHAT IT IS -->
+<section class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="fade-in-up">
+                <div class="badge border border-white/10 text-slate-400 mb-5">What is FirstCityFoundry?</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                    The ecosystem's<br>storytelling layer.
+                </h2>
+                <p class="text-slate-400 text-lg leading-relaxed mb-6">
+                    FirstCityFoundry is where the Buildly builder community tells its story. Long-form conversations with founders, deep dives into AI-native operations, and honest discussion about the realities of building software in the modern era.
+                </p>
+                <p class="text-slate-400 leading-relaxed mb-8">
+                    We believe the best startup education comes from people who are actually doing it — not just talking about it. No hype. No polish. Real builders, real conversations.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://labs.buildly.io" class="bg-buildly-accent text-white px-6 py-3 rounded-xl font-semibold hover:bg-orange-500 transition-colors">Join the Ecosystem</a>
+                    <a href="articles.html" class="border border-white/20 text-slate-300 px-6 py-3 rounded-xl font-semibold hover:bg-white/5 transition-colors">Read the Blog</a>
+                </div>
+            </div>
+
+            <div class="fade-in-up space-y-4">
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500/15 border border-orange-400/20 flex items-center justify-center text-xl flex-shrink-0">🎤</div>
+                        <div>
+                            <h3 class="text-white font-semibold mb-1">Founder Interviews</h3>
+                            <p class="text-slate-400 text-sm">Long-form conversations with builders at all stages — from pre-launch indie devs to post-scale startup founders.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-400/20 flex items-center justify-center text-xl flex-shrink-0">🤖</div>
+                        <div>
+                            <h3 class="text-white font-semibold mb-1">AI-Native Startup Education</h3>
+                            <p class="text-slate-400 text-sm">Practical, opinionated content about using AI in product operations — not AI hype, but AI practice.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-400/20 flex items-center justify-center text-xl flex-shrink-0">📖</div>
+                        <div>
+                            <h3 class="text-white font-semibold mb-1">Ecosystem Storytelling</h3>
+                            <p class="text-slate-400 text-sm">The Buildly ecosystem in narrative form. Product launches, community milestones, founder journeys.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center text-xl flex-shrink-0">🌱</div>
+                        <div>
+                            <h3 class="text-white font-semibold mb-1">Early-Stage &amp; Indie Focused</h3>
+                            <p class="text-slate-400 text-sm">Content written and produced for founders who are still in the building phase — before the press releases.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider max-w-7xl mx-auto"></div>
+
+<!-- RECENT CONTENT / PLACEHOLDER -->
+<section class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 fade-in-up">
+            <div class="badge border border-white/10 text-slate-400 mb-4">Content</div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">From the Foundry</h2>
+            <p class="text-slate-400 max-w-xl mx-auto">Articles, podcast episodes, and founder conversations — from the Buildly community.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 fade-in-up">
+            <div class="podcast-card p-6">
+                <div class="badge bg-orange-500/10 border border-orange-400/20 text-orange-300 mb-4 text-xs">Podcast</div>
+                <h3 class="text-white font-semibold mb-2">Building AI-Native from Day One</h3>
+                <p class="text-slate-400 text-sm mb-4">What it actually means to build a software product with AI in the core loop — not bolted on as an afterthought.</p>
+                <a href="articles.html" class="text-orange-400 text-sm font-semibold hover:text-orange-300 transition-colors">Listen &rarr;</a>
+            </div>
+            <div class="podcast-card p-6">
+                <div class="badge bg-blue-500/10 border border-blue-400/20 text-blue-300 mb-4 text-xs">Interview</div>
+                <h3 class="text-white font-semibold mb-2">The Honest Startup: No Fundraising, No Hype</h3>
+                <p class="text-slate-400 text-sm mb-4">A conversation with an indie builder who shipped a profitable SaaS without a single investor meeting.</p>
+                <a href="articles.html" class="text-blue-400 text-sm font-semibold hover:text-blue-300 transition-colors">Read more &rarr;</a>
+            </div>
+            <div class="podcast-card p-6">
+                <div class="badge bg-green-500/10 border border-green-400/20 text-green-300 mb-4 text-xs">Deep Dive</div>
+                <h3 class="text-white font-semibold mb-2">Radical Agile in Practice</h3>
+                <p class="text-slate-400 text-sm mb-4">How Buildly's non-opinionated agile process works in teams of 1, 5, and 50. A founder's field guide.</p>
+                <a href="articles.html" class="text-green-400 text-sm font-semibold hover:text-green-300 transition-colors">Read more &rarr;</a>
+            </div>
+        </div>
+
+        <div class="text-center mt-10">
+            <a href="articles.html" class="inline-flex items-center gap-2 border border-white/10 text-slate-400 hover:text-white hover:border-white/20 px-5 py-3 rounded-xl text-sm font-medium transition-all">
+                View all articles &rarr;
+            </a>
+        </div>
+    </div>
+</section>
+
+<div class="divider max-w-7xl mx-auto"></div>
+
+<!-- CONTRIBUTE YOUR STORY -->
+<section class="py-20 px-4">
+    <div class="max-w-3xl mx-auto text-center fade-in-up">
+        <div class="text-4xl mb-5">✍️</div>
+        <div class="badge border border-orange-400/30 text-orange-300 bg-orange-500/5 mb-5">Share Your Story</div>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Are you building something?
+        </h2>
+        <p class="text-slate-400 text-lg leading-relaxed mb-8">
+            We want to hear from founders, indie builders, and product people doing real work. FirstCityFoundry exists to amplify builders who are in the middle of it — not just those who have already made it.
+        </p>
+        <a href="https://collab.buildly.io" class="bg-buildly-accent text-white px-8 py-4 rounded-xl font-semibold hover:bg-orange-500 transition-colors">
+            Get Involved &rarr;
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <a href="/"><img src="media/buildly-logo.svg" alt="Buildly" class="h-7 w-auto" style="filter: brightness(0) invert(1);"></a>
+        <p class="text-slate-600 text-sm">FirstCityFoundry is part of the Buildly Ecosystem &mdash; &copy; 2025 Buildly, Inc.</p>
+        <div class="flex gap-4 text-sm text-slate-500">
+            <a href="ecosystem.html" class="hover:text-white transition-colors">Ecosystem Map</a>
+            <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in-up').forEach(function(el) { observer.observe(el); });
+})();
+</script>
+</body>
+</html>

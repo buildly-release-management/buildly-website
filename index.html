@@ -1,34 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth" data-no-nav-loader>
 <head>
     <meta charset="UTF-8">
-    <!-- Load common elements -->
-    <script src="/js/buildly-head.js"></script>
-    
-    <!-- Page-specific customization -->
-    <title>Buildly - AI-Powered Team Development Platform | Collaborative Software Development for Serious Teams</title>
-    <meta name="description" content="Build software that scales with Buildly's AI-assisted platform. Team collaboration meets transparent AI development - the enterprise-ready alternative to magic button solutions for serious teams.">
-    <meta name="keywords" content="AI development, team collaboration, transparent AI, enterprise software, maintainable code, AI-assisted development, software teams, production-ready applications, collaborative development platform">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Buildly">
+    <link rel="icon" type="image/svg+xml" href="/media/buildly-logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script>tailwind={config:{theme:{extend:{colors:{'buildly-primary':'#1b5fa3','buildly-secondary':'#144a84','buildly-accent':'#f9943b','buildly-dark':'#1F2937','buildly-light':'#F3F4F6'},fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}}}</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFY5W80XQX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YFY5W80XQX');</script>
+
+    <title>Buildly — A Collaborative AI-Native Software Ecosystem</title>
+    <meta name="description" content="Buildly is a collaborative AI-native software ecosystem for independent builders, startups, and product teams. CollabHub, Forge Marketplace, Buildly Labs, and Buildly Deploy — built together.">
+    <meta name="keywords" content="AI-native software, collaborative ecosystem, startup community, indie builders, reusable software, open source, product operations, founder network, Buildly Labs, CollabHub, Forge Marketplace">
     <link rel="canonical" href="https://www.buildly.io/">
-    
-    <!-- RSS Feed -->
-    <link rel="alternate" type="application/rss+xml" title="Buildly AI Development Blog" href="https://www.buildly.io/feed.xml">
-    
-    <!-- Open Graph tags -->
+
+    <link rel="alternate" type="application/rss+xml" title="Buildly Blog" href="https://www.buildly.io/feed.xml">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.buildly.io/">
-    <meta property="og:title" content="Buildly - AI-Powered Team Development Platform">
-    <meta property="og:description" content="Build software that scales with AI-assisted team collaboration. Transparent, maintainable development platform for serious teams building enterprise-ready applications.">
+    <meta property="og:title" content="Buildly — A Collaborative AI-Native Software Ecosystem">
+    <meta property="og:description" content="A collaborative AI-native software ecosystem for independent builders, startups, and product teams. CollabHub, Forge, Labs, Deploy — built together.">
     <meta property="og:image" content="https://www.buildly.io/media/buildly-logo.svg">
-    
-    <!-- Twitter Card tags -->
+
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.buildly.io/">
-    <meta property="twitter:title" content="Buildly - AI-Powered Team Development Platform">
-    <meta property="twitter:description" content="Build software that scales together. AI-assisted development platform where teams collaborate with transparent AI to create maintainable, enterprise-ready applications.">
+    <meta property="twitter:title" content="Buildly — A Collaborative AI-Native Software Ecosystem">
+    <meta property="twitter:description" content="A collaborative AI-native software ecosystem for independent builders, startups, and product teams.">
     <meta property="twitter:image" content="https://www.buildly.io/media/buildly-logo.svg">
-    
-    <!-- Structured Data -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -36,946 +39,784 @@
       "name": "Buildly",
       "url": "https://www.buildly.io",
       "logo": "https://www.buildly.io/media/buildly-logo.svg",
-      "description": "AI-powered product development platform for turning visionary ideas into reality",
+      "description": "A collaborative AI-native software ecosystem for independent builders, startups, and product teams.",
       "foundingDate": "2020",
       "sameAs": [
         "https://labs.buildly.io",
+        "https://collab.buildly.io",
+        "https://market.buildly.io",
         "https://docs.buildly.io"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "url": "https://www.buildly.io/contact"
-      },
-      "offers": {
-        "@type": "Offer",
-        "description": "AI-assisted development platform enabling teams to collaboratively build maintainable, enterprise-ready software with transparent AI automation"
-      }
+      ]
     }
     </script>
+
+    <style>
+        :root {
+            --bg-base: #070d1a;
+            --bg-card: #0e1729;
+            --bg-card-hover: #131e33;
+            --border-subtle: rgba(255,255,255,0.07);
+            --border-accent: rgba(249,148,59,0.3);
+            --text-muted: #94a3b8;
+            --glow-blue: rgba(27,95,163,0.4);
+            --glow-orange: rgba(249,148,59,0.3);
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: #e2e8f0;
+        }
+
+        .hero-bg {
+            background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(27,95,163,0.25) 0%, transparent 70%),
+                        radial-gradient(ellipse 40% 40% at 80% 60%, rgba(249,148,59,0.1) 0%, transparent 60%),
+                        var(--bg-base);
+        }
+
+        .grid-overlay {
+            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .glass-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .glass-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(255,255,255,0.12);
+        }
+
+        .connector {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(27,95,163,0.4), rgba(249,148,59,0.3));
+            position: relative;
+        }
+        .connector::after {
+            content: '';
+            position: absolute;
+            right: -4px;
+            top: -3px;
+            width: 0;
+            height: 0;
+            border-top: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-left: 6px solid rgba(249,148,59,0.5);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #f9943b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .nav-dark {
+            background: rgba(7,13,26,0.88);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+        .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+        @keyframes scroll-strip {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .scroll-strip { animation: scroll-strip 30s linear infinite; }
+        .scroll-strip:hover { animation-play-state: paused; }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent);
+        }
+    </style>
 </head>
-<body class="font-sans">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html" aria-label="Buildly Homepage">
-                        <img src="media/buildly-logo.svg" alt="Buildly - AI-Powered Product Development Platform" class="h-12 w-auto" style="filter: brightness(0) saturate(100%) invert(21%) sepia(47%) saturate(1765%) hue-rotate(198deg) brightness(97%) contrast(93%);">
+
+<body>
+
+<!-- NAV -->
+<nav class="nav-dark fixed w-full z-50 top-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <a href="/" aria-label="Buildly Home" class="flex items-center space-x-2">
+                <img src="media/buildly-logo.svg" alt="Buildly" class="h-9 w-auto" style="filter: brightness(0) invert(1);">
+            </a>
+
+            <div class="hidden md:flex items-center space-x-1">
+                <div class="relative group">
+                    <button class="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium flex items-center gap-1 transition-colors">
+                        Ecosystem
+                        <svg class="h-3 w-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="absolute left-0 mt-1 w-60 rounded-xl shadow-2xl border border-white/10 bg-[#0e1729] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20 py-2">
+                        <a href="https://collab.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5 transition-colors">
+                            <span class="text-lg leading-none mt-0.5">🤝</span>
+                            <div><div class="text-sm font-semibold text-white">CollabHub</div><div class="text-xs text-slate-400">Community &amp; collaboration layer</div></div>
+                        </a>
+                        <a href="https://market.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5 transition-colors">
+                            <span class="text-lg leading-none mt-0.5">🛒</span>
+                            <div><div class="text-sm font-semibold text-white">Forge Marketplace</div><div class="text-xs text-slate-400">Reusable products &amp; templates</div></div>
+                        </a>
+                        <a href="https://labs.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5 transition-colors">
+                            <span class="text-lg leading-none mt-0.5">🧠</span>
+                            <div><div class="text-sm font-semibold text-white">Buildly Labs</div><div class="text-xs text-slate-400">AI-native product operations</div></div>
+                        </a>
+                        <a href="ecosystem.html" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5 transition-colors">
+                            <span class="text-lg leading-none mt-0.5">🗺️</span>
+                            <div><div class="text-sm font-semibold text-white">Ecosystem Map</div><div class="text-xs text-slate-400">See how it all connects</div></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button class="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium flex items-center gap-1 transition-colors">
+                        Community
+                        <svg class="h-3 w-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="absolute left-0 mt-1 w-60 rounded-xl shadow-2xl border border-white/10 bg-[#0e1729] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20 py-2">
+                        <a href="https://collab.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5 transition-colors">
+                            <span class="text-lg leading-none mt-0.5">🏗️</span>
+                            <div><div class="text-sm font-semibold text-white">Builder Network</div><div class="text-xs text-slate-400">Developers, founders, agencies</div></div>
+                        </a>
+                        <a href="startupgrind.html" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5 transition-colors">
+                            <span class="text-lg leading-none mt-0.5">🔥</span>
+                            <div><div class="text-sm font-semibold text-white">StartupGrind PDX</div><div class="text-xs text-slate-400">Local founder community</div></div>
+                        </a>
+                        <a href="firstcityfoundry.html" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5 transition-colors">
+                            <span class="text-lg leading-none mt-0.5">🎙️</span>
+                            <div><div class="text-sm font-semibold text-white">FirstCityFoundry</div><div class="text-xs text-slate-400">Founder conversations &amp; podcasts</div></div>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="articles.html" class="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Articles</a>
+                <a href="pricing.html" class="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Pricing</a>
+                <a href="https://labs.buildly.io" class="ml-2 bg-buildly-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-500 transition-colors">Join the Ecosystem</a>
+            </div>
+
+            <button class="mobile-menu-button md:hidden text-slate-300 hover:text-white focus:outline-none" aria-label="Open menu" aria-expanded="false">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="mobile-nav hidden pb-4 space-y-1 border-t border-white/5 mt-2">
+            <a href="https://collab.buildly.io" class="block px-3 py-2 text-sm text-slate-300 hover:text-white">CollabHub</a>
+            <a href="https://market.buildly.io" class="block px-3 py-2 text-sm text-slate-300 hover:text-white">Forge Marketplace</a>
+            <a href="https://labs.buildly.io" class="block px-3 py-2 text-sm text-slate-300 hover:text-white">Buildly Labs</a>
+            <a href="ecosystem.html" class="block px-3 py-2 text-sm text-slate-300 hover:text-white">Ecosystem Map</a>
+            <a href="startupgrind.html" class="block px-3 py-2 text-sm text-slate-300 hover:text-white">StartupGrind PDX</a>
+            <a href="firstcityfoundry.html" class="block px-3 py-2 text-sm text-slate-300 hover:text-white">FirstCityFoundry</a>
+            <a href="articles.html" class="block px-3 py-2 text-sm text-slate-300 hover:text-white">Articles</a>
+            <a href="pricing.html" class="block px-3 py-2 text-sm text-slate-300 hover:text-white">Pricing</a>
+            <a href="https://labs.buildly.io" class="block mx-3 mt-2 bg-buildly-accent text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">Join the Ecosystem</a>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero-bg grid-overlay relative overflow-hidden pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 lg:py-36">
+        <div class="max-w-4xl mx-auto text-center">
+
+            <div class="badge border border-orange-400/40 text-buildly-accent bg-orange-500/10 mb-6">
+                <span class="pulse-dot w-2 h-2 rounded-full bg-buildly-accent mr-2 inline-block"></span>
+                A New Kind of Software Ecosystem
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tight mb-6 text-white">
+                Build software<br>
+                <span class="gradient-text">together.</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Buildly is a collaborative AI-native software ecosystem for independent builders, startups, and product teams. Community, reusable software, intelligent operations — under one roof.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://labs.buildly.io" class="bg-buildly-accent text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-orange-500 transition-colors shadow-lg">
+                    Join the Ecosystem &rarr;
+                </a>
+                <a href="#ecosystem" class="border border-white/20 text-slate-300 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/5 hover:text-white transition-colors">
+                    Explore the Map
+                </a>
+            </div>
+
+            <div class="mt-12 flex flex-wrap justify-center gap-3 text-sm text-slate-500">
+                <span class="px-3 py-1 rounded-full border border-white/10">Collaborative Ecosystem</span>
+                <span class="px-3 py-1 rounded-full border border-white/10">AI-Native Operations</span>
+                <span class="px-3 py-1 rounded-full border border-white/10">Reusable Software</span>
+                <span class="px-3 py-1 rounded-full border border-white/10">Builder Network</span>
+                <span class="px-3 py-1 rounded-full border border-white/10">Open Source Aligned</span>
+                <span class="px-3 py-1 rounded-full border border-white/10">Founder-Focused</span>
+            </div>
+        </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#070d1a] to-transparent pointer-events-none"></div>
+</section>
+
+
+<!-- ECOSYSTEM OVERVIEW -->
+<section id="ecosystem" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-16 fade-in-up">
+            <div class="badge border border-white/10 text-slate-400 mb-4">The Ecosystem</div>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Four layers. One unified platform.</h2>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">Each layer is independent and useful on its own — and more powerful together.</p>
+        </div>
+
+        <!-- Desktop horizontal flow -->
+        <div class="hidden lg:flex items-stretch gap-0 mb-12 fade-in-up">
+            <div class="glass-card rounded-2xl p-7 flex-1">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/15 border border-blue-400/20 flex items-center justify-center mb-4 text-2xl">🤝</div>
+                <div class="badge bg-blue-500/10 border border-blue-400/20 text-blue-300 mb-3">01 — Community</div>
+                <h3 class="text-xl font-bold text-white mb-2">CollabHub</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">The community and collaboration layer. Find builders, co-founders, agencies, and fellow indie developers. Share work. Give back.</p>
+                <a href="https://collab.buildly.io" class="inline-block mt-4 text-blue-400 text-sm font-semibold hover:text-blue-300 transition-colors">Explore CollabHub &rarr;</a>
+            </div>
+
+            <div class="flex items-center px-2 py-8"><div class="connector w-12"></div></div>
+
+            <div class="glass-card rounded-2xl p-7 flex-1">
+                <div class="w-12 h-12 rounded-xl bg-orange-500/15 border border-orange-400/20 flex items-center justify-center mb-4 text-2xl">🛒</div>
+                <div class="badge bg-orange-500/10 border border-orange-400/20 text-orange-300 mb-3">02 — Marketplace</div>
+                <h3 class="text-xl font-bold text-white mb-2">Forge Marketplace</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Reusable products, templates, and apps. Stop rebuilding the same things. Publish what you build. Use what others built.</p>
+                <a href="https://market.buildly.io" class="inline-block mt-4 text-orange-400 text-sm font-semibold hover:text-orange-300 transition-colors">Browse Forge &rarr;</a>
+            </div>
+
+            <div class="flex items-center px-2 py-8"><div class="connector w-12"></div></div>
+
+            <div class="glass-card rounded-2xl p-7 flex-1">
+                <div class="w-12 h-12 rounded-xl bg-buildly-primary/15 border border-buildly-primary/30 flex items-center justify-center mb-4 text-2xl">🧠</div>
+                <div class="badge bg-buildly-primary/10 border border-buildly-primary/30 text-blue-300 mb-3">03 — Operations</div>
+                <h3 class="text-xl font-bold text-white mb-2">Buildly Labs</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">AI-native software business operating system. Release planning, backlog management, team alignment — guided by AI, owned by you.</p>
+                <a href="https://labs.buildly.io" class="inline-block mt-4 text-buildly-accent text-sm font-semibold hover:text-orange-300 transition-colors">Try Labs &rarr;</a>
+            </div>
+
+            <div class="flex items-center px-2 py-8"><div class="connector w-12"></div></div>
+
+            <div class="glass-card rounded-2xl p-7 flex-1">
+                <div class="w-12 h-12 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center mb-4 text-2xl">🚀</div>
+                <div class="badge bg-green-500/10 border border-green-400/20 text-green-300 mb-3">04 — Infrastructure</div>
+                <h3 class="text-xl font-bold text-white mb-2">Buildly Deploy</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Operational infrastructure and deployment layer. Ship with confidence using shared, open-source-aligned hosting and microservice components.</p>
+                <a href="rad-core.html" class="inline-block mt-4 text-green-400 text-sm font-semibold hover:text-green-300 transition-colors">Learn Deploy &rarr;</a>
+            </div>
+        </div>
+
+        <!-- Mobile vertical cards -->
+        <div class="lg:hidden grid gap-4 mb-12">
+            <div class="glass-card rounded-2xl p-6"><div class="flex items-start gap-4"><div class="w-10 h-10 rounded-lg bg-blue-500/15 border border-blue-400/20 flex items-center justify-center text-xl flex-shrink-0">🤝</div><div><div class="badge bg-blue-500/10 border border-blue-400/20 text-blue-300 mb-2 text-xs">Community</div><h3 class="font-bold text-white">CollabHub</h3><p class="text-slate-400 text-sm mt-1">Community and collaboration layer for builders, co-founders, and agencies.</p><a href="https://collab.buildly.io" class="text-blue-400 text-sm font-semibold mt-2 block">Explore &rarr;</a></div></div></div>
+            <div class="glass-card rounded-2xl p-6"><div class="flex items-start gap-4"><div class="w-10 h-10 rounded-lg bg-orange-500/15 border border-orange-400/20 flex items-center justify-center text-xl flex-shrink-0">🛒</div><div><div class="badge bg-orange-500/10 border border-orange-400/20 text-orange-300 mb-2 text-xs">Marketplace</div><h3 class="font-bold text-white">Forge Marketplace</h3><p class="text-slate-400 text-sm mt-1">Reusable products, templates, and apps. Stop rebuilding from scratch.</p><a href="https://market.buildly.io" class="text-orange-400 text-sm font-semibold mt-2 block">Browse &rarr;</a></div></div></div>
+            <div class="glass-card rounded-2xl p-6"><div class="flex items-start gap-4"><div class="w-10 h-10 rounded-lg bg-buildly-primary/15 border border-buildly-primary/30 flex items-center justify-center text-xl flex-shrink-0">🧠</div><div><div class="badge bg-buildly-primary/10 border border-buildly-primary/30 text-blue-300 mb-2 text-xs">Operations</div><h3 class="font-bold text-white">Buildly Labs</h3><p class="text-slate-400 text-sm mt-1">AI-native product operations — release planning, backlogs, team alignment.</p><a href="https://labs.buildly.io" class="text-buildly-accent text-sm font-semibold mt-2 block">Try Labs &rarr;</a></div></div></div>
+            <div class="glass-card rounded-2xl p-6"><div class="flex items-start gap-4"><div class="w-10 h-10 rounded-lg bg-green-500/15 border border-green-400/20 flex items-center justify-center text-xl flex-shrink-0">🚀</div><div><div class="badge bg-green-500/10 border border-green-400/20 text-green-300 mb-2 text-xs">Infrastructure</div><h3 class="font-bold text-white">Buildly Deploy</h3><p class="text-slate-400 text-sm mt-1">Open-source-aligned deployment infrastructure for teams and founders.</p><a href="rad-core.html" class="text-green-400 text-sm font-semibold mt-2 block">Learn Deploy &rarr;</a></div></div></div>
+        </div>
+
+        <div class="text-center">
+            <a href="ecosystem.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-white border border-white/10 hover:border-white/20 px-5 py-3 rounded-xl text-sm font-medium transition-all">
+                View full ecosystem map
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<div class="divider max-w-7xl mx-auto"></div>
+
+
+<!-- BUILD TOGETHER -->
+<section id="community" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="fade-in-up">
+                <div class="badge border border-white/10 text-slate-400 mb-5">Build Together</div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    Software is better<br>built <span class="gradient-text">in community.</span>
+                </h2>
+                <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                    Buildly isn't a dev shop or a consultancy. It's a collaborative network of independent developers, technical co-founders, and product teams who build, share, and grow together — powered by shared tools and infrastructure.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-blue-500/15 border border-blue-400/20 flex items-center justify-center text-sm flex-shrink-0">👩‍💻</div>
+                        <div><div class="text-white font-semibold text-sm">Independent Developers</div><div class="text-slate-500 text-sm">Builders who create, publish, and collaborate on reusable software</div></div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-orange-500/15 border border-orange-400/20 flex items-center justify-center text-sm flex-shrink-0">🌱</div>
+                        <div><div class="text-white font-semibold text-sm">Startup Founders</div><div class="text-slate-500 text-sm">First-time and serial founders who need technical co-founders and AI-native tooling</div></div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-green-500/15 border border-green-400/20 flex items-center justify-center text-sm flex-shrink-0">🏢</div>
+                        <div><div class="text-white font-semibold text-sm">Agencies &amp; Product Teams</div><div class="text-slate-500 text-sm">Teams who ship at scale using shared infrastructure and marketplaced components</div></div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-purple-500/15 border border-purple-400/20 flex items-center justify-center text-sm flex-shrink-0">🎙️</div>
+                        <div><div class="text-white font-semibold text-sm">Podcast Hosts &amp; Content Creators</div><div class="text-slate-500 text-sm">Founders sharing stories through FirstCityFoundry and StartupGrind PDX</div></div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <a href="https://collab.buildly.io" class="inline-flex items-center gap-2 bg-buildly-primary text-white px-6 py-3 rounded-xl font-semibold hover:bg-buildly-secondary transition-colors">
+                        Join the Builder Network &rarr;
                     </a>
                 </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <div class="relative group">
-                            <button class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
-                                Products
-                                <svg class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                                <div class="py-1">
-                                    <a href="labs.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Labs Platform</a>
-                                    <a href="platform" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Developer Platform</a>
-                                    <a href="rad-core.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">RAD Core</a>
-                                    <a href="rad-process.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">RAD Process</a>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
-                        <a href="articles.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Articles</a>
-                        <a href="training.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Training</a>
-                        <a href="pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
-                        <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Start Building</a>
-                    </div>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button class="mobile-menu-button text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
             </div>
-            <!-- Mobile menu -->
-            <div class="mobile-nav hidden md:hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a href="labs.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Labs Platform</a>
-                    <a href="platform" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Developer Platform</a>
-                    <a href="rad-core.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">RAD Core</a>
-                    <a href="use-cases.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Use Cases</a>
-                    <a href="articles.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Articles</a>
-                    <a href="training.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Training</a>
-                    <a href="pricing.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
-                    <a href="https://labs.buildly.io" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Start Building</a>
+
+            <div class="fade-in-up grid grid-cols-2 gap-4">
+                <div class="glass-card rounded-2xl p-6 col-span-2">
+                    <div class="text-4xl font-bold text-white mb-1">50%</div>
+                    <div class="text-slate-400 text-sm">Average reduction in software development budget with AI-reviewed, component-based delivery</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="text-4xl font-bold text-white mb-1">40%</div>
+                    <div class="text-slate-400 text-sm">Time saved through better async planning and fewer meetings</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="text-4xl font-bold text-white mb-1">75%</div>
+                    <div class="text-slate-400 text-sm">Savings on release management with AI-automated planning</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 col-span-2">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">🔓</span>
+                        <div class="text-white font-semibold">Open Source Aligned</div>
+                    </div>
+                    <div class="text-slate-400 text-sm">Buildly is built on open-source foundations. No vendor lock-in. Transparent processes. Community-maintained components.</div>
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="pt-20 bg-buildly-primary relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Text Content -->
-                <div class="text-center lg:text-left">
-                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
-                        The Buildly App Platform
-                    </h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-buildly-accent mb-6">
-                        AI + Product Management + Open Source Tools
-                    </h2>
-                    <p class="text-xl text-white opacity-90 mb-8">
-                        Comprehensive platform combining AI-powered development, radical agile product management, and sustainable open source developer tools. The scalable alternative to magic button vibe coding that builds lasting teams and maintainable software.
-                    </p>
-                    <div class="flex flex-col sm:flex-row lg:justify-start justify-center gap-4">
-                        <a href="https://labs.buildly.io" class="bg-buildly-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
-                            Try for Free
-                        </a>
-                        <a href="labs.html" class="border border-buildly-accent text-buildly-accent px-8 py-3 rounded-lg font-semibold hover:bg-buildly-accent hover:text-white transition-colors">
-                            Learn More
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Rocket Image -->
-                <div class="relative lg:block hidden">
-                    <div class="rocket-container animate-hover">
-                        <img src="media/rocket_labs.png" alt="Buildly AI-Powered Development Platform - Vibe Coding Innovation" class="w-full max-w-xs mx-auto h-auto drop-shadow-xl">
-                        
-                        <!-- Buildly Rabbit in Rocket Window -->
-                        <div class="rabbit-in-window absolute animate-hover-delayed">
-                            <img src="media/buildly-rabbit-square-transparent copy.png" alt="Buildly Rabbit Pilot" class="w-7 h-7 opacity-100">
-                        </div>
-                    </div>
-                    
-                    <!-- Floating elements with site colors -->
-                    <div class="absolute top-8 left-8 w-3 h-3 bg-buildly-primary rounded-full animate-pulse opacity-70"></div>
-                    <div class="absolute bottom-16 right-16 w-4 h-4 bg-buildly-accent rounded-full animate-ping opacity-60"></div>
-                    <div class="absolute top-1/2 left-2 w-2 h-2 bg-buildly-secondary rounded-full animate-bounce opacity-80"></div>
-                    <div class="absolute top-20 right-8 w-2 h-2 bg-buildly-primary rounded-full animate-pulse opacity-50"></div>
-                    <div class="absolute bottom-32 left-12 w-3 h-3 bg-buildly-accent rounded-full animate-ping opacity-40"></div>
-                </div>
+<div class="divider max-w-7xl mx-auto"></div>
+
+
+<!-- AI-NATIVE PRODUCT OPERATIONS — LABS -->
+<section id="labs" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-in-up">
+            <div class="badge border border-orange-400/30 text-buildly-accent bg-orange-500/5 mb-5">Buildly Labs</div>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">AI-native product operations.</h2>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">Not a project tracker. Not a vibe coding tool. Buildly Labs is an operating system for how your software business thinks, plans, and ships.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 fade-in-up">
+            <div class="glass-card rounded-2xl p-7">
+                <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-400/20 flex items-center justify-center text-2xl mb-5">📊</div>
+                <h3 class="text-lg font-bold text-white mb-3">Intelligent Release Planning</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">AI-assisted backlog prioritization, timeline generation, and release packaging — with human oversight at every step. Not magic buttons. Transparent decisions.</p>
             </div>
-        </div>
-        
-        <!-- CSS for rocket animation -->
-        <style>
-            @keyframes hover {
-                0%, 100% { 
-                    transform: translateY(0px) translateX(0px) rotate(0deg); 
-                }
-                25% { 
-                    transform: translateY(-8px) translateX(2px) rotate(1deg); 
-                }
-                50% { 
-                    transform: translateY(-12px) translateX(0px) rotate(0deg); 
-                }
-                75% { 
-                    transform: translateY(-8px) translateX(-2px) rotate(-1deg); 
-                }
-            }
-
-            @keyframes hoverDelayed {
-                0%, 100% { 
-                    transform: translateX(-50%) translateY(-50%) scale(1); 
-                }
-                25% { 
-                    transform: translateX(-50%) translateY(-55%) scale(1.05); 
-                }
-                50% { 
-                    transform: translateX(-50%) translateY(-60%) scale(1); 
-                }
-                75% { 
-                    transform: translateX(-50%) translateY(-55%) scale(1.05); 
-                }
-            }
-
-            @keyframes rabbitBounce {
-                0%, 100% { 
-                    transform: translateX(-50%) translateY(-50%) scale(1) rotate(0deg); 
-                }
-                25% { 
-                    transform: translateX(-52%) translateY(-48%) scale(1.05) rotate(1deg); 
-                }
-                50% { 
-                    transform: translateX(-50%) translateY(-52%) scale(1) rotate(0deg); 
-                }
-                75% { 
-                    transform: translateX(-48%) translateY(-48%) scale(1.05) rotate(-1deg); 
-                }
-            }
-            
-            .animate-hover {
-                animation: hover 4s ease-in-out infinite;
-            }
-
-            .animate-hover-delayed {
-                animation: rabbitBounce 4s ease-in-out infinite 0.2s;
-            }
-            
-            .rocket-container {
-                filter: drop-shadow(0 15px 35px rgba(249, 148, 59, 0.3));
-                position: relative;
-            }
-
-            /* Rabbit positioning - positioned in rocket window */
-            .rabbit-in-window {
-                top: calc(38% - 25px); /* Moved up 140px */
-                left: calc(48% + 25px); /* Moved right 100px */
-                transform: translateX(-50%) translateY(-50%);
-                z-index: 10;
-            }
-
-            /* Subtle effects for the rabbit */
-            .rabbit-in-window img {
-                filter: drop-shadow(0 2px 4px rgba(27, 95, 163, 0.3));
-            }
-        </style>
-    </section>
-
-    <!-- Find Your Technical Co-Founder / Team Section -->
-    <section class="py-16 bg-gradient-to-br from-buildly-secondary to-buildly-primary text-white relative overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Content -->
+            <div class="glass-card rounded-2xl p-7">
+                <div class="w-12 h-12 rounded-xl bg-buildly-primary/15 border border-buildly-primary/30 flex items-center justify-center text-2xl mb-5">🔁</div>
+                <h3 class="text-lg font-bold text-white mb-3">Radical Agile Operations</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">A non-opinionated agile methodology that works for any team size — from solo founders to multi-team orgs. Ceremonies, sprints, and retrospectives, simplified.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-7">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/15 border border-blue-400/20 flex items-center justify-center text-2xl mb-5">🤖</div>
+                <h3 class="text-lg font-bold text-white mb-3">AI Product Insights</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Automatically generated technical documentation, architecture suggestions, and budget estimates from your product requirements. Business language to engineering specs.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-7">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-400/20 flex items-center justify-center text-2xl mb-5">📋</div>
+                <h3 class="text-lg font-bold text-white mb-3">Team Alignment Tools</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Keep product managers, engineers, and stakeholders on the same page with AI-translated requirements and async-first communication workflows.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-7">
+                <div class="w-12 h-12 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center text-2xl mb-5">🛡️</div>
+                <h3 class="text-lg font-bold text-white mb-3">AI Guardrails &amp; Governance</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Delivery guardrails that enforce quality gates, audit trails, and review checkpoints — so AI accelerates your team without removing human oversight.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-7 flex flex-col justify-between">
                 <div>
-                    <div class="inline-block bg-buildly-accent text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                        🚀 Startup? Need Technical Help?
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                        Find Your Technical Co-Founder or Team
-                    </h2>
-                    <p class="text-xl text-blue-100 mb-6">
-                        Connect with verified developers, CTO-in-training mentorship, and elastic engineering pods through the Buildly community. Start building with proven talent and AI-powered delivery guardrails.
-                    </p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-buildly-accent mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                            <span class="text-lg"><strong>Verified Developers</strong> with certifications, reviews, and live project history</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-buildly-accent mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                            <span class="text-lg"><strong>CTO-in-Training</strong> programs with senior mentorship and guidance contracts</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-buildly-accent mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                            <span class="text-lg"><strong>Elastic Team Pods</strong> that scale with your needs—product, design, and engineering</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-buildly-accent mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                            <span class="text-lg"><strong>RAD Process</strong> with AI delivery guardrails, governance, and checkpoints</span>
-                        </li>
-                    </ul>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://collab.buildly.io/work-with-buildly/" class="bg-buildly-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors text-center text-lg shadow-lg">
-                            Find Your Team →
-                        </a>
-                        <a href="https://labs.buildly.io" class="bg-white text-buildly-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center text-lg">
-                            Explore Buildly Labs
-                        </a>
-                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-400/20 flex items-center justify-center text-2xl mb-5">✨</div>
+                    <h3 class="text-lg font-bold text-white mb-3">Start for Free</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Buildly Labs is free to start. No credit card. No lock-in. Bring your team or fly solo.</p>
                 </div>
-
-                <!-- Visual Element -->
-                <div class="hidden lg:block">
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                        <div class="space-y-6">
-                            <div class="flex items-center space-x-4 p-4 bg-white/10 rounded-lg">
-                                <div class="w-12 h-12 bg-buildly-accent rounded-full flex items-center justify-center flex-shrink-0">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="font-semibold text-white">Verified Developers</div>
-                                    <div class="text-sm text-blue-100">Certified, reviewed, proven</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-4 p-4 bg-white/10 rounded-lg">
-                                <div class="w-12 h-12 bg-buildly-accent rounded-full flex items-center justify-center flex-shrink-0">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="font-semibold text-white">Elastic Pods</div>
-                                    <div class="text-sm text-blue-100">Scale teams up or down</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-4 p-4 bg-white/10 rounded-lg">
-                                <div class="w-12 h-12 bg-buildly-accent rounded-full flex items-center justify-center flex-shrink-0">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="font-semibold text-white">AI Guardrails</div>
-                                    <div class="text-sm text-blue-100">Safe, reviewable delivery</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-4 p-4 bg-white/10 rounded-lg">
-                                <div class="w-12 h-12 bg-buildly-accent rounded-full flex items-center justify-center flex-shrink-0">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="font-semibold text-white">CTO Mentorship</div>
-                                    <div class="text-sm text-blue-100">Rising leads + guidance</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-6 p-4 bg-buildly-accent/20 rounded-lg text-center">
-                            <p class="text-sm text-white font-medium">Fast intake • Reply within 1 business day</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-6 rounded-xl shadow-sm">
-                    <div class="text-5xl font-bold text-buildly-primary mb-2">50%</div>
-                    <p class="text-gray-600 font-medium">Reduction in software development budget</p>
-                    <p class="text-sm text-gray-500 mt-2">AI reviewed planning component based custom software</p>
-                </div>
-                <div class="text-center p-6 rounded-xl shadow-sm">
-                    <div class="text-5xl font-bold text-buildly-primary mb-2">40%</div>
-                    <p class="text-gray-600 font-medium">Time saved by reduced meeting times</p>
-                    <p class="text-sm text-gray-500 mt-2">Fewer meetings with better communication and faster planning</p>
-                </div>
-                <div class="text-center p-6 rounded-xl shadow-sm">
-                    <div class="text-5xl font-bold text-buildly-primary mb-2">75%</div>
-                    <p class="text-gray-600 font-medium">Time and money savings with AI release management</p>
-                    <p class="text-sm text-gray-500 mt-2">Automated planning and tracking processes</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Three Core Differentiators Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">AI + Product Management + Open Source Developer Tools</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive platform integrating AI automation, radical agile product management, and sustainable open source tools. Build scalable teams and maintainable software that competes with magic button chaos.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
-                <!-- Manage at AI Speed -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-buildly-primary">
-                    <div class="w-16 h-16 bg-buildly-primary rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <span class="text-2xl">📊</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-center mb-4 text-buildly-primary">AI-Powered Product Management</h3>
-                    <p class="text-gray-600 text-center mb-6 text-lg">"Intelligent automation meets radical agile methodology - AI assists product decisions while maintaining strategic control and team alignment"</p>
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <p class="text-sm text-gray-700 text-center">
-                            <strong>vs magic buttons:</strong> Chaotic AI generation with no product strategy, priority management, or team processes
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Prioritize Intelligently -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-buildly-accent">
-                    <div class="w-16 h-16 bg-buildly-accent rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <span class="text-2xl">🎯</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-center mb-4 text-buildly-primary">Sustainable Developer Tools</h3>
-                    <p class="text-gray-600 text-center mb-6 text-lg">"Open source foundation with transparent AI assistance and component-driven architecture - build maintainable software that teams can understand and evolve"</p>
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <p class="text-sm text-gray-700 text-center">
-                            <strong>vs magic buttons:</strong> Black box AI with proprietary lock-in and unmaintainable generated code
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Scale with Control -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-green-500">
-                    <div class="w-16 h-16 bg-green-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <span class="text-2xl">�</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-center mb-4 text-buildly-primary">Scale Teams & Technology</h3>
-                    <p class="text-gray-600 text-center mb-6 text-lg">"Integrated platform that scales both your development team capabilities and software architecture - sustainable growth from startup to enterprise"</p>
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <p class="text-sm text-gray-700 text-center">
-                            <strong>vs magic buttons:</strong> Technical debt explosion, team burnout, and unmaintainable systems that collapse under growth
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Buildly App Platform Section -->
-    <section class="py-20 bg-gradient-to-br from-buildly-primary via-buildly-secondary to-buildly-primary relative overflow-hidden">
-        <!-- Background decorative elements -->
-        <div class="absolute top-0 left-0 w-full h-full opacity-10">
-            <div class="absolute top-10 left-10 w-20 h-20 border-2 border-white rounded-full"></div>
-            <div class="absolute top-32 right-20 w-16 h-16 border-2 border-white rounded-full"></div>
-            <div class="absolute bottom-20 left-1/4 w-12 h-12 border-2 border-white rounded-full"></div>
-            <div class="absolute bottom-10 right-10 w-24 h-24 border-2 border-white rounded-full"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">AI + Product Management + Open Source Tools</h2>
-                <div class="inline-block bg-buildly-accent px-6 py-3 rounded-full mb-6">
-                    <p class="text-xl font-bold text-white tracking-wide">SUSTAINABLE AI DEVELOPMENT • NOT MAGIC BUTTON CHAOS</p>
-                </div>
-                <p class="text-xl text-white opacity-90 max-w-4xl mx-auto">While magic button AI creates unsustainable chaos, Buildly integrates AI automation, radical agile product management, and transparent open source developer tools to build scalable teams and maintainable software that lasts.</p>
-            </div>
-            
-            <!-- Process Flow with Connecting Lines -->
-            <div class="relative">
-                <!-- Connecting Lines for Desktop -->
-                <div class="hidden lg:block absolute top-20 left-1/2 transform -translate-x-1/2 w-full">
-                    <svg class="w-full h-32" viewBox="0 0 800 120" fill="none">
-                        <!-- Curved connecting lines -->
-                        <path d="M150 60 Q400 20 650 60" stroke="rgba(255,255,255,0.3)" stroke-width="3" fill="none" stroke-dasharray="10,5"/>
-                        <path d="M150 60 Q400 100 650 60" stroke="rgba(255,255,255,0.3)" stroke-width="3" fill="none" stroke-dasharray="10,5"/>
-                        
-                        <!-- Flow arrows -->
-                        <polygon points="300,35 315,45 300,55" fill="rgba(255,255,255,0.6)"/>
-                        <polygon points="500,35 515,45 500,55" fill="rgba(255,255,255,0.6)"/>
-                        <polygon points="300,85 315,75 300,65" fill="rgba(255,255,255,0.6)"/>
-                        <polygon points="500,85 515,75 500,65" fill="rgba(255,255,255,0.6)"/>
-                    </svg>
-                </div>
-                
-                <div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
-                    <!-- Plan & Manage -->
-                    <div class="relative group">
-                        <!-- Glow effect -->
-                        <div class="absolute -inset-0.5 bg-gradient-to-r from-buildly-accent to-yellow-400 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
-                        <div class="relative bg-white rounded-2xl p-8 shadow-2xl transform group-hover:scale-105 transition duration-300">
-                            <div class="text-center mb-6">
-                                <div class="relative">
-                                    <div class="w-20 h-20 bg-gradient-to-br from-buildly-accent to-yellow-400 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
-                                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M12 2C7.03 2 3 6.03 3 11c0 2.43.97 4.63 2.55 6.24L12 21l6.45-3.76C20.03 15.63 21 13.43 21 11c0-4.97-4.03-9-9-9zm0 2c3.86 0 7 3.14 7 7 0 1.09-.26 2.12-.72 3.03L12 18.65l-6.28-4.62C5.26 13.12 5 12.09 5 11c0-3.86 3.14-7 7-7z"/>
-                                        </svg>
-                                    </div>
-                                    <!-- Number badge -->
-                                    <div class="absolute -top-2 -right-2 w-8 h-8 bg-buildly-primary text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
-                                </div>
-                                <h3 class="text-2xl font-bold text-buildly-primary mb-2">PLAN & MANAGE</h3>
-                                <div class="inline-block bg-buildly-accent px-3 py-1 rounded-full">
-                                    <p class="text-white font-semibold text-sm">AI Labs</p>
-                                </div>
-                            </div>
-                            <ul class="space-y-3 text-gray-700">
-                                <li class="flex items-center">
-                                    <div class="w-6 h-6 bg-buildly-primary rounded-full mr-3 flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </div>
-                                    Radical agile product management at AI speed
-                                </li>
-                                <li class="flex items-center">
-                                    <div class="w-6 h-6 bg-buildly-primary rounded-full mr-3 flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </div>
-                                    AI-assisted backlog prioritization & planning
-                                </li>
-                                <li class="flex items-center">
-                                    <div class="w-6 h-6 bg-buildly-primary rounded-full mr-3 flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </div>
-                                    Non-opinionated methodology for any team size
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Build & Integrate -->
-                    <div class="relative group">
-                        <!-- Glow effect -->
-                        <div class="absolute -inset-0.5 bg-gradient-to-r from-buildly-primary to-blue-400 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
-                        <div class="relative bg-white rounded-2xl p-8 shadow-2xl transform group-hover:scale-105 transition duration-300">
-                            <div class="text-center mb-6">
-                                <div class="relative">
-                                    <div class="w-20 h-20 bg-gradient-to-br from-buildly-primary to-blue-400 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
-                                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/>
-                                        </svg>
-                                    </div>
-                                    <!-- Number badge -->
-                                    <div class="absolute -top-2 -right-2 w-8 h-8 bg-buildly-primary text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
-                                </div>
-                                <h3 class="text-2xl font-bold text-buildly-primary mb-2">BUILD & INTEGRATE</h3>
-                                <div class="inline-block bg-buildly-primary px-3 py-1 rounded-full">
-                                    <p class="text-white font-semibold text-sm">Buildly Core</p>
-                                </div>
-                            </div>
-                            <ul class="space-y-3 text-gray-700">
-                                <li class="flex items-center">
-                                    <div class="w-6 h-6 bg-buildly-primary rounded-full mr-3 flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </div>
-                                    Maintainable component-driven architecture
-                                </li>
-                                <li class="flex items-center">
-                                    <div class="w-6 h-6 bg-buildly-primary rounded-full mr-3 flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </div>
-                                    Transparent open-source foundation
-                                </li>
-                                <li class="flex items-center">
-                                    <div class="w-6 h-6 bg-buildly-primary rounded-full mr-3 flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </div>
-                                    Transparent AI-assisted code generation
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Deliver & Evolve -->
-                    <div class="relative group">
-                        <!-- Glow effect -->
-                        <div class="absolute -inset-0.5 bg-gradient-to-r from-buildly-primary to-buildly-accent rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
-                        <div class="relative bg-white rounded-2xl p-8 shadow-2xl transform group-hover:scale-105 transition duration-300">
-                            <div class="text-center mb-6">
-                                <div class="relative">
-                                    <div class="w-20 h-20 bg-gradient-to-br from-buildly-primary to-buildly-accent rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
-                                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M2.81 14.12L5.64 11.29C8.34 10.79 10.34 8.79 10.84 6.09L13.67 3.26C13.85 3.07 14.19 3.07 14.37 3.26L20.74 9.63C20.93 9.81 20.93 10.15 20.74 10.33L17.91 13.16C15.21 13.66 13.21 15.66 12.71 18.36L9.88 21.19C9.7 21.37 9.36 21.37 9.18 21.19L2.81 14.82C2.62 14.63 2.62 14.3 2.81 14.12Z"/>
-                                        </svg>
-                                    </div>
-                                    <!-- Number badge -->
-                                    <div class="absolute -top-2 -right-2 w-8 h-8 bg-buildly-primary text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
-                                </div>
-                                <h3 class="text-2xl font-bold text-buildly-primary mb-2">DELIVER & EVOLVE</h3>
-                                <div class="inline-block bg-buildly-primary px-3 py-1 rounded-full">
-                                    <p class="text-white font-semibold text-sm">Scale With Buildly</p>
-                                </div>
-                            </div>
-                            <ul class="space-y-3 text-gray-700">
-                                <li class="flex items-center">
-                                    <div class="w-6 h-6 bg-buildly-primary rounded-full mr-3 flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </div>
-                                    Enterprise-ready release pipelines & audit trails
-                                </li>
-                                <li class="flex items-center">
-                                    <div class="w-6 h-6 bg-buildly-primary rounded-full mr-3 flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </div>
-                                    Team-driven QA & continuous oversight
-                                </li>
-                                <li class="flex items-center">
-                                    <div class="w-6 h-6 bg-buildly-primary rounded-full mr-3 flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </div>
-                                    Production-ready scaling from startup to enterprise
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Lifecycle Section -->
-    <section id="product" class="py-20 bg-buildly-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center p-8">
-                    <div class="w-16 h-16 bg-buildly-primary rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <img src="media/icons/product-management.svg" alt="Product Labs" class="w-8 h-8 filter invert" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <svg style="display:none;" class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-center">Product Labs</h3>
-                    <p class="text-gray-600 text-center">Get automated technical translations and boost team communication instantly. Along with auto-generated budgets, timelines, and software architecture.</p>
-                    <div class="text-center mt-4 space-x-4">
-                        <a href="labs.html" class="text-buildly-primary font-semibold hover:text-buildly-secondary">Learn More →</a>
-                        <a href="https://labs.buildly.io/" class="bg-buildly-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-buildly-secondary transition-colors">Try Now →</a>
-                    </div>
-                </div>
-                <div class="text-center p-8">
-                    <div class="w-16 h-16 bg-buildly-accent rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-center">Insights</h3>
-                    <p class="text-gray-600 text-center">Unlock a powerful release management tool with AI-driven suggestions for packaging, planning, and documenting future releases.</p>
-                    <div class="text-center mt-4 space-x-4">
-                        <a href="labs.html" class="text-buildly-primary font-semibold hover:text-buildly-secondary">Learn More →</a>
-                        <a href="https://labs.buildly.io/" class="bg-buildly-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-buildly-secondary transition-colors">Try Now →</a>
-                    </div>
-                </div>
-                <div class="text-center p-8">
-                    <div class="w-16 h-16 bg-buildly-secondary rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <img src="media/icons/collab.svg" alt="Collab Hub" class="w-8 h-8 filter invert" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <svg style="display:none;" class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-center">Collab Hub</h3>
-                    <p class="text-gray-600 text-center">Tap into our network of trusted technical co-founders and remote development agencies. Get the expertise and resources you need.</p>
-                    <div class="text-center mt-4">
-                        <a href="https://collab.buildly.io/" class="text-buildly-primary font-semibold hover:text-buildly-secondary">Learn More →</a>
-                    </div>
-                </div>
-                <div class="text-center p-8">
-                    <div class="w-16 h-16 bg-buildly-primary rounded-full mx-auto mb-6 flex items-center justify-center">
-                        <img src="media/icons/rad-core.svg" alt="RAD Core" class="w-8 h-8 filter invert" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <svg style="display:none;" class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-center">RAD Core</h3>
-                    <p class="text-gray-600 text-center">Take advantage of our open-source gateway and marketplace of microservice components. Effortlessly snap them together to build complex applications.</p>
-                    <div class="text-center mt-4">
-                        <a href="rad-core.html" class="text-buildly-primary font-semibold hover:text-buildly-secondary">Learn More →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section class="py-20 bg-buildly-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Text Content -->
-                <div class="lg:pr-8">
-                    <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-6">See Buildly in Action</h2>
-                    <p class="text-lg text-gray-600 mb-6">Watch how Buildly transforms your development process and accelerates your product delivery.</p>
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 bg-buildly-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                            <p class="text-gray-600">Transform business requirements into technical documentation</p>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 bg-buildly-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                            <p class="text-gray-600">Streamline collaboration with AI-powered insights</p>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 bg-buildly-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                            <p class="text-gray-600">Deploy faster with integrated development tools</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Video Content -->
-                <div class="lg:pl-8">
-                    <div style="position: relative; padding-top: 56.25%;">
-                        <iframe
-                            src="https://customer-oea4zxza4u5hx1zy.cloudflarestream.com/e3076cc2b0d02ffdc2d74d3166ca1e69/iframe?poster=https%3A%2F%2Fcustomer-oea4zxza4u5hx1zy.cloudflarestream.com%2Fe3076cc2b0d02ffdc2d74d3166ca1e69%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
-                            loading="lazy"
-                            style="border: none; position: absolute; top: 0; left: 0; height: 100%; width: 100%; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);"
-                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                            allowfullscreen="true"
-                        ></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Competitive Positioning Section -->
-    <section class="py-20 bg-gradient-to-r from-buildly-primary to-buildly-secondary">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Sustainable AI Development vs Magic Button Chaos</h2>
-                <p class="text-xl text-white opacity-90 max-w-4xl mx-auto">Magic button AI creates unsustainable development chaos. Buildly combines AI automation, product management, and open source tools to build scalable teams and maintainable software that competes with vibe coding while lasting long-term.</p>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Magic Button Chaos -->
-                <div class="bg-white rounded-2xl p-8 shadow-xl">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-red-600">Magic Button Vibe Coding Chaos</h3>
-                    </div>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="text-red-500 mr-3 mt-1">✗</span>
-                            <div>
-                                <strong class="text-gray-800">No Product Strategy:</strong>
-                                <p class="text-gray-600">Random AI generation without business logic, user research, or strategic planning</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-red-500 mr-3 mt-1">✗</span>
-                            <div>
-                                <strong class="text-gray-800">Black Box AI Tools:</strong>
-                                <p class="text-gray-600">Proprietary AI with no transparency, vendor lock-in, and unmaintainable generated code</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-red-500 mr-3 mt-1">✗</span>
-                            <div>
-                                <strong class="text-gray-800">Unsustainable Development:</strong>
-                                <p class="text-gray-600">Fast prototyping that creates technical debt explosions and team burnout at scale</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-red-500 mr-3 mt-1">✗</span>
-                            <div>
-                                <strong class="text-gray-800">Team & Technology Breakdown:</strong>
-                                <p class="text-gray-600">No developer tools, team processes, or architectural foundation for sustainable growth</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Buildly Radical Agile -->
-                <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-green-400">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-green-600">Buildly: AI + Product Management + Open Source</h3>
-                    </div>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-3 mt-1">✓</span>
-                            <div>
-                                <strong class="text-gray-800">Strategic AI Integration:</strong>
-                                <p class="text-gray-600">Transparent AI automation guided by radical agile product management and business strategy</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-3 mt-1">✓</span>
-                            <div>
-                                <strong class="text-gray-800">Open Source Foundation:</strong>
-                                <p class="text-gray-600">Maintainable developer tools, component architecture, and transparent processes teams can evolve</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-3 mt-1">✓</span>
-                            <div>
-                                <strong class="text-gray-800">Sustainable Team Growth:</strong>
-                                <p class="text-gray-600">Integrated platform that scales both technical capabilities and team processes from startup to enterprise</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-3 mt-1">✓</span>
-                            <div>
-                                <strong class="text-gray-800">Long-term Competitive Advantage:</strong>
-                                <p class="text-gray-600">Build maintainable software and scalable teams that compete with vibe coding while lasting years</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="text-center mt-12 space-x-4">
-                <a href="https://labs.buildly.io" class="bg-buildly-accent text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-600 transition-colors shadow-lg">
-                    Try Sustainable AI Development →
-                </a>
-                <a href="labs.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-buildly-primary transition-colors">
-                    Learn About Our Platform
+                <a href="https://labs.buildly.io" class="mt-6 block bg-buildly-accent text-white px-5 py-3 rounded-xl font-semibold text-sm text-center hover:bg-orange-500 transition-colors">
+                    Try Buildly Labs Free &rarr;
                 </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Our Customers Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">Foundry customers and partners</h2>
-                <p class="text-xl text-gray-600 mb-4">Our goal is to help every team and product that joins Buildly, both at the Foundry and Partner levels as well as the free open source and enterprise plans.</p>
-                <p class="text-lg text-gray-600">Here we list some of the early adopters who have helped us get started and we couldn't get on without.</p>
+<div class="divider max-w-7xl mx-auto"></div>
+
+
+<!-- FORGE MARKETPLACE -->
+<section id="forge" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <div class="fade-in-up order-2 lg:order-1">
+                <div class="glass-card rounded-2xl p-8 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent pointer-events-none rounded-2xl"></div>
+                    <h4 class="text-slate-400 text-xs font-semibold uppercase tracking-widest mb-6">Forge Marketplace — Featured</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-4 p-3 rounded-xl bg-white/5 hover:bg-white/8 transition-colors">
+                            <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-lg flex-shrink-0">🔐</div>
+                            <div class="flex-1 min-w-0"><div class="text-white text-sm font-semibold">Auth Microservice</div><div class="text-slate-500 text-xs">JWT + OAuth2 + RBAC — plug and play</div></div>
+                            <div class="text-buildly-accent text-xs font-bold">Free</div>
+                        </div>
+                        <div class="flex items-center gap-4 p-3 rounded-xl bg-white/5 hover:bg-white/8 transition-colors">
+                            <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center text-lg flex-shrink-0">📧</div>
+                            <div class="flex-1 min-w-0"><div class="text-white text-sm font-semibold">Notification Engine</div><div class="text-slate-500 text-xs">Email, SMS, push — multi-channel</div></div>
+                            <div class="text-buildly-accent text-xs font-bold">Free</div>
+                        </div>
+                        <div class="flex items-center gap-4 p-3 rounded-xl bg-white/5 hover:bg-white/8 transition-colors">
+                            <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center text-lg flex-shrink-0">🧾</div>
+                            <div class="flex-1 min-w-0"><div class="text-white text-sm font-semibold">Billing &amp; Subscriptions</div><div class="text-slate-500 text-xs">Stripe-integrated subscription management</div></div>
+                            <div class="text-slate-400 text-xs">Pro</div>
+                        </div>
+                        <div class="flex items-center gap-4 p-3 rounded-xl bg-white/5 hover:bg-white/8 transition-colors">
+                            <div class="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center text-lg flex-shrink-0">🗂️</div>
+                            <div class="flex-1 min-w-0"><div class="text-white text-sm font-semibold">SaaS Starter Template</div><div class="text-slate-500 text-xs">Full-stack app scaffold — ship faster</div></div>
+                            <div class="text-slate-400 text-xs">Community</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/5 text-center">
+                        <a href="https://market.buildly.io" class="text-orange-400 text-sm font-semibold hover:text-orange-300 transition-colors">Browse all components &rarr;</a>
+                    </div>
+                </div>
             </div>
-            <div class="overflow-hidden">
-                <div class="flex animate-scroll gap-3 lg:gap-4">
-                    <!-- First set of logos -->
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <img src="media/customers/ajackus.jpg" alt="Ajackus" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+
+            <div class="fade-in-up order-1 lg:order-2">
+                <div class="badge border border-orange-400/30 text-orange-300 bg-orange-500/5 mb-5">Forge Marketplace</div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    Stop rebuilding<br>what already <span class="gradient-text">exists.</span>
+                </h2>
+                <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                    The Forge Marketplace is a community-driven library of reusable microservices, templates, and production-ready app starters. Snap components together. Ship faster. Contribute back.
+                </p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-orange-400 font-bold">&rarr;</span> Open-source microservice components</li>
+                    <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-orange-400 font-bold">&rarr;</span> Full-stack SaaS and startup templates</li>
+                    <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-orange-400 font-bold">&rarr;</span> AI-ready integrations and scaffolds</li>
+                    <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-orange-400 font-bold">&rarr;</span> Community-published by real builders</li>
+                    <li class="flex items-center gap-3 text-sm text-slate-300"><span class="text-orange-400 font-bold">&rarr;</span> Revenue sharing for contributors</li>
+                </ul>
+                <a href="https://market.buildly.io" class="inline-flex items-center gap-2 bg-orange-500/15 border border-orange-400/30 text-orange-300 px-6 py-3 rounded-xl font-semibold text-sm hover:bg-orange-500/25 transition-colors">
+                    Browse Forge Marketplace &rarr;
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider max-w-7xl mx-auto"></div>
+
+
+<!-- FIRSTCITYFOUNDRY + STARTUPGRIND -->
+<section id="founder-ecosystem" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-in-up">
+            <div class="badge border border-white/10 text-slate-400 mb-5">Founder Ecosystem</div>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Real founders. Real conversations.</h2>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">Buildly connects the software ecosystem to the founder community — through stories, events, and shared experience.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 fade-in-up">
+            <div class="glass-card rounded-2xl p-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-orange-500/5 to-transparent rounded-bl-full pointer-events-none"></div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/15 border border-orange-400/20 flex items-center justify-center text-3xl">🎙️</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">FirstCityFoundry</h3>
+                        <div class="badge bg-orange-500/10 border border-orange-400/20 text-orange-300 mt-1 text-xs">Content &amp; Media</div>
                     </div>
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <img src="media/customers/american family life insurance.png" alt="American Family Life Insurance" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+                <p class="text-slate-400 leading-relaxed mb-6">Founder conversations, podcasts, and AI-native startup education. FirstCityFoundry tells the stories of builders who are making something real — including the messy parts.</p>
+                <ul class="space-y-2 text-sm text-slate-300 mb-6">
+                    <li class="flex items-center gap-2"><span class="text-orange-400">&#x2736;</span> Long-form founder interviews &amp; podcasts</li>
+                    <li class="flex items-center gap-2"><span class="text-orange-400">&#x2736;</span> AI-native startup operations education</li>
+                    <li class="flex items-center gap-2"><span class="text-orange-400">&#x2736;</span> Ecosystem storytelling &amp; product narratives</li>
+                    <li class="flex items-center gap-2"><span class="text-orange-400">&#x2736;</span> Content for early-stage and indie founders</li>
+                </ul>
+                <a href="firstcityfoundry.html" class="inline-flex items-center gap-2 border border-orange-400/30 text-orange-300 px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-orange-500/10 transition-colors">Visit FirstCityFoundry &rarr;</a>
+            </div>
+
+            <div class="glass-card rounded-2xl p-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-red-500/5 to-transparent rounded-bl-full pointer-events-none"></div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 rounded-2xl bg-red-500/15 border border-red-400/20 flex items-center justify-center text-3xl">🔥</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">StartupGrind PDX</h3>
+                        <div class="badge bg-red-500/10 border border-red-400/20 text-red-300 mt-1 text-xs">Local Community</div>
                     </div>
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <img src="media/customers/age_of_peers.png" alt="Age of Peers" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+                <p class="text-slate-400 leading-relaxed mb-6">Portland's startup community, part of the global StartupGrind network. Real-world events, founder introductions, and collaborative startup support for the Pacific Northwest ecosystem.</p>
+                <ul class="space-y-2 text-sm text-slate-300 mb-6">
+                    <li class="flex items-center gap-2"><span class="text-red-400">&#x2736;</span> Monthly founder meetups &amp; fireside chats</li>
+                    <li class="flex items-center gap-2"><span class="text-red-400">&#x2736;</span> Real-world networking in Portland, OR</li>
+                    <li class="flex items-center gap-2"><span class="text-red-400">&#x2736;</span> Global StartupGrind network access</li>
+                    <li class="flex items-center gap-2"><span class="text-red-400">&#x2736;</span> Collaborative startup support &amp; mentorship</li>
+                </ul>
+                <a href="startupgrind.html" class="inline-flex items-center gap-2 border border-red-400/30 text-red-300 px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-red-500/10 transition-colors">Join StartupGrind PDX &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider max-w-7xl mx-auto"></div>
+
+
+<!-- OPEN SOURCE + SUSTAINABILITY -->
+<section id="open-source" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="fade-in-up">
+                <div class="badge border border-green-400/30 text-green-300 bg-green-500/5 mb-5">Open Source &amp; Sustainability</div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    Software that lasts.<br>Communities that <span class="gradient-text">endure.</span>
+                </h2>
+                <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                    We believe in transparent software, shared infrastructure, and sustainable development practices. No black boxes. No lock-in. Open foundations that communities can maintain and evolve.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass-card rounded-xl p-4"><div class="text-green-400 font-bold text-sm mb-1">Open Core</div><div class="text-slate-400 text-xs">Core infrastructure is open source and community-maintained</div></div>
+                    <div class="glass-card rounded-xl p-4"><div class="text-blue-400 font-bold text-sm mb-1">No Lock-In</div><div class="text-slate-400 text-xs">Bring your own infrastructure. Export your data anytime.</div></div>
+                    <div class="glass-card rounded-xl p-4"><div class="text-orange-400 font-bold text-sm mb-1">Transparent AI</div><div class="text-slate-400 text-xs">AI assists — it doesn't decide. Human oversight at every step.</div></div>
+                    <div class="glass-card rounded-xl p-4"><div class="text-purple-400 font-bold text-sm mb-1">Community Governance</div><div class="text-slate-400 text-xs">Contributors shape the ecosystem roadmap and direction</div></div>
+                </div>
+            </div>
+
+            <div class="fade-in-up space-y-5">
+                <div class="flex items-start gap-5">
+                    <div class="w-10 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center text-lg flex-shrink-0">🌍</div>
+                    <div>
+                        <div class="text-white font-semibold mb-1">Sustainable Development Practices</div>
+                        <div class="text-slate-400 text-sm">We build for the long term. Not the next funding round. Maintainable software, healthy teams, responsible AI use.</div>
                     </div>
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <img src="media/customers/drunr.jpg" alt="Drunr" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+                <div class="flex items-start gap-5">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-400/20 flex items-center justify-center text-lg flex-shrink-0">🔗</div>
+                    <div>
+                        <div class="text-white font-semibold mb-1">Shared Infrastructure</div>
+                        <div class="text-slate-400 text-sm">Teams and founders share deployment infrastructure, reducing costs and enabling independent builders to operate at scale.</div>
                     </div>
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <img src="media/customers/Kurent.webp" alt="Kurent" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+                <div class="flex items-start gap-5">
+                    <div class="w-10 h-10 rounded-xl bg-orange-500/15 border border-orange-400/20 flex items-center justify-center text-lg flex-shrink-0">💡</div>
+                    <div>
+                        <div class="text-white font-semibold mb-1">Accessible for Independent Builders</div>
+                        <div class="text-slate-400 text-sm">Enterprise-grade tooling shouldn't require enterprise budgets. Buildly makes serious software infrastructure accessible to solo founders and small teams.</div>
                     </div>
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <a href="https://www.designrush.com/agency/hr-outsourcing/trends/ai-productivity-tools" target="_blank" rel="noopener noreferrer">
-                            <img src="media/customers/TOP ai productivity tools.png" alt="Buildly as AI Productivity Tool on DesignRush" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                        </a>
-                    </div>
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <img src="media/customers/transparent_path.jpg" alt="Transparent Path" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    </div>
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <img src="media/customers/uprising_global_logo.jpeg" alt="Uprising Global" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    </div>
-                    <!-- Duplicate set for seamless loop -->
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <img src="media/customers/ajackus.jpg" alt="Ajackus" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    </div>
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <img src="media/customers/american family life insurance.png" alt="American Family Life Insurance" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    </div>
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <img src="media/customers/age_of_peers.png" alt="Age of Peers" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    </div>
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <img src="media/customers/drunr.jpg" alt="Drunr" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    </div>
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <img src="media/customers/Kurent.webp" alt="Kurent" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    </div>
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <a href="https://www.designrush.com/agency/hr-outsourcing/trends/ai-productivity-tools" target="_blank" rel="noopener noreferrer">
-                            <img src="media/customers/TOP ai productivity tools.png" alt="Buildly as AI Productivity Tool on DesignRush" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                        </a>
-                    </div>
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <img src="media/customers/transparent_path.jpg" alt="Transparent Path" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                    </div>
-                    <div class="flex justify-center items-center h-24 w-44 flex-shrink-0">
-                        <img src="media/customers/uprising_global_logo.jpeg" alt="Uprising Global" class="h-24 w-44 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+                <div class="flex items-start gap-5">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-400/20 flex items-center justify-center text-lg flex-shrink-0">🤲</div>
+                    <div>
+                        <div class="text-white font-semibold mb-1">Give Back by Default</div>
+                        <div class="text-slate-400 text-sm">Every component published to Forge, every session shared on CollabHub, every story told on FirstCityFoundry — feeds the ecosystem back.</div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Team Section -->
-    <section id="team" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">Team</h2>
-                <p class="text-xl text-gray-600">Meet the innovators behind Buildly</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="text-center p-8 rounded-xl">
-                    <img src="media/team/greg-lind.jpg" alt="Gregory Lind" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display:none;" class="w-24 h-24 rounded-full mx-auto mb-4 bg-buildly-primary flex items-center justify-center text-white font-bold text-xl">GL</div>
-                    <h3 class="text-xl font-semibold mb-2">Gregory Lind</h3>
-                    <p class="text-buildly-primary font-medium mb-2">CEO</p>
-                    <p class="text-gray-600 text-sm">20+ year career in software development for Enterprise and Startups</p>
-                </div>
-                <div class="text-center p-8 rounded-xl">
-                    <img src="media/team/radhika-patel.jpg" alt="Radhika Patel" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display:none;" class="w-24 h-24 rounded-full mx-auto mb-4 bg-buildly-accent flex items-center justify-center text-white font-bold text-xl">RP</div>
-                    <h3 class="text-xl font-semibold mb-2">Radhika Patel</h3>
-                    <p class="text-buildly-primary font-medium mb-2">VP of Engineering AI/ML</p>
-                    <p class="text-gray-600 text-sm">MA sc. AI/ML Experienced Full stack and Ops</p>
-                </div>
-                <div class="text-center p-8 rounded-xl">
-                    <img src="media/team/maryna-mishchenko.jpg" alt="Maryna Mishchenko" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display:none;" class="w-24 h-24 rounded-full mx-auto mb-4 bg-buildly-secondary flex items-center justify-center text-white font-bold text-xl">MM</div>
-                    <h3 class="text-xl font-semibold mb-2">Maryna Mishchenko</h3>
-                    <p class="text-buildly-primary font-medium mb-2">VP of Product and Marketing</p>
-                    <p class="text-gray-600 text-sm">International Multiple Founder</p>
-                </div>
+<div class="divider max-w-7xl mx-auto"></div>
+
+
+<!-- CUSTOMER LOGOS -->
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-slate-600 text-sm uppercase tracking-widest mb-10">Teams &amp; founders who've built with Buildly</p>
+        <div class="overflow-hidden">
+            <div class="flex scroll-strip gap-8 w-max">
+                <div class="flex justify-center items-center h-16 w-36 flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity"><img src="media/customers/ajackus.jpg" alt="Ajackus" class="h-12 w-auto object-contain grayscale"></div>
+                <div class="flex justify-center items-center h-16 w-36 flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity"><img src="media/customers/american family life insurance.png" alt="American Family Life Insurance" class="h-12 w-auto object-contain grayscale"></div>
+                <div class="flex justify-center items-center h-16 w-36 flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity"><img src="media/customers/age_of_peers.png" alt="Age of Peers" class="h-12 w-auto object-contain grayscale"></div>
+                <div class="flex justify-center items-center h-16 w-36 flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity"><img src="media/customers/drunr.jpg" alt="Drunr" class="h-12 w-auto object-contain grayscale"></div>
+                <div class="flex justify-center items-center h-16 w-36 flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity"><img src="media/customers/Kurent.webp" alt="Kurent" class="h-12 w-auto object-contain grayscale"></div>
+                <div class="flex justify-center items-center h-16 w-36 flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity"><img src="media/customers/transparent_path.jpg" alt="Transparent Path" class="h-12 w-auto object-contain grayscale"></div>
+                <div class="flex justify-center items-center h-16 w-36 flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity"><img src="media/customers/uprising_global_logo.jpeg" alt="Uprising Global" class="h-12 w-auto object-contain grayscale"></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="flex justify-center items-center h-16 w-36 flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity"><img src="media/customers/ajackus.jpg" alt="Ajackus" class="h-12 w-auto object-contain grayscale"></div>
+                <div class="flex justify-center items-center h-16 w-36 flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity"><img src="media/customers/american family life insurance.png" alt="American Family Life Insurance" class="h-12 w-auto object-contain grayscale"></div>
+                <div class="flex justify-center items-center h-16 w-36 flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity"><img src="media/customers/age_of_peers.png" alt="Age of Peers" class="h-12 w-auto object-contain grayscale"></div>
+                <div class="flex justify-center items-center h-16 w-36 flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity"><img src="media/customers/drunr.jpg" alt="Drunr" class="h-12 w-auto object-contain grayscale"></div>
+                <div class="flex justify-center items-center h-16 w-36 flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity"><img src="media/customers/Kurent.webp" alt="Kurent" class="h-12 w-auto object-contain grayscale"></div>
+                <div class="flex justify-center items-center h-16 w-36 flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity"><img src="media/customers/transparent_path.jpg" alt="Transparent Path" class="h-12 w-auto object-contain grayscale"></div>
+                <div class="flex justify-center items-center h-16 w-36 flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity"><img src="media/customers/uprising_global_logo.jpeg" alt="Uprising Global" class="h-12 w-auto object-contain grayscale"></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-buildly-dark text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">THE BUILDLY LIFECYCLE</h4>
-                    <p class="text-gray-300 text-sm">The Buildly Lifecycle process helps startups and SMBs document their ideas, translating business concepts into detailed technical documentation.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="https://labs.buildly.io" class="text-gray-300 hover:text-white transition-colors">Labs</a></li>
-                        <li><a href="use-cases.html" class="text-gray-300 hover:text-white transition-colors">Use Cases</a></li>
-                        <li><a href="platform" class="text-gray-300 hover:text-white transition-colors">Platform</a></li>
-                        <li><a href="pricing.html" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
-                    <ul class="space-y-2">
-                        <li><a href="articles.html" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="/contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="rad-core.html" class="text-gray-300 hover:text-white transition-colors">RAD Core</a></li>
-                        <li><a href="https://market.buildly.io/" class="text-gray-300 hover:text-white transition-colors">Collab Hub</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">OUR NEWSLETTER</h4>
-                    <p class="text-gray-300 text-sm mb-4">Sign up for the Buildly Lifecycle Newsletter to get the latest info on release and open source projects</p>
-                    <form class="space-y-4">
-                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-gray-700 text-white placeholder-gray-400 rounded focus:outline-none focus:ring-2 focus:ring-buildly-primary">
-                        <button type="submit" class="w-full bg-buildly-primary text-white py-2 rounded hover:bg-buildly-secondary transition-colors">Submit</button>
-                    </form>
-                </div>
+<div class="divider max-w-7xl mx-auto"></div>
+
+
+<!-- TEAM -->
+<section id="team" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14 fade-in-up">
+            <div class="badge border border-white/10 text-slate-400 mb-5">The Team</div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Built by builders, for builders.</h2>
+            <p class="text-slate-400 text-lg max-w-xl mx-auto">The people behind the Buildly ecosystem — and the community of contributors who make it grow.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 fade-in-up">
+            <div class="glass-card rounded-2xl p-8 text-center">
+                <img src="media/team/greg-lind.jpg" alt="Gregory Lind" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover ring-2 ring-white/10" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display:none;" class="w-20 h-20 rounded-full mx-auto mb-4 bg-buildly-primary flex items-center justify-center text-white font-bold text-xl">GL</div>
+                <h3 class="text-lg font-bold text-white mb-1">Gregory Lind</h3>
+                <p class="text-buildly-accent text-sm font-medium mb-3">CEO &amp; Founder</p>
+                <p class="text-slate-400 text-sm">20+ years building software for enterprises and startups. Ecosystem architect and community builder.</p>
             </div>
-            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
-                <p class="text-gray-300">&copy; Copyright Buildly, Inc. 2025 All Rights Reserved</p>
+            <div class="glass-card rounded-2xl p-8 text-center">
+                <img src="media/team/radhika-patel.jpg" alt="Radhika Patel" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover ring-2 ring-white/10" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display:none;" class="w-20 h-20 rounded-full mx-auto mb-4 bg-buildly-accent flex items-center justify-center text-white font-bold text-xl">RP</div>
+                <h3 class="text-lg font-bold text-white mb-1">Radhika Patel</h3>
+                <p class="text-buildly-accent text-sm font-medium mb-3">VP Engineering AI/ML</p>
+                <p class="text-slate-400 text-sm">MA SC in AI/ML. Full-stack and ops experience. Driving the AI-native product operations platform.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-8 text-center">
+                <img src="media/team/maryna-mishchenko.jpg" alt="Maryna Mishchenko" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover ring-2 ring-white/10" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display:none;" class="w-20 h-20 rounded-full mx-auto mb-4 bg-buildly-secondary flex items-center justify-center text-white font-bold text-xl">MM</div>
+                <h3 class="text-lg font-bold text-white mb-1">Maryna Mishchenko</h3>
+                <p class="text-buildly-accent text-sm font-medium mb-3">VP Product &amp; Marketing</p>
+                <p class="text-slate-400 text-sm">International multi-time founder. Shapes the Buildly ecosystem narrative and product strategy.</p>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="js/main.js"></script>
+<div class="divider max-w-7xl mx-auto"></div>
+
+
+<!-- JOIN THE ECOSYSTEM -->
+<section id="join" class="py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
+        <div class="badge border border-orange-400/30 text-buildly-accent bg-orange-500/5 mb-6">Join the Ecosystem</div>
+        <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Ready to build<br>something real?
+        </h2>
+        <p class="text-slate-400 text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+            Whether you're a solo builder, a startup founder, or a product team — there's a place for you in the Buildly ecosystem. Start free. Stay independent. Build together.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <a href="https://labs.buildly.io" class="bg-buildly-accent text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-orange-500 transition-colors shadow-xl">
+                Start with Buildly Labs &rarr;
+            </a>
+            <a href="https://collab.buildly.io" class="border border-white/20 text-slate-300 px-10 py-4 rounded-xl font-semibold text-lg hover:bg-white/5 hover:text-white transition-colors">
+                Join CollabHub
+            </a>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
+            <span>&#10003; Free to start</span>
+            <span>&#10003; No credit card required</span>
+            <span>&#10003; Open source aligned</span>
+            <span>&#10003; No vendor lock-in</span>
+        </div>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-5 gap-10 mb-14">
+            <div class="md:col-span-2">
+                <a href="/" class="flex items-center space-x-2 mb-4">
+                    <img src="media/buildly-logo.svg" alt="Buildly" class="h-8 w-auto" style="filter: brightness(0) invert(1);">
+                </a>
+                <p class="text-slate-500 text-sm leading-relaxed mb-5 max-w-xs">A collaborative AI-native software ecosystem for independent builders, startups, and product teams.</p>
+                <div class="badge border border-white/10 text-slate-500 text-xs">Open Source Aligned</div>
+            </div>
+
+            <div>
+                <h4 class="text-xs font-semibold text-white uppercase tracking-widest mb-4">Ecosystem</h4>
+                <ul class="space-y-3">
+                    <li><a href="https://collab.buildly.io" class="text-slate-500 hover:text-white text-sm transition-colors">CollabHub</a></li>
+                    <li><a href="https://market.buildly.io" class="text-slate-500 hover:text-white text-sm transition-colors">Forge Marketplace</a></li>
+                    <li><a href="https://labs.buildly.io" class="text-slate-500 hover:text-white text-sm transition-colors">Buildly Labs</a></li>
+                    <li><a href="rad-core.html" class="text-slate-500 hover:text-white text-sm transition-colors">Buildly Deploy</a></li>
+                    <li><a href="ecosystem.html" class="text-slate-500 hover:text-white text-sm transition-colors">Ecosystem Map</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-xs font-semibold text-white uppercase tracking-widest mb-4">Community</h4>
+                <ul class="space-y-3">
+                    <li><a href="firstcityfoundry.html" class="text-slate-500 hover:text-white text-sm transition-colors">FirstCityFoundry</a></li>
+                    <li><a href="startupgrind.html" class="text-slate-500 hover:text-white text-sm transition-colors">StartupGrind PDX</a></li>
+                    <li><a href="articles.html" class="text-slate-500 hover:text-white text-sm transition-colors">Articles &amp; Blog</a></li>
+                    <li><a href="training.html" class="text-slate-500 hover:text-white text-sm transition-colors">Training</a></li>
+                    <li><a href="team.html" class="text-slate-500 hover:text-white text-sm transition-colors">Team</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-xs font-semibold text-white uppercase tracking-widest mb-4">Stay Connected</h4>
+                <p class="text-slate-500 text-sm mb-4">Ecosystem news, open source releases, and founder stories — delivered to your inbox.</p>
+                <form class="space-y-3">
+                    <input type="email" placeholder="your@email.com" class="w-full px-4 py-2.5 bg-white/5 border border-white/10 text-white placeholder-slate-600 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-buildly-primary focus:border-transparent">
+                    <button type="submit" class="w-full bg-buildly-primary text-white py-2.5 rounded-xl text-sm font-semibold hover:bg-buildly-secondary transition-colors">Subscribe</button>
+                </form>
+                <ul class="space-y-2 mt-5">
+                    <li><a href="pricing.html" class="text-slate-500 hover:text-white text-sm transition-colors">Pricing</a></li>
+                    <li><a href="https://docs.buildly.io" class="text-slate-500 hover:text-white text-sm transition-colors">Documentation</a></li>
+                    <li><a href="privacy.html" class="text-slate-500 hover:text-white text-sm transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="text-slate-500 hover:text-white text-sm transition-colors">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-600 text-sm">&copy; 2025 Buildly, Inc. All Rights Reserved.</p>
+            <p class="text-slate-700 text-xs">A collaborative AI-native software ecosystem — built by independent builders, for independent builders.</p>
+        </div>
+    </div>
+</footer>
+
+
+<script src="js/main.js"></script>
+<script>
+(function() {
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in-up').forEach(function(el) {
+        observer.observe(el);
+    });
+})();
+</script>
+
 </body>
 </html>

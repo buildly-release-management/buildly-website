@@ -54,8 +54,11 @@
         // Full CSS loads after critical styles
         { tag: 'link', attrs: { rel: 'stylesheet', href: '/css/style.css' } },
         
-        // Universal Navigation Loader (loads before Tailwind for better performance)
-        { tag: 'script', attrs: { src: '/js/nav-loader.js' } },
+        // Universal Navigation Loader - skipped if <html> has data-no-nav-loader attribute
+        // (for pages with their own custom navigation, e.g. dark-mode ecosystem pages)
+        ...(document.documentElement.hasAttribute('data-no-nav-loader') ? [] : [
+            { tag: 'script', attrs: { src: '/js/nav-loader.js' } }
+        ]),
         
         // Tailwind CSS as enhancement (loads after critical CSS)
         { tag: 'script', attrs: { src: 'https://cdn.tailwindcss.com' } },

@@ -77,6 +77,12 @@
     
     // Main function to load navigation
     function loadNavigation() {
+        // Skip injection if this page has its own custom navigation (.nav-dark)
+        // This allows new ecosystem pages to manage their own nav without conflict
+        if (document.querySelector('.nav-dark') || document.querySelector('[data-skip-nav-loader]')) {
+            return;
+        }
+
         const basePath = getBasePath();
         const navPath = basePath + 'includes/nav.html';
         
@@ -88,6 +94,11 @@
                 return response.text();
             })
             .then(html => {
+                // Don't inject if the page already has its own nav (checked again after async fetch)
+                if (document.querySelector('.nav-dark') || document.querySelector('[data-skip-nav-loader]')) {
+                    return;
+                }
+
                 // Adjust paths and set active states
                 const adjustedHTML = adjustPaths(html, basePath);
                 const finalHTML = setActiveNavigation(adjustedHTML);

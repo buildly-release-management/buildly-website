@@ -2,9 +2,28 @@
     "site": {
         "name": "Buildly",
         "url": "https://www.buildly.io",
-        "description": "AI-powered product development platform",
+        "description": "A collaborative AI-native software ecosystem for independent builders, startups, and product teams.",
         "logo": "/media/buildly-logo.svg",
         "favicon": "/favicon.ico"
+    },
+    "pages": {
+        "core": [
+            {"file": "index.html", "title": "Homepage", "description": "Main ecosystem landing page"},
+            {"file": "ecosystem.html", "title": "Ecosystem Map", "description": "Visual map of all four ecosystem layers"},
+            {"file": "firstcityfoundry.html", "title": "FirstCityFoundry", "description": "Media, podcasts, and founder storytelling layer"},
+            {"file": "startupgrind.html", "title": "StartupGrind PDX", "description": "Portland local founder community layer"},
+            {"file": "labs.html", "title": "Buildly Labs", "description": "AI product management platform"},
+            {"file": "pricing.html", "title": "Pricing", "description": "Pricing plans"},
+            {"file": "use-cases.html", "title": "Use Cases", "description": "Customer use cases"},
+            {"file": "team.html", "title": "Team", "description": "Team page"},
+            {"file": "articles.html", "title": "Articles", "description": "Blog article listing"},
+            {"file": "developer.html", "title": "Developer", "description": "Developer-focused page"},
+            {"file": "product-manager.html", "title": "Product Manager", "description": "PM-focused page"},
+            {"file": "rad-core.html", "title": "RAD Core", "description": "RAD Core open-source page"},
+            {"file": "training.html", "title": "Training", "description": "Training page"},
+            {"file": "privacy.html", "title": "Privacy Policy", "description": "Privacy policy"},
+            {"file": "terms.html", "title": "Terms of Service", "description": "Terms of service"}
+        ]
     },
     "content": {
         "articlesFolder": "articles/",
