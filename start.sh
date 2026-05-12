@@ -1,18 +1,17 @@
 #!/bin/bash
 #
-# Buildly Website Admin Server Management Script
-# 
-# Usage: ./ops/admin-server.sh [start|stop|restart|status|setup]
+# Buildly Website — Admin Server
 #
-# This script manages the development server for the Buildly website admin interface.
-# It handles virtual environment setup, dependency installation, and server lifecycle.
+# Usage: ./start.sh [start|stop|restart|status|logs|help]
+#
+# Run with no arguments to start the server (or show status if already running).
 #
 
 set -e
 
 # Configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+PROJECT_ROOT="$SCRIPT_DIR"
 VENV_DIR="$PROJECT_ROOT/.venv"
 REQUIREMENTS_FILE="$PROJECT_ROOT/requirements.txt"
 PID_FILE="$PROJECT_ROOT/.admin-server.pid"
@@ -302,22 +301,23 @@ show_status() {
 # Show usage information
 show_usage() {
     print_header
-    echo "Usage: $0 [command] [options]"
+    echo "Usage: ./start.sh [command] [options]"
     echo ""
     echo "Commands:"
     echo "  start [port]    Start the admin server (default port: $DEFAULT_PORT)"
     echo "  stop            Stop the admin server"
     echo "  restart [port]  Restart the admin server"
-    echo "  status          Show server and environment status"
-    echo "  setup           Set up virtual environment and install dependencies"
+    echo "  status          Show server status"
     echo "  logs            Show server logs"
     echo "  help            Show this help message"
     echo ""
     echo "Examples:"
-    echo "  $0 start          # Start server on port 8000"
-    echo "  $0 start 3000     # Start server on port 3000"
-    echo "  $0 restart        # Restart server"
-    echo "  $0 status         # Check if server is running"
+    echo "  ./start.sh             # Start (or show status if already running)"
+    echo "  ./start.sh start       # Explicitly start on port 8000"
+    echo "  ./start.sh start 3000  # Start on port 3000"
+    echo "  ./start.sh stop        # Stop the server"
+    echo "  ./start.sh restart     # Restart the server"
+    echo "  ./start.sh status      # Check if server is running"
     echo ""
 }
 

@@ -1,8 +1,13 @@
 #!/bin/bash
 
 # AMP Validation Script for Buildly.io
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SITE_DIR="$SCRIPT_DIR/docs"
+
 echo "AMP Validation Results for Buildly.io"
 echo "====================================="
+echo "Site directory: $SITE_DIR"
+echo ""
 
 # List of AMP pages to validate
 AMP_PAGES=(
@@ -13,29 +18,29 @@ AMP_PAGES=(
 
 echo "Created AMP pages:"
 for page in "${AMP_PAGES[@]}"; do
-    if [ -f "/home/glind/Projects/buildly/buildly-website/$page" ]; then
+    if [ -f "$SITE_DIR/$page" ]; then
         echo "✅ $page - File exists"
         
         # Check for required AMP elements
-        if grep -q "html amp" "/home/glind/Projects/buildly/buildly-website/$page"; then
+        if grep -q "html amp" "$SITE_DIR/$page"; then
             echo "   ✅ Contains <html amp> tag"
         else
             echo "   ❌ Missing <html amp> tag"
         fi
         
-        if grep -q "cdn.ampproject.org/v0.js" "/home/glind/Projects/buildly/buildly-website/$page"; then
+        if grep -q "cdn.ampproject.org/v0.js" "$SITE_DIR/$page"; then
             echo "   ✅ Contains AMP runtime script"
         else
             echo "   ❌ Missing AMP runtime script"
         fi
         
-        if grep -q "amp-boilerplate" "/home/glind/Projects/buildly/buildly-website/$page"; then
+        if grep -q "amp-boilerplate" "$SITE_DIR/$page"; then
             echo "   ✅ Contains AMP boilerplate CSS"
         else
             echo "   ❌ Missing AMP boilerplate CSS"
         fi
         
-        if grep -q "rel=\"canonical\"" "/home/glind/Projects/buildly/buildly-website/$page"; then
+        if grep -q "rel=\"canonical\"" "$SITE_DIR/$page"; then
             echo "   ✅ Contains canonical URL"
         else
             echo "   ❌ Missing canonical URL"
@@ -62,8 +67,8 @@ for pair in "${ORIGINAL_PAGES[@]}"; do
     original="${pair%:*}"
     amp="${pair#*:}"
     
-    if [ -f "/home/glind/Projects/buildly/buildly-website/$original" ]; then
-        if grep -q "rel=\"amphtml\"" "/home/glind/Projects/buildly/buildly-website/$original"; then
+    if [ -f "$SITE_DIR/$original" ]; then
+        if grep -q "rel=\"amphtml\"" "$SITE_DIR/$original"; then
             echo "✅ $original links to AMP version"
         else
             echo "❌ $original missing AMP link"
@@ -77,11 +82,11 @@ echo ""
 echo "Sitemap Verification:"
 echo "===================="
 
-if [ -f "/home/glind/Projects/buildly/buildly-website/sitemap.xml" ]; then
-    if grep -q ".amp.html" "/home/glind/Projects/buildly/buildly-website/sitemap.xml"; then
+if [ -f "$SITE_DIR/sitemap.xml" ]; then
+    if grep -q ".amp.html" "$SITE_DIR/sitemap.xml"; then
         echo "✅ Sitemap includes AMP pages"
         echo "AMP pages in sitemap:"
-        grep -o "https://[^<]*\.amp\.html" "/home/glind/Projects/buildly/buildly-website/sitemap.xml" | sed 's/^/   /'
+        grep -o "https://[^<]*\.amp\.html" "$SITE_DIR/sitemap.xml" | sed 's/^/   /'
     else
         echo "❌ Sitemap missing AMP pages"
     fi
@@ -101,3 +106,5 @@ echo "Manual validation URLs:"
 for page in "${AMP_PAGES[@]}"; do
     echo "   https://validator.ampproject.org/#url=https://www.buildly.io/$page"
 done
+
+echo "Created AMP pages:"

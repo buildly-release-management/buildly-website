@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-no-nav-loader>
 <head>
     <meta charset="UTF-8">
     <!-- Load common elements -->
@@ -13,275 +13,298 @@
 </head>
 <body class="font-sans">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
+    <nav class="bg-white shadow-sm fixed w-full z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html">
-                        <img src="media/buildly-logo.svg" alt="Buildly" class="h-12 w-auto" style="filter: brightness(0) saturate(100%) invert(21%) sepia(47%) saturate(1765%) hue-rotate(198deg) brightness(97%) contrast(93%);">
-                    </a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <div class="relative group">
-                            <button class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
-                                Products
-                                <svg class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                                <div class="py-1">
-                                    <a href="labs.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Labs Platform</a>
-                                    <a href="rad-core.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">RAD Core</a>
-                                    <a href="rad-process.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">RAD Process</a>
-                                </div>
-                            </div>
+                <a href="/" aria-label="Buildly Homepage" class="flex items-center">
+                    <img src="/media/buildly-logo.svg" alt="Buildly" class="h-10 w-auto" style="filter: brightness(0) saturate(100%) invert(21%) sepia(47%) saturate(1765%) hue-rotate(198deg) brightness(97%) contrast(93%);">
+                </a>
+                <div class="hidden md:flex items-center space-x-1">
+                    <div class="relative group">
+                        <button class="text-gray-600 hover:text-buildly-primary px-3 py-2 text-sm font-medium flex items-center gap-1 transition-colors">
+                            Ecosystem
+                            <svg class="h-3 w-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="absolute left-0 mt-1 w-64 rounded-xl shadow-xl border border-gray-100 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20 py-2">
+                            <a href="https://collab.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg leading-none mt-0.5">🤝</span>
+                                <div><div class="text-sm font-semibold text-gray-900">CollabHub</div><div class="text-xs text-gray-500">Community &amp; collaboration</div></div>
+                            </a>
+                            <a href="https://market.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg leading-none mt-0.5">🛒</span>
+                                <div><div class="text-sm font-semibold text-gray-900">Forge Marketplace</div><div class="text-xs text-gray-500">Reusable products &amp; templates</div></div>
+                            </a>
+                            <a href="https://labs.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg leading-none mt-0.5">🧠</span>
+                                <div><div class="text-sm font-semibold text-gray-900">Buildly Labs</div><div class="text-xs text-gray-500">AI-native product operations</div></div>
+                            </a>
+                            <a href="/ecosystem.html" class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg leading-none mt-0.5">🗺️</span>
+                                <div><div class="text-sm font-semibold text-gray-900">Ecosystem Map</div><div class="text-xs text-gray-500">See how it all connects</div></div>
+                            </a>
                         </div>
-                        <a href="use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
-                        <a href="articles.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Articles</a>
-                        <a href="training.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Training</a>
-                        <div class="relative group">
-                            <button class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
-                                For Developers
-                                <svg class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                                <div class="py-1">
-                                    <a href="developer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Developer Platform</a>
-                                    <a href="product-manager.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Product Managers</a>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="pricing.html" class="text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors font-semibold">Pricing</a>
-                        <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Try for Free</a>
                     </div>
+                    <div class="relative group">
+                        <button class="text-gray-600 hover:text-buildly-primary px-3 py-2 text-sm font-medium flex items-center gap-1 transition-colors">
+                            Community
+                            <svg class="h-3 w-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="absolute left-0 mt-1 w-64 rounded-xl shadow-xl border border-gray-100 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20 py-2">
+                            <a href="https://collab.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg leading-none mt-0.5">🏗️</span>
+                                <div><div class="text-sm font-semibold text-gray-900">Builder Network</div><div class="text-xs text-gray-500">Developers, founders, agencies</div></div>
+                            </a>
+                            <a href="/startupgrind.html" class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg leading-none mt-0.5">🔥</span>
+                                <div><div class="text-sm font-semibold text-gray-900">StartupGrind PDX</div><div class="text-xs text-gray-500">Local founder community</div></div>
+                            </a>
+                            <a href="/firstcityfoundry.html" class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg leading-none mt-0.5">🎙️</span>
+                                <div><div class="text-sm font-semibold text-gray-900">FirstCityFoundry</div><div class="text-xs text-gray-500">Founder conversations &amp; podcasts</div></div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="/articles.html" class="text-gray-600 hover:text-buildly-primary px-3 py-2 text-sm font-medium transition-colors">Articles</a>
+                    <a href="/pricing.html" class="text-buildly-primary font-semibold px-3 py-2 text-sm font-medium transition-colors">Pricing</a>
+                    <a href="https://labs.buildly.io" class="ml-2 bg-buildly-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-500 transition-colors">Try for Free</a>
                 </div>
+                <button class="mobile-menu-btn md:hidden text-gray-600 hover:text-gray-900 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-nav hidden pb-4 space-y-1 border-t border-gray-100 mt-2">
+                <a href="https://collab.buildly.io" class="block px-3 py-2 text-sm text-gray-600">CollabHub</a>
+                <a href="https://market.buildly.io" class="block px-3 py-2 text-sm text-gray-600">Forge Marketplace</a>
+                <a href="https://labs.buildly.io" class="block px-3 py-2 text-sm text-gray-600">Buildly Labs</a>
+                <a href="/ecosystem.html" class="block px-3 py-2 text-sm text-gray-600">Ecosystem Map</a>
+                <a href="/startupgrind.html" class="block px-3 py-2 text-sm text-gray-600">StartupGrind PDX</a>
+                <a href="/firstcityfoundry.html" class="block px-3 py-2 text-sm text-gray-600">FirstCityFoundry</a>
+                <a href="/articles.html" class="block px-3 py-2 text-sm text-gray-600">Articles</a>
+                <a href="/pricing.html" class="block px-3 py-2 text-sm font-semibold text-buildly-primary">Pricing</a>
+                <a href="https://labs.buildly.io" class="block mx-3 mt-2 bg-buildly-accent text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">Try for Free</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-20 bg-gradient-to-br from-buildly-light to-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-buildly-dark mb-6">
-                    Pricing
-                </h1>
-                <p class="text-xl text-gray-600 mb-8 max-w-4xl mx-auto">
-                    Choose the plan that's right for your team. Start free and scale as you grow.
-                </p>
+    <section class="pt-24 pb-12 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block bg-orange-100 text-buildly-accent px-4 py-1.5 rounded-full text-sm font-semibold mb-6">Transparent Pricing</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-buildly-dark mb-5 leading-tight">Build more.<br class="hidden sm:block"> Spend less.</h1>
+            <p class="text-lg text-gray-500 mb-10 max-w-2xl mx-auto">
+                Stop burning budget on vibe coding. Get structured AI-powered development with oversight, not chaos.
+            </p>
+            <div class="flex justify-center items-center gap-3">
+                <span class="text-sm text-gray-600 font-medium">Monthly</span>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="billing-toggle" class="sr-only peer">
+                    <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-buildly-primary"></div>
+                </label>
+                <span class="text-sm text-gray-600 font-medium">Annual <span class="text-buildly-accent font-semibold">Save 20%</span></span>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="py-20 bg-white">
+    <!-- Pricing Cards -->
+    <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Foundry Plan -->
-                <div class="bg-white p-8 rounded-2xl border-4 border-green-500 relative shadow-xl">
-                    <h3 class="text-2xl font-bold text-center mb-2">Buildly Foundry</h3>
-                    <p class="text-center text-gray-600 mb-6">Perfect for growing teams and mid-size companies</p>
-                    <div class="text-center mb-6">
-                        <div class="bg-green-100 text-green-800 px-4 py-2 rounded-lg inline-block mb-2">
-                            <span class="text-lg font-semibold">Free 30 Day Trial</span>
-                        </div>
-                        <div>
-                            <span class="text-4xl font-bold">$50</span>
-                            <span class="text-gray-500">/month after</span>
-                        </div>
-                    </div>
-                    <p class="text-center text-gray-600 mb-6">Why this is perfect for you:</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Accelerates production by 10x
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Reduces infrastructure costs by 60%
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Built-in security and compliance
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Seamless third-party integrations
-                        </li>
-                    </ul>
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                <!-- Starter Plan -->
+                <div class="border border-gray-200 rounded-2xl p-8 flex flex-col">
                     <div class="mb-6">
-                        <h4 class="font-semibold text-gray-800 mb-3">Key Features:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Microservice Architecture Foundation</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Advanced DevOps Toolchain</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">API Gateway Management</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Container Orchestration</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Priority Support</span>
-                        </div>
+                        <h3 class="text-xl font-bold text-buildly-dark mb-1">Starter</h3>
+                        <p class="text-sm text-gray-500">For individuals and solo founders</p>
                     </div>
-                    <div class="text-center">
-                        <a href="https://labs.buildly.io/" class="w-full bg-buildly-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-buildly-secondary transition-colors block">Register Now</a>
-                    </div>
-                </div>
-
-                <!-- Developer Plan -->
-                <div class="bg-white p-8 rounded-2xl border-2 border-gray-200 shadow-lg">
-                    <h3 class="text-2xl font-bold text-center mb-2">Buildly Developer</h3>
-                    <p class="text-center text-gray-600 mb-6">Advanced tools for serious developers</p>
-                    <div class="text-center mb-6">
-                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-block mb-2">
-                            <span class="text-lg font-semibold">Free 30 Day Trial - $70/month after</span>
-                        </div>
-                    </div>
-                    <p class="text-center text-gray-600 mb-6">Why this is perfect for you:</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Accelerates production by 10x
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Reduces infrastructure costs by 60%
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Built-in security and compliance
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Seamless third-party integrations
-                        </li>
-                    </ul>
                     <div class="mb-6">
-                        <h4 class="font-semibold text-gray-800 mb-3">Key Features:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">VS Code Integration via Copilot</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Code Generation & Templates via CLI</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Punchlist Issue Tracking</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Open Source Ecosystem</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Open Source Deployment Management (COMING SOON)</span>
-                        </div>
+                        <span class="text-5xl font-bold text-buildly-dark">$0</span>
+                        <span class="text-gray-400 text-sm ml-1">/ forever</span>
                     </div>
-                    <div class="text-center">
-                        <a href="https://labs.buildly.io/" class="w-full bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors block">Register Now</a>
-                    </div>
+                    <a href="https://labs.buildly.io" class="block text-center border border-gray-300 text-gray-700 py-3 px-6 rounded-xl font-semibold hover:bg-gray-50 transition-colors mb-8">Get Started Free</a>
+                    <ul class="space-y-3 flex-1">
+                        <li class="flex gap-3 text-sm text-gray-700"><svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>1 active project</li>
+                        <li class="flex gap-3 text-sm text-gray-700"><svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Buildly Labs basic access</li>
+                        <li class="flex gap-3 text-sm text-gray-700"><svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>CollabHub community access</li>
+                        <li class="flex gap-3 text-sm text-gray-700"><svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>AI-assisted planning (limited)</li>
+                        <li class="flex gap-3 text-sm text-gray-700"><svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Community support</li>
+                    </ul>
                 </div>
-
+                <!-- Foundry Plan - Most Popular -->
+                <div class="border-2 border-buildly-primary rounded-2xl p-8 relative shadow-xl flex flex-col">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                        <span class="bg-buildly-accent text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide">Most Popular</span>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold text-buildly-dark mb-1">Foundry</h3>
+                        <p class="text-sm text-gray-500">For growing teams and startups</p>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-5xl font-bold text-buildly-dark price-monthly">$50</span>
+                        <span class="text-5xl font-bold text-buildly-dark price-annual hidden">$39</span>
+                        <span class="text-gray-400 text-sm ml-1">/ month</span>
+                    </div>
+                    <div class="text-xs text-buildly-accent mb-5 annual-note hidden">Billed annually ($468/yr — save $132)</div>
+                    <div class="bg-green-50 text-green-700 text-sm py-2 px-4 rounded-lg text-center mb-5 font-medium">30-day free trial included</div>
+                    <a href="https://labs.buildly.io" class="block text-center bg-buildly-primary text-white py-3 px-6 rounded-xl font-semibold hover:bg-buildly-secondary transition-colors mb-8">Start Free Trial</a>
+                    <ul class="space-y-3 flex-1">
+                        <li class="flex gap-3 text-sm text-gray-700"><svg class="w-4 h-4 text-buildly-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Unlimited projects</li>
+                        <li class="flex gap-3 text-sm text-gray-700"><svg class="w-4 h-4 text-buildly-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Full Buildly Labs access</li>
+                        <li class="flex gap-3 text-sm text-gray-700"><svg class="w-4 h-4 text-buildly-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>RAD process automation</li>
+                        <li class="flex gap-3 text-sm text-gray-700"><svg class="w-4 h-4 text-buildly-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>AI release management</li>
+                        <li class="flex gap-3 text-sm text-gray-700"><svg class="w-4 h-4 text-buildly-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>API gateway + microservices</li>
+                        <li class="flex gap-3 text-sm text-gray-700"><svg class="w-4 h-4 text-buildly-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Priority support + onboarding</li>
+                    </ul>
+                </div>
                 <!-- Enterprise Plan -->
-                <div class="bg-white p-8 rounded-2xl border-2 border-gray-200 shadow-lg">
-                    <h3 class="text-2xl font-bold text-center mb-2">Buildly Enterprise</h3>
-                    <p class="text-center text-gray-600 mb-6">Comprehensive solution for large organizations</p>
-                    <div class="text-center mb-6">
-                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-block mb-2">
-                            <span class="text-lg font-semibold">Custom pricing starting at $150/month</span>
-                        </div>
-                    </div>
-                    <p class="text-center text-gray-600 mb-6">Why this is perfect for you:</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Accelerates production by 10x
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Reduces infrastructure costs by 60%
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Built-in security and compliance
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Seamless third-party integrations
-                        </li>
-                    </ul>
+                <div class="border border-gray-200 rounded-2xl p-8 bg-buildly-dark text-white flex flex-col">
                     <div class="mb-6">
-                        <h4 class="font-semibold text-gray-800 mb-3">Key Features:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">InnerSource Management</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Product Portfolio Gamification</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Multi-Cloud Deployment</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Advanced Security & Compliance</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Dedicated Success Team</span>
-                        </div>
+                        <h3 class="text-xl font-bold mb-1">Enterprise</h3>
+                        <p class="text-sm text-gray-400">For large orgs and agencies</p>
                     </div>
-                    <div class="text-center">
-                        <a href="https://calendly.com/marinamishchenko/buildly-product-demo" class="w-full bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors block">Get in Touch</a>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">Custom</span>
+                        <div class="text-gray-400 text-sm mt-1">Starting at $150/month</div>
                     </div>
+                    <a href="https://calendly.com/marinamishchenko/buildly-product-demo" class="block text-center bg-white text-buildly-dark py-3 px-6 rounded-xl font-semibold hover:bg-gray-100 transition-colors mb-8">Book a Demo</a>
+                    <ul class="space-y-3 flex-1">
+                        <li class="flex gap-3 text-sm text-gray-300"><svg class="w-4 h-4 text-buildly-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Everything in Foundry</li>
+                        <li class="flex gap-3 text-sm text-gray-300"><svg class="w-4 h-4 text-buildly-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>InnerSource management</li>
+                        <li class="flex gap-3 text-sm text-gray-300"><svg class="w-4 h-4 text-buildly-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Multi-cloud deployment</li>
+                        <li class="flex gap-3 text-sm text-gray-300"><svg class="w-4 h-4 text-buildly-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Product portfolio gamification</li>
+                        <li class="flex gap-3 text-sm text-gray-300"><svg class="w-4 h-4 text-buildly-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Advanced security &amp; compliance</li>
+                        <li class="flex gap-3 text-sm text-gray-300"><svg class="w-4 h-4 text-buildly-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Dedicated success team + SLA</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Metrics Strip -->
+    <section class="py-12 bg-buildly-light">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div><div class="text-4xl font-bold text-buildly-primary mb-1">50%</div><div class="text-sm text-gray-600">Reduction in dev budget</div></div>
+                <div><div class="text-4xl font-bold text-buildly-primary mb-1">40%</div><div class="text-sm text-gray-600">Time saved in meetings</div></div>
+                <div><div class="text-4xl font-bold text-buildly-primary mb-1">75%</div><div class="text-sm text-gray-600">Faster AI release cycles</div></div>
+                <div><div class="text-4xl font-bold text-buildly-primary mb-1">10x</div><div class="text-sm text-gray-600">Production acceleration</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-buildly-dark text-center mb-12">Frequently asked questions</h2>
+            <div class="space-y-4">
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                        <span class="font-semibold text-buildly-dark">What's included in the free Starter plan?</span>
+                        <svg class="w-5 h-5 text-gray-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="hidden px-6 pb-5 text-gray-600 text-sm">The Starter plan includes 1 active project, basic Buildly Labs access, CollabHub community membership, limited AI-assisted planning, and community support. Free forever — no credit card required.</div>
+                </div>
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                        <span class="font-semibold text-buildly-dark">How does the 30-day free trial work?</span>
+                        <svg class="w-5 h-5 text-gray-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="hidden px-6 pb-5 text-gray-600 text-sm">Sign up for Foundry and get full access for 30 days — no credit card required. After the trial you'll be billed $50/month (or $39/month on annual billing).</div>
+                </div>
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                        <span class="font-semibold text-buildly-dark">Is Buildly a vibe coding platform?</span>
+                        <svg class="w-5 h-5 text-gray-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="hidden px-6 pb-5 text-gray-600 text-sm">No — and that's intentional. Buildly is the structured alternative to vibe coding. We accelerate planning, docs, and delivery with AI but always with human oversight. Speed without chaos.</div>
+                </div>
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                        <span class="font-semibold text-buildly-dark">What is the RAD process?</span>
+                        <svg class="w-5 h-5 text-gray-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="hidden px-6 pb-5 text-gray-600 text-sm">RAD (Rapid Application Development) is Buildly's post-agile methodology for AI-native teams. It replaces heavyweight sprint ceremonies with continuous, AI-assisted planning and delivery.</div>
+                </div>
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                        <span class="font-semibold text-buildly-dark">Can I cancel anytime?</span>
+                        <svg class="w-5 h-5 text-gray-400 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="hidden px-6 pb-5 text-gray-600 text-sm">Yes. Cancel your monthly plan anytime with no penalties. Annual subscriptions run until the end of the billing period.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-16 bg-gradient-to-r from-buildly-primary to-buildly-secondary">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Ready to build smarter?</h2>
+            <p class="text-blue-100 text-lg mb-8">Start your free trial today. No credit card required.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://labs.buildly.io" class="bg-white text-buildly-primary px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors">Start Free Trial</a>
+                <a href="https://calendly.com/marinamishchenko/buildly-product-demo" class="border border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white/10 transition-colors">Talk to Sales</a>
+            </div>
+        </div>
+    </section>
     <!-- Footer -->
     <footer class="bg-buildly-dark text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">THE BUILDLY LIFECYCLE</h4>
-                    <p class="text-gray-300 text-sm">The Buildly Lifecycle process helps startups and SMBs document their ideas, translating business concepts into detailed technical documentation.</p>
+                    <img src="/media/buildly-logo.svg" alt="Buildly" class="h-8 w-auto mb-4" style="filter: brightness(0) invert(1);">
+                    <p class="text-gray-400 text-sm">A collaborative AI-native software ecosystem for builders, startups, and product teams.</p>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Ecosystem</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="https://labs.buildly.io" class="text-gray-300 hover:text-white transition-colors">Labs</a></li>
-                        <li><a href="use-cases.html" class="text-gray-300 hover:text-white transition-colors">Use Cases</a></li>
-                        <li><a href="pricing.html" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="https://labs.buildly.io" class="text-gray-300 hover:text-white text-sm transition-colors">Buildly Labs</a></li>
+                        <li><a href="https://collab.buildly.io" class="text-gray-300 hover:text-white text-sm transition-colors">CollabHub</a></li>
+                        <li><a href="https://market.buildly.io" class="text-gray-300 hover:text-white text-sm transition-colors">Forge Marketplace</a></li>
+                        <li><a href="/ecosystem.html" class="text-gray-300 hover:text-white text-sm transition-colors">Ecosystem Map</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Resources</h4>
                     <ul class="space-y-2">
-                        <li><a href="articles.html" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="/contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="rad-core.html" class="text-gray-300 hover:text-white transition-colors">RAD Core</a></li>
-                        <li><a href="https://market.buildly.io/" class="text-gray-300 hover:text-white transition-colors">Collab Hub</a></li>
+                        <li><a href="/articles.html" class="text-gray-300 hover:text-white text-sm transition-colors">Articles</a></li>
+                        <li><a href="https://docs.buildly.io" class="text-gray-300 hover:text-white text-sm transition-colors">Documentation</a></li>
+                        <li><a href="/use-cases.html" class="text-gray-300 hover:text-white text-sm transition-colors">Use Cases</a></li>
+                        <li><a href="/pricing.html" class="text-gray-300 hover:text-white text-sm transition-colors">Pricing</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">OUR NEWSLETTER</h4>
-                    <p class="text-gray-300 text-sm mb-4">Sign up for the Buildly Lifecycle Newsletter</p>
-                    <form class="space-y-4">
-                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-gray-700 text-white placeholder-gray-400 rounded focus:outline-none focus:ring-2 focus:ring-buildly-primary">
-                        <button type="submit" class="w-full bg-buildly-primary text-white py-2 rounded hover:bg-buildly-secondary transition-colors">Submit</button>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Newsletter</h4>
+                    <p class="text-gray-400 text-sm mb-4">Get insights on AI development and startup growth.</p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-gray-800 text-white placeholder-gray-500 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-buildly-primary border border-gray-700">
+                        <button type="submit" class="w-full bg-buildly-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-buildly-secondary transition-colors">Subscribe</button>
                     </form>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
-                <p class="text-gray-300">&copy; Copyright Buildly, Inc. 2025 All Rights Reserved</p>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">&copy; 2026 Buildly, Inc. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="/privacy.html" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">Privacy</a>
+                    <a href="/terms.html" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">Terms</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        const toggle = document.getElementById('billing-toggle');
+        if (toggle) {
+            toggle.addEventListener('change', function() {
+                const annual = this.checked;
+                document.querySelectorAll('.price-monthly').forEach(el => el.classList.toggle('hidden', annual));
+                document.querySelectorAll('.price-annual').forEach(el => el.classList.toggle('hidden', !annual));
+                document.querySelectorAll('.annual-note').forEach(el => el.classList.toggle('hidden', !annual));
+            });
+        }
+        document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
+            document.querySelector('.mobile-nav').classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
