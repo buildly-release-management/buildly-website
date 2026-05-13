@@ -3,778 +3,705 @@
 <head>
     <meta charset="UTF-8">
     <script src="/js/buildly-head.js"></script>
-    <title>Articles - Insights for Modern Builders | Buildly</title>
-    <meta name="description" content="Expert insights on AI development, product management, startup growth, and software engineering from the Buildly team.">
-    <meta name="keywords" content="AI development articles, product management insights, startup growth, software engineering, buildly blog">
+    <title>Articles - Buildly</title>
+    <meta name="description" content="Insights on AI-powered development, product management, startup growth, and more from the Buildly team.">
+    <meta name="keywords" content="AI development articles, product management, startup growth, software engineering, buildly blog">
     <link rel="canonical" href="https://www.buildly.io/articles.html">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.buildly.io/articles.html">
-    <meta property="og:title" content="Articles - Insights for Modern Builders | Buildly">
-    <meta property="og:description" content="Expert insights on AI development, product management, startup growth, and software engineering.">
-    <meta property="og:image" content="https://www.buildly.io/media/buildly-logo.svg">
-    <link rel="alternate" type="application/rss+xml" title="Buildly Blog" href="/feed.xml">
+    <style>
+        :root {
+            --bg-base: #070d1a;
+            --bg-card: #0e1729;
+            --bg-card-hover: #131e33;
+            --border-subtle: rgba(255,255,255,0.07);
+        }
+        body { background-color: var(--bg-base); color: #e2e8f0; }
+        .hero-bg {
+            background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(27,95,163,0.25) 0%, transparent 70%),
+                        radial-gradient(ellipse 40% 40% at 80% 60%, rgba(249,148,59,0.1) 0%, transparent 60%),
+                        var(--bg-base);
+        }
+        .grid-overlay {
+            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .glass-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .glass-card:hover { background: var(--bg-card-hover); border-color: rgba(255,255,255,0.12); }
+        .nav-dark { background: rgba(7,13,26,0.88); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.07); }
+        .filter-btn { transition: all 0.2s; }
+        .active-filter { background: #1b5fa3 !important; color: white !important; border-color: #1b5fa3 !important; }
+    </style>
 </head>
-<body class="font-sans">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm fixed w-full z-50 border-b border-gray-100">
+<body>
+    <nav class="nav-dark fixed w-full z-50 top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="/" aria-label="Buildly Homepage" class="flex items-center">
-                    <img src="/media/buildly-logo.svg" alt="Buildly" class="h-10 w-auto" style="filter: brightness(0) saturate(100%) invert(21%) sepia(47%) saturate(1765%) hue-rotate(198deg) brightness(97%) contrast(93%);">
+                    <img src="/media/buildly-logo.svg" alt="Buildly" class="h-9 w-auto" style="filter: brightness(0) invert(1);">
                 </a>
                 <div class="hidden md:flex items-center space-x-1">
                     <div class="relative group">
-                        <button class="text-gray-600 hover:text-buildly-primary px-3 py-2 text-sm font-medium flex items-center gap-1 transition-colors">
-                            Ecosystem
-                            <svg class="h-3 w-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div class="absolute left-0 mt-1 w-64 rounded-xl shadow-xl border border-gray-100 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20 py-2">
-                            <a href="https://collab.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
-                                <span class="text-lg leading-none mt-0.5">&#129309;</span>
-                                <div><div class="text-sm font-semibold text-gray-900">CollabHub</div><div class="text-xs text-gray-500">Community &amp; collaboration</div></div>
-                            </a>
-                            <a href="https://market.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
-                                <span class="text-lg leading-none mt-0.5">&#128722;</span>
-                                <div><div class="text-sm font-semibold text-gray-900">Forge Marketplace</div><div class="text-xs text-gray-500">Reusable products &amp; templates</div></div>
-                            </a>
-                            <a href="https://labs.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
-                                <span class="text-lg leading-none mt-0.5">&#129504;</span>
-                                <div><div class="text-sm font-semibold text-gray-900">Buildly Labs</div><div class="text-xs text-gray-500">AI-native product operations</div></div>
-                            </a>
-                            <a href="/ecosystem.html" class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
-                                <span class="text-lg leading-none mt-0.5">&#128506;</span>
-                                <div><div class="text-sm font-semibold text-gray-900">Ecosystem Map</div><div class="text-xs text-gray-500">See how it all connects</div></div>
-                            </a>
+                        <button class="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium flex items-center gap-1 transition-colors">Ecosystem <svg class="h-3 w-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="absolute left-0 mt-1 w-60 rounded-xl shadow-2xl border border-white/10 bg-[#0e1729] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20 py-2">
+                            <a href="https://collab.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5"><span class="text-lg mt-0.5">&#129309;</span><div><div class="text-sm font-semibold text-white">CollabHub</div><div class="text-xs text-slate-400">Community &amp; collaboration</div></div></a>
+                            <a href="https://market.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5"><span class="text-lg mt-0.5">&#128722;</span><div><div class="text-sm font-semibold text-white">Forge Marketplace</div><div class="text-xs text-slate-400">Reusable products &amp; templates</div></div></a>
+                            <a href="https://labs.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5"><span class="text-lg mt-0.5">&#129504;</span><div><div class="text-sm font-semibold text-white">Buildly Labs</div><div class="text-xs text-slate-400">AI-native product operations</div></div></a>
+                            <a href="/ecosystem.html" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5"><span class="text-lg mt-0.5">&#128506;</span><div><div class="text-sm font-semibold text-white">Ecosystem Map</div><div class="text-xs text-slate-400">See how it all connects</div></div></a>
                         </div>
                     </div>
                     <div class="relative group">
-                        <button class="text-gray-600 hover:text-buildly-primary px-3 py-2 text-sm font-medium flex items-center gap-1 transition-colors">
-                            Community
-                            <svg class="h-3 w-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div class="absolute left-0 mt-1 w-64 rounded-xl shadow-xl border border-gray-100 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20 py-2">
-                            <a href="https://collab.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
-                                <span class="text-lg leading-none mt-0.5">&#127959;</span>
-                                <div><div class="text-sm font-semibold text-gray-900">Builder Network</div><div class="text-xs text-gray-500">Developers, founders, agencies</div></div>
-                            </a>
-                            <a href="/startupgrind.html" class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
-                                <span class="text-lg leading-none mt-0.5">&#128293;</span>
-                                <div><div class="text-sm font-semibold text-gray-900">StartupGrind PDX</div><div class="text-xs text-gray-500">Local founder community</div></div>
-                            </a>
-                            <a href="/firstcityfoundry.html" class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
-                                <span class="text-lg leading-none mt-0.5">&#127897;</span>
-                                <div><div class="text-sm font-semibold text-gray-900">FirstCityFoundry</div><div class="text-xs text-gray-500">Founder conversations &amp; podcasts</div></div>
-                            </a>
+                        <button class="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium flex items-center gap-1 transition-colors">Community <svg class="h-3 w-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                        <div class="absolute left-0 mt-1 w-60 rounded-xl shadow-2xl border border-white/10 bg-[#0e1729] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20 py-2">
+                            <a href="https://collab.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5"><span class="text-lg mt-0.5">&#127959;</span><div><div class="text-sm font-semibold text-white">Builder Network</div><div class="text-xs text-slate-400">Developers, founders, agencies</div></div></a>
+                            <a href="/startupgrind.html" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5"><span class="text-lg mt-0.5">&#128293;</span><div><div class="text-sm font-semibold text-white">StartupGrind PDX</div><div class="text-xs text-slate-400">Local founder community</div></div></a>
+                            <a href="/firstcityfoundry.html" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5"><span class="text-lg mt-0.5">&#127897;</span><div><div class="text-sm font-semibold text-white">FirstCityFoundry</div><div class="text-xs text-slate-400">Founder conversations &amp; podcasts</div></div></a>
                         </div>
                     </div>
-                    <a href="/articles.html" class="text-buildly-primary font-semibold px-3 py-2 text-sm transition-colors">Articles</a>
-                    <a href="/pricing.html" class="text-gray-600 hover:text-buildly-primary px-3 py-2 text-sm font-medium transition-colors">Pricing</a>
+                    <a href="/articles.html" class="text-white font-semibold px-3 py-2 text-sm transition-colors">Articles</a>
+                    <a href="/pricing.html" class="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Pricing</a>
                     <a href="https://labs.buildly.io" class="ml-2 bg-buildly-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-500 transition-colors">Try for Free</a>
                 </div>
-                <button class="mobile-menu-btn md:hidden text-gray-600 hover:text-gray-900 focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
+                <button class="mobile-menu-btn md:hidden text-slate-300 hover:text-white focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
-            <div class="mobile-nav hidden pb-4 space-y-1 border-t border-gray-100 mt-2">
-                <a href="https://collab.buildly.io" class="block px-3 py-2 text-sm text-gray-600">CollabHub</a>
-                <a href="https://market.buildly.io" class="block px-3 py-2 text-sm text-gray-600">Forge Marketplace</a>
-                <a href="https://labs.buildly.io" class="block px-3 py-2 text-sm text-gray-600">Buildly Labs</a>
-                <a href="/ecosystem.html" class="block px-3 py-2 text-sm text-gray-600">Ecosystem Map</a>
-                <a href="/startupgrind.html" class="block px-3 py-2 text-sm text-gray-600">StartupGrind PDX</a>
-                <a href="/firstcityfoundry.html" class="block px-3 py-2 text-sm text-gray-600">FirstCityFoundry</a>
-                <a href="/articles.html" class="block px-3 py-2 text-sm font-semibold text-buildly-primary">Articles</a>
-                <a href="/pricing.html" class="block px-3 py-2 text-sm text-gray-600">Pricing</a>
+            <div class="mobile-nav hidden pb-4 space-y-1 border-t border-white/10 mt-2">
+                <a href="https://collab.buildly.io" class="block px-3 py-2 text-sm text-slate-300">CollabHub</a>
+                <a href="https://market.buildly.io" class="block px-3 py-2 text-sm text-slate-300">Forge Marketplace</a>
+                <a href="https://labs.buildly.io" class="block px-3 py-2 text-sm text-slate-300">Buildly Labs</a>
+                <a href="/ecosystem.html" class="block px-3 py-2 text-sm text-slate-300">Ecosystem Map</a>
+                <a href="/articles.html" class="block px-3 py-2 text-sm font-semibold text-white">Articles</a>
+                <a href="/pricing.html" class="block px-3 py-2 text-sm text-slate-300">Pricing</a>
                 <a href="https://labs.buildly.io" class="block mx-3 mt-2 bg-buildly-accent text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">Try for Free</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="pt-24 pb-10 bg-gradient-to-br from-slate-50 via-white to-blue-50">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="inline-block bg-orange-100 text-buildly-accent px-4 py-1.5 rounded-full text-sm font-semibold mb-5">Buildly Articles</span>
-            <h1 class="text-4xl md:text-5xl font-bold text-buildly-dark mb-4 leading-tight">Insights for Modern Builders</h1>
-            <p class="text-lg text-gray-500 mb-8 max-w-2xl mx-auto">Practical guides on AI development, product management, startup growth, and engineering — written by builders, for builders.</p>
+    <section class="hero-bg grid-overlay pt-28 pb-12 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6" style="background: rgba(27,95,163,0.2); color: #60a5fa; border: 1px solid rgba(27,95,163,0.4);">
+                Knowledge Base
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-5 leading-tight">Insights for Modern Builders</h1>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10">
+                Deep dives on AI-powered development, product strategy, startup growth, and engineering craft.
+            </p>
             <!-- Category Filter Tabs -->
             <div class="flex flex-wrap justify-center gap-2">
-                <button onclick="filterArticles('all')" data-filter="all" class="filter-btn active-filter px-4 py-2 rounded-full text-sm font-medium transition-colors bg-buildly-primary text-white">All</button>
-                <button onclick="filterArticles('pm')" data-filter="pm" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 border border-gray-200 hover:border-buildly-primary hover:text-buildly-primary">Product Management</button>
-                <button onclick="filterArticles('ai')" data-filter="ai" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 border border-gray-200 hover:border-buildly-primary hover:text-buildly-primary">AI &amp; Automation</button>
-                <button onclick="filterArticles('startup')" data-filter="startup" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 border border-gray-200 hover:border-buildly-primary hover:text-buildly-primary">Startup &amp; Growth</button>
-                <button onclick="filterArticles('dev')" data-filter="dev" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 border border-gray-200 hover:border-buildly-primary hover:text-buildly-primary">Software Dev</button>
-                <button onclick="filterArticles('frontend')" data-filter="frontend" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 border border-gray-200 hover:border-buildly-primary hover:text-buildly-primary">Frontend</button>
-                <button onclick="filterArticles('devrel')" data-filter="devrel" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-white text-gray-600 border border-gray-200 hover:border-buildly-primary hover:text-buildly-primary">Dev Relations</button>
+                <button onclick="filterArticles('all')" data-filter="all" class="filter-btn active-filter px-4 py-2 rounded-full text-sm font-medium border border-transparent">All</button>
+                <button onclick="filterArticles('pm')" data-filter="pm" class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-white/10 hover:border-blue-500 hover:text-blue-300">Product Management</button>
+                <button onclick="filterArticles('ai')" data-filter="ai" class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-white/10 hover:border-purple-500 hover:text-purple-300">AI &amp; Automation</button>
+                <button onclick="filterArticles('startup')" data-filter="startup" class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-white/10 hover:border-orange-500 hover:text-orange-300">Startup &amp; Growth</button>
+                <button onclick="filterArticles('dev')" data-filter="dev" class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-white/10 hover:border-green-500 hover:text-green-300">Software Dev</button>
+                <button onclick="filterArticles('frontend')" data-filter="frontend" class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-white/10 hover:border-cyan-500 hover:text-cyan-300">Frontend</button>
+                <button onclick="filterArticles('devrel')" data-filter="devrel" class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-white/10 hover:border-pink-500 hover:text-pink-300">Dev Relations</button>
             </div>
         </div>
     </section>
 
     <!-- Featured Article -->
-    <section class="py-8 bg-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" id="featured-section">
-            <a href="/articles/time-to-kill-agile.html" class="block group rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-shadow bg-gradient-to-r from-buildly-primary to-buildly-secondary text-white p-8 md:p-12">
+    <section class="py-8" style="background: var(--bg-base);" id="featured-section">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <a href="/articles/time-to-kill-agile.html" class="block group rounded-2xl overflow-hidden p-8 md:p-12 transition-all" style="background: linear-gradient(135deg, #0d2044 0%, #0e1729 100%); border: 1px solid rgba(27,95,163,0.4);">
                 <div class="flex items-center gap-2 mb-3">
-                    <span class="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full">Featured</span>
-                    <span class="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full">Software Dev</span>
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background: rgba(249,148,59,0.2); color: #f9943b;">Featured</span>
+                    <span class="text-xs font-semibold text-green-300 px-3 py-1 rounded-full" style="background: rgba(34,197,94,0.15);">Software Dev</span>
                 </div>
-                <h2 class="text-2xl md:text-4xl font-bold mb-3 group-hover:text-blue-100 transition-colors">It&apos;s Time to Kill Agile</h2>
-                <p class="text-blue-100 text-lg max-w-3xl">Agile was a revolution. But after two decades, it&apos;s become the problem it set out to solve. Here&apos;s why the RAD process is the post-agile answer for AI-native teams.</p>
-                <div class="mt-6 inline-flex items-center gap-2 text-white font-semibold">
-                    Read article
-                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                <h2 class="text-2xl md:text-4xl font-bold text-white mb-3 group-hover:text-blue-200 transition-colors">It&apos;s Time to Kill Agile</h2>
+                <p class="text-slate-400 text-lg max-w-3xl">Agile was a revolution. But after two decades, it&apos;s become the problem it set out to solve. Here&apos;s why the RAD process is the post-agile answer for AI-native teams.</p>
+                <div class="mt-6 inline-flex items-center gap-2 text-blue-400 font-semibold group-hover:text-blue-300">
+                    Read article <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </div>
             </a>
         </div>
     </section>
 
     <!-- Articles Grid -->
-    <section class="py-8 pb-16 bg-white">
+    <section class="pb-16 pt-4" style="background: var(--bg-base);">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="articles-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="pm">
+            <div id="articles-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="pm">
                     <a href="/articles/ai-powered-product-management.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Product Management</span>
+                            <span class="text-xs font-semibold text-blue-300 px-2.5 py-1 rounded-full" style="background:rgba(59,130,246,0.15);">Product Management</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">AI-Powered Product Management</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">AI-Powered Product Management</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="pm">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="pm">
                     <a href="/articles/ai-powered-release-planning.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Product Management</span>
+                            <span class="text-xs font-semibold text-blue-300 px-2.5 py-1 rounded-full" style="background:rgba(59,130,246,0.15);">Product Management</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">AI-Powered Release Planning</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">AI-Powered Release Planning</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="pm">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="pm">
                     <a href="/articles/ai-smarter-decision-making.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Product Management</span>
+                            <span class="text-xs font-semibold text-blue-300 px-2.5 py-1 rounded-full" style="background:rgba(59,130,246,0.15);">Product Management</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Smarter Decision-Making with AI</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Smarter Decision-Making with AI</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="pm">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="pm">
                     <a href="/articles/ethical-ai-for-product-managers.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Product Management</span>
+                            <span class="text-xs font-semibold text-blue-300 px-2.5 py-1 rounded-full" style="background:rgba(59,130,246,0.15);">Product Management</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Ethical AI for Product Managers</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Ethical AI for Product Managers</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="pm">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="pm">
                     <a href="/articles/feature-prioritization.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Product Management</span>
+                            <span class="text-xs font-semibold text-blue-300 px-2.5 py-1 rounded-full" style="background:rgba(59,130,246,0.15);">Product Management</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Feature Prioritization Frameworks</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Feature Prioritization Frameworks</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="pm">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="pm">
                     <a href="/articles/prioritizing-features-techniques.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Product Management</span>
+                            <span class="text-xs font-semibold text-blue-300 px-2.5 py-1 rounded-full" style="background:rgba(59,130,246,0.15);">Product Management</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Techniques for Prioritizing Features</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Techniques for Prioritizing Features</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="pm">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="pm">
                     <a href="/articles/product-lifecycle.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Product Management</span>
+                            <span class="text-xs font-semibold text-blue-300 px-2.5 py-1 rounded-full" style="background:rgba(59,130,246,0.15);">Product Management</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Mastering the Product Lifecycle</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Mastering the Product Lifecycle</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="pm">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="pm">
                     <a href="/articles/product-management-developer-tools.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Product Management</span>
+                            <span class="text-xs font-semibold text-blue-300 px-2.5 py-1 rounded-full" style="background:rgba(59,130,246,0.15);">Product Management</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Product Management for Developer Tools</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Product Management for Developer Tools</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="pm">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="pm">
                     <a href="/articles/product-strategy-startup-scaling.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Product Management</span>
+                            <span class="text-xs font-semibold text-blue-300 px-2.5 py-1 rounded-full" style="background:rgba(59,130,246,0.15);">Product Management</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Product Strategy for Startup Scaling</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Product Strategy for Startup Scaling</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="pm">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="pm">
                     <a href="/articles/roadmap-chaos-ai-solution.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Product Management</span>
+                            <span class="text-xs font-semibold text-blue-300 px-2.5 py-1 rounded-full" style="background:rgba(59,130,246,0.15);">Product Management</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Roadmap Chaos: The AI Solution</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Roadmap Chaos: The AI Solution</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="pm">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="pm">
                     <a href="/articles/roadmap-planning-prioritization.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Product Management</span>
+                            <span class="text-xs font-semibold text-blue-300 px-2.5 py-1 rounded-full" style="background:rgba(59,130,246,0.15);">Product Management</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Roadmap Planning & Prioritization</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Roadmap Planning & Prioritization</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="pm">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="pm">
                     <a href="/articles/user-research-technical-products.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Product Management</span>
+                            <span class="text-xs font-semibold text-blue-300 px-2.5 py-1 rounded-full" style="background:rgba(59,130,246,0.15);">Product Management</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">User Research for Technical Products</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">User Research for Technical Products</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="ai">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="ai">
                     <a href="/articles/ai-powered-content-management-local-vs-cloud.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">AI &amp; Automation</span>
+                            <span class="text-xs font-semibold text-purple-300 px-2.5 py-1 rounded-full" style="background:rgba(147,51,234,0.15);">AI &amp; Automation</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">AI-Powered Content Management: Local vs Cloud</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">AI-Powered Content Management: Local vs Cloud</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="ai">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="ai">
                     <a href="/articles/ai-powered-devops.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">AI &amp; Automation</span>
+                            <span class="text-xs font-semibold text-purple-300 px-2.5 py-1 rounded-full" style="background:rgba(147,51,234,0.15);">AI &amp; Automation</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">AI-Powered DevOps</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">AI-Powered DevOps</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="ai">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="ai">
                     <a href="/articles/ai-software-maintenance.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">AI &amp; Automation</span>
+                            <span class="text-xs font-semibold text-purple-300 px-2.5 py-1 rounded-full" style="background:rgba(147,51,234,0.15);">AI &amp; Automation</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">AI in Software Maintenance</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">AI in Software Maintenance</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="ai">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="ai">
                     <a href="/articles/ai-startup-growth-strategies.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">AI &amp; Automation</span>
+                            <span class="text-xs font-semibold text-purple-300 px-2.5 py-1 rounded-full" style="background:rgba(147,51,234,0.15);">AI &amp; Automation</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">AI Startup Growth Strategies</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">AI Startup Growth Strategies</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="ai">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="ai">
                     <a href="/articles/ai-technical-debt-management.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">AI &amp; Automation</span>
+                            <span class="text-xs font-semibold text-purple-300 px-2.5 py-1 rounded-full" style="background:rgba(147,51,234,0.15);">AI &amp; Automation</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Managing Technical Debt with AI</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Managing Technical Debt with AI</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="ai">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="ai">
                     <a href="/articles/building-ethical-ai.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">AI &amp; Automation</span>
+                            <span class="text-xs font-semibold text-purple-300 px-2.5 py-1 rounded-full" style="background:rgba(147,51,234,0.15);">AI &amp; Automation</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Building Ethical AI</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Building Ethical AI</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="ai">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="ai">
                     <a href="/articles/future-of-software-development.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">AI &amp; Automation</span>
+                            <span class="text-xs font-semibold text-purple-300 px-2.5 py-1 rounded-full" style="background:rgba(147,51,234,0.15);">AI &amp; Automation</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">The Future of Software Development</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">The Future of Software Development</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="ai">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="ai">
                     <a href="/articles/future-of-work-ai-human.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">AI &amp; Automation</span>
+                            <span class="text-xs font-semibold text-purple-300 px-2.5 py-1 rounded-full" style="background:rgba(147,51,234,0.15);">AI &amp; Automation</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">The Future of Work: AI &amp; Human Collaboration</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">The Future of Work: AI &amp; Human Collaboration</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="startup">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="startup">
                     <a href="/articles/10x-engineer-myth-diverse-teams.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Startup &amp; Growth</span>
+                            <span class="text-xs font-semibold text-orange-300 px-2.5 py-1 rounded-full" style="background:rgba(249,148,59,0.15);">Startup &amp; Growth</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">The 10x Engineer Myth: Building Diverse Teams</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">The 10x Engineer Myth: Building Diverse Teams</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="startup">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="startup">
                     <a href="/articles/buildly-foundry-startup-acceleration.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Startup &amp; Growth</span>
+                            <span class="text-xs font-semibold text-orange-300 px-2.5 py-1 rounded-full" style="background:rgba(249,148,59,0.15);">Startup &amp; Growth</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Buildly Foundry: Startup Acceleration</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Buildly Foundry: Startup Acceleration</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="startup">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="startup">
                     <a href="/articles/buildly-marketplace-technical-co-founders.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Startup &amp; Growth</span>
+                            <span class="text-xs font-semibold text-orange-300 px-2.5 py-1 rounded-full" style="background:rgba(249,148,59,0.15);">Startup &amp; Growth</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Buildly Marketplace: Technical Co-Founders</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Buildly Marketplace: Technical Co-Founders</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="startup">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="startup">
                     <a href="/articles/collab-hub-the-forge-and-business-friendly-open-source.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Startup &amp; Growth</span>
+                            <span class="text-xs font-semibold text-orange-300 px-2.5 py-1 rounded-full" style="background:rgba(249,148,59,0.15);">Startup &amp; Growth</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">CollabHub, The Forge &amp; Business-Friendly Open Source</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">CollabHub, The Forge &amp; Business-Friendly Open Source</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="startup">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="startup">
                     <a href="/articles/future-saas-startup-growth-opportunities.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Startup &amp; Growth</span>
+                            <span class="text-xs font-semibold text-orange-300 px-2.5 py-1 rounded-full" style="background:rgba(249,148,59,0.15);">Startup &amp; Growth</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Future SaaS Startup Growth Opportunities</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Future SaaS Startup Growth Opportunities</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="startup">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="startup">
                     <a href="/articles/positive-reinforcement-software-development.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Startup &amp; Growth</span>
+                            <span class="text-xs font-semibold text-orange-300 px-2.5 py-1 rounded-full" style="background:rgba(249,148,59,0.15);">Startup &amp; Growth</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Positive Reinforcement in Software Development</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Positive Reinforcement in Software Development</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="startup">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="startup">
                     <a href="/articles/startup-scaling.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Startup &amp; Growth</span>
+                            <span class="text-xs font-semibold text-orange-300 px-2.5 py-1 rounded-full" style="background:rgba(249,148,59,0.15);">Startup &amp; Growth</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">How to Scale Your Startup</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">How to Scale Your Startup</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="startup">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="startup">
                     <a href="/articles/why-software-teams-fail.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Startup &amp; Growth</span>
+                            <span class="text-xs font-semibold text-orange-300 px-2.5 py-1 rounded-full" style="background:rgba(249,148,59,0.15);">Startup &amp; Growth</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Why Software Teams Fail</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Why Software Teams Fail</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="dev">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/accelerating-software-delivery-agile-devops.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Accelerating Software Delivery with Agile &amp; DevOps</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Accelerating Software Delivery with Agile &amp; DevOps</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="dev">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/agile-development-practices.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Modern Agile Development Practices</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Modern Agile Development Practices</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="dev">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/database-design-migrations-best-practices.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Database Design &amp; Migrations Best Practices</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Database Design &amp; Migrations Best Practices</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="dev">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/docker-containerization-guide.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">The Docker Containerization Guide</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">The Docker Containerization Guide</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="dev">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/microservices-framework-architecture.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Microservices Framework Architecture</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Microservices Framework Architecture</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="dev">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/radical-therapy-software-development-teams.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Radical Therapy for Software Development Teams</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Radical Therapy for Software Development Teams</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="dev">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/software-performance-scalability-optimization.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Software Performance &amp; Scalability Optimization</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Software Performance &amp; Scalability Optimization</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="dev">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/time-to-kill-agile.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">It&apos;s Time to Kill Agile</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">It&apos;s Time to Kill Agile</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="frontend">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="frontend">
                     <a href="/articles/frontend-development-best-practices.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Frontend</span>
+                            <span class="text-xs font-semibold text-cyan-300 px-2.5 py-1 rounded-full" style="background:rgba(6,182,212,0.15);">Frontend</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Frontend Development Best Practices</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Frontend Development Best Practices</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="frontend">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="frontend">
                     <a href="/articles/frontend-testing-strategies.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Frontend</span>
+                            <span class="text-xs font-semibold text-cyan-300 px-2.5 py-1 rounded-full" style="background:rgba(6,182,212,0.15);">Frontend</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Frontend Testing Strategies</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Frontend Testing Strategies</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="frontend">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="frontend">
                     <a href="/articles/react-integration-patterns.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Frontend</span>
+                            <span class="text-xs font-semibold text-cyan-300 px-2.5 py-1 rounded-full" style="background:rgba(6,182,212,0.15);">Frontend</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">React Integration Patterns</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">React Integration Patterns</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="frontend">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="frontend">
                     <a href="/articles/responsive-design-principles.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Frontend</span>
+                            <span class="text-xs font-semibold text-cyan-300 px-2.5 py-1 rounded-full" style="background:rgba(6,182,212,0.15);">Frontend</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Responsive Design Principles</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Responsive Design Principles</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="frontend">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="frontend">
                     <a href="/articles/ui-component-library-design.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Frontend</span>
+                            <span class="text-xs font-semibold text-cyan-300 px-2.5 py-1 rounded-full" style="background:rgba(6,182,212,0.15);">Frontend</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">UI Component Library Design</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">UI Component Library Design</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="devrel">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="devrel">
                     <a href="/articles/community-building-developer-engagement.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Dev Relations</span>
+                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Dev Relations</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Community Building &amp; Developer Engagement</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Community Building &amp; Developer Engagement</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="devrel">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="devrel">
                     <a href="/articles/content-marketing-open-source.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Dev Relations</span>
+                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Dev Relations</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Content Marketing for Open Source</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Content Marketing for Open Source</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="devrel">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="devrel">
                     <a href="/articles/developer-relations-best-practices.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Dev Relations</span>
+                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Dev Relations</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Developer Relations Best Practices</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Developer Relations Best Practices</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="devrel">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="devrel">
                     <a href="/articles/digital-marketing-tech-products.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Dev Relations</span>
+                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Dev Relations</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">Digital Marketing for Tech Products</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Digital Marketing for Tech Products</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
-                <div class="article-card group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white" data-category="devrel">
+                <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="devrel">
                     <a href="/articles/seo-developer-products.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-buildly-primary bg-blue-50 px-2.5 py-1 rounded-full">Dev Relations</span>
+                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Dev Relations</span>
                         </div>
-                        <h3 class="text-base font-semibold text-buildly-dark group-hover:text-buildly-primary transition-colors leading-snug">SEO for Developer Products</h3>
-                        <div class="mt-4 flex items-center text-xs text-gray-400 font-medium">
-                            Read article
-                            <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">SEO for Developer Products</h3>
+                        <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
+                            Read article <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </div>
                     </a>
                 </div>
             </div>
-            <div id="no-results" class="hidden text-center py-16 text-gray-400">No articles found in this category.</div>
         </div>
     </section>
 
     <!-- Newsletter -->
-    <section class="py-16 bg-buildly-light">
-        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-2xl font-bold text-buildly-dark mb-3">Stay in the loop</h2>
-            <p class="text-gray-500 mb-8">Get new articles on AI development, product strategy, and startup growth — delivered to your inbox.</p>
-            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-buildly-primary">
-                <button type="submit" class="bg-buildly-primary text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-buildly-secondary transition-colors whitespace-nowrap">Subscribe</button>
+    <section class="py-16" style="background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(27,95,163,0.2) 0%, transparent 70%), var(--bg-base); border-top: 1px solid rgba(255,255,255,0.07);">
+        <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold text-white mb-3">Stay in the loop</h2>
+            <p class="text-slate-400 mb-6">Get new articles on AI development, product strategy, and startup growth &mdash; delivered to your inbox.</p>
+            <form class="flex gap-3">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2.5 text-white placeholder-slate-500 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-buildly-primary border border-white/10" style="background: #0e1729;">
+                <button type="submit" class="bg-buildly-primary text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-buildly-secondary transition-colors whitespace-nowrap">Subscribe</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-buildly-dark text-white py-12">
+    <footer style="background: #050b17; border-top: 1px solid rgba(255,255,255,0.07);" class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
                     <img src="/media/buildly-logo.svg" alt="Buildly" class="h-8 w-auto mb-4" style="filter: brightness(0) invert(1);">
-                    <p class="text-gray-400 text-sm">A collaborative AI-native software ecosystem for builders, startups, and product teams.</p>
+                    <p class="text-slate-400 text-sm">A collaborative AI-native software ecosystem for builders, startups, and product teams.</p>
                 </div>
                 <div>
-                    <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Ecosystem</h4>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">Ecosystem</h4>
                     <ul class="space-y-2">
-                        <li><a href="https://labs.buildly.io" class="text-gray-300 hover:text-white text-sm transition-colors">Buildly Labs</a></li>
-                        <li><a href="https://collab.buildly.io" class="text-gray-300 hover:text-white text-sm transition-colors">CollabHub</a></li>
-                        <li><a href="https://market.buildly.io" class="text-gray-300 hover:text-white text-sm transition-colors">Forge Marketplace</a></li>
-                        <li><a href="/ecosystem.html" class="text-gray-300 hover:text-white text-sm transition-colors">Ecosystem Map</a></li>
+                        <li><a href="https://labs.buildly.io" class="text-slate-400 hover:text-white text-sm transition-colors">Buildly Labs</a></li>
+                        <li><a href="https://collab.buildly.io" class="text-slate-400 hover:text-white text-sm transition-colors">CollabHub</a></li>
+                        <li><a href="https://market.buildly.io" class="text-slate-400 hover:text-white text-sm transition-colors">Forge Marketplace</a></li>
+                        <li><a href="/ecosystem.html" class="text-slate-400 hover:text-white text-sm transition-colors">Ecosystem Map</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Resources</h4>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">Resources</h4>
                     <ul class="space-y-2">
-                        <li><a href="/articles.html" class="text-gray-300 hover:text-white text-sm transition-colors">Articles</a></li>
-                        <li><a href="https://docs.buildly.io" class="text-gray-300 hover:text-white text-sm transition-colors">Documentation</a></li>
-                        <li><a href="/use-cases.html" class="text-gray-300 hover:text-white text-sm transition-colors">Use Cases</a></li>
-                        <li><a href="/pricing.html" class="text-gray-300 hover:text-white text-sm transition-colors">Pricing</a></li>
+                        <li><a href="/articles.html" class="text-slate-400 hover:text-white text-sm transition-colors">Articles</a></li>
+                        <li><a href="https://docs.buildly.io" class="text-slate-400 hover:text-white text-sm transition-colors">Documentation</a></li>
+                        <li><a href="/use-cases.html" class="text-slate-400 hover:text-white text-sm transition-colors">Use Cases</a></li>
+                        <li><a href="/pricing.html" class="text-slate-400 hover:text-white text-sm transition-colors">Pricing</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Newsletter</h4>
-                    <p class="text-gray-400 text-sm mb-4">Get insights on AI development and startup growth.</p>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">Newsletter</h4>
+                    <p class="text-slate-400 text-sm mb-4">Get insights on AI development and startup growth.</p>
                     <form class="space-y-3">
-                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-gray-800 text-white placeholder-gray-500 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-buildly-primary border border-gray-700">
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 text-white placeholder-slate-500 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-buildly-primary border border-white/10" style="background: #0e1729;">
                         <button type="submit" class="w-full bg-buildly-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-buildly-secondary transition-colors">Subscribe</button>
                     </form>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-sm">&copy; 2026 Buildly, Inc. All rights reserved.</p>
+            <div style="border-top: 1px solid rgba(255,255,255,0.07);" class="mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">&copy; 2026 Buildly, Inc. All rights reserved.</p>
                 <div class="flex gap-6">
-                    <a href="/privacy.html" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">Privacy</a>
-                    <a href="/terms.html" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">Terms</a>
+                    <a href="/privacy.html" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Privacy</a>
+                    <a href="/terms.html" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Terms</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        function filterArticles(category) {
-            // Update buttons
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                const isActive = btn.dataset.filter === category;
-                btn.classList.toggle('bg-buildly-primary', isActive);
-                btn.classList.toggle('text-white', isActive);
-                btn.classList.toggle('bg-white', !isActive);
-                btn.classList.toggle('text-gray-600', !isActive);
-                btn.classList.toggle('border', !isActive);
-                btn.classList.toggle('border-gray-200', !isActive);
-            });
-
-            // Filter cards
+        function filterArticles(cat) {
             const cards = document.querySelectorAll('.article-card');
-            let visible = 0;
-            cards.forEach(card => {
-                const show = category === 'all' || card.dataset.category === category;
-                card.style.display = show ? '' : 'none';
-                if (show) visible++;
-            });
-
-            // Hide featured when filtering
             const featured = document.getElementById('featured-section');
-            if (featured) featured.style.display = category === 'all' ? '' : 'none';
-
-            document.getElementById('no-results').classList.toggle('hidden', visible > 0);
+            cards.forEach(c => c.style.display = (cat === 'all' || c.dataset.category === cat) ? '' : 'none');
+            if (featured) featured.style.display = cat === 'all' ? '' : 'none';
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.toggle('active-filter', btn.dataset.filter === cat);
+                if (btn.dataset.filter !== cat) btn.style.cssText = '';
+            });
         }
-
         document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
             document.querySelector('.mobile-nav').classList.toggle('hidden');
         });
