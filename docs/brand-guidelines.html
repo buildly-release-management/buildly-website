@@ -2,475 +2,249 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Load common elements -->
-    <script src="/js/buildly-head.js"></script>
-    
-    <!-- Page-specific meta tags -->
-    <title>Brand Guidelines - Buildly</title>
-    <meta name="description" content="Official Buildly brand guidelines including logos, colors, fonts, and messaging for partners and media.">
-    <meta name="keywords" content="buildly brand guidelines, logo downloads, brand assets, partner resources">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buildly Brand Guidelines</title>
+    <meta name="description" content="Buildly brand guidelines for logo use, colors, typography, UI styling, and messaging.">
+    <meta name="keywords" content="Buildly brand guidelines, Buildly design system, Buildly logo, Buildly colors">
     <link rel="canonical" href="https://www.buildly.io/brand-guidelines.html">
     <meta name="robots" content="noindex, nofollow">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.buildly.io/brand-guidelines.html">
-    <meta property="og:title" content="Buildly Brand Guidelines">
-    <meta property="og:description" content="Official brand guidelines and assets for Buildly partners and media.">
-    <meta property="og:image" content="https://www.buildly.io/media/buildly-logo.svg">
-    
-    <!-- Custom styles for brand guidelines -->
+    <link rel="icon" type="image/svg+xml" href="/media/buildly-logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet">
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        colors: {
+                            'forge-navy': '#0F1B2A',
+                            'steel-slate': '#2B3643',
+                            'gunmetal': '#4A5560',
+                            'silver-steel': '#C3C7CD',
+                            'buildly-orange': '#FF8A1A',
+                            'tech-teal': '#00B3C6',
+                            'cloud-blue': '#E6F3FF'
+                        },
+                        fontFamily: {
+                            sans: ['Inter', 'system-ui', 'sans-serif'],
+                            display: ['Sora', 'Inter', 'system-ui', 'sans-serif']
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .color-swatch {
-            width: 120px;
-            height: 120px;
-            border-radius: 12px;
-            display: flex;
-            align-items: end;
-            justify-content: center;
-            padding: 12px;
-            color: white;
-            font-weight: 600;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-            margin-bottom: 8px;
+        body {
+            background: #f8fbfd;
+            color: #0F1B2A;
+            font-family: 'Inter', system-ui, sans-serif;
         }
-        .logo-showcase {
-            background: linear-gradient(45deg, #f8f9fa 25%, transparent 25%), 
-                        linear-gradient(-45deg, #f8f9fa 25%, transparent 25%), 
-                        linear-gradient(45deg, transparent 75%, #f8f9fa 75%), 
-                        linear-gradient(-45deg, transparent 75%, #f8f9fa 75%);
-            background-size: 20px 20px;
-            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+
+        h1, h2, h3, .font-display {
+            font-family: 'Sora', 'Inter', system-ui, sans-serif;
+            letter-spacing: 0;
         }
-        .download-btn {
-            background: #1b5fa3;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            display: inline-block;
-            margin: 4px;
-            transition: background-color 0.2s;
+
+        .panel {
+            background: #fff;
+            border: 1px solid rgba(74, 85, 96, 0.14);
+            border-radius: 8px;
+            box-shadow: 0 14px 34px rgba(15, 27, 42, 0.06);
         }
-        .download-btn:hover {
-            background: #144a84;
-            color: white;
-            text-decoration: none;
+
+        .label {
+            color: #006c7a;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
         }
-        .font-preview {
-            font-size: 48px;
+
+        .swatch {
+            border: 1px solid rgba(15, 27, 42, 0.12);
+            border-radius: 8px;
+            min-height: 110px;
+        }
+
+        .btn {
+            align-items: center;
+            border-radius: 8px;
+            display: inline-flex;
             font-weight: 700;
-            margin-bottom: 16px;
+            justify-content: center;
+            min-height: 42px;
+            padding: 0.7rem 1rem;
         }
-        .usage-example {
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 16px 0;
+
+        .btn-primary {
+            background: #FF8A1A;
+            color: white;
         }
-        .do-dont {
-            border-radius: 8px;
-            padding: 20px;
-            margin: 12px 0;
-        }
-        .do {
-            background: #dcfce7;
-            border: 2px solid #16a34a;
-        }
-        .dont {
-            background: #fef2f2;
-            border: 2px solid #dc2626;
-        }
-        .print-hide {
-            display: block;
-        }
+
         @media print {
-            .print-hide {
-                display: none;
-            }
-            .color-swatch {
-                border: 1px solid #000;
-            }
+            .print-hide { display: none; }
+            body { background: white; }
+            .panel { box-shadow: none; }
         }
     </style>
 </head>
-<body class="font-sans bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-sm print-hide">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html">
-                        <img src="media/buildly-logo.svg" alt="Buildly" class="h-12 w-auto" style="filter: brightness(0) saturate(100%) invert(21%) sepia(47%) saturate(1765%) hue-rotate(198deg) brightness(97%) contrast(93%);">
-                    </a>
-                    <span class="ml-4 text-gray-600 text-sm">Brand Guidelines</span>
+<body>
+<header class="print-hide border-b border-slate-200 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <a href="index.html" class="flex items-center gap-3">
+            <img src="media/buildly-logo.svg" alt="Buildly" class="h-10 w-auto">
+            <span class="text-sm font-semibold text-gunmetal">Brand Guidelines</span>
+        </a>
+        <div class="flex items-center gap-4 text-sm font-semibold">
+            <button onclick="window.print()" class="text-gunmetal hover:text-tech-teal">Print</button>
+            <a href="index.html" class="text-gunmetal hover:text-tech-teal">Back to website</a>
+        </div>
+    </div>
+</header>
+
+<main class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <section class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+        <div>
+            <div class="label mb-4">Buildly design system</div>
+            <h1 class="font-display text-5xl font-extrabold leading-tight sm:text-6xl">Architect. Reuse. Scale.</h1>
+            <p class="mt-5 max-w-2xl text-lg leading-8 text-gunmetal">Buildly is the platform for building software products and cloud-native systems. The brand should feel modular, reusable, transparent, scalable, practical, and open.</p>
+        </div>
+        <div class="panel flex items-center justify-center bg-white p-8">
+            <img src="media/buildly-logo.svg" alt="Buildly logo" class="max-h-40 w-auto">
+        </div>
+    </section>
+
+    <section class="mt-12 grid gap-5 lg:grid-cols-4">
+        <div class="panel p-6 lg:col-span-2">
+            <div class="label mb-4">Brand Mark Suite</div>
+            <div class="grid gap-4 sm:grid-cols-2">
+                <div class="rounded-lg border border-slate-200 bg-white p-5">
+                    <div class="text-sm font-bold text-gunmetal">Primary mark</div>
+                    <img src="media/buildly-logo.svg" alt="Buildly primary logo" class="mt-5 h-20 w-auto">
                 </div>
-                <div class="flex items-center space-x-4">
-                    <button onclick="window.print()" class="text-buildly-primary hover:text-buildly-secondary">
-                        Print Guidelines
-                    </button>
-                    <a href="index.html" class="text-buildly-primary hover:text-buildly-secondary">
-                        Back to Website
-                    </a>
+                <div class="rounded-lg border border-slate-200 bg-forge-navy p-5">
+                    <div class="text-sm font-bold text-cloud-blue">Monochrome on navy</div>
+                    <img src="media/buildly-logo.svg" alt="Buildly monochrome logo" class="mt-5 h-20 w-auto brightness-0 invert">
+                </div>
+            </div>
+            <div class="mt-5 grid gap-3 text-sm text-gunmetal sm:grid-cols-2">
+                <div class="rounded-lg bg-cloud-blue p-4"><strong>Do:</strong> use clear space, high contrast, and provided source files.</div>
+                <div class="rounded-lg bg-[#fff4ea] p-4"><strong>Do not:</strong> distort, recolor, outline, or place on busy images.</div>
+            </div>
+        </div>
+
+        <div class="panel p-6 lg:col-span-2">
+            <div class="label mb-4">Typography</div>
+            <div class="grid gap-6 sm:grid-cols-2">
+                <div>
+                    <div class="font-display text-5xl font-extrabold">H1</div>
+                    <p class="mt-2 font-display text-xl font-bold">Sora Extra Bold</p>
+                    <p class="mt-3 text-sm leading-6 text-gunmetal">Use Sora for the light brand system: large headings, section titles, product cards, and strong interface labels.</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-semibold" style="font-family:'Space Grotesk',Inter,sans-serif;">Aa</div>
+                    <p class="mt-2 text-xl font-semibold">Space Grotesk + Inter</p>
+                    <p class="mt-3 text-sm leading-6 text-gunmetal">Use Space Grotesk for dark app surfaces and Inter for body text, forms, tables, navigation, captions, and product UI.</p>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        
-        <!-- Introduction -->
-        <section class="mb-16">
-            <h1 class="text-5xl font-bold text-buildly-dark mb-6">Buildly Brand Guidelines</h1>
-            <div class="bg-white rounded-xl p-8 shadow-sm">
-                <p class="text-xl text-gray-700 mb-4">
-                    Welcome to the official Buildly brand guidelines. This comprehensive guide will help you understand how to properly represent our brand across all communications, partnerships, and media.
-                </p>
-                <p class="text-gray-600">
-                    Buildly is an AI-powered product development platform that provides a superior alternative to vibe coding through intelligent automation guided by developer oversight. Our brand reflects innovation, reliability, and the perfect balance between AI efficiency and human expertise.
-                </p>
-            </div>
-        </section>
-
-        <!-- Logo and Identity -->
-        <section class="mb-16">
-            <h2 class="text-4xl font-bold text-buildly-dark mb-8">Logo & Visual Identity</h2>
-            
-            <!-- Primary Logo -->
-            <div class="bg-white rounded-xl p-8 shadow-sm mb-8">
-                <h3 class="text-2xl font-bold text-buildly-dark mb-6">Primary Logo</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h4 class="font-semibold text-gray-900 mb-4">Logo on Light Background</h4>
-                        <div class="logo-showcase bg-white p-8 rounded-lg border-2 border-gray-200 text-center">
-                            <img src="media/buildly-logo.svg" alt="Buildly Logo" class="h-16 mx-auto">
-                        </div>
-                        <div class="mt-4 print-hide">
-                            <a href="media/buildly-logo.svg" download class="download-btn">SVG</a>
-                            <a href="media/buildly-logo.svg" download class="download-btn">PNG (High-res)</a>
-                            <a href="media/buildly-logo.svg" download class="download-btn">PNG (Web)</a>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold text-gray-900 mb-4">Logo on Dark Background</h4>
-                        <div class="logo-showcase bg-buildly-dark p-8 rounded-lg border-2 border-gray-200 text-center">
-                            <img src="media/buildly-logo.svg" alt="Buildly Logo" class="h-16 mx-auto filter invert">
-                        </div>
-                        <div class="mt-4 print-hide">
-                            <a href="media/buildly-logo.svg" download class="download-btn">SVG (White)</a>
-                            <a href="media/buildly-logo.svg" download class="download-btn">PNG (White)</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Logo Usage Guidelines -->
-            <div class="bg-white rounded-xl p-8 shadow-sm">
-                <h3 class="text-2xl font-bold text-buildly-dark mb-6">Logo Usage Guidelines</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="do">
-                        <h4 class="font-bold text-green-800 mb-3">✓ DO</h4>
-                        <ul class="space-y-2 text-green-700">
-                            <li>• Use the logo at sufficient size for readability</li>
-                            <li>• Maintain clear space around the logo</li>
-                            <li>• Use on high contrast backgrounds</li>
-                            <li>• Keep the logo proportional</li>
-                            <li>• Use provided logo files only</li>
-                        </ul>
-                    </div>
-                    <div class="dont">
-                        <h4 class="font-bold text-red-800 mb-3">✗ DON'T</h4>
-                        <ul class="space-y-2 text-red-700">
-                            <li>• Stretch or distort the logo</li>
-                            <li>• Change the logo colors</li>
-                            <li>• Add effects or shadows</li>
-                            <li>• Use on busy backgrounds</li>
-                            <li>• Make the logo too small to read</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Color Palette -->
-        <section class="mb-16">
-            <h2 class="text-4xl font-bold text-buildly-dark mb-8">Color Palette</h2>
-            <div class="bg-white rounded-xl p-8 shadow-sm">
-                <div class="grid md:grid-cols-5 gap-6">
-                    <div class="text-center">
-                        <div class="color-swatch bg-buildly-primary">#1b5fa3</div>
-                        <h4 class="font-bold text-gray-900">Primary Blue</h4>
-                        <p class="text-sm text-gray-600 mt-2">Main brand color<br>RGB: 27, 95, 163<br>CMYK: 83, 42, 0, 36</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="color-swatch bg-buildly-secondary">#144a84</div>
-                        <h4 class="font-bold text-gray-900">Secondary Blue</h4>
-                        <p class="text-sm text-gray-600 mt-2">Supporting color<br>RGB: 20, 74, 132<br>CMYK: 85, 44, 0, 48</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="color-swatch bg-buildly-accent">#f9943b</div>
-                        <h4 class="font-bold text-gray-900">Accent Orange</h4>
-                        <p class="text-sm text-gray-600 mt-2">Call-to-action<br>RGB: 249, 148, 59<br>CMYK: 0, 41, 76, 2</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="color-swatch bg-buildly-dark text-white">#1F2937</div>
-                        <h4 class="font-bold text-gray-900">Dark Gray</h4>
-                        <p class="text-sm text-gray-600 mt-2">Text & headers<br>RGB: 31, 41, 55<br>CMYK: 44, 25, 0, 78</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="color-swatch bg-buildly-light text-buildly-dark">#F3F4F6</div>
-                        <h4 class="font-bold text-gray-900">Light Gray</h4>
-                        <p class="text-sm text-gray-600 mt-2">Backgrounds<br>RGB: 243, 244, 246<br>CMYK: 1, 1, 0, 4</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Typography -->
-        <section class="mb-16">
-            <h2 class="text-4xl font-bold text-buildly-dark mb-8">Typography</h2>
-            <div class="bg-white rounded-xl p-8 shadow-sm">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-2xl font-bold text-buildly-dark mb-4">Primary Font: Inter</h3>
-                        <div class="font-preview text-buildly-dark">Inter Font</div>
-                        <p class="text-gray-600 mb-4">
-                            Inter is our primary typeface for all digital communications. It provides excellent readability and modern aesthetic.
-                        </p>
-                        <div class="space-y-2">
-                            <div class="text-3xl font-bold">Heading Bold</div>
-                            <div class="text-2xl font-semibold">Heading Semibold</div>
-                            <div class="text-xl font-medium">Subheading Medium</div>
-                            <div class="text-base">Body Regular</div>
-                            <div class="text-sm text-gray-600">Small Text</div>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-buildly-dark mb-4">Font Usage Guidelines</h3>
-                        <div class="usage-example">
-                            <h4 class="font-bold mb-2">Web & Digital</h4>
-                            <p class="text-gray-600">Use Inter for all web content, applications, and digital communications.</p>
-                        </div>
-                        <div class="usage-example">
-                            <h4 class="font-bold mb-2">Print Materials</h4>
-                            <p class="text-gray-600">For print, use Inter or substitute with Arial/Helvetica if Inter is unavailable.</p>
-                        </div>
-                        <div class="usage-example">
-                            <h4 class="font-bold mb-2">Font Weights</h4>
-                            <ul class="text-gray-600 space-y-1">
-                                <li>• Headlines: Bold (700)</li>
-                                <li>• Subheadings: Semibold (600)</li>
-                                <li>• Body text: Regular (400)</li>
-                                <li>• Captions: Regular (400)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Brand Voice & Messaging -->
-        <section class="mb-16">
-            <h2 class="text-4xl font-bold text-buildly-dark mb-8">Brand Voice & Messaging</h2>
-            
-            <!-- Core Positioning -->
-            <div class="bg-white rounded-xl p-8 shadow-sm mb-8">
-                <h3 class="text-2xl font-bold text-buildly-dark mb-6">Core Positioning</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="do">
-                        <h4 class="font-bold text-green-800 mb-3">✓ WE ARE</h4>
-                        <ul class="space-y-2 text-green-700">
-                            <li>• An AI-powered product development platform</li>
-                            <li>• A superior alternative to vibe coding</li>
-                            <li>• AI automation with developer oversight</li>
-                            <li>• Professional and reliable</li>
-                            <li>• Innovation-focused</li>
-                        </ul>
-                    </div>
-                    <div class="dont">
-                        <h4 class="font-bold text-red-800 mb-3">✗ WE ARE NOT</h4>
-                        <ul class="space-y-2 text-red-700">
-                            <li>• A vibe coding platform</li>
-                            <li>• Just another AI tool</li>
-                            <li>• Replacing developers entirely</li>
-                            <li>• Overly technical or complex</li>
-                            <li>• Unreliable or experimental</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Key Messages -->
-            <div class="bg-white rounded-xl p-8 shadow-sm mb-8">
-                <h3 class="text-2xl font-bold text-buildly-dark mb-6">Key Messages</h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="usage-example">
-                        <h4 class="font-bold text-buildly-primary mb-2">Value Proposition</h4>
-                        <p class="text-gray-700">"AI automation + developer oversight = better than vibe coding"</p>
-                    </div>
-                    <div class="usage-example">
-                        <h4 class="font-bold text-buildly-primary mb-2">Target Outcome</h4>
-                        <p class="text-gray-700">"Transform your visionary ideas into reality with comprehensive AI development platform"</p>
-                    </div>
-                    <div class="usage-example">
-                        <h4 class="font-bold text-buildly-primary mb-2">Differentiation</h4>
-                        <p class="text-gray-700">"Superior alternative to vibe coding with intelligent automation guided by human expertise"</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tone of Voice -->
-            <div class="bg-white rounded-xl p-8 shadow-sm">
-                <h3 class="text-2xl font-bold text-buildly-dark mb-6">Tone of Voice</h3>
-                <div class="grid md:grid-cols-4 gap-4">
-                    <div class="text-center p-4 bg-buildly-light rounded-lg">
-                        <h4 class="font-bold text-buildly-primary mb-2">Professional</h4>
-                        <p class="text-sm text-gray-600">Expert, credible, trustworthy</p>
-                    </div>
-                    <div class="text-center p-4 bg-buildly-light rounded-lg">
-                        <h4 class="font-bold text-buildly-primary mb-2">Approachable</h4>
-                        <p class="text-sm text-gray-600">Friendly, accessible, human</p>
-                    </div>
-                    <div class="text-center p-4 bg-buildly-light rounded-lg">
-                        <h4 class="font-bold text-buildly-primary mb-2">Innovative</h4>
-                        <p class="text-sm text-gray-600">Forward-thinking, cutting-edge</p>
-                    </div>
-                    <div class="text-center p-4 bg-buildly-light rounded-lg">
-                        <h4 class="font-bold text-buildly-primary mb-2">Solution-Oriented</h4>
-                        <p class="text-sm text-gray-600">Problem-solving, practical</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Usage Examples -->
-        <section class="mb-16">
-            <h2 class="text-4xl font-bold text-buildly-dark mb-8">Usage Examples</h2>
-            
-            <!-- Business Card Example -->
-            <div class="bg-white rounded-xl p-8 shadow-sm mb-8">
-                <h3 class="text-2xl font-bold text-buildly-dark mb-6">Business Card Layout</h3>
-                <div class="max-w-md mx-auto bg-gradient-to-r from-buildly-primary to-buildly-secondary p-6 rounded-lg text-white">
-                    <img src="media/buildly-logo.svg" alt="Buildly" class="h-8 mb-4 filter invert">
-                    <div class="text-lg font-bold">John Doe</div>
-                    <div class="text-sm opacity-90">Product Manager</div>
-                    <div class="mt-3 text-sm opacity-80">
-                        <div>john@buildly.io</div>
-                        <div>labs.buildly.io</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Social Media Examples -->
-            <div class="bg-white rounded-xl p-8 shadow-sm">
-                <h3 class="text-2xl font-bold text-buildly-dark mb-6">Social Media Templates</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="font-bold mb-3">LinkedIn Post Template</h4>
-                        <div class="bg-gray-50 p-4 rounded border">
-                            <p class="text-sm">🚀 Transform your development process with Buildly - the AI-powered platform that's a superior alternative to vibe coding.</p>
-                            <p class="text-sm mt-2">✅ AI automation + developer oversight<br>✅ 50% reduction in development costs<br>✅ Streamlined product lifecycle</p>
-                            <p class="text-sm mt-2 text-buildly-primary">#AI #ProductDevelopment #SoftwareDevelopment</p>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="font-bold mb-3">Twitter Post Template</h4>
-                        <div class="bg-gray-50 p-4 rounded border">
-                            <p class="text-sm">Building software? Skip vibe coding. Choose Buildly's AI-powered platform with developer oversight. 🚀</p>
-                            <p class="text-sm mt-2">50% cost reduction | 40% time savings | Superior results</p>
-                            <p class="text-sm mt-2 text-buildly-primary">#BuildlyLabs #AI #SoftwareDev</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Digital Assets -->
-        <section class="mb-16 print-hide">
-            <h2 class="text-4xl font-bold text-buildly-dark mb-8">Digital Assets Download</h2>
-            <div class="bg-white rounded-xl p-8 shadow-sm">
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="text-center p-6 bg-gray-50 rounded-lg">
-                        <div class="text-4xl mb-4">🎨</div>
-                        <h4 class="font-bold mb-2">Logo Package</h4>
-                        <p class="text-sm text-gray-600 mb-4">SVG, PNG, and print-ready files</p>
-                        <a href="media/buildly-logo.svg" download class="download-btn">Download Logos</a>
-                    </div>
-                    <div class="text-center p-6 bg-gray-50 rounded-lg">
-                        <div class="text-4xl mb-4">🎨</div>
-                        <h4 class="font-bold mb-2">Brand Colors</h4>
-                        <p class="text-sm text-gray-600 mb-4">Hex, RGB, and CMYK values</p>
-                        <button onclick="copyColorPalette()" class="download-btn">Copy Color Codes</button>
-                    </div>
-                    <div class="text-center p-6 bg-gray-50 rounded-lg">
-                        <div class="text-4xl mb-4">📝</div>
-                        <h4 class="font-bold mb-2">Style Guide</h4>
-                        <p class="text-sm text-gray-600 mb-4">Complete brand guidelines PDF</p>
-                        <button onclick="window.print()" class="download-btn">Print Guidelines</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section class="mb-16">
-            <h2 class="text-4xl font-bold text-buildly-dark mb-8">Brand Guidelines Contact</h2>
-            <div class="bg-white rounded-xl p-8 shadow-sm">
-                <p class="text-lg text-gray-700 mb-4">
-                    Questions about brand usage or need additional assets? Contact our team:
-                </p>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="font-bold text-buildly-primary mb-2">Marketing & Brand</h4>
-                        <p class="text-gray-600">
-                            Maryna Mishchenko<br>
-                            VP Product and Marketing<br>
-                            <a href="mailto:marketing@buildly.io" class="text-buildly-primary">marketing@buildly.io</a>
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-buildly-primary mb-2">Partnership Inquiries</h4>
-                        <p class="text-gray-600">
-                            Greg Lind<br>
-                            CEO<br>
-                            <a href="mailto:partnerships@buildly.io" class="text-buildly-primary">partnerships@buildly.io</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-buildly-dark text-white py-8 print-hide">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025 Buildly, Inc. All rights reserved. These brand guidelines are for authorized use only.</p>
+    <section class="mt-12">
+        <div class="label mb-3">Dark Theme</div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+            <div><div class="swatch bg-[#0D1117]"></div><h3 class="mt-3 font-bold">App Black</h3><p class="text-sm text-gunmetal">#0D1117</p></div>
+            <div><div class="swatch bg-[#161B22]"></div><h3 class="mt-3 font-bold">Panel Dark</h3><p class="text-sm text-gunmetal">#161B22</p></div>
+            <div><div class="swatch bg-[#1F2937]"></div><h3 class="mt-3 font-bold">Blueprint</h3><p class="text-sm text-gunmetal">#1F2937</p></div>
+            <div><div class="swatch bg-[#F59E0B]"></div><h3 class="mt-3 font-bold">Buildly Gold</h3><p class="text-sm text-gunmetal">#F59E0B</p></div>
+            <div><div class="swatch bg-[#A3A9B3]"></div><h3 class="mt-3 font-bold">Dark Text</h3><p class="text-sm text-gunmetal">#A3A9B3</p></div>
+            <div><div class="swatch bg-[#E5E7EB]"></div><h3 class="mt-3 font-bold">Light Text</h3><p class="text-sm text-gunmetal">#E5E7EB</p></div>
         </div>
-    </footer>
+    </section>
 
-    <!-- JavaScript for interactions -->
-    <script>
-        function copyColorPalette() {
-            const colors = `Buildly Color Palette:
-Primary Blue: #1b5fa3 (RGB: 27, 95, 163)
-Secondary Blue: #144a84 (RGB: 20, 74, 132)  
-Accent Orange: #f9943b (RGB: 249, 148, 59)
-Dark Gray: #1F2937 (RGB: 31, 41, 55)
-Light Gray: #F3F4F6 (RGB: 243, 244, 246)`;
-            
-            navigator.clipboard.writeText(colors).then(function() {
-                alert('Color palette copied to clipboard!');
-            });
-        }
+    <section class="mt-12">
+        <div class="mb-5 flex items-end justify-between gap-4">
+            <div>
+                <div class="label mb-3">Color Palette</div>
+                <h2 class="font-display text-3xl font-extrabold">Primary system colors</h2>
+            </div>
+            <button class="btn btn-primary print-hide" onclick="copyColorPalette()">Copy palette</button>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-8">
+            <div><div class="swatch bg-forge-navy"></div><h3 class="mt-3 font-bold">Forge Navy</h3><p class="text-sm text-gunmetal">#0F1B2A</p></div>
+            <div><div class="swatch bg-steel-slate"></div><h3 class="mt-3 font-bold">Steel Slate</h3><p class="text-sm text-gunmetal">#2B3643</p></div>
+            <div><div class="swatch bg-gunmetal"></div><h3 class="mt-3 font-bold">Gunmetal</h3><p class="text-sm text-gunmetal">#4A5560</p></div>
+            <div><div class="swatch bg-silver-steel"></div><h3 class="mt-3 font-bold">Silver Steel</h3><p class="text-sm text-gunmetal">#C3C7CD</p></div>
+            <div><div class="swatch bg-buildly-orange"></div><h3 class="mt-3 font-bold">Buildly Orange</h3><p class="text-sm text-gunmetal">#FF8A1A</p></div>
+            <div><div class="swatch bg-tech-teal"></div><h3 class="mt-3 font-bold">Tech Teal</h3><p class="text-sm text-gunmetal">#00B3C6</p></div>
+            <div><div class="swatch bg-cloud-blue"></div><h3 class="mt-3 font-bold">Cloud Blue</h3><p class="text-sm text-gunmetal">#E6F3FF</p></div>
+            <div><div class="swatch bg-white"></div><h3 class="mt-3 font-bold">White</h3><p class="text-sm text-gunmetal">#FFFFFF</p></div>
+        </div>
+    </section>
 
-        // Print optimization
-        window.addEventListener('beforeprint', function() {
-            document.title = 'Buildly Brand Guidelines';
-        });
-    </script>
+    <section class="mt-14 grid gap-5 lg:grid-cols-[1fr_1fr]">
+        <div class="panel p-6">
+            <div class="label mb-4">UI Components</div>
+            <h2 class="font-display text-3xl font-extrabold">Product platform styling</h2>
+            <div class="mt-6 grid gap-4">
+                <div class="rounded-lg border border-slate-200 bg-white p-4">
+                    <div class="mb-3 flex items-center justify-between">
+                        <span class="font-bold">Deployment status</span>
+                        <span class="rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-[#007f8d]">Healthy</span>
+                    </div>
+                    <div class="h-2 rounded-full bg-cloud-blue"><div class="h-2 w-3/4 rounded-full bg-tech-teal"></div></div>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <button class="btn btn-primary">Primary</button>
+                    <button class="btn border border-tech-teal bg-white text-[#007f8d]">Secondary</button>
+                    <button class="btn border border-slate-200 bg-white text-forge-navy">Tertiary</button>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-3">
+                    <div class="rounded-lg bg-cloud-blue px-3 py-2 text-center text-sm font-semibold">Microservice</div>
+                    <div class="rounded-lg bg-white px-3 py-2 text-center text-sm font-semibold ring-1 ring-slate-200">Library</div>
+                    <div class="rounded-lg bg-white px-3 py-2 text-center text-sm font-semibold ring-1 ring-slate-200">API</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel p-6">
+            <div class="label mb-4">Voice and Content</div>
+            <h2 class="font-display text-3xl font-extrabold">Use product language that feels practical.</h2>
+            <div class="mt-6 grid gap-4 text-sm leading-6 text-gunmetal">
+                <div class="rounded-lg bg-cloud-blue p-4"><strong>Lead with:</strong> architect, reuse, scale, deploy, component, platform, system, product, operations.</div>
+                <div class="rounded-lg bg-white p-4 ring-1 ring-slate-200"><strong>Avoid:</strong> vague AI hype, magical claims, dark cyber styling, and one-off feature lists without product workflow context.</div>
+                <div class="rounded-lg bg-white p-4 ring-1 ring-slate-200"><strong>Core line:</strong> The platform for building software products and cloud-native systems.</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="print-hide mt-8 border-t border-slate-200 bg-white py-8">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 text-sm text-gunmetal sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+        <span>&copy; 2026 Buildly. Brand guidelines for authorized use.</span>
+        <a href="mailto:marketing@buildly.io" class="font-semibold text-tech-teal">marketing@buildly.io</a>
+    </div>
+</footer>
+
+<script>
+function copyColorPalette() {
+    var colors = [
+        'Forge Navy #0F1B2A',
+        'Steel Slate #2B3643',
+        'Gunmetal #4A5560',
+        'Silver Steel #C3C7CD',
+        'Buildly Orange #FF8A1A',
+        'Tech Teal #00B3C6',
+        'Cloud Blue #E6F3FF',
+        'White #FFFFFF'
+    ].join('\n');
+    navigator.clipboard.writeText(colors).then(function() {
+        alert('Buildly palette copied.');
+    });
+}
+</script>
 </body>
 </html>

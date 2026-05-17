@@ -19,13 +19,7 @@
         
         // Fonts - preload for better performance
         { tag: 'link', attrs: { 
-            href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap', 
-            rel: 'stylesheet' 
-        }},
-        
-        // Emoji font support - ensures consistent emoji rendering across platforms
-        { tag: 'link', attrs: { 
-            href: 'https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap', 
+            href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap', 
             rel: 'stylesheet' 
         }},
         
@@ -33,12 +27,12 @@
         { tag: 'style', content: `
             * { box-sizing: border-box; }
             body { 
-                font-family: 'Inter', 'Noto Color Emoji', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; 
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; 
                 margin: 0; 
                 line-height: 1.6; 
             }
             .bg-white { background-color: #ffffff; }
-            .bg-buildly-primary { background-color: #1b5fa3; }
+            .bg-buildly-primary { background-color: #0F1B2A; }
             .text-white { color: #ffffff; }
             .text-gray-700 { color: #374151; }
             .flex { display: flex; }
@@ -73,14 +67,16 @@
                             theme: {
                                 extend: {
                                     colors: {
-                                        'buildly-primary': '#1b5fa3',
-                                        'buildly-secondary': '#144a84',
-                                        'buildly-accent': '#f9943b',
-                                        'buildly-dark': '#1F2937',
-                                        'buildly-light': '#F3F4F6',
+                                        'buildly-primary': '#0F1B2A',
+                                        'buildly-secondary': '#2B3643',
+                                        'buildly-accent': '#FF8A1A',
+                                        'buildly-teal': '#00B3C6',
+                                        'buildly-dark': '#0F1B2A',
+                                        'buildly-light': '#E6F3FF',
                                     },
                                     fontFamily: {
-                                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Noto Color Emoji"', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Android Emoji"', '"EmojiSymbols"', 'sans-serif'],
+                                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                                        display: ['Sora', 'Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
                                     },
                                     animation: {
                                         'scroll': 'scroll 30s linear infinite',

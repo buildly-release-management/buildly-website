@@ -1,95 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" data-no-nav-loader>
+<html lang="en" class="scroll-smooth" data-no-nav-loader>
 <head>
     <meta charset="UTF-8">
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('buildly-theme');
+            document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
+        })();
+    </script>
     <script src="/js/buildly-head.js"></script>
     <title>Articles - Buildly</title>
-    <meta name="description" content="Insights on AI-powered development, product management, startup growth, and more from the Buildly team.">
-    <meta name="keywords" content="AI development articles, product management, startup growth, software engineering, buildly blog">
+    <meta name="description" content="Buildly articles on AI-native product management, cloud-native delivery, reusable software, startup ecosystems, and community-led software building.">
+    <meta name="keywords" content="AI-native product management, cloud-native delivery, reusable software, Buildly Labs, CollabHub, Forge Marketplace, startup ecosystem, buildly blog">
     <link rel="canonical" href="https://www.buildly.io/articles.html">
     <style>
-        :root {
-            --bg-base: #070d1a;
-            --bg-card: #0e1729;
-            --bg-card-hover: #131e33;
-            --border-subtle: rgba(255,255,255,0.07);
-        }
-        body { background-color: var(--bg-base); color: #e2e8f0; }
-        .hero-bg {
-            background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(27,95,163,0.25) 0%, transparent 70%),
-                        radial-gradient(ellipse 40% 40% at 80% 60%, rgba(249,148,59,0.1) 0%, transparent 60%),
-                        var(--bg-base);
-        }
-        .grid-overlay {
-            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        .glass-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            transition: border-color 0.3s, background 0.3s;
-        }
-        .glass-card:hover { background: var(--bg-card-hover); border-color: rgba(255,255,255,0.12); }
-        .nav-dark { background: rgba(7,13,26,0.88); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.07); }
         .filter-btn { transition: all 0.2s; }
-        .active-filter { background: #1b5fa3 !important; color: white !important; border-color: #1b5fa3 !important; }
+        .knowledge-eyebrow {
+            background: rgba(0, 179, 198, 0.14);
+            border: 1px solid rgba(0, 179, 198, 0.32);
+            color: var(--buildly-teal);
+            letter-spacing: 0.12em;
+        }
     </style>
 </head>
-<body>
-    <nav class="nav-dark fixed w-full z-50 top-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="/" aria-label="Buildly Homepage" class="flex items-center">
-                    <img src="/media/buildly-logo.svg" alt="Buildly" class="h-9 w-auto" style="filter: brightness(0) invert(1);">
-                </a>
-                <div class="hidden md:flex items-center space-x-1">
-                    <div class="relative group">
-                        <button class="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium flex items-center gap-1 transition-colors">Ecosystem <svg class="h-3 w-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-                        <div class="absolute left-0 mt-1 w-60 rounded-xl shadow-2xl border border-white/10 bg-[#0e1729] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20 py-2">
-                            <a href="https://collab.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5"><span class="text-lg mt-0.5">&#129309;</span><div><div class="text-sm font-semibold text-white">CollabHub</div><div class="text-xs text-slate-400">Community &amp; collaboration</div></div></a>
-                            <a href="https://market.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5"><span class="text-lg mt-0.5">&#128722;</span><div><div class="text-sm font-semibold text-white">Forge Marketplace</div><div class="text-xs text-slate-400">Reusable products &amp; templates</div></div></a>
-                            <a href="https://labs.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5"><span class="text-lg mt-0.5">&#129504;</span><div><div class="text-sm font-semibold text-white">Buildly Labs</div><div class="text-xs text-slate-400">AI-native product operations</div></div></a>
-                            <a href="/ecosystem.html" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5"><span class="text-lg mt-0.5">&#128506;</span><div><div class="text-sm font-semibold text-white">Ecosystem Map</div><div class="text-xs text-slate-400">See how it all connects</div></div></a>
-                        </div>
-                    </div>
-                    <div class="relative group">
-                        <button class="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium flex items-center gap-1 transition-colors">Community <svg class="h-3 w-3 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-                        <div class="absolute left-0 mt-1 w-60 rounded-xl shadow-2xl border border-white/10 bg-[#0e1729] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20 py-2">
-                            <a href="https://collab.buildly.io" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5"><span class="text-lg mt-0.5">&#127959;</span><div><div class="text-sm font-semibold text-white">Builder Network</div><div class="text-xs text-slate-400">Developers, founders, agencies</div></div></a>
-                            <a href="/startupgrind.html" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5"><span class="text-lg mt-0.5">&#128293;</span><div><div class="text-sm font-semibold text-white">StartupGrind PDX</div><div class="text-xs text-slate-400">Local founder community</div></div></a>
-                            <a href="/firstcityfoundry.html" class="flex items-start gap-3 px-4 py-3 hover:bg-white/5"><span class="text-lg mt-0.5">&#127897;</span><div><div class="text-sm font-semibold text-white">FirstCityFoundry</div><div class="text-xs text-slate-400">Founder conversations &amp; podcasts</div></div></a>
-                        </div>
-                    </div>
-                    <a href="/articles.html" class="text-white font-semibold px-3 py-2 text-sm transition-colors">Articles</a>
-                    <a href="/pricing.html" class="text-slate-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Pricing</a>
-                    <a href="https://labs.buildly.io" class="ml-2 bg-buildly-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-500 transition-colors">Try for Free</a>
-                </div>
-                <button class="mobile-menu-btn md:hidden text-slate-300 hover:text-white focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+<body class="buildly-system-page">
+    <nav class="nav-surface fixed top-0 z-50 w-full">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <a href="/" aria-label="Buildly Home" class="flex items-center gap-3">
+                <img src="/media/buildly-logo.svg" alt="Buildly" class="h-10 w-auto">
+            </a>
+            <div class="hidden items-center gap-7 md:flex">
+                <a href="/#platform" class="nav-link">Platform</a>
+                <a href="/#ecosystem" class="nav-link">Ecosystem</a>
+                <a href="/pricing.html" class="nav-link">Pricing</a>
+                <a href="/articles.html" class="nav-link active">Articles</a>
+                <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch light/dark theme">
+                    <svg class="moon-icon h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8z"/></svg>
+                    <svg class="sun-icon h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4V2m0 20v-2m8-8h2M2 12h2m14.95 6.95 1.41 1.41M3.64 3.64l1.41 1.41m13.9-1.41-1.41 1.41M5.05 18.95l-1.41 1.41M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/></svg>
                 </button>
+                <a href="https://labs.buildly.io" class="btn-primary px-4 py-2 text-sm">Start in Labs</a>
             </div>
-            <div class="mobile-nav hidden pb-4 space-y-1 border-t border-white/10 mt-2">
-                <a href="https://collab.buildly.io" class="block px-3 py-2 text-sm text-slate-300">CollabHub</a>
-                <a href="https://market.buildly.io" class="block px-3 py-2 text-sm text-slate-300">Forge Marketplace</a>
-                <a href="https://labs.buildly.io" class="block px-3 py-2 text-sm text-slate-300">Buildly Labs</a>
-                <a href="/ecosystem.html" class="block px-3 py-2 text-sm text-slate-300">Ecosystem Map</a>
-                <a href="/articles.html" class="block px-3 py-2 text-sm font-semibold text-white">Articles</a>
-                <a href="/pricing.html" class="block px-3 py-2 text-sm text-slate-300">Pricing</a>
-                <a href="https://labs.buildly.io" class="block mx-3 mt-2 bg-buildly-accent text-white px-4 py-2 rounded-lg text-sm font-semibold text-center">Try for Free</a>
-            </div>
+            <button class="mobile-menu-button md:hidden text-buildly-primary" aria-label="Open menu" aria-expanded="false">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
+        </div>
+        <div class="mobile-nav hidden border-t px-4 pb-4 md:hidden" style="border-color: var(--page-border); background: var(--page-surface);">
+            <a href="/#platform" class="nav-link block py-2">Platform</a>
+            <a href="/#ecosystem" class="nav-link block py-2">Ecosystem</a>
+            <a href="/pricing.html" class="nav-link block py-2">Pricing</a>
+            <a href="/articles.html" class="nav-link active block py-2">Articles</a>
+            <button class="theme-toggle mt-2" type="button" data-theme-toggle aria-label="Switch theme" title="Switch light/dark theme">
+                <svg class="moon-icon h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8z"/></svg>
+                <svg class="sun-icon h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4V2m0 20v-2m8-8h2M2 12h2m14.95 6.95 1.41 1.41M3.64 3.64l1.41 1.41m13.9-1.41-1.41 1.41M5.05 18.95l-1.41 1.41M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/></svg>
+            </button>
+            <a href="https://labs.buildly.io" class="btn-primary mt-2 w-full text-sm">Start in Labs</a>
         </div>
     </nav>
 
     <!-- Hero -->
     <section class="hero-bg grid-overlay pt-28 pb-12 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6" style="background: rgba(27,95,163,0.2); color: #60a5fa; border: 1px solid rgba(27,95,163,0.4);">
-                Knowledge Base
+            <div class="knowledge-eyebrow inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase mb-6">
+                Ecosystem Knowledge
             </div>
-            <h1 class="text-5xl md:text-6xl font-bold text-white mb-5 leading-tight">Insights for Modern Builders</h1>
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-5 leading-tight">Insights for AI-native builders</h1>
             <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10">
-                Deep dives on AI-powered development, product strategy, startup growth, and engineering craft.
+                Deep dives on Buildly Labs, AI-native product work, reusable components, cloud-native delivery, startup ecosystems, and community-led software.
             </p>
             <!-- Category Filter Tabs -->
             <div class="flex flex-wrap justify-center gap-2">
@@ -97,9 +73,9 @@
                 <button onclick="filterArticles('pm')" data-filter="pm" class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-white/10 hover:border-blue-500 hover:text-blue-300">Product Management</button>
                 <button onclick="filterArticles('ai')" data-filter="ai" class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-white/10 hover:border-purple-500 hover:text-purple-300">AI &amp; Automation</button>
                 <button onclick="filterArticles('startup')" data-filter="startup" class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-white/10 hover:border-orange-500 hover:text-orange-300">Startup &amp; Growth</button>
-                <button onclick="filterArticles('dev')" data-filter="dev" class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-white/10 hover:border-green-500 hover:text-green-300">Software Dev</button>
+                <button onclick="filterArticles('dev')" data-filter="dev" class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-white/10 hover:border-green-500 hover:text-green-300">Cloud Native</button>
                 <button onclick="filterArticles('frontend')" data-filter="frontend" class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-white/10 hover:border-cyan-500 hover:text-cyan-300">Frontend</button>
-                <button onclick="filterArticles('devrel')" data-filter="devrel" class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-white/10 hover:border-pink-500 hover:text-pink-300">Dev Relations</button>
+                <button onclick="filterArticles('devrel')" data-filter="devrel" class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-white/10 hover:border-pink-500 hover:text-pink-300">Community</button>
             </div>
         </div>
     </section>
@@ -107,10 +83,10 @@
     <!-- Featured Article -->
     <section class="py-8" style="background: var(--bg-base);" id="featured-section">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <a href="/articles/time-to-kill-agile.html" class="block group rounded-2xl overflow-hidden p-8 md:p-12 transition-all" style="background: linear-gradient(135deg, #0d2044 0%, #0e1729 100%); border: 1px solid rgba(27,95,163,0.4);">
+            <a href="/articles/time-to-kill-agile.html" class="featured-article-card block group rounded-2xl overflow-hidden p-8 md:p-12 transition-all" style="background: linear-gradient(135deg, #0d2044 0%, #0e1729 100%); border: 1px solid rgba(27,95,163,0.4);">
                 <div class="flex items-center gap-2 mb-3">
                     <span class="text-xs font-semibold px-3 py-1 rounded-full" style="background: rgba(249,148,59,0.2); color: #f9943b;">Featured</span>
-                    <span class="text-xs font-semibold text-green-300 px-3 py-1 rounded-full" style="background: rgba(34,197,94,0.15);">Software Dev</span>
+                    <span class="text-xs font-semibold text-green-300 px-3 py-1 rounded-full" style="background: rgba(34,197,94,0.15);">Cloud Native</span>
                 </div>
                 <h2 class="text-2xl md:text-4xl font-bold text-white mb-3 group-hover:text-blue-200 transition-colors">It&apos;s Time to Kill Agile</h2>
                 <p class="text-slate-400 text-lg max-w-3xl">Agile was a revolution. But after two decades, it&apos;s become the problem it set out to solve. Here&apos;s why the RAD process is the post-agile answer for AI-native teams.</p>
@@ -436,7 +412,7 @@
                 <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/accelerating-software-delivery-agile-devops.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Cloud Native</span>
                         </div>
                         <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Accelerating Software Delivery with Agile &amp; DevOps</h3>
                         <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
@@ -447,7 +423,7 @@
                 <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/agile-development-practices.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Cloud Native</span>
                         </div>
                         <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Modern Agile Development Practices</h3>
                         <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
@@ -458,7 +434,7 @@
                 <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/database-design-migrations-best-practices.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Cloud Native</span>
                         </div>
                         <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Database Design &amp; Migrations Best Practices</h3>
                         <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
@@ -469,7 +445,7 @@
                 <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/docker-containerization-guide.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Cloud Native</span>
                         </div>
                         <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">The Docker Containerization Guide</h3>
                         <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
@@ -480,7 +456,7 @@
                 <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/microservices-framework-architecture.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Cloud Native</span>
                         </div>
                         <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Microservices Framework Architecture</h3>
                         <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
@@ -491,7 +467,7 @@
                 <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/radical-therapy-software-development-teams.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Cloud Native</span>
                         </div>
                         <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Radical Therapy for Software Development Teams</h3>
                         <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
@@ -502,7 +478,7 @@
                 <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/software-performance-scalability-optimization.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Cloud Native</span>
                         </div>
                         <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Software Performance &amp; Scalability Optimization</h3>
                         <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
@@ -513,7 +489,7 @@
                 <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="dev">
                     <a href="/articles/time-to-kill-agile.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Software Dev</span>
+                            <span class="text-xs font-semibold text-green-300 px-2.5 py-1 rounded-full" style="background:rgba(34,197,94,0.15);">Cloud Native</span>
                         </div>
                         <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">It&apos;s Time to Kill Agile</h3>
                         <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
@@ -579,7 +555,7 @@
                 <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="devrel">
                     <a href="/articles/community-building-developer-engagement.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Dev Relations</span>
+                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Community</span>
                         </div>
                         <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Community Building &amp; Developer Engagement</h3>
                         <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
@@ -590,7 +566,7 @@
                 <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="devrel">
                     <a href="/articles/content-marketing-open-source.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Dev Relations</span>
+                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Community</span>
                         </div>
                         <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Content Marketing for Open Source</h3>
                         <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
@@ -601,7 +577,7 @@
                 <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="devrel">
                     <a href="/articles/developer-relations-best-practices.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Dev Relations</span>
+                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Community</span>
                         </div>
                         <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Developer Relations Best Practices</h3>
                         <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
@@ -612,7 +588,7 @@
                 <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="devrel">
                     <a href="/articles/digital-marketing-tech-products.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Dev Relations</span>
+                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Community</span>
                         </div>
                         <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">Digital Marketing for Tech Products</h3>
                         <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
@@ -623,7 +599,7 @@
                 <div class="article-card group glass-card rounded-xl overflow-hidden transition-all" data-category="devrel">
                     <a href="/articles/seo-developer-products.html" class="block p-6">
                         <div class="mb-3">
-                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Dev Relations</span>
+                            <span class="text-xs font-semibold text-pink-300 px-2.5 py-1 rounded-full" style="background:rgba(236,72,153,0.15);">Community</span>
                         </div>
                         <h3 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors leading-snug">SEO for Developer Products</h3>
                         <div class="mt-4 flex items-center text-xs text-slate-500 font-medium group-hover:text-slate-300 transition-colors">
@@ -639,7 +615,7 @@
     <section class="py-16" style="background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(27,95,163,0.2) 0%, transparent 70%), var(--bg-base); border-top: 1px solid rgba(255,255,255,0.07);">
         <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-2xl font-bold text-white mb-3">Stay in the loop</h2>
-            <p class="text-slate-400 mb-6">Get new articles on AI development, product strategy, and startup growth &mdash; delivered to your inbox.</p>
+            <p class="text-slate-400 mb-6">Get new articles on AI-native product work, cloud-native delivery, reusable software, and community building &mdash; delivered to your inbox.</p>
             <form class="flex gap-3">
                 <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2.5 text-white placeholder-slate-500 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-buildly-primary border border-white/10" style="background: #0e1729;">
                 <button type="submit" class="bg-buildly-primary text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-buildly-secondary transition-colors whitespace-nowrap">Subscribe</button>
@@ -674,7 +650,7 @@
                 </div>
                 <div>
                     <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">Newsletter</h4>
-                    <p class="text-slate-400 text-sm mb-4">Get insights on AI development and startup growth.</p>
+                    <p class="text-slate-400 text-sm mb-4">Get insights on AI-native product work, cloud-native delivery, and ecosystem building.</p>
                     <form class="space-y-3">
                         <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 text-white placeholder-slate-500 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-buildly-primary border border-white/10" style="background: #0e1729;">
                         <button type="submit" class="w-full bg-buildly-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-buildly-secondary transition-colors">Subscribe</button>
@@ -702,8 +678,35 @@
                 if (btn.dataset.filter !== cat) btn.style.cssText = '';
             });
         }
-        document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
-            document.querySelector('.mobile-nav').classList.toggle('hidden');
+        document.addEventListener('DOMContentLoaded', function() {
+            var button = document.querySelector('.mobile-menu-button');
+            var nav = document.querySelector('.mobile-nav');
+            if (button && nav) {
+                button.addEventListener('click', function() {
+                    var isOpen = !nav.classList.contains('hidden');
+                    nav.classList.toggle('hidden');
+                    button.setAttribute('aria-expanded', String(!isOpen));
+                });
+            }
+
+            function syncThemeButtons(theme) {
+                document.querySelectorAll('[data-theme-toggle]').forEach(function(toggle) {
+                    toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+                    toggle.setAttribute('title', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+                });
+            }
+
+            var activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            syncThemeButtons(activeTheme);
+
+            document.querySelectorAll('[data-theme-toggle]').forEach(function(toggle) {
+                toggle.addEventListener('click', function() {
+                    activeTheme = activeTheme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', activeTheme);
+                    localStorage.setItem('buildly-theme', activeTheme);
+                    syncThemeButtons(activeTheme);
+                });
+            });
         });
     </script>
 </body>

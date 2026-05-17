@@ -1,10 +1,11 @@
 /* Buildly Custom Styles - Critical CSS to prevent FOUC */
 :root {
-    --buildly-primary: #1b5fa3;
-    --buildly-secondary: #144a84;
-    --buildly-accent: #f9943b;
-    --buildly-dark: #1F2937;
-    --buildly-light: #F3F4F6;
+    --buildly-primary: #0F1B2A;
+    --buildly-secondary: #2B3643;
+    --buildly-accent: #FF8A1A;
+    --buildly-teal: #00B3C6;
+    --buildly-dark: #0F1B2A;
+    --buildly-light: #E6F3FF;
 }
 
 /* Critical styles to prevent FOUC - load immediately */
@@ -13,7 +14,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     margin: 0;
     line-height: 1.6;
 }
@@ -93,7 +94,7 @@ body {
 
 .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
 
-.tracking-tight { letter-spacing: -0.025em; }
+.tracking-tight { letter-spacing: 0; }
 
 .gap-2 { gap: 0.5rem; }
 .gap-3 { gap: 0.75rem; }
@@ -102,6 +103,217 @@ body {
 .hover\:text-buildly-primary:hover { color: var(--buildly-primary); }
 .hover\:bg-buildly-secondary:hover { background-color: var(--buildly-secondary); }
 .hover\:bg-slate-800:hover { background-color: #1e293b; }
+
+/* Buildly design-system page shell */
+.buildly-system-page {
+    --page-bg: #f8fbfd;
+    --page-surface: #ffffff;
+    --page-surface-hover: #f1f8fb;
+    --page-border: rgba(74, 85, 96, 0.16);
+    --page-text: #0F1B2A;
+    --page-muted: #4A5560;
+    --page-soft: #E6F3FF;
+    --page-footer: #ffffff;
+    --page-shadow: 0 18px 40px rgba(15, 27, 42, 0.08);
+    --page-hero: linear-gradient(180deg, rgba(230, 243, 255, 0.92), rgba(255, 255, 255, 0.96) 48%, #f8fbfd),
+        radial-gradient(circle at 16% 12%, rgba(0, 179, 198, 0.14), transparent 30%),
+        radial-gradient(circle at 84% 18%, rgba(255, 138, 26, 0.16), transparent 30%);
+    --logo-filter: none;
+    background: var(--page-bg);
+    color: var(--page-text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+html[data-theme="dark"] .buildly-system-page {
+    --page-bg: #0D1117;
+    --page-surface: #161B22;
+    --page-surface-hover: #1F2937;
+    --page-border: rgba(229, 231, 235, 0.12);
+    --page-text: #E5E7EB;
+    --page-muted: #A3A9B3;
+    --page-soft: #111827;
+    --page-footer: #0D1117;
+    --page-shadow: 0 24px 44px rgba(0, 0, 0, 0.28);
+    --page-hero: radial-gradient(ellipse 80% 60% at 52% 0%, rgba(245, 158, 11, 0.18) 0%, transparent 68%),
+        radial-gradient(ellipse 42% 44% at 82% 60%, rgba(0, 179, 198, 0.1) 0%, transparent 62%),
+        linear-gradient(180deg, #0D1117 0%, #111827 52%, #0D1117 100%);
+    --logo-filter: brightness(0) invert(1);
+}
+
+.buildly-system-page h1,
+.buildly-system-page h2,
+.buildly-system-page h3,
+.buildly-system-page .font-display {
+    font-family: 'Sora', 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    letter-spacing: 0;
+}
+
+.buildly-system-page .nav-surface {
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid var(--page-border);
+    backdrop-filter: blur(18px);
+}
+
+html[data-theme="dark"] .buildly-system-page .nav-surface {
+    background: rgba(13, 17, 23, 0.9);
+}
+
+.buildly-system-page .nav-link {
+    color: var(--page-muted);
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: color 0.18s ease;
+}
+
+.buildly-system-page .nav-link:hover,
+.buildly-system-page .nav-link.active {
+    color: var(--buildly-accent);
+}
+
+.buildly-system-page .theme-toggle {
+    align-items: center;
+    background: var(--page-surface);
+    border: 1px solid var(--page-border);
+    border-radius: 8px;
+    color: var(--page-text);
+    display: inline-flex;
+    height: 40px;
+    justify-content: center;
+    transition: border-color 0.18s ease, color 0.18s ease, background-color 0.18s ease;
+    width: 40px;
+}
+
+.buildly-system-page .theme-toggle:hover {
+    border-color: var(--buildly-accent);
+    color: var(--buildly-accent);
+}
+
+.buildly-system-page .theme-toggle .sun-icon,
+html[data-theme="light"] .buildly-system-page .theme-toggle .moon-icon {
+    display: none;
+}
+
+html[data-theme="light"] .buildly-system-page .theme-toggle .sun-icon {
+    display: block;
+}
+
+.buildly-system-page .hero-bg {
+    background: var(--page-hero);
+}
+
+.buildly-system-page .grid-overlay {
+    background-image: none;
+}
+
+.buildly-system-page .glass-card,
+.buildly-system-page .glass-card-featured,
+.buildly-system-page .faq-item {
+    background: var(--page-surface);
+    border: 1px solid var(--page-border);
+    box-shadow: var(--page-shadow);
+}
+
+.buildly-system-page .glass-card:hover,
+.buildly-system-page .faq-item:hover {
+    background: var(--page-surface-hover);
+    border-color: rgba(0, 179, 198, 0.32);
+}
+
+.buildly-system-page .glass-card-featured {
+    border-color: rgba(255, 138, 26, 0.42);
+}
+
+.buildly-system-page .divider {
+    background: linear-gradient(90deg, transparent, var(--page-border), transparent);
+    height: 1px;
+}
+
+.buildly-system-page .text-white:not(.keep-white):not(.bg-buildly-primary):not(.bg-buildly-accent):not(.btn-primary),
+.buildly-system-page .text-slate-300,
+.buildly-system-page .text-slate-400,
+.buildly-system-page .text-slate-500 {
+    color: var(--page-text) !important;
+}
+
+.buildly-system-page .text-slate-300,
+.buildly-system-page .text-slate-400,
+.buildly-system-page .text-slate-500 {
+    color: var(--page-muted) !important;
+}
+
+html[data-theme="dark"] .buildly-system-page .text-white:not(.keep-white):not(.bg-buildly-primary):not(.bg-buildly-accent):not(.btn-primary) {
+    color: #F8FAFC !important;
+}
+
+.buildly-system-page .text-blue-400,
+.buildly-system-page .text-blue-300 {
+    color: var(--buildly-teal) !important;
+}
+
+.buildly-system-page .text-green-400,
+.buildly-system-page .text-green-300 {
+    color: #0f9f78 !important;
+}
+
+html[data-theme="dark"] .buildly-system-page .text-green-400,
+html[data-theme="dark"] .buildly-system-page .text-green-300 {
+    color: #34d399 !important;
+}
+
+.buildly-system-page .btn-primary,
+.buildly-system-page a.bg-buildly-primary,
+.buildly-system-page button.bg-buildly-primary,
+.buildly-system-page a.bg-buildly-accent,
+.buildly-system-page button.bg-buildly-accent {
+    background: var(--buildly-accent) !important;
+    border-radius: 8px;
+    color: #fff !important;
+    font-weight: 800;
+}
+
+.buildly-system-page .btn-primary:hover,
+.buildly-system-page a.bg-buildly-primary:hover,
+.buildly-system-page button.bg-buildly-primary:hover,
+.buildly-system-page a.bg-buildly-accent:hover,
+.buildly-system-page button.bg-buildly-accent:hover {
+    background: #e87508 !important;
+}
+
+.buildly-system-page input {
+    background: var(--page-surface) !important;
+    border-color: var(--page-border) !important;
+    color: var(--page-text) !important;
+}
+
+.buildly-system-page input::placeholder {
+    color: var(--page-muted);
+}
+
+.buildly-system-page footer {
+    background: var(--page-footer) !important;
+    border-top: 1px solid var(--page-border) !important;
+    color: var(--page-muted);
+}
+
+.buildly-system-page img[alt="Buildly"] {
+    filter: var(--logo-filter) !important;
+}
+
+.buildly-system-page .active-filter {
+    background: var(--buildly-accent) !important;
+    border-color: var(--buildly-accent) !important;
+    color: #fff !important;
+}
+
+.buildly-system-page .featured-article-card {
+    background: linear-gradient(135deg, rgba(230, 243, 255, 0.94) 0%, #ffffff 100%) !important;
+    border-color: rgba(0, 179, 198, 0.28) !important;
+}
+
+html[data-theme="dark"] .buildly-system-page .featured-article-card {
+    background: linear-gradient(135deg, #111d35 0%, #161B22 100%) !important;
+    border-color: rgba(0, 179, 198, 0.24) !important;
+}
 
 /* Responsive utilities */
 @media (min-width: 768px) {
