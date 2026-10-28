@@ -1,314 +1,361 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- Load common elements -->
-    <script src="/js/buildly-head.js"></script>
-    
-    <!-- Page-specific customization -->
-    <title>AI-Powered Product Management Tools - Streamline Development | Buildly</title>
-    <meta name="description" content="Revolutionary AI-powered product management platform for modern teams. Automate workflows and accelerate product development cycles with advanced AI tools.">
-    <meta name="keywords" content="AI product management, product manager tools, AI-powered workflows, product development platform, agile product management, AI automation">
-    <link rel="canonical" href="https://www.buildly.io/product-manager.html">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.buildly.io/product-manager.html">
-    <meta property="og:title" content="AI-Powered Product Management Tools - Streamline Development">
-    <meta property="og:description" content="Revolutionary AI-powered product management platform for modern development teams.">
-    <meta property="og:image" content="https://www.buildly.io/media/buildly-logo.svg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.buildly.io/product-manager.html">
-    <meta property="twitter:title" content="AI-Powered Product Management Tools - Streamline Development">
-    <meta property="twitter:description" content="Revolutionary AI-powered product management platform.">
-    <meta property="twitter:image" content="https://www.buildly.io/media/buildly-logo.svg">
-</head>
-<body class="font-sans">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html">
-                        <img src="media/buildly-logo.svg" alt="Buildly" class="h-12 w-auto" style="filter: brightness(0) saturate(100%) invert(21%) sepia(47%) saturate(1765%) hue-rotate(198deg) brightness(97%) contrast(93%);">
-                    </a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <div class="relative group">
-                            <button class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
-                                Products
-                                <svg class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                                <div class="py-1">
-                                    <a href="labs.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Labs Platform</a>
-                                    <a href="rad-core.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">RAD Core</a>
-                                    <a href="rad-process.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">RAD Process</a>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
-                        <a href="articles.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Articles</a>
-                        <div class="relative group">
-                            <button class="text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center font-semibold">
-                                For Developers
-                                <svg class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                                <div class="py-1">
-                                    <a href="developer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Developer Platform</a>
-                                    <a href="product-manager.html" class="block px-4 py-2 text-sm text-buildly-primary font-semibold hover:bg-buildly-light">Product Managers</a>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
-                        <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Try for Free</a>
-                    </div>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button class="mobile-menu-button text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <!-- Mobile menu -->
-            <div class="mobile-nav hidden md:hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <div class="space-y-1">
-                        <div class="text-gray-600 px-3 py-1 text-xs font-semibold uppercase tracking-wider">Products</div>
-                        <a href="labs.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">Labs Platform</a>
-                        <a href="rad-core.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">RAD Core</a>
-                        <a href="rad-process.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">RAD Process</a>
-                    </div>
-                    <a href="use-cases.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Use Cases</a>
-                    <a href="articles.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Articles</a>
-                    <div class="space-y-1">
-                        <div class="text-buildly-primary px-3 py-1 text-xs font-semibold uppercase tracking-wider">For Developers</div>
-                        <a href="developer.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">Developer Platform</a>
-                        <a href="product-manager.html" class="text-buildly-primary block px-6 py-2 rounded-md text-base font-medium font-semibold">Product Managers</a>
-                    </div>
-                    <a href="pricing.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
-                    <a href="https://labs.buildly.io" class="bg-buildly-primary text-white block px-3 py-2 rounded-md text-base font-medium text-center">Try for Free</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="pt-20 bg-gradient-to-br from-buildly-light to-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-buildly-dark mb-6">
-                    Manage multiple internal products effortlessly
-                </h1>
-                <p class="text-xl text-gray-600 mb-8 max-w-4xl mx-auto">
-                    A centralized platform designed to help product managers bring innovation to life—faster, smarter, and with full control.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-buildly-secondary transition-colors">
-                        Try for Free
-                    </a>
-                    <a href="#learn-more" class="border border-buildly-primary text-buildly-primary px-8 py-3 rounded-lg font-semibold hover:bg-buildly-primary hover:text-white transition-colors">
-                        Learn More
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 text-center mb-16">
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold text-buildly-primary mb-2">Centralized management</h3>
-                    <p class="text-gray-600 text-sm">Single platform for your entire product portfolio</p>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold text-buildly-primary mb-2">Enhanced team coordination</h3>
-                    <p class="text-gray-600 text-sm">Better communication and faster planning</p>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold text-buildly-primary mb-2">Efficient development</h3>
-                    <p class="text-gray-600 text-sm">Streamlined workflows and processes</p>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold text-buildly-primary mb-2">AI models trained for you</h3>
-                    <p class="text-gray-600 text-sm">Personalized AI assistance for your products</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Product Management Section -->
-    <section class="py-20 bg-buildly-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">AI PRODUCT MANAGEMENT</h2>
-                <h3 class="text-2xl md:text-3xl font-semibold text-gray-700 mb-6">Leverage AI to Accelerate Your Planning & Execution</h3>
-                <p class="text-xl text-gray-600">Product management platform Labs provides everything you need to turn ideas into reality quickly and effectively.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-buildly-primary rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-lg font-semibold text-buildly-dark mb-2">Automated Technical Documentation</h4>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-buildly-accent rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-lg font-semibold text-buildly-dark mb-2">AI-Assisted User Stories</h4>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-buildly-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-lg font-semibold text-buildly-dark mb-2">Feature Discovery and Recommendation for POC and MVP</h4>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-buildly-primary rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-lg font-semibold text-buildly-dark mb-2">AI-Powered Release Management</h4>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-buildly-accent rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
-                        </svg>
-                    </div>
-                    <h4 class="text-lg font-semibold text-buildly-dark mb-2">Build Your Own AI on Your Product</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">PORTFOLIO</h2>
-                <h3 class="text-2xl md:text-3xl font-semibold text-gray-700 mb-6">Simplify and Centralize Your Product Portfolio</h3>
-                <p class="text-xl text-gray-600 mb-8">Ensure accurate technical documentation for every product with Buildly's AI-generated reports and tracking features.</p>
-                <p class="text-lg text-gray-600">Buildly provides you with a single platform to manage your entire product portfolio from ideation to release.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- RAD Core Section -->
-    <section class="py-20 bg-buildly-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">RAD CORE</h2>
-                <h3 class="text-2xl md:text-3xl font-semibold text-gray-700 mb-6">Use reusable components to maintain consistency across products and scale seamlessly</h3>
-                <p class="text-xl text-gray-600">Get access to Buildly RAD (Rapid Application Development) Core, a component-driven architecture. It's simple for teams to build microservice architectures that allow for centralized management, passthrough authentication, and a data mesh.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Your AI Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-buildly-dark mb-4">YOUR AI</h2>
-                <h3 class="text-2xl md:text-3xl font-semibold text-gray-700 mb-6">Train Your Micro AI</h3>
-                <p class="text-xl text-gray-600 mb-8">Use a virtual product manager assistant for ongoing project management.</p>
-                <p class="text-lg text-gray-600">Start building your product by using our release management tool, and AI suggestions for packaging, planning, and documenting future releases, while also building a uniquely trained AI on your product, its features, and release processes. Creating a Micro Product AI that can be your customer chat bot as well as an AI Product Management assistant.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-buildly-primary">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to transform your product management?</h2>
-            <p class="text-xl text-blue-100 mb-8">Join product managers who are already leveraging AI to accelerate their workflows</p>
-            <a href="https://labs.buildly.io" class="bg-white text-buildly-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Start Your Free Trial
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-buildly-dark text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">THE BUILDLY LIFECYCLE</h4>
-                    <p class="text-gray-300 text-sm">The Buildly Lifecycle process helps startups and SMBs document their ideas, translating business concepts into detailed technical documentation.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="https://labs.buildly.io" class="text-gray-300 hover:text-white transition-colors">Labs</a></li>
-                        <li><a href="use-cases.html" class="text-gray-300 hover:text-white transition-colors">Use Cases</a></li>
-                        <li><a href="pricing.html" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
-                    <ul class="space-y-2">
-                        <li><a href="articles.html" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="/contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="rad-core.html" class="text-gray-300 hover:text-white transition-colors">RAD Core</a></li>
-                        <li><a href="https://market.buildly.io/" class="text-gray-300 hover:text-white transition-colors">Collab Hub</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">OUR NEWSLETTER</h4>
-                    <p class="text-gray-300 text-sm mb-4">Sign up for the Buildly Lifecycle Newsletter</p>
-                    <form class="space-y-4">
-                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-gray-700 text-white placeholder-gray-400 rounded focus:outline-none focus:ring-2 focus:ring-buildly-primary">
-                        <button type="submit" class="w-full bg-buildly-primary text-white py-2 rounded hover:bg-buildly-secondary transition-colors">Submit</button>
-                    </form>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
-                <p class="text-gray-300">&copy; Copyright Buildly, Inc. 2025 All Rights Reserved</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-    // Mobile menu toggle functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileNav = document.querySelector('.mobile-nav');
-        
-        if (mobileMenuButton && mobileNav) {
-            mobileMenuButton.addEventListener('click', function() {
-                mobileNav.classList.toggle('hidden');
-            });
+<html class="scroll-smooth" data-no-nav-loader="" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Product Managers &amp; Designers | Buildly
+  </title>
+  <meta content="Join a collective where product managers and designers collaborate with developers on client projects, open source software, and independent businesses." name="description"/>
+  <meta content="Buildly" name="author"/>
+  <link href="https://www.buildly.io/product-manager.html" rel="canonical"/>
+  <link href="/media/buildly-logo.svg" rel="icon" type="image/svg+xml"/>
+  <link href="/feed.xml" rel="alternate" title="Buildly Blog" type="application/rss+xml"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://www.buildly.io/product-manager.html" property="og:url"/>
+  <meta content="Product Managers &amp; Designers | Buildly" property="og:title"/>
+  <meta content="Join a collective where product managers and designers collaborate with developers on client projects, open source software, and independent businesses." property="og:description"/>
+  <meta content="https://www.buildly.io/media/buildly-logo.svg" property="og:image"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="Product Managers &amp; Designers | Buildly" name="twitter:title"/>
+  <meta content="Join a collective where product managers and designers collaborate with developers on client projects, open source software, and independent businesses." name="twitter:description"/>
+  <meta content="https://www.buildly.io/media/buildly-logo.svg" name="twitter:image"/>
+  <script>
+   try {document.documentElement.setAttribute('data-theme',localStorage.getItem('buildly-theme')||'dark');} catch (_) {document.documentElement.setAttribute('data-theme','dark');}
+  </script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="/css/style.css" rel="stylesheet"/>
+  <link href="/css/collective.css" rel="stylesheet"/>
+  <script>
+   tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        colors: {
+                            'forge-navy': '#0F1B2A', 'buildly-primary': '#0F1B2A', 'buildly-dark': '#0F1B2A', 'buildly-accent': '#F5A623', 'buildly-light': '#B9F1EA',
+                            'steel-slate': '#2B3643',
+                            'gunmetal': '#4A5560',
+                            'silver-steel': '#C3C7CD',
+                            'buildly-orange': '#F5A623',
+                            'tech-teal': '#16C4B5',
+                            'cloud-blue': '#B9F1EA',
+                            'buildly-white': '#FFFFFF'
+                        },
+                        fontFamily: {
+                            sans: ['Inter', 'system-ui', 'sans-serif'],
+                            display: ['Sora', 'Inter', 'system-ui', 'sans-serif']
+                        },
+                        borderRadius: {
+                            buildly: '8px'
+                        }
+                    }
+                }
+            }
         }
-    });
-    </script>
-    
-    <script src="js/main.js"></script>
-</body>
+  </script>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-YFY5W80XQX">
+  </script>
+  <script>
+   window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YFY5W80XQX');
+  </script>
+ </head>
+ <body>
+  <a class="skip-link" href="#main-content">
+   Skip to content
+  </a>
+  <nav aria-label="Main navigation" class="collective-nav nav-surface">
+   <div class="collective-nav-inner">
+    <a aria-label="Buildly home" href="/">
+     <img alt="Buildly" class="h-10 w-auto" src="/media/buildly-logo.svg"/>
+    </a>
+    <div class="collective-links text-gunmetal">
+     <a class="hover:text-tech-teal" href="/team.html">
+      The Collective
+     </a>
+     <a class="hover:text-tech-teal" href="/use-cases.html">
+      Work Together
+     </a>
+     <a class="hover:text-tech-teal" href="/rad-core.html">
+      Open Source
+     </a>
+     <a class="hover:text-tech-teal" href="/labs.html">
+      ProductLabs
+     </a>
+     <a class="hover:text-tech-teal" href="/firstcityfoundry.html">
+      Community
+     </a>
+     <a class="hover:text-tech-teal" href="/articles.html">
+      Articles
+     </a>
+     <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+      Join CollabHub
+     </a>
+    </div>
+    <div class="flex items-center gap-3">
+     <button aria-label="Switch theme" class="theme-toggle" data-collective-theme="" type="button">
+      ◐
+     </button>
+     <button aria-controls="collective-mobile" aria-expanded="false" class="collective-menu-button text-forge-navy" type="button">
+      Menu
+     </button>
+    </div>
+   </div>
+   <div class="collective-mobile text-gunmetal" hidden="" id="collective-mobile">
+    <a class="hover:text-tech-teal" href="/team.html">
+     The Collective
+    </a>
+    <a class="hover:text-tech-teal" href="/use-cases.html">
+     Work Together
+    </a>
+    <a class="hover:text-tech-teal" href="/rad-core.html">
+     Open Source
+    </a>
+    <a class="hover:text-tech-teal" href="/labs.html">
+     ProductLabs
+    </a>
+    <a class="hover:text-tech-teal" href="/firstcityfoundry.html">
+     Community
+    </a>
+    <a class="hover:text-tech-teal" href="/articles.html">
+     Articles
+    </a>
+    <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+     Join CollabHub
+    </a>
+   </div>
+  </nav>
+  <main id="main-content">
+   <section class="brand-shell collective-hero">
+    <div class="max-w-7xl mx-auto px-6 visual-subhero">
+     <div>
+      <div class="mini-label mb-5">
+       Product managers &amp; designers
+      </div>
+      <h1 class="font-display font-extrabold text-forge-navy">
+       Shape what gets built.
+       <br/>
+       And why it matters.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-gunmetal">
+       Research, strategy, prioritization, and design are central to the collective. Work alongside developers on shared projects, offer independent services, or build a product of your own.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+       <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+        Join CollabHub
+       </a>
+       <a class="btn-outline" href="/use-cases.html">
+        Work with the collective
+       </a>
+      </div>
+     </div>
+     <img alt="" fetchpriority="high" height="1024" src="/media/community/collabhub-certifications-hero.png" width="1536"/>
+    </div>
+   </section>
+   <section class="collective-section section-rule py-16 bg-white" id="product">
+    <div class="max-w-7xl mx-auto px-6">
+     <div class="max-w-3xl mb-9">
+      <div class="mini-label mb-4">
+       Product management
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-forge-navy">
+       Turn an idea into a shared direction.
+      </h2>
+     </div>
+     <div class="grid gap-5 md:grid-cols-2">
+      <div class="card p-7">
+       <h3 class="font-display text-xl font-bold text-forge-navy">
+        Understand the problem
+       </h3>
+       <p class="mt-3 text-gunmetal leading-7">
+        Connect user needs and business goals.
+       </p>
+       <div class="mt-5">
+        <a class="font-semibold text-buildly-orange underline underline-offset-4" href="https://collab.buildly.io/work-with-buildly/">
+         Bring product expertise
+        </a>
+       </div>
+      </div>
+      <div class="card p-7">
+       <h3 class="font-display text-xl font-bold text-forge-navy">
+        Make priorities clear
+       </h3>
+       <p class="mt-3 text-gunmetal leading-7">
+        Create a roadmap that fits the project, make tradeoffs visible, and keep clients and contributors aligned.
+       </p>
+       <div class="mt-5">
+        <a class="font-semibold text-buildly-orange underline underline-offset-4" href="/labs.html">
+         Explore ProductLabs
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="collective-section section-rule py-16 bg-[#f8fbfd]" id="design">
+    <div class="max-w-7xl mx-auto px-6">
+     <div class="max-w-3xl mb-9">
+      <div class="mini-label mb-4">
+       Design
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-forge-navy">
+       Bring the user into every decision.
+      </h2>
+     </div>
+     <div class="grid gap-5 md:grid-cols-2">
+      <div class="card p-7">
+       <h3 class="font-display text-xl font-bold text-forge-navy">
+        Research &amp; experience
+       </h3>
+       <p class="mt-3 text-gunmetal leading-7">
+        Explore how people use a product, test ideas, and turn what you learn into better interactions.
+       </p>
+       <div class="mt-5">
+        <a class="font-semibold text-buildly-orange underline underline-offset-4" href="https://collab.buildly.io/onboarding/register/">
+         Join as a designer
+        </a>
+       </div>
+      </div>
+      <div class="card p-7">
+       <h3 class="font-display text-xl font-bold text-forge-navy">
+        Design &amp; delivery
+       </h3>
+       <p class="mt-3 text-gunmetal leading-7">
+        Collaborate on interfaces, design systems, accessibility, and the details that carry a design into working software.
+       </p>
+       <div class="mt-5">
+        <a class="font-semibold text-buildly-orange underline underline-offset-4" href="https://collab.buildly.io/">
+         Find collaborators
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="collective-section section-rule py-16 bg-[#f8fbfd]" id="join">
+    <div class="max-w-7xl mx-auto px-6">
+     <div class="max-w-3xl mb-9">
+      <div class="mini-label mb-4">
+       Start a conversation
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-forge-navy">
+       Your next project starts with people.
+      </h2>
+     </div>
+     <p class="max-w-3xl text-lg leading-8 text-gunmetal">
+      Find collaborators, share what you are working on, or bring a project to the collective.
+     </p>
+     <div class="mt-7 flex flex-wrap gap-3">
+      <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+       Join CollabHub
+      </a>
+      <a class="btn-outline" href="https://collab.buildly.io/work-with-buildly/">
+       Bring a project
+      </a>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="collective-footer bg-white">
+   <div class="max-w-7xl mx-auto px-6">
+    <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-4 text-sm">
+     <div>
+      <img alt="Buildly" class="h-9 w-auto mb-4" src="/media/buildly-logo.svg"/>
+      <p>
+       Independent builders.
+       <br/>
+       Shared possibilities.
+      </p>
+     </div>
+     <div>
+      <h2 class="font-display font-bold mb-3">
+       Connect
+      </h2>
+      <ul>
+       <li>
+        <a class="hover:text-tech-teal" href="https://collab.buildly.io/onboarding/register/">
+         Join CollabHub
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="https://collab.buildly.io/work-with-buildly/">
+         Bring a project
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="https://www.firstcityfoundry.com/">
+         First City Foundry
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h2 class="font-display font-bold mb-3">
+       Explore
+      </h2>
+      <ul>
+       <li>
+        <a class="hover:text-tech-teal" href="/labs.html">
+         ProductLabs
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/open-source-impact.html">
+         Why community matters
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/pricing.html">
+         Membership &amp; services
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h2 class="font-display font-bold mb-3">
+       Our story
+      </h2>
+      <ul>
+       <li>
+        <a class="hover:text-tech-teal" href="/team.html">
+         People &amp; history
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/articles.html">
+         Articles &amp; blog
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/vlog.html">
+         Videos &amp; conversations
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="mt-8 flex flex-wrap justify-between gap-4 text-sm">
+     <p>
+      © 2026 Buildly.
+     </p>
+     <div class="flex gap-5">
+      <a class="" href="/privacy.html">
+       Privacy
+      </a>
+      <a class="" href="/terms.html">
+       Terms
+      </a>
+      <a class="" href="https://docs.buildly.io">
+       Docs
+      </a>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script defer="" src="/js/collective.js">
+  </script>
+ </body>
 </html>

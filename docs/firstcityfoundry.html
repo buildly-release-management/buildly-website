@@ -1,211 +1,357 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" data-no-nav-loader>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="/media/buildly-logo.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={theme:{extend:{colors:{'buildly-primary':'#1b5fa3','buildly-secondary':'#144a84','buildly-accent':'#f9943b','buildly-dark':'#1F2937','buildly-light':'#F3F4F6'}}}}</script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFY5W80XQX"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YFY5W80XQX');</script>
-    <title>FirstCityFoundry — Founder Conversations &amp; Podcasts | Buildly Ecosystem</title>
-    <meta name="description" content="FirstCityFoundry is the media and storytelling arm of the Buildly ecosystem. Long-form founder conversations, podcasts, and AI-native startup education.">
-    <link rel="canonical" href="https://www.buildly.io/firstcityfoundry.html">
-    <style>
-        :root { --bg-base: #070d1a; --bg-card: #0e1729; --border-subtle: rgba(255,255,255,0.07); }
-        body { background-color: var(--bg-base); color: #e2e8f0; }
-        .nav-dark { background: rgba(7,13,26,0.88); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.07); }
-        .glass-card { background: var(--bg-card); border: 1px solid var(--border-subtle); transition: border-color 0.3s; }
-        .glass-card:hover { border-color: rgba(255,255,255,0.12); }
-        .gradient-text { background: linear-gradient(135deg, #fb923c 0%, #f9943b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .badge { display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
-        .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent); }
-        .fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
-        .fade-in-up.visible { opacity: 1; transform: none; }
-        .podcast-card { background: #0e1729; border: 1px solid rgba(249,148,59,0.15); border-radius: 16px; transition: border-color 0.3s, background 0.3s; }
-        .podcast-card:hover { border-color: rgba(249,148,59,0.3); background: #131e33; }
-    </style>
-</head>
-<body>
-
-<!-- NAV -->
-<nav class="nav-dark fixed w-full z-50 top-0">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-            <a href="/" class="flex items-center"><img src="media/buildly-logo.svg" alt="Buildly" class="h-9 w-auto" style="filter: brightness(0) invert(1);"></a>
-            <div class="hidden md:flex items-center space-x-4">
-                <a href="/" class="text-slate-300 hover:text-white text-sm transition-colors">&larr; Home</a>
-                <a href="ecosystem.html" class="text-slate-300 hover:text-white text-sm transition-colors">Ecosystem Map</a>
-                <a href="https://labs.buildly.io" class="bg-buildly-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-500 transition-colors">Join the Ecosystem</a>
-            </div>
-        </div>
+<html class="scroll-smooth" data-no-nav-loader="" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Community with First City Foundry | Buildly
+  </title>
+  <meta content="Connect Buildly’s independent builder collective with First City Foundry’s founder support, mentorship, events, and local community." name="description"/>
+  <meta content="Buildly" name="author"/>
+  <link href="https://www.buildly.io/firstcityfoundry.html" rel="canonical"/>
+  <link href="/media/buildly-logo.svg" rel="icon" type="image/svg+xml"/>
+  <link href="/feed.xml" rel="alternate" title="Buildly Blog" type="application/rss+xml"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://www.buildly.io/firstcityfoundry.html" property="og:url"/>
+  <meta content="Community with First City Foundry | Buildly" property="og:title"/>
+  <meta content="Connect Buildly’s independent builder collective with First City Foundry’s founder support, mentorship, events, and local community." property="og:description"/>
+  <meta content="https://www.buildly.io/media/buildly-logo.svg" property="og:image"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="Community with First City Foundry | Buildly" name="twitter:title"/>
+  <meta content="Connect Buildly’s independent builder collective with First City Foundry’s founder support, mentorship, events, and local community." name="twitter:description"/>
+  <meta content="https://www.buildly.io/media/buildly-logo.svg" name="twitter:image"/>
+  <script>
+   try {document.documentElement.setAttribute('data-theme',localStorage.getItem('buildly-theme')||'dark');} catch (_) {document.documentElement.setAttribute('data-theme','dark');}
+  </script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="/css/style.css" rel="stylesheet"/>
+  <link href="/css/collective.css" rel="stylesheet"/>
+  <script>
+   tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        colors: {
+                            'forge-navy': '#0F1B2A', 'buildly-primary': '#0F1B2A', 'buildly-dark': '#0F1B2A', 'buildly-accent': '#F5A623', 'buildly-light': '#B9F1EA',
+                            'steel-slate': '#2B3643',
+                            'gunmetal': '#4A5560',
+                            'silver-steel': '#C3C7CD',
+                            'buildly-orange': '#F5A623',
+                            'tech-teal': '#16C4B5',
+                            'cloud-blue': '#B9F1EA',
+                            'buildly-white': '#FFFFFF'
+                        },
+                        fontFamily: {
+                            sans: ['Inter', 'system-ui', 'sans-serif'],
+                            display: ['Sora', 'Inter', 'system-ui', 'sans-serif']
+                        },
+                        borderRadius: {
+                            buildly: '8px'
+                        }
+                    }
+                }
+            }
+        }
+  </script>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-YFY5W80XQX">
+  </script>
+  <script>
+   window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YFY5W80XQX');
+  </script>
+ </head>
+ <body>
+  <a class="skip-link" href="#main-content">
+   Skip to content
+  </a>
+  <nav aria-label="Main navigation" class="collective-nav nav-surface">
+   <div class="collective-nav-inner">
+    <a aria-label="Buildly home" href="/">
+     <img alt="Buildly" class="h-10 w-auto" src="/media/buildly-logo.svg"/>
+    </a>
+    <div class="collective-links text-gunmetal">
+     <a class="hover:text-tech-teal" href="/team.html">
+      The Collective
+     </a>
+     <a class="hover:text-tech-teal" href="/use-cases.html">
+      Work Together
+     </a>
+     <a class="hover:text-tech-teal" href="/rad-core.html">
+      Open Source
+     </a>
+     <a class="hover:text-tech-teal" href="/labs.html">
+      ProductLabs
+     </a>
+     <a class="hover:text-tech-teal" href="/firstcityfoundry.html">
+      Community
+     </a>
+     <a class="hover:text-tech-teal" href="/articles.html">
+      Articles
+     </a>
+     <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+      Join CollabHub
+     </a>
     </div>
-</nav>
-
-<!-- HERO -->
-<section class="pt-28 pb-20 px-4" style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(249,148,59,0.12) 0%, transparent 70%), #070d1a;">
-    <div class="max-w-4xl mx-auto text-center">
-        <div class="text-6xl mb-6">🎙️</div>
-        <div class="badge border border-orange-400/30 text-orange-300 bg-orange-500/5 mb-5">Buildly Ecosystem — Media Layer</div>
-        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            <span class="gradient-text">FirstCityFoundry</span>
-        </h1>
-        <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-4">
-            Founder conversations, podcasts, and AI-native startup education — for builders who are making something real.
-        </p>
-        <p class="text-slate-500 max-w-xl mx-auto">
-            Part of the Buildly ecosystem. Not a media company — a community telling its own story.
-        </p>
+    <div class="flex items-center gap-3">
+     <button aria-label="Switch theme" class="theme-toggle" data-collective-theme="" type="button">
+      ◐
+     </button>
+     <button aria-controls="collective-mobile" aria-expanded="false" class="collective-menu-button text-forge-navy" type="button">
+      Menu
+     </button>
     </div>
-</section>
-
-<div class="divider max-w-7xl mx-auto"></div>
-
-<!-- WHAT IT IS -->
-<section class="py-20 px-4">
-    <div class="max-w-6xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="fade-in-up">
-                <div class="badge border border-white/10 text-slate-400 mb-5">What is FirstCityFoundry?</div>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                    The ecosystem's<br>storytelling layer.
-                </h2>
-                <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    FirstCityFoundry is where the Buildly builder community tells its story. Long-form conversations with founders, deep dives into AI-native operations, and honest discussion about the realities of building software in the modern era.
-                </p>
-                <p class="text-slate-400 leading-relaxed mb-8">
-                    We believe the best startup education comes from people who are actually doing it — not just talking about it. No hype. No polish. Real builders, real conversations.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://labs.buildly.io" class="bg-buildly-accent text-white px-6 py-3 rounded-xl font-semibold hover:bg-orange-500 transition-colors">Join the Ecosystem</a>
-                    <a href="articles.html" class="border border-white/20 text-slate-300 px-6 py-3 rounded-xl font-semibold hover:bg-white/5 transition-colors">Read the Blog</a>
-                </div>
-            </div>
-
-            <div class="fade-in-up space-y-4">
-                <div class="glass-card rounded-2xl p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-xl bg-orange-500/15 border border-orange-400/20 flex items-center justify-center text-xl flex-shrink-0">🎤</div>
-                        <div>
-                            <h3 class="text-white font-semibold mb-1">Founder Interviews</h3>
-                            <p class="text-slate-400 text-sm">Long-form conversations with builders at all stages — from pre-launch indie devs to post-scale startup founders.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass-card rounded-2xl p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-400/20 flex items-center justify-center text-xl flex-shrink-0">🤖</div>
-                        <div>
-                            <h3 class="text-white font-semibold mb-1">AI-Native Startup Education</h3>
-                            <p class="text-slate-400 text-sm">Practical, opinionated content about using AI in product operations — not AI hype, but AI practice.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass-card rounded-2xl p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-400/20 flex items-center justify-center text-xl flex-shrink-0">📖</div>
-                        <div>
-                            <h3 class="text-white font-semibold mb-1">Ecosystem Storytelling</h3>
-                            <p class="text-slate-400 text-sm">The Buildly ecosystem in narrative form. Product launches, community milestones, founder journeys.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass-card rounded-2xl p-6">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-xl bg-green-500/15 border border-green-400/20 flex items-center justify-center text-xl flex-shrink-0">🌱</div>
-                        <div>
-                            <h3 class="text-white font-semibold mb-1">Early-Stage &amp; Indie Focused</h3>
-                            <p class="text-slate-400 text-sm">Content written and produced for founders who are still in the building phase — before the press releases.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+   </div>
+   <div class="collective-mobile text-gunmetal" hidden="" id="collective-mobile">
+    <a class="hover:text-tech-teal" href="/team.html">
+     The Collective
+    </a>
+    <a class="hover:text-tech-teal" href="/use-cases.html">
+     Work Together
+    </a>
+    <a class="hover:text-tech-teal" href="/rad-core.html">
+     Open Source
+    </a>
+    <a class="hover:text-tech-teal" href="/labs.html">
+     ProductLabs
+    </a>
+    <a class="hover:text-tech-teal" href="/firstcityfoundry.html">
+     Community
+    </a>
+    <a class="hover:text-tech-teal" href="/articles.html">
+     Articles
+    </a>
+    <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+     Join CollabHub
+    </a>
+   </div>
+  </nav>
+  <main id="main-content">
+   <section class="brand-shell collective-hero">
+    <div class="max-w-7xl mx-auto px-6 visual-subhero">
+     <div>
+      <div class="mini-label mb-5">
+       Community · First City Foundry
+      </div>
+      <h1 class="font-display font-extrabold text-forge-navy">
+       Build products.
+       <br/>
+       Build community.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-gunmetal">
+       The people around a project matter as much as the tools. Buildly works with First City Foundry to connect independent builders, founders, and local communities.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+       <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+        Join CollabHub
+       </a>
+       <a class="btn-outline" href="https://www.firstcityfoundry.com/">
+        Explore First City Foundry
+       </a>
+      </div>
+     </div>
+     <img alt="" fetchpriority="high" height="1024" src="/media/community/collabhub-certifications-hero.png" width="1536"/>
     </div>
-</section>
-
-<div class="divider max-w-7xl mx-auto"></div>
-
-<!-- RECENT CONTENT / PLACEHOLDER -->
-<section class="py-20 px-4">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12 fade-in-up">
-            <div class="badge border border-white/10 text-slate-400 mb-4">Content</div>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">From the Foundry</h2>
-            <p class="text-slate-400 max-w-xl mx-auto">Articles, podcast episodes, and founder conversations — from the Buildly community.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6 fade-in-up">
-            <div class="podcast-card p-6">
-                <div class="badge bg-orange-500/10 border border-orange-400/20 text-orange-300 mb-4 text-xs">Podcast</div>
-                <h3 class="text-white font-semibold mb-2">Building AI-Native from Day One</h3>
-                <p class="text-slate-400 text-sm mb-4">What it actually means to build a software product with AI in the core loop — not bolted on as an afterthought.</p>
-                <a href="articles.html" class="text-orange-400 text-sm font-semibold hover:text-orange-300 transition-colors">Listen &rarr;</a>
-            </div>
-            <div class="podcast-card p-6">
-                <div class="badge bg-blue-500/10 border border-blue-400/20 text-blue-300 mb-4 text-xs">Interview</div>
-                <h3 class="text-white font-semibold mb-2">The Honest Startup: No Fundraising, No Hype</h3>
-                <p class="text-slate-400 text-sm mb-4">A conversation with an indie builder who shipped a profitable SaaS without a single investor meeting.</p>
-                <a href="articles.html" class="text-blue-400 text-sm font-semibold hover:text-blue-300 transition-colors">Read more &rarr;</a>
-            </div>
-            <div class="podcast-card p-6">
-                <div class="badge bg-green-500/10 border border-green-400/20 text-green-300 mb-4 text-xs">Deep Dive</div>
-                <h3 class="text-white font-semibold mb-2">Radical Agile in Practice</h3>
-                <p class="text-slate-400 text-sm mb-4">How Buildly's non-opinionated agile process works in teams of 1, 5, and 50. A founder's field guide.</p>
-                <a href="articles.html" class="text-green-400 text-sm font-semibold hover:text-green-300 transition-colors">Read more &rarr;</a>
-            </div>
-        </div>
-
-        <div class="text-center mt-10">
-            <a href="articles.html" class="inline-flex items-center gap-2 border border-white/10 text-slate-400 hover:text-white hover:border-white/20 px-5 py-3 rounded-xl text-sm font-medium transition-all">
-                View all articles &rarr;
-            </a>
-        </div>
-    </div>
-</section>
-
-<div class="divider max-w-7xl mx-auto"></div>
-
-<!-- CONTRIBUTE YOUR STORY -->
-<section class="py-20 px-4">
-    <div class="max-w-3xl mx-auto text-center fade-in-up">
-        <div class="text-4xl mb-5">✍️</div>
-        <div class="badge border border-orange-400/30 text-orange-300 bg-orange-500/5 mb-5">Share Your Story</div>
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-            Are you building something?
-        </h2>
-        <p class="text-slate-400 text-lg leading-relaxed mb-8">
-            We want to hear from founders, indie builders, and product people doing real work. FirstCityFoundry exists to amplify builders who are in the middle of it — not just those who have already made it.
-        </p>
-        <a href="https://collab.buildly.io" class="bg-buildly-accent text-white px-8 py-4 rounded-xl font-semibold hover:bg-orange-500 transition-colors">
-            Get Involved &rarr;
+   </section>
+   <section class="collective-section section-rule py-16 bg-white" id="opportunities">
+    <div class="max-w-7xl mx-auto px-6">
+     <div class="max-w-3xl mb-9">
+      <div class="mini-label mb-4">
+       Beyond the project
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-forge-navy">
+       Create more ways to participate.
+      </h2>
+     </div>
+     <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div class="card p-7">
+       <h3 class="font-display text-xl font-bold text-forge-navy">
+        Founder support
+       </h3>
+       <p class="mt-3 text-gunmetal leading-7">
+        Find programs and resources for moving an idea forward, including the Founder Launchpad.
+       </p>
+       <div class="mt-5">
+        <a class="font-semibold text-buildly-orange underline underline-offset-4" href="https://www.firstcityfoundry.com/">
+         Explore programs
         </a>
+       </div>
+      </div>
+      <div class="card p-7">
+       <h3 class="font-display text-xl font-bold text-forge-navy">
+        Mentorship &amp; connections
+       </h3>
+       <p class="mt-3 text-gunmetal leading-7">
+        Meet founders, mentors, and community members with perspectives and experience to share.
+       </p>
+       <div class="mt-5">
+        <a class="font-semibold text-buildly-orange underline underline-offset-4" href="https://www.firstcityfoundry.com/">
+         Get involved
+        </a>
+       </div>
+      </div>
+      <div class="card p-7">
+       <h3 class="font-display text-xl font-bold text-forge-navy">
+        Events &amp; conversations
+       </h3>
+       <p class="mt-3 text-gunmetal leading-7">
+        Discover opportunities to learn, meet people, and take part in the local community.
+       </p>
+       <div class="mt-5">
+        <a class="font-semibold text-buildly-orange underline underline-offset-4" href="https://www.firstcityfoundry.com/">
+         See what’s happening
+        </a>
+       </div>
+      </div>
+     </div>
     </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="border-t border-white/5 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <a href="/"><img src="media/buildly-logo.svg" alt="Buildly" class="h-7 w-auto" style="filter: brightness(0) invert(1);"></a>
-        <p class="text-slate-600 text-sm">FirstCityFoundry is part of the Buildly Ecosystem &mdash; &copy; 2025 Buildly, Inc.</p>
-        <div class="flex gap-4 text-sm text-slate-500">
-            <a href="ecosystem.html" class="hover:text-white transition-colors">Ecosystem Map</a>
-            <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
-        </div>
+   </section>
+   <section class="collective-section section-rule py-16 bg-[#f8fbfd]" id="connections">
+    <div class="max-w-7xl mx-auto px-6">
+     <div class="max-w-3xl mb-9">
+      <div class="mini-label mb-4">
+       Connected communities
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-forge-navy">
+       Bring those relationships into your work.
+      </h2>
+     </div>
+     <p class="max-w-3xl text-lg leading-8 text-gunmetal">
+      Start with First City Foundry for community programs and local connections. Use CollabHub to introduce your skills, find product collaborators, and discuss projects with the Buildly collective.
+     </p>
+     <div class="mt-7 flex flex-wrap gap-3">
+      <a class="btn-secondary" href="https://www.firstcityfoundry.com/">
+       Visit FirstCityFoundry.com
+      </a>
+      <a class="btn-outline" href="https://collab.buildly.io/">
+       Meet the CollabHub community
+      </a>
+     </div>
     </div>
-</footer>
-
-<script>
-(function() {
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in-up').forEach(function(el) { observer.observe(el); });
-})();
-</script>
-</body>
+   </section>
+   <section class="collective-section section-rule py-16 bg-white" id="stories">
+    <div class="max-w-7xl mx-auto px-6">
+     <div class="max-w-3xl mb-9">
+      <div class="mini-label mb-4">
+       Keep exploring
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-forge-navy">
+       Our conversations and history remain here.
+      </h2>
+     </div>
+     <div class="flex flex-wrap gap-3">
+      <a class="btn-outline" href="/articles.html">
+       Read the articles &amp; blog
+      </a>
+      <a class="btn-outline" href="/vlog.html">
+       Watch videos &amp; conversations
+      </a>
+      <a class="btn-outline" href="/startupgrind.html">
+       Startup Grind PDX
+      </a>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="collective-footer bg-white">
+   <div class="max-w-7xl mx-auto px-6">
+    <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-4 text-sm">
+     <div>
+      <img alt="Buildly" class="h-9 w-auto mb-4" src="/media/buildly-logo.svg"/>
+      <p>
+       Independent builders.
+       <br/>
+       Shared possibilities.
+      </p>
+     </div>
+     <div>
+      <h2 class="font-display font-bold mb-3">
+       Connect
+      </h2>
+      <ul>
+       <li>
+        <a class="hover:text-tech-teal" href="https://collab.buildly.io/onboarding/register/">
+         Join CollabHub
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="https://collab.buildly.io/work-with-buildly/">
+         Bring a project
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="https://www.firstcityfoundry.com/">
+         First City Foundry
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h2 class="font-display font-bold mb-3">
+       Explore
+      </h2>
+      <ul>
+       <li>
+        <a class="hover:text-tech-teal" href="/labs.html">
+         ProductLabs
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/open-source-impact.html">
+         Why community matters
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/pricing.html">
+         Membership &amp; services
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h2 class="font-display font-bold mb-3">
+       Our story
+      </h2>
+      <ul>
+       <li>
+        <a class="hover:text-tech-teal" href="/team.html">
+         People &amp; history
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/articles.html">
+         Articles &amp; blog
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/vlog.html">
+         Videos &amp; conversations
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="mt-8 flex flex-wrap justify-between gap-4 text-sm">
+     <p>
+      © 2026 Buildly.
+     </p>
+     <div class="flex gap-5">
+      <a class="" href="/privacy.html">
+       Privacy
+      </a>
+      <a class="" href="/terms.html">
+       Terms
+      </a>
+      <a class="" href="https://docs.buildly.io">
+       Docs
+      </a>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script defer="" src="/js/collective.js">
+  </script>
+ </body>
 </html>

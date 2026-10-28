@@ -1,33 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" data-no-nav-loader>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Buildly">
-    <link rel="icon" type="image/svg+xml" href="/media/buildly-logo.svg">
-    <script>
-        (function() {
-            var savedTheme = localStorage.getItem('buildly-theme');
-            document.documentElement.setAttribute('data-theme', savedTheme || 'dark');
-        })();
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <script>
-        tailwind = {
+<html class="scroll-smooth" data-no-nav-loader="" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Independent Builders. Shared Possibilities. | Buildly
+  </title>
+  <meta content="A co-op of developers, product managers, designers, and solo founders. Build together through CollabHub, open source, and First City Foundry." name="description"/>
+  <meta content="Buildly" name="author"/>
+  <link href="https://www.buildly.io/" rel="canonical"/>
+  <link href="/media/buildly-logo.svg" rel="icon" type="image/svg+xml"/>
+  <link href="/feed.xml" rel="alternate" title="Buildly Blog" type="application/rss+xml"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://www.buildly.io/" property="og:url"/>
+  <meta content="Independent Builders. Shared Possibilities. | Buildly" property="og:title"/>
+  <meta content="A co-op of developers, product managers, designers, and solo founders. Build together through CollabHub, open source, and First City Foundry." property="og:description"/>
+  <meta content="https://www.buildly.io/media/buildly-logo.svg" property="og:image"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="Independent Builders. Shared Possibilities. | Buildly" name="twitter:title"/>
+  <meta content="A co-op of developers, product managers, designers, and solo founders. Build together through CollabHub, open source, and First City Foundry." name="twitter:description"/>
+  <meta content="https://www.buildly.io/media/buildly-logo.svg" name="twitter:image"/>
+  <script>
+   try {document.documentElement.setAttribute('data-theme',localStorage.getItem('buildly-theme')||'dark');} catch (_) {document.documentElement.setAttribute('data-theme','dark');}
+  </script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="/css/style.css" rel="stylesheet"/>
+  <link href="/css/collective.css" rel="stylesheet"/>
+  <script>
+   tailwind = {
             config: {
                 theme: {
                     extend: {
                         colors: {
-                            'forge-navy': '#0F1B2A',
+                            'forge-navy': '#0F1B2A', 'buildly-primary': '#0F1B2A', 'buildly-dark': '#0F1B2A', 'buildly-accent': '#F5A623', 'buildly-light': '#B9F1EA',
                             'steel-slate': '#2B3643',
                             'gunmetal': '#4A5560',
                             'silver-steel': '#C3C7CD',
-                            'buildly-orange': '#FF8A1A',
-                            'tech-teal': '#00B3C6',
-                            'cloud-blue': '#E6F3FF',
+                            'buildly-orange': '#F5A623',
+                            'tech-teal': '#16C4B5',
+                            'cloud-blue': '#B9F1EA',
                             'buildly-white': '#FFFFFF'
                         },
                         fontFamily: {
@@ -41,587 +54,569 @@
                 }
             }
         }
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFY5W80XQX"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YFY5W80XQX');</script>
-
-    <title>Buildly - A Collaborative AI-Native Software Ecosystem</title>
-    <meta name="description" content="Buildly is a collaborative AI-native software ecosystem for builders, startups, and product teams, connecting Labs, CollabHub, Forge Marketplace, and cloud-native deployment.">
-    <meta name="keywords" content="Buildly, AI-native software ecosystem, cloud-native systems, Buildly Labs, CollabHub, Forge Marketplace, reusable components, product operations, community">
-    <link rel="canonical" href="https://www.buildly.io/">
-    <link rel="alternate" type="application/rss+xml" title="Buildly Blog" href="https://www.buildly.io/feed.xml">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.buildly.io/">
-    <meta property="og:title" content="Buildly - A Collaborative AI-Native Software Ecosystem">
-    <meta property="og:description" content="Build software together with Labs, CollabHub, Forge Marketplace, reusable components, and cloud-native delivery.">
-    <meta property="og:image" content="https://www.buildly.io/media/buildly-logo.svg">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.buildly.io/">
-    <meta property="twitter:title" content="Buildly - A Collaborative AI-Native Software Ecosystem">
-    <meta property="twitter:description" content="Build software together with Labs, CollabHub, Forge Marketplace, reusable components, and cloud-native delivery.">
-    <meta property="twitter:image" content="https://www.buildly.io/media/buildly-logo.svg">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Buildly",
-      "url": "https://www.buildly.io",
-      "logo": "https://www.buildly.io/media/buildly-logo.svg",
-      "description": "A collaborative AI-native software ecosystem for builders, startups, and product teams.",
-      "sameAs": [
-        "https://labs.buildly.io",
-        "https://collab.buildly.io",
-        "https://market.buildly.io",
-        "https://docs.buildly.io"
-      ]
-    }
-    </script>
-
-    <style>
-        :root {
-            --forge-navy: #0F1B2A;
-            --steel-slate: #2B3643;
-            --gunmetal: #4A5560;
-            --silver-steel: #C3C7CD;
-            --buildly-orange: #FF8A1A;
-            --tech-teal: #00B3C6;
-            --cloud-blue: #E6F3FF;
-            --white: #FFFFFF;
-        }
-
-        body {
-            background: #f8fbfd;
-            color: var(--forge-navy);
-            font-family: 'Inter', system-ui, sans-serif;
-        }
-
-        h1, h2, h3, .font-display {
-            font-family: 'Sora', 'Inter', system-ui, sans-serif;
-            letter-spacing: 0;
-        }
-
-        .brand-shell {
-            background:
-                linear-gradient(180deg, rgba(230, 243, 255, 0.85), rgba(255, 255, 255, 0.92) 44%, rgba(248, 251, 253, 1)),
-                radial-gradient(circle at 16% 12%, rgba(0, 179, 198, 0.12), transparent 28%),
-                radial-gradient(circle at 84% 18%, rgba(255, 138, 26, 0.14), transparent 28%);
-        }
-
-        .nav-surface {
-            background: rgba(255, 255, 255, 0.92);
-            border-bottom: 1px solid rgba(74, 85, 96, 0.14);
-            backdrop-filter: blur(18px);
-        }
-
-        .btn-primary,
-        .btn-secondary,
-        .btn-outline {
-            align-items: center;
-            border-radius: 8px;
-            display: inline-flex;
-            font-weight: 700;
-            gap: 0.5rem;
-            justify-content: center;
-            min-height: 44px;
-            padding: 0.75rem 1.1rem;
-            transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
-        }
-
-        .btn-primary {
-            background: var(--buildly-orange);
-            color: #fff;
-            box-shadow: 0 14px 26px rgba(255, 138, 26, 0.22);
-        }
-
-        .btn-primary:hover {
-            background: #e87508;
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            background: var(--tech-teal);
-            color: #fff;
-        }
-
-        .btn-secondary:hover {
-            background: #0096a7;
-        }
-
-        .btn-outline {
-            background: #fff;
-            border: 1px solid rgba(15, 27, 42, 0.18);
-            color: var(--forge-navy);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--tech-teal);
-            color: #007f8d;
-        }
-
-        .card {
-            background: #fff;
-            border: 1px solid rgba(74, 85, 96, 0.14);
-            border-radius: 8px;
-            box-shadow: 0 16px 36px rgba(15, 27, 42, 0.07);
-        }
-
-        .mini-label {
-            color: #006c7a;
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-
-        .product-screen {
-            border: 1px solid rgba(15, 27, 42, 0.16);
-            border-radius: 8px;
-            box-shadow: 0 26px 70px rgba(15, 27, 42, 0.18);
-            overflow: hidden;
-        }
-
-        .sidebar {
-            background: var(--forge-navy);
-            color: #d9e7ef;
-        }
-
-        .line-chart {
-            height: 26px;
-            width: 100%;
-        }
-
-        .icon-tile {
-            align-items: center;
-            background: #fff;
-            border: 1px solid rgba(74, 85, 96, 0.18);
-            border-radius: 8px;
-            color: var(--forge-navy);
-            display: flex;
-            height: 44px;
-            justify-content: center;
-            width: 44px;
-        }
-
-        .section-rule {
-            border-top: 1px solid rgba(74, 85, 96, 0.14);
-        }
-
-        .theme-toggle {
-            align-items: center;
-            background: #fff;
-            border: 1px solid rgba(15, 27, 42, 0.16);
-            border-radius: 8px;
-            color: var(--forge-navy);
-            display: inline-flex;
-            height: 40px;
-            justify-content: center;
-            transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
-            width: 40px;
-        }
-
-        .theme-toggle:hover {
-            border-color: var(--tech-teal);
-            color: #007f8d;
-        }
-
-        .theme-toggle .sun-icon,
-        html[data-theme="light"] .theme-toggle .moon-icon {
-            display: none;
-        }
-
-        html[data-theme="light"] .theme-toggle .sun-icon {
-            display: block;
-        }
-
-        html[data-theme="dark"] body {
-            background: #0D1117;
-            color: #eef6fb;
-        }
-
-        html[data-theme="dark"] h1,
-        html[data-theme="dark"] h2,
-        html[data-theme="dark"] h3,
-        html[data-theme="dark"] .font-display {
-            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-        }
-
-        html[data-theme="dark"] .brand-shell {
-            background:
-                radial-gradient(ellipse 70% 55% at 50% 0%, rgba(245, 158, 11, 0.12), transparent 70%),
-                radial-gradient(circle at 82% 16%, rgba(31, 41, 55, 0.8), transparent 30%),
-                linear-gradient(180deg, #0D1117 0%, #111827 58%, #0D1117 100%);
-        }
-
-        html[data-theme="dark"] .nav-surface {
-            background: rgba(13, 17, 23, 0.9);
-            border-bottom-color: rgba(255, 255, 255, 0.08);
-        }
-
-        html[data-theme="dark"] .card,
-        html[data-theme="dark"] .product-screen {
-            background: #161B22;
-            border-color: rgba(255, 255, 255, 0.09);
-            box-shadow: 0 20px 52px rgba(0, 0, 0, 0.28);
-        }
-
-        html[data-theme="dark"] .product-screen > div > div:last-child,
-        html[data-theme="dark"] section.bg-white,
-        html[data-theme="dark"] footer.bg-white {
-            background: #0D1117 !important;
-        }
-
-        html[data-theme="dark"] section.bg-\[\#f8fbfd\] {
-            background: #111827 !important;
-        }
-
-        html[data-theme="dark"] .rounded-buildly.bg-white,
-        html[data-theme="dark"] .bg-white.ring-1,
-        html[data-theme="dark"] .icon-tile,
-        html[data-theme="dark"] .theme-toggle {
-            background: #161B22 !important;
-            border-color: rgba(255, 255, 255, 0.1);
-            color: #eef6fb;
-        }
-
-        html[data-theme="dark"] .text-forge-navy {
-            color: #eef6fb !important;
-        }
-
-        html[data-theme="dark"] .text-gunmetal {
-            color: #A3A9B3 !important;
-        }
-
-        html[data-theme="dark"] .text-buildly-orange,
-        html[data-theme="dark"] .mini-label {
-            color: #F59E0B !important;
-        }
-
-        html[data-theme="dark"] .btn-primary {
-            background: #F59E0B;
-            box-shadow: 0 14px 26px rgba(245, 158, 11, 0.22);
-        }
-
-        html[data-theme="dark"] .btn-primary:hover {
-            background: #D97706;
-        }
-
-        html[data-theme="dark"] .section-rule {
-            border-top-color: rgba(255, 255, 255, 0.08);
-        }
-
-        html[data-theme="dark"] .btn-outline {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(255, 255, 255, 0.18);
-            color: #eef6fb;
-        }
-
-        html[data-theme="dark"] .mobile-nav {
-            background: #0D1117;
-            border-color: rgba(255, 255, 255, 0.08);
-        }
-
-        html[data-theme="dark"] img[alt="Buildly"] {
-            filter: brightness(0) invert(1);
-        }
-    </style>
-</head>
-
-<body>
-<div class="brand-shell min-h-screen">
-    <nav class="nav-surface fixed top-0 z-50 w-full">
-        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-            <a href="/" aria-label="Buildly Home" class="flex items-center gap-3">
-                <img src="media/buildly-logo.svg" alt="Buildly" class="h-10 w-auto">
-            </a>
-            <div class="hidden items-center gap-7 text-sm font-semibold text-gunmetal md:flex">
-                <a href="#platform" class="hover:text-tech-teal">Platform</a>
-                <a href="#ecosystem" class="hover:text-tech-teal">Ecosystem</a>
-                <a href="pricing.html" class="hover:text-tech-teal">Pricing</a>
-                <a href="articles.html" class="hover:text-tech-teal">Articles</a>
-                <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch light/dark theme">
-                    <svg class="moon-icon h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8z"/></svg>
-                    <svg class="sun-icon h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4V2m0 20v-2m8-8h2M2 12h2m14.95 6.95 1.41 1.41M3.64 3.64l1.41 1.41m13.9-1.41-1.41 1.41M5.05 18.95l-1.41 1.41M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/></svg>
-                </button>
-                <a href="https://labs.buildly.io" class="btn-primary px-4 py-2 text-sm">Start in Labs</a>
-            </div>
-            <button class="mobile-menu-button md:hidden text-forge-navy" aria-label="Open menu" aria-expanded="false">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
-            </button>
-        </div>
-        <div class="mobile-nav hidden border-t border-slate-200 bg-white px-4 pb-4 md:hidden">
-            <a href="#platform" class="block py-2 text-sm font-semibold text-gunmetal">Platform</a>
-            <a href="#ecosystem" class="block py-2 text-sm font-semibold text-gunmetal">Ecosystem</a>
-            <a href="pricing.html" class="block py-2 text-sm font-semibold text-gunmetal">Pricing</a>
-            <a href="articles.html" class="block py-2 text-sm font-semibold text-gunmetal">Articles</a>
-            <button class="theme-toggle mt-2" type="button" data-theme-toggle aria-label="Switch theme" title="Switch light/dark theme">
-                <svg class="moon-icon h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8z"/></svg>
-                <svg class="sun-icon h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4V2m0 20v-2m8-8h2M2 12h2m14.95 6.95 1.41 1.41M3.64 3.64l1.41 1.41m13.9-1.41-1.41 1.41M5.05 18.95l-1.41 1.41M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/></svg>
-            </button>
-            <a href="https://labs.buildly.io" class="btn-primary mt-2 w-full text-sm">Start in Labs</a>
-        </div>
-    </nav>
-
-    <main class="pt-16">
-        <section class="mx-auto grid max-w-7xl items-center gap-12 px-4 pb-16 pt-16 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:pb-24 lg:pt-24">
-            <div>
-                <div class="mini-label mb-5">Collaborative AI-native software ecosystem</div>
-                <h1 class="font-display text-5xl font-extrabold leading-[1.04] text-forge-navy sm:text-6xl lg:text-7xl">
-                    Build software together.
-                </h1>
-                <p class="mt-6 max-w-xl text-xl font-semibold leading-8 text-buildly-orange">
-                    Architect. Reuse. Scale.
-                </p>
-                <p class="mt-4 max-w-xl text-base leading-7 text-gunmetal sm:text-lg">
-                    Buildly connects Buildly Labs, CollabHub, Forge Marketplace, and cloud-native deployment so builders, startups, and product teams can plan with AI, reuse what works, collaborate in community, and ship real software.
-                </p>
-                <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <a href="https://labs.buildly.io" class="btn-primary">
-                        Start in Labs
-                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </a>
-                    <a href="#ecosystem" class="btn-outline">
-                        Explore ecosystem
-                    </a>
-                </div>
-                <div class="mt-8 grid max-w-xl grid-cols-3 gap-3 text-sm">
-                    <div class="card p-4">
-                        <div class="font-display text-2xl font-extrabold text-forge-navy">780</div>
-                        <div class="mt-1 text-gunmetal">Reusable components</div>
-                    </div>
-                    <div class="card p-4">
-                        <div class="font-display text-2xl font-extrabold text-forge-navy">342</div>
-                        <div class="mt-1 text-gunmetal">Cloud deployments</div>
-                    </div>
-                    <div class="card p-4">
-                        <div class="font-display text-2xl font-extrabold text-forge-navy">99.98%</div>
-                        <div class="mt-1 text-gunmetal">Platform reliability</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-screen bg-white">
-                <div class="grid min-h-[520px] grid-cols-[92px_1fr]">
-                    <aside class="sidebar p-4">
-                        <img src="media/buildly-logo.svg" alt="Buildly" class="mb-8 h-8 w-auto brightness-0 invert">
-                        <div class="space-y-2 text-[11px] font-semibold">
-                            <div class="rounded-buildly bg-white/12 px-2 py-2">Overview</div>
-                            <div class="rounded-buildly px-2 py-2 text-white/70">Labs</div>
-                            <div class="rounded-buildly px-2 py-2 text-white/70">Forge</div>
-                            <div class="rounded-buildly px-2 py-2 text-white/70">CollabHub</div>
-                            <div class="rounded-buildly px-2 py-2 text-white/70">Deploy</div>
-                            <div class="rounded-buildly px-2 py-2 text-white/70">Community</div>
-                        </div>
-                    </aside>
-                    <div class="bg-[#f7fbfd] p-5">
-                        <div class="mb-5 flex items-center justify-between">
-                            <div>
-                                <div class="mini-label">Labs workspace</div>
-                                <h2 class="font-display text-xl font-bold text-forge-navy">AI-native product operations</h2>
-                            </div>
-                            <button class="btn-secondary min-h-0 px-3 py-2 text-xs">Deploy</button>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 2xl:grid-cols-4">
-                            <div class="card p-4">
-                                <div class="text-xs font-semibold text-gunmetal">AI product plans</div>
-                                <div class="mt-2 font-display text-3xl font-extrabold">128</div>
-                                <svg class="line-chart mt-3" viewBox="0 0 120 26" fill="none"><path d="M2 19L16 14L28 18L41 9L55 12L68 7L82 15L96 10L118 4" stroke="#00B3C6" stroke-width="2"/></svg>
-                            </div>
-                            <div class="card p-4">
-                                <div class="text-xs font-semibold text-gunmetal">Cloud releases</div>
-                                <div class="mt-2 font-display text-3xl font-extrabold">342</div>
-                                <svg class="line-chart mt-3" viewBox="0 0 120 26" fill="none"><path d="M2 17L18 18L31 13L43 15L55 9L67 12L79 8L94 11L118 5" stroke="#00B3C6" stroke-width="2"/></svg>
-                            </div>
-                            <div class="card p-4">
-                                <div class="text-xs font-semibold text-gunmetal">Forge components</div>
-                                <div class="mt-2 font-display text-3xl font-extrabold">780</div>
-                                <svg class="line-chart mt-3" viewBox="0 0 120 26" fill="none"><path d="M2 20L18 16L30 17L43 13L55 15L68 10L80 12L95 8L118 3" stroke="#00B3C6" stroke-width="2"/></svg>
-                            </div>
-                            <div class="card p-4">
-                                <div class="text-xs font-semibold text-gunmetal">Reliability</div>
-                                <div class="mt-2 font-display text-3xl font-extrabold">99.98%</div>
-                                <div class="mt-4 rounded-full bg-teal-50 px-2 py-1 text-xs font-bold text-[#007f8d]">Healthy</div>
-                            </div>
-                        </div>
-                        <div class="mt-4 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-                            <div class="card p-5">
-                                <div class="mb-4 flex items-center justify-between">
-                                    <h3 class="font-display text-base font-bold">Ecosystem activity</h3>
-                                    <span class="text-xs font-semibold text-tech-teal">Live</span>
-                                </div>
-                                <div class="space-y-3 text-sm">
-                                    <div class="flex items-center justify-between rounded-buildly border border-slate-200 bg-white p-3"><span>Buildly Labs plan</span><span class="font-semibold text-teal-700">Refined</span></div>
-                                    <div class="flex items-center justify-between rounded-buildly border border-slate-200 bg-white p-3"><span>Forge template</span><span class="font-semibold text-teal-700">Published</span></div>
-                                    <div class="flex items-center justify-between rounded-buildly border border-slate-200 bg-white p-3"><span>CollabHub review</span><span class="font-semibold text-buildly-orange">In progress</span></div>
-                                </div>
-                            </div>
-                            <div class="card p-5">
-                                <h3 class="font-display text-base font-bold">Start in Labs</h3>
-                                <div class="mt-4 space-y-3 text-sm">
-                                    <div class="rounded-buildly bg-cloud-blue p-3"><strong>Product brief</strong><br><span class="text-gunmetal">Turn strategy into build-ready work.</span></div>
-                                    <div class="rounded-buildly bg-white p-3 ring-1 ring-slate-200"><strong>Release plan</strong><br><span class="text-gunmetal">Coordinate scope, team, and delivery.</span></div>
-                                    <div class="rounded-buildly bg-white p-3 ring-1 ring-slate-200"><strong>Reusable stack</strong><br><span class="text-gunmetal">Pull proven components from Forge.</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-</div>
-
-<section id="ecosystem" class="bg-white py-20 section-rule">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-10 lg:grid-cols-[0.72fr_1fr]">
-            <div>
-                <div class="mini-label mb-4">Buildly ecosystem</div>
-                <h2 class="font-display text-4xl font-extrabold leading-tight text-forge-navy">AI-native product work, reusable cloud-native software, and community in one connected system.</h2>
-                <p class="mt-4 text-gunmetal">Buildly is built as an ecosystem: Labs helps teams shape the work, Forge turns reusable software into a marketplace, CollabHub brings builders together, and community programs help new products become real.</p>
-            </div>
-            <div class="grid gap-4 md:grid-cols-2">
-                <a href="https://labs.buildly.io" class="card p-5 hover:border-tech-teal">
-                    <div class="icon-tile mb-4">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5h6M9 9h6M8 13h8M7 21h10a2 2 0 0 0 2-2V5l-3-3H7a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2z"/></svg>
-                    </div>
-                    <h3 class="font-display text-lg font-bold">Buildly Labs</h3>
-                    <p class="mt-2 text-sm leading-6 text-gunmetal">AI-native product management for briefs, requirements, roadmaps, releases, and team alignment.</p>
-                </a>
-                <a href="https://market.buildly.io" class="card p-5 hover:border-tech-teal">
-                    <div class="icon-tile mb-4">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M6 7v12h12V7M9 11h6"/></svg>
-                    </div>
-                    <h3 class="font-display text-lg font-bold">The Forge</h3>
-                    <p class="mt-2 text-sm leading-6 text-gunmetal">Reusable software, services, blueprints, and templates forged into real cloud-native products.</p>
-                </a>
-                <a href="https://collab.buildly.io" class="card p-5 hover:border-tech-teal">
-                    <div class="icon-tile mb-4">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M9 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 20v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3 class="font-display text-lg font-bold">CollabHub</h3>
-                    <p class="mt-2 text-sm leading-6 text-gunmetal">Community for open source builders, product teams, startup partners, and shared learning.</p>
-                </a>
-                <a href="firstcityfoundry.html" class="card p-5 hover:border-tech-teal">
-                    <div class="icon-tile mb-4">
-                        <svg class="h-6 w-6 text-[#ff3d57]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 16c4-6 14-6 18 0M5 16V9m14 7V9M7 9h10"/></svg>
-                    </div>
-                    <h3 class="font-display text-lg font-bold">First City Foundry</h3>
-                    <p class="mt-2 text-sm leading-6 text-gunmetal">Strengthening cities through practical startup opportunity, founder support, and community momentum.</p>
-                </a>
-            </div>
-        </div>
+  </script>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-YFY5W80XQX">
+  </script>
+  <script>
+   window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YFY5W80XQX');
+  </script>
+ </head>
+ <body>
+  <a class="skip-link" href="#main-content">
+   Skip to content
+  </a>
+  <nav aria-label="Main navigation" class="collective-nav nav-surface">
+   <div class="collective-nav-inner">
+    <a aria-label="Buildly home" href="/">
+     <img alt="Buildly" class="h-10 w-auto" src="/media/buildly-logo.svg"/>
+    </a>
+    <div class="collective-links text-gunmetal">
+     <a class="hover:text-tech-teal" href="/team.html">
+      The Collective
+     </a>
+     <a class="hover:text-tech-teal" href="/use-cases.html">
+      Work Together
+     </a>
+     <a class="hover:text-tech-teal" href="/rad-core.html">
+      Open Source
+     </a>
+     <a class="hover:text-tech-teal" href="/labs.html">
+      ProductLabs
+     </a>
+     <a class="hover:text-tech-teal" href="/firstcityfoundry.html">
+      Community
+     </a>
+     <a class="hover:text-tech-teal" href="/articles.html">
+      Articles
+     </a>
+     <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+      Join CollabHub
+     </a>
     </div>
-</section>
-
-<section id="platform" class="bg-[#f8fbfd] py-20 section-rule">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-12 max-w-3xl">
-            <div class="mini-label mb-4">Labs and cloud-native delivery</div>
-            <h2 class="font-display text-4xl font-extrabold text-forge-navy">Plan in Labs, assemble from the ecosystem, and deploy cloud-native software.</h2>
-        </div>
-        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            <div class="card p-6">
-                <div class="icon-tile mb-5"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M5 7v12h14V7M9 11h6"/></svg></div>
-                <h3 class="font-display text-lg font-bold">Labs product ops</h3>
-                <p class="mt-2 text-sm leading-6 text-gunmetal">Turn ideas, requirements, roadmaps, and releases into structured AI-assisted product work.</p>
-            </div>
-            <div class="card p-6">
-                <div class="icon-tile mb-5"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2l3 6 6 .9-4.5 4.4 1 6.2L12 16.5 6.5 19.5l1-6.2L3 8.9 9 8z"/></svg></div>
-                <h3 class="font-display text-lg font-bold">Forge components</h3>
-                <p class="mt-2 text-sm leading-6 text-gunmetal">Reuse services, libraries, patterns, and templates across products and teams.</p>
-            </div>
-            <div class="card p-6">
-                <div class="icon-tile mb-5"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5M5 12l7-7 7 7"/></svg></div>
-                <h3 class="font-display text-lg font-bold">Cloud-native deploy</h3>
-                <p class="mt-2 text-sm leading-6 text-gunmetal">Move from planned work to running services with clear status, rollback, and logs.</p>
-            </div>
-            <div class="card p-6">
-                <div class="icon-tile mb-5"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-5M20 6L9 17l-5-5"/></svg></div>
-                <h3 class="font-display text-lg font-bold">Community governance</h3>
-                <p class="mt-2 text-sm leading-6 text-gunmetal">Use shared standards, practical quality checks, and community-visible collaboration loops.</p>
-            </div>
-        </div>
+    <div class="flex items-center gap-3">
+     <button aria-label="Switch theme" class="theme-toggle" data-collective-theme="" type="button">
+      ◐
+     </button>
+     <button aria-controls="collective-mobile" aria-expanded="false" class="collective-menu-button text-forge-navy" type="button">
+      Menu
+     </button>
     </div>
-</section>
-
-<section class="bg-white py-20 section-rule">
-    <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+   </div>
+   <div class="collective-mobile text-gunmetal" hidden="" id="collective-mobile">
+    <a class="hover:text-tech-teal" href="/team.html">
+     The Collective
+    </a>
+    <a class="hover:text-tech-teal" href="/use-cases.html">
+     Work Together
+    </a>
+    <a class="hover:text-tech-teal" href="/rad-core.html">
+     Open Source
+    </a>
+    <a class="hover:text-tech-teal" href="/labs.html">
+     ProductLabs
+    </a>
+    <a class="hover:text-tech-teal" href="/firstcityfoundry.html">
+     Community
+    </a>
+    <a class="hover:text-tech-teal" href="/articles.html">
+     Articles
+    </a>
+    <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+     Join CollabHub
+    </a>
+   </div>
+  </nav>
+  <main id="main-content">
+   <section class="guild-hero">
+    <img alt="" class="guild-art" fetchpriority="high" height="992" src="/media/community/collabhub-guild-path-hero.png" width="1586"/>
+    <div class="guild-copy">
+     <div class="mini-label mb-5">
+      Buildly · The builder collective
+     </div>
+     <h1 class="font-display font-extrabold">
+      Build independently.
+      <br/>
+      <span style="color:#F5A623">
+       Belong together.
+      </span>
+     </h1>
+     <p class="mt-6">
+      A co-op of developers, product managers, designers, and solo founders. Shared projects. Independent work. Open source.
+     </p>
+     <div class="mt-7 flex flex-wrap gap-3">
+      <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+       Join CollabHub
+      </a>
+      <a class="btn-outline" href="https://collab.buildly.io/work-with-buildly/">
+       Bring a project
+      </a>
+     </div>
+     <div class="role-strip">
+      <span>
+       Developers
+      </span>
+      <span>
+       Product managers
+      </span>
+      <span>
+       Designers
+      </span>
+      <span>
+       Solo founders
+      </span>
+     </div>
+    </div>
+   </section>
+   <section class="collective-section section-rule py-16 bg-white" id="work-together">
+    <div class="max-w-7xl mx-auto px-6">
+     <div class="max-w-3xl mb-9">
+      <div class="mini-label mb-4">
+       Your work. Your way.
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-forge-navy">
+       Three ways to belong.
+      </h2>
+     </div>
+     <div class="visual-paths">
+      <div class="visual-path">
+       <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+        <circle cx="8" cy="7" r="3">
+        </circle>
+        <circle cx="18" cy="9" r="2">
+        </circle>
+        <path d="M2 21v-3a6 6 0 0 1 12 0v3m2-6a4 4 0 0 1 6 4v2">
+        </path>
+       </svg>
+       <h3>
+        Team up
+       </h3>
+       <p>
+        Build a product with people who complement your skills.
+       </p>
+       <a class="" href="https://collab.buildly.io/work-with-buildly/">
+        Find collaborators →
+       </a>
+      </div>
+      <div class="visual-path">
+       <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+        <path d="M8 5V3h8v2M3 7h18v14H3zM3 12h18M10 11v4h4v-4">
+        </path>
+       </svg>
+       <h3>
+        Work independently
+       </h3>
+       <p>
+        Take on client work as an independent contractor.
+       </p>
+       <a class="" href="https://collab.buildly.io/onboarding/register/">
+        Join the collective →
+       </a>
+      </div>
+      <div class="visual-path">
+       <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+        <path d="M12 22V3m0 0 7 6m-7-6L5 9M3 21h18">
+        </path>
+       </svg>
+       <h3>
+        Launch your own
+       </h3>
+       <p>
+        Grow a solo business with a community behind you.
+       </p>
+       <a class="" href="https://collab.buildly.io/">
+        Meet other founders →
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="collective-section section-rule py-16 bg-[#f8fbfd]" id="community-impact">
+    <div class="max-w-7xl mx-auto px-6">
+     <div class="max-w-3xl mb-9">
+      <div class="mini-label mb-4">
+       Why community matters
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-forge-navy">
+       Shared work strengthens the ecosystem.
+      </h2>
+     </div>
+     <div class="evidence-grid">
+      <figure class="evidence-card">
+       <div class="eyebrow">
+        2025 survey · contributing organizations
+       </div>
+       <h3>
+        Participation has practical benefits.
+       </h3>
+       <div aria-label="Reported benefits: faster product development 66 percent, faster security and bug responses 55 percent, easier hiring and retention 55 percent." class="chart-bars" role="img">
+        <div class="chart-row">
+         <div class="chart-row-label">
+          <span>
+           Faster product development
+          </span>
+          <strong>
+           66%
+          </strong>
+         </div>
+         <div aria-hidden="true" class="chart-track">
+          <div class="chart-fill" style="width:66%">
+          </div>
+         </div>
+        </div>
+        <div class="chart-row">
+         <div class="chart-row-label">
+          <span>
+           Faster security / bug responses
+          </span>
+          <strong>
+           55%
+          </strong>
+         </div>
+         <div aria-hidden="true" class="chart-track">
+          <div class="chart-fill" style="width:55%">
+          </div>
+         </div>
+        </div>
+        <div class="chart-row">
+         <div class="chart-row-label">
+          <span>
+           Easier hiring &amp; retention
+          </span>
+          <strong>
+           55%
+          </strong>
+         </div>
+         <div aria-hidden="true" class="chart-track">
+          <div class="chart-fill" style="width:55%">
+          </div>
+         </div>
+        </div>
+        <div aria-hidden="true" class="chart-axis">
+         <span>
+          0%
+         </span>
+         <span>
+          50%
+         </span>
+         <span>
+          100%
+         </span>
+        </div>
+       </div>
+       <figcaption class="chart-note">
+        Share reporting improvement; 252 respondents per question. Positive response categories summed from rounded figures.
+        <a href="https://www.linuxfoundation.org/hubfs/Research%20Reports/2025%20Open%20Source%20ROI%20Survey%204.24.26.pdf?hsLang=en">
+         Linux Foundation, tables A16, A18–19
+        </a>
+        .
+       </figcaption>
+       <details class="chart-note">
+        <summary>
+         Data &amp; limitations
+        </summary>
+        <table class="chart-data">
+         <caption>
+          Share reporting improvement
+         </caption>
+         <thead>
+          <tr>
+           <th scope="col">
+            Outcome
+           </th>
+           <th scope="col">
+            Share
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <th scope="row">
+            Faster product development
+           </th>
+           <td>
+            66%
+           </td>
+          </tr>
+          <tr>
+           <th scope="row">
+            Faster security / bug responses
+           </th>
+           <td>
+            55%
+           </td>
+          </tr>
+          <tr>
+           <th scope="row">
+            Easier hiring &amp; retention
+           </th>
+           <td>
+            55%
+           </td>
+          </tr>
+         </tbody>
+        </table>
+        <p>
+         Self-reported association, not proof of causation or a forecast for Buildly members. Denominators include “don’t know” responses.
+        </p>
+       </details>
+      </figure>
+      <figure class="evidence-card">
+       <div class="eyebrow">
+        2024 funding study · contribution value
+       </div>
+       <h3>
+        People power open source.
+       </h3>
+       <div class="donut-layout">
+        <div aria-label="86 percent employee labor, 14 percent financial support" class="donut" role="img">
+         <div class="donut-center">
+          <strong>
+           86%
+          </strong>
+          <span>
+           employee labor
+          </span>
+         </div>
+        </div>
         <div>
-            <div class="mini-label mb-4">Ecosystem principles</div>
-            <h2 class="font-display text-4xl font-extrabold text-forge-navy">AI-native. Cloud-native. Community-powered. Reusable.</h2>
-            <p class="mt-4 text-gunmetal">Buildly keeps product strategy, reusable engineering, open collaboration, and deployment close together so teams can build with speed and accountability.</p>
+         <span class="chart-key">
+          <i>
+          </i>
+          86% employee labor
+         </span>
+         <span class="chart-key">
+          <i>
+          </i>
+          14% financial support
+         </span>
         </div>
-        <div class="grid gap-4 sm:grid-cols-2">
-            <div class="card p-5"><h3 class="font-display font-bold">AI-native</h3><p class="mt-2 text-sm leading-6 text-gunmetal">Labs turns product thinking into structured, build-ready work.</p></div>
-            <div class="card p-5"><h3 class="font-display font-bold">Cloud-native</h3><p class="mt-2 text-sm leading-6 text-gunmetal">Deployment and operations stay part of the product system.</p></div>
-            <div class="card p-5"><h3 class="font-display font-bold">Community-powered</h3><p class="mt-2 text-sm leading-6 text-gunmetal">CollabHub makes open collaboration a first-class part of delivery.</p></div>
-            <div class="card p-5"><h3 class="font-display font-bold">Reusable</h3><p class="mt-2 text-sm leading-6 text-gunmetal">Forge helps teams build once, learn together, and reuse everywhere.</p></div>
-        </div>
+       </div>
+       <figcaption class="chart-note">
+        Share of estimated contribution value among 159 organizations reporting positive support—not a share of contributors.
+        <a href="https://opensourcefundingsurvey2024.com/">
+         2024 OSS Funding Report
+        </a>
+        .
+       </figcaption>
+       <details class="chart-note">
+        <summary>
+         Data &amp; limitations
+        </summary>
+        <p>
+         Labor is valued paid employee time. Financial support includes donations and other support. Percentages are rounded; 14% is the complement of the reported 86%. Survey estimates are not a census of all open source work.
+        </p>
+       </details>
+      </figure>
+     </div>
+     <div class="mt-6">
+      <a class="font-semibold text-buildly-orange" href="/open-source-impact.html">
+       Explore the research &amp; community models →
+      </a>
+     </div>
     </div>
-</section>
-
-<section class="bg-forge-navy py-20 text-white">
-    <div class="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:px-8">
-        <div>
-            <div class="mini-label mb-4 text-tech-teal">Ready to build</div>
-            <h2 class="font-display text-4xl font-extrabold">Start in Labs, then build with the ecosystem.</h2>
-            <p class="mt-4 max-w-2xl text-cloud-blue/80">Use Buildly Labs to shape product work, Forge to reuse proven components, CollabHub to collaborate, and Deploy to ship cloud-native.</p>
-        </div>
-        <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
-            <a href="https://labs.buildly.io" class="btn-primary">Start in Labs</a>
-            <a href="https://market.buildly.io" class="btn-outline border-white/20 bg-white/10 text-white hover:text-white">Browse Forge</a>
-        </div>
+   </section>
+   <section class="collective-section section-rule py-16 bg-white" id="platform">
+    <div class="max-w-7xl mx-auto px-6 feature-split">
+     <img alt="An illustrated workshop representing shared software and the Forge" class="feature-art" height="1024" loading="lazy" src="/media/community/forge-marketplace-hero.png" width="1536"/>
+     <div class="feature-copy">
+      <div class="mini-label">
+       Shared tools · open foundations
+      </div>
+      <h2>
+       Tools for the work.
+       <br/>
+       People for the journey.
+      </h2>
+      <p>
+       Labs becomes
+       <strong>
+        ProductLabs
+       </strong>
+       , transitioning to business-friendly open source. Explore shared software through Forge.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+       <a class="btn-outline" href="/labs.html">
+        Meet ProductLabs
+       </a>
+       <a class="btn-outline" href="https://market.buildly.io">
+        Explore Forge
+       </a>
+      </div>
+     </div>
     </div>
-</section>
-
-<footer class="bg-white py-10">
-    <div class="mx-auto flex max-w-7xl flex-col gap-6 px-4 text-sm text-gunmetal sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
-        <div class="flex items-center gap-3">
-            <img src="media/buildly-logo.svg" alt="Buildly" class="h-8 w-auto">
-            <span>&copy; 2026 Buildly. Collaborative AI-native software ecosystem.</span>
-        </div>
-        <div class="flex flex-wrap gap-5 font-semibold">
-            <a href="privacy.html" class="hover:text-tech-teal">Privacy</a>
-            <a href="terms.html" class="hover:text-tech-teal">Terms</a>
-            <a href="https://docs.buildly.io" class="hover:text-tech-teal">Docs</a>
-        </div>
+   </section>
+   <section class="collective-section section-rule py-16 bg-[#f8fbfd]" id="community">
+    <div class="max-w-7xl mx-auto px-6 feature-split">
+     <div class="feature-copy">
+      <div class="mini-label">
+       Community beyond the project
+      </div>
+      <h2>
+       Rooted locally.
+       <br/>
+       Connected through our work.
+      </h2>
+      <p>
+       Find founder support, mentorship, and community through First City Foundry.
+      </p>
+      <div class="mt-6">
+       <a class="btn-secondary" href="https://www.firstcityfoundry.com/">
+        Explore First City Foundry
+       </a>
+      </div>
+     </div>
+     <div aria-label="Illustrative model: local relationships connect to product collaborators, which connect to shared work" class="community-map" role="img">
+      <div class="map-node">
+       First City Foundry
+       <small>
+        Local connections · founder support
+       </small>
+      </div>
+      <div aria-hidden="true" class="map-connector">
+       ↕
+      </div>
+      <div class="map-node">
+       CollabHub
+       <small>
+        People · projects · collaboration
+       </small>
+      </div>
+      <div aria-hidden="true" class="map-connector">
+       ↕
+      </div>
+      <div class="map-node">
+       The work we share
+       <small>
+        Open software · independent businesses
+       </small>
+      </div>
+      <p class="map-caption">
+       How we connect · illustrative model
+      </p>
+     </div>
     </div>
-</footer>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var button = document.querySelector('.mobile-menu-button');
-    var nav = document.querySelector('.mobile-nav');
-    if (button && nav) {
-        button.addEventListener('click', function() {
-            var isOpen = !nav.classList.contains('hidden');
-            nav.classList.toggle('hidden');
-            button.setAttribute('aria-expanded', String(!isOpen));
-        });
-    }
-
-    function syncThemeButtons(theme) {
-        document.querySelectorAll('[data-theme-toggle]').forEach(function(toggle) {
-            toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-            toggle.setAttribute('title', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-        });
-    }
-
-    var activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    syncThemeButtons(activeTheme);
-
-    document.querySelectorAll('[data-theme-toggle]').forEach(function(toggle) {
-        toggle.addEventListener('click', function() {
-            activeTheme = activeTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', activeTheme);
-            localStorage.setItem('buildly-theme', activeTheme);
-            syncThemeButtons(activeTheme);
-        });
-    });
-});
-</script>
-</body>
+   </section>
+   <section class="collective-section section-rule py-12 bg-white" id="ecosystem">
+    <div class="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-6">
+     <div>
+      <h2 class="font-display text-2xl font-bold text-forge-navy">
+       Your next chapter starts with people.
+      </h2>
+      <p class="mt-3 text-gunmetal">
+       <a class="underline" href="/team.html#our-story">
+        Our story
+       </a>
+       ·
+       <a class="underline" href="/articles.html">
+        Articles &amp; blog
+       </a>
+      </p>
+     </div>
+     <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+      Join CollabHub
+     </a>
+    </div>
+   </section>
+  </main>
+  <footer class="collective-footer bg-white">
+   <div class="max-w-7xl mx-auto px-6">
+    <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-4 text-sm">
+     <div>
+      <img alt="Buildly" class="h-9 w-auto mb-4" src="/media/buildly-logo.svg"/>
+      <p>
+       Independent builders.
+       <br/>
+       Shared possibilities.
+      </p>
+     </div>
+     <div>
+      <h2 class="font-display font-bold mb-3">
+       Connect
+      </h2>
+      <ul>
+       <li>
+        <a class="hover:text-tech-teal" href="https://collab.buildly.io/onboarding/register/">
+         Join CollabHub
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="https://collab.buildly.io/work-with-buildly/">
+         Bring a project
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="https://www.firstcityfoundry.com/">
+         First City Foundry
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h2 class="font-display font-bold mb-3">
+       Explore
+      </h2>
+      <ul>
+       <li>
+        <a class="hover:text-tech-teal" href="/labs.html">
+         ProductLabs
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/open-source-impact.html">
+         Why community matters
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/pricing.html">
+         Membership &amp; services
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h2 class="font-display font-bold mb-3">
+       Our story
+      </h2>
+      <ul>
+       <li>
+        <a class="hover:text-tech-teal" href="/team.html">
+         People &amp; history
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/articles.html">
+         Articles &amp; blog
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/vlog.html">
+         Videos &amp; conversations
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="mt-8 flex flex-wrap justify-between gap-4 text-sm">
+     <p>
+      © 2026 Buildly.
+     </p>
+     <div class="flex gap-5">
+      <a class="" href="/privacy.html">
+       Privacy
+      </a>
+      <a class="" href="/terms.html">
+       Terms
+      </a>
+      <a class="" href="https://docs.buildly.io">
+       Docs
+      </a>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script defer="" src="/js/collective.js">
+  </script>
+ </body>
 </html>

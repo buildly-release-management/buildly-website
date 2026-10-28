@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "label": "Product",
-    "href": "#product",
+    "label": "The Collective",
+    "href": "/team.html",
     "type": "internal",
     "order": 1,
     "showInDesktop": true,
@@ -10,8 +10,8 @@
   },
   {
     "id": 2,
-    "label": "Labs",
-    "href": "labs.amp.html",
+    "label": "Work Together",
+    "href": "/use-cases.html",
     "type": "internal",
     "order": 2,
     "showInDesktop": true,
@@ -19,8 +19,8 @@
   },
   {
     "id": 3,
-    "label": "Use Cases",
-    "href": "use-cases.html",
+    "label": "Open Source",
+    "href": "/rad-core.html",
     "type": "internal",
     "order": 3,
     "showInDesktop": true,
@@ -28,8 +28,8 @@
   },
   {
     "id": 4,
-    "label": "Pricing",
-    "href": "pricing.html",
+    "label": "ProductLabs",
+    "href": "/labs.html",
     "type": "internal",
     "order": 4,
     "showInDesktop": true,
@@ -37,10 +37,28 @@
   },
   {
     "id": 5,
-    "label": "Try for Free",
-    "href": "https://labs.buildly.io",
-    "type": "cta",
+    "label": "Community",
+    "href": "/firstcityfoundry.html",
+    "type": "internal",
     "order": 5,
+    "showInDesktop": true,
+    "showInMobile": true
+  },
+  {
+    "id": 6,
+    "label": "Articles",
+    "href": "/articles.html",
+    "type": "internal",
+    "order": 6,
+    "showInDesktop": true,
+    "showInMobile": true
+  },
+  {
+    "id": 7,
+    "label": "Join CollabHub",
+    "href": "https://collab.buildly.io/onboarding/register/",
+    "type": "cta",
+    "order": 7,
     "showInDesktop": true,
     "showInMobile": true
   }

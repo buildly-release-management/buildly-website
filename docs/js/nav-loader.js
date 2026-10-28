@@ -19,12 +19,15 @@
     
     // Function to adjust paths in the loaded HTML based on current page depth
     function adjustPaths(html, basePath) {
-        // Replace relative paths with adjusted paths
-        return html
-            .replace(/href="\.\.\/([^"]*)/g, `href="${basePath}$1`)
-            .replace(/src="\.\.\/([^"]*)/g, `src="${basePath}$1`)
-            .replace(/href="([^h][^"]*\.html)/g, `href="${basePath}$1`) // Non-absolute links
-            .replace(/src="([^h][^"]*\.(svg|png|jpg|jpeg))/g, `src="${basePath}$1`); // Image sources
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        doc.querySelectorAll('[href], [src]').forEach(element => {
+            ['href', 'src'].forEach(attribute => {
+                const value = element.getAttribute(attribute);
+                if (!value || /^(?:[a-z]+:|\/|#)/i.test(value)) return;
+                element.setAttribute(attribute, basePath + value.replace(/^(?:\.\.\/|\.\/)+/, ''));
+            });
+        });
+        return doc.body.innerHTML;
     }
     
     // Function to set active navigation state based on current page
@@ -35,6 +38,7 @@
         
         // Remove active states first
         doc.querySelectorAll('a').forEach(link => {
+            if (link.classList.contains('text-white')) return;
             link.classList.remove('text-buildly-primary', 'font-semibold');
             link.classList.add('text-gray-700');
         });
@@ -79,7 +83,7 @@
     function loadNavigation() {
         // Skip injection if this page has its own custom navigation (.nav-dark)
         // This allows new ecosystem pages to manage their own nav without conflict
-        if (document.querySelector('.nav-dark') || document.querySelector('[data-skip-nav-loader]')) {
+        if (document.documentElement.hasAttribute('data-no-nav-loader') || document.querySelector('.nav-dark') || document.querySelector('[data-skip-nav-loader]')) {
             return;
         }
 
@@ -95,7 +99,7 @@
             })
             .then(html => {
                 // Don't inject if the page already has its own nav (checked again after async fetch)
-                if (document.querySelector('.nav-dark') || document.querySelector('[data-skip-nav-loader]')) {
+                if (document.documentElement.hasAttribute('data-no-nav-loader') || document.querySelector('.nav-dark') || document.querySelector('[data-skip-nav-loader]')) {
                     return;
                 }
 
@@ -106,7 +110,9 @@
                 // Insert navigation at the beginning of body
                 const navContainer = document.createElement('div');
                 navContainer.innerHTML = finalHTML;
-                document.body.insertBefore(navContainer.firstElementChild, document.body.firstChild);
+                const existingNav = document.querySelector('nav');
+                if (existingNav) existingNav.replaceWith(navContainer.firstElementChild);
+                else document.body.insertBefore(navContainer.firstElementChild, document.body.firstChild);
                 
                 // Initialize mobile menu functionality
                 initializeMobileMenu();
@@ -125,6 +131,7 @@
         if (mobileMenuButton && mobileNav) {
             mobileMenuButton.addEventListener('click', function() {
                 mobileNav.classList.toggle('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', String(!mobileNav.classList.contains('hidden')));
             });
         }
     }

@@ -1,0 +1,42 @@
+{
+  "reviewed": "2026-10-28",
+  "reported_benefits": {
+    "source": "https://www.linuxfoundation.org/hubfs/Research%20Reports/2025%20Open%20Source%20ROI%20Survey%204.24.26.pdf?hsLang=en",
+    "survey_year": 2025,
+    "respondents_per_question": 252,
+    "denominator": "All responses, including don\u2019t know",
+    "method": "Sum positive categories from rounded percentages in tables A16, A18, A19",
+    "data": [
+      {
+        "outcome": "Faster product development",
+        "percent": 66
+      },
+      {
+        "outcome": "Faster security / bug responses",
+        "percent": 55
+      },
+      {
+        "outcome": "Easier hiring & retention",
+        "percent": 55
+      }
+    ],
+    "limitation": "Self-reported association, not causation; not Buildly results"
+  },
+  "contribution_value": {
+    "source": "https://opensourcefundingsurvey2024.com/",
+    "report_year": 2024,
+    "organizations_with_positive_support": 159,
+    "data": [
+      {
+        "type": "Employee labor",
+        "percent": 86
+      },
+      {
+        "type": "Financial support",
+        "percent": 14
+      }
+    ],
+    "method": "Reported labor share; financial share calculated as 100 minus 86",
+    "limitation": "Estimated contribution value, not number of contributors; nonrepresentative survey"
+  }
+}

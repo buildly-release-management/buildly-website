@@ -1,303 +1,557 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- Load common elements -->
-    <script src="/js/buildly-head.js"></script>
-    
-    <!-- Page-specific customization -->
-    <title>RAD Process - Buildly</title>
-    <meta name="description" content="RAD Process - Advanced development features and tools by Buildly. Discover how AI-powered solutions can transform your software development process.">
-    <meta name="keywords" content="buildly, AI development, software development, team collaboration, development features, AI tools, automation, rad process">
-    <link rel="canonical" href="https://www.buildly.io/rad-process.html">
-    
-    <!-- Open Graph tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.buildly.io/rad-process.html">
-    <meta property="og:title" content="RAD Process - Buildly">
-    <meta property="og:description" content="RAD Process - Advanced development features and tools by Buildly. Discover how AI-powered solutions can transform your software development process.">
-    <meta property="og:image" content="https://www.buildly.io/media/buildly-logo.svg">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html">
-                        <img src="media/buildly-logo.svg" alt="Buildly" class="h-12 w-auto" style="filter: brightness(0) saturate(100%) invert(21%) sepia(47%) saturate(1765%) hue-rotate(198deg) brightness(97%) contrast(93%);">
-                    </a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <div class="relative group">
-                            <button class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
-                                Products
-                                <svg class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                                <div class="py-1">
-                                    <a href="labs.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Labs Platform</a>
-                                    <a href="rad-core.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">RAD Core</a>
-                                    <a href="rad-process.html" class="block px-4 py-2 text-sm text-buildly-primary font-semibold hover:bg-buildly-light">RAD Process</a>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="use-cases.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
-                        <a href="articles.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Articles</a>
-                        <div class="relative group">
-                            <button class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
-                                For Developers
-                                <svg class="ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                                <div class="py-1">
-                                    <a href="developer.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Developer Platform</a>
-                                    <a href="product-manager.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-buildly-light">Product Managers</a>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="pricing.html" class="text-gray-700 hover:text-buildly-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Pricing</a>
-                        <a href="https://labs.buildly.io" class="bg-buildly-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-buildly-secondary transition-colors">Try for Free</a>
-                    </div>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button class="mobile-menu-button text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <!-- Mobile menu -->
-            <div class="mobile-nav hidden md:hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <div class="space-y-1">
-                        <div class="text-gray-600 px-3 py-1 text-xs font-semibold uppercase tracking-wider">Products</div>
-                        <a href="labs.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">Labs Platform</a>
-                        <a href="rad-core.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">RAD Core</a>
-                        <a href="rad-process.html" class="text-buildly-primary block px-6 py-2 rounded-md text-base font-medium font-semibold">RAD Process</a>
-                    </div>
-                    <a href="use-cases.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Use Cases</a>
-                    <a href="articles.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Articles</a>
-                    <div class="space-y-1">
-                        <div class="text-gray-600 px-3 py-1 text-xs font-semibold uppercase tracking-wider">For Developers</div>
-                        <a href="developer.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">Developer Platform</a>
-                        <a href="product-manager.html" class="text-gray-700 hover:text-buildly-primary block px-6 py-2 rounded-md text-base font-medium">Product Managers</a>
-                    </div>
-                    <a href="pricing.html" class="text-gray-700 hover:text-buildly-primary block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
-                    <a href="https://labs.buildly.io" class="bg-buildly-primary text-white block px-3 py-2 rounded-md text-base font-medium text-center">Try for Free</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-	 <!-- Hero -->
-  <header class="relative pt-16">
-    <div class="mx-auto max-w-7xl px-6 pt-16 pb-12 lg:px-8">
-      <div class="mx-auto max-w-3xl text-center">
-        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1 text-xs font-medium text-slate-600">
-          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
-          Post-Agile • AI-Assisted • Continuous
-        </span>
-        <h1 class="mt-6 text-4xl font-extrabold tracking-tight sm:text-5xl">
-          RAD Process: a replacement for capital-A Agile
-        </h1>
-        <p class="mt-4 text-lg text-slate-600">
-          <strong>RAD (Radical Adaptive Development)</strong> is Buildly’s evolution of Agile—automation-first, AI-assisted, and shaped for the real pace of modern software. Flow over frameworks. Transparency over tickets. Outcomes over ceremonies.
-        </p>
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a href="https://labs.buildly.io" class="inline-flex items-center rounded-xl bg-slate-900 px-5 py-3 text-white hover:bg-slate-800">
-            Explore Buildly Labs
-            <svg class="ml-2 h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l5 5a.997.997 0 01.083 1.32l-.083.094-5 5a1 1 0 01-1.497-1.32l.083-.094L13.585 10H4a1 1 0 01-.117-1.993L4 8h9.585l-3.292-3.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-            </svg>
-          </a>
-          <a href="https://www.apress.com/gp/book/9781484294933" class="inline-flex items-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-slate-800 hover:border-slate-300">
-            Read: Radical Therapy for Software Teams
-          </a>
-        </div>
+<html class="scroll-smooth" data-no-nav-loader="" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   RAD Process for Collaborative Work | Buildly
+  </title>
+  <meta content="Explore rad process for collaborative work with the Buildly collective." name="description"/>
+  <meta content="Buildly" name="author"/>
+  <link href="https://www.buildly.io/rad-process.html" rel="canonical"/>
+  <link href="/media/buildly-logo.svg" rel="icon" type="image/svg+xml"/>
+  <link href="/feed.xml" rel="alternate" title="Buildly Blog" type="application/rss+xml"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://www.buildly.io/rad-process.html" property="og:url"/>
+  <meta content="RAD Process for Collaborative Work | Buildly" property="og:title"/>
+  <meta content="Explore rad process for collaborative work with the Buildly collective." property="og:description"/>
+  <meta content="https://www.buildly.io/media/buildly-logo.svg" property="og:image"/>
+  <meta content="summary" name="twitter:card"/>
+  <meta content="RAD Process for Collaborative Work | Buildly" name="twitter:title"/>
+  <meta content="Explore rad process for collaborative work with the Buildly collective." name="twitter:description"/>
+  <meta content="https://www.buildly.io/media/buildly-logo.svg" name="twitter:image"/>
+  <script>
+   try {document.documentElement.setAttribute('data-theme',localStorage.getItem('buildly-theme')||'dark');} catch (_) {document.documentElement.setAttribute('data-theme','dark');}
+  </script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="/css/style.css" rel="stylesheet"/>
+  <link href="/css/collective.css" rel="stylesheet"/>
+  <script>
+   tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        colors: {
+                            'forge-navy': '#0F1B2A', 'buildly-primary': '#0F1B2A', 'buildly-dark': '#0F1B2A', 'buildly-accent': '#F5A623', 'buildly-light': '#B9F1EA',
+                            'steel-slate': '#2B3643',
+                            'gunmetal': '#4A5560',
+                            'silver-steel': '#C3C7CD',
+                            'buildly-orange': '#F5A623',
+                            'tech-teal': '#16C4B5',
+                            'cloud-blue': '#B9F1EA',
+                            'buildly-white': '#FFFFFF'
+                        },
+                        fontFamily: {
+                            sans: ['Inter', 'system-ui', 'sans-serif'],
+                            display: ['Sora', 'Inter', 'system-ui', 'sans-serif']
+                        },
+                        borderRadius: {
+                            buildly: '8px'
+                        }
+                    }
+                }
+            }
+        }
+  </script>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-YFY5W80XQX">
+  </script>
+  <script>
+   window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YFY5W80XQX');
+  </script>
+ </head>
+ <body>
+  <a class="skip-link" href="#main-content">
+   Skip to content
+  </a>
+  <nav aria-label="Main navigation" class="collective-nav nav-surface">
+   <div class="collective-nav-inner">
+    <a aria-label="Buildly home" href="/">
+     <img alt="Buildly" class="h-10 w-auto" src="/media/buildly-logo.svg"/>
+    </a>
+    <div class="collective-links text-gunmetal">
+     <a class="hover:text-tech-teal" href="/team.html">
+      The Collective
+     </a>
+     <a class="hover:text-tech-teal" href="/use-cases.html">
+      Work Together
+     </a>
+     <a class="hover:text-tech-teal" href="/rad-core.html">
+      Open Source
+     </a>
+     <a class="hover:text-tech-teal" href="/labs.html">
+      ProductLabs
+     </a>
+     <a class="hover:text-tech-teal" href="/firstcityfoundry.html">
+      Community
+     </a>
+     <a class="hover:text-tech-teal" href="/articles.html">
+      Articles
+     </a>
+     <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+      Join CollabHub
+     </a>
+    </div>
+    <div class="flex items-center gap-3">
+     <button aria-label="Switch theme" class="theme-toggle" data-collective-theme="" type="button">
+      ◐
+     </button>
+     <button aria-controls="collective-mobile" aria-expanded="false" class="collective-menu-button text-forge-navy" type="button">
+      Menu
+     </button>
+    </div>
+   </div>
+   <div class="collective-mobile text-gunmetal" hidden="" id="collective-mobile">
+    <a class="hover:text-tech-teal" href="/team.html">
+     The Collective
+    </a>
+    <a class="hover:text-tech-teal" href="/use-cases.html">
+     Work Together
+    </a>
+    <a class="hover:text-tech-teal" href="/rad-core.html">
+     Open Source
+    </a>
+    <a class="hover:text-tech-teal" href="/labs.html">
+     ProductLabs
+    </a>
+    <a class="hover:text-tech-teal" href="/firstcityfoundry.html">
+     Community
+    </a>
+    <a class="hover:text-tech-teal" href="/articles.html">
+     Articles
+    </a>
+    <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+     Join CollabHub
+    </a>
+   </div>
+  </nav>
+  <main id="main-content">
+   <section class="brand-shell collective-hero">
+    <div class="max-w-7xl mx-auto px-6">
+     <div>
+      <div class="mini-label mb-5">
+       RAD process
       </div>
+      <h1 class="font-display font-extrabold text-forge-navy">
+       A shared way
+       <br/>
+       to move work forward.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-gunmetal">
+       Use the RAD process as a practical collaboration approach for independent builders and project teams. The methodology below remains part of our open source history.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+       <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+        Join CollabHub
+       </a>
+       <a class="btn-outline" href="/articles.html">
+        Read our articles
+       </a>
+      </div>
+     </div>
     </div>
-  </header>
-
-  <!-- Intro / Context -->
-  <section class="mx-auto max-w-4xl px-6 py-10 lg:px-8">
-    <p class="text-slate-700">
-      I’ve stood on both sides of the stand-up circle: developer and Scrum Master. Agile rescued us from waterfall and big-up-front design—no question. But in an era of AI-assisted development, aggressive CI/CD, and component-driven architectures, fixed sprints and ritualized ceremonies often slow the actual flow of work. RAD keeps Agile’s spirit—<em>continuous reflection and adaptation</em>—and removes the drag.
-    </p>
-  </section>
-
-  <!-- Principles -->
-  <section class="mx-auto max-w-7xl px-6 py-10 lg:px-8">
-    <div class="mx-auto max-w-3xl text-center">
-      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Core Principles</h2>
-      <p class="mt-3 text-slate-600">The smallest process that preserves clarity, alignment, and speed.</p>
-    </div>
-    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+   </section>
+   <div class="collective-preserved">
+    <section class="mx-auto max-w-7xl px-6 py-10 lg:px-8">
+     <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">
+       Core Principles
+      </h2>
+      <p class="mt-3 text-slate-600">
+       The smallest process that preserves clarity, alignment, and speed.
+      </p>
+     </div>
+     <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <!-- 1 -->
       <div class="rounded-2xl border border-slate-200 p-6">
-        <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white">
-          <!-- lightning icon -->
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-        </div>
-        <h3 class="font-semibold">Flow over Frameworks</h3>
-        <p class="mt-2 text-sm text-slate-600">Replace rigid sprints with adaptive <strong>radical intervals</strong>—micro-cycles that match real work, not calendar blocks.</p>
+       <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-forge-navy">
+        <!-- lightning icon -->
+        <svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+         <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z">
+         </path>
+        </svg>
+       </div>
+       <h3 class="font-semibold">
+        Flow over Frameworks
+       </h3>
+       <p class="mt-2 text-sm text-slate-600">
+        Replace rigid sprints with adaptive
+        <strong>
+         radical intervals
+        </strong>
+        —micro-cycles that match real work, not calendar blocks.
+       </p>
       </div>
       <!-- 2 -->
       <div class="rounded-2xl border border-slate-200 p-6">
-        <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white">
-          <!-- bot icon -->
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a2 2 0 012 2v1h4a2 2 0 012 2v10a3 3 0 01-3 3h-2v2h-2v-2H9v2H7v-2H5a3 3 0 01-3-3V7a2 2 0 012-2h4V4a2 2 0 012-2h2zM4 9v7a1 1 0 001 1h14a1 1 0 001-1V9H4z"/></svg>
-        </div>
-        <h3 class="font-semibold">Automation as Collaboration</h3>
-        <p class="mt-2 text-sm text-slate-600">Let AI handle repetition—issue splitting, estimates, reporting—so people focus on design, architecture, and decisions.</p>
+       <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-forge-navy">
+        <!-- bot icon -->
+        <svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+         <path d="M12 2a2 2 0 012 2v1h4a2 2 0 012 2v10a3 3 0 01-3 3h-2v2h-2v-2H9v2H7v-2H5a3 3 0 01-3-3V7a2 2 0 012-2h4V4a2 2 0 012-2h2zM4 9v7a1 1 0 001 1h14a1 1 0 001-1V9H4z">
+         </path>
+        </svg>
+       </div>
+       <h3 class="font-semibold">
+        Automation as Collaboration
+       </h3>
+       <p class="mt-2 text-sm text-slate-600">
+        Let AI handle repetition—issue splitting, estimates, reporting—so people focus on design, architecture, and decisions.
+       </p>
       </div>
       <!-- 3 -->
       <div class="rounded-2xl border border-slate-200 p-6">
-        <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white">
-          <!-- link icon -->
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M10.59 13.41a1.996 1.996 0 000-2.82l-1.18-1.18a4 4 0 015.66-5.66l2.12 2.12a4 4 0 01-5.66 5.66l-.35-.35-1.06 1.06.35.35a6 6 0 008.48-8.48l-2.12-2.12a6 6 0 00-8.48 8.48l1.18 1.18a2 2 0 002.82 0z"/></svg>
-        </div>
-        <h3 class="font-semibold">Context Everywhere</h3>
-        <p class="mt-2 text-sm text-slate-600">Unify decisions, designs, and code. Buildly Labs links Slack, Figma, and repos so the “why” travels with the “what.”</p>
+       <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-forge-navy">
+        <!-- link icon -->
+        <svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+         <path d="M10.59 13.41a1.996 1.996 0 000-2.82l-1.18-1.18a4 4 0 015.66-5.66l2.12 2.12a4 4 0 01-5.66 5.66l-.35-.35-1.06 1.06.35.35a6 6 0 008.48-8.48l-2.12-2.12a6 6 0 00-8.48 8.48l1.18 1.18a2 2 0 002.82 0z">
+         </path>
+        </svg>
+       </div>
+       <h3 class="font-semibold">
+        Context Everywhere
+       </h3>
+       <p class="mt-2 text-sm text-slate-600">
+        Unify decisions, designs, and code. ProductLabs links Slack, Figma, and repos so the “why” travels with the “what.”
+       </p>
       </div>
       <!-- 4 -->
       <div class="rounded-2xl border border-slate-200 p-6">
-        <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white">
-          <!-- loop icon -->
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h11V4l4 4-4 4V9H7a4 4 0 000 8h4v2H7a6 6 0 010-12z"/></svg>
-        </div>
-        <h3 class="font-semibold">Continuous Reflection</h3>
-        <p class="mt-2 text-sm text-slate-600">AI summarizes signals in flight—blockers, load, drift—so teams adjust now, not at the end of a sprint.</p>
+       <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-forge-navy">
+        <!-- loop icon -->
+        <svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+         <path d="M7 7h11V4l4 4-4 4V9H7a4 4 0 000 8h4v2H7a6 6 0 010-12z">
+         </path>
+        </svg>
+       </div>
+       <h3 class="font-semibold">
+        Continuous Reflection
+       </h3>
+       <p class="mt-2 text-sm text-slate-600">
+        AI summarizes signals in flight—blockers, load, drift—so teams adjust now, not at the end of a sprint.
+       </p>
       </div>
       <!-- 5 -->
       <div class="rounded-2xl border border-slate-200 p-6">
-        <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white">
-          <!-- eye icon -->
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5c-7 0-10 7-10 7s3 7 10 7 10-7 10-7-3-7-10-7zm0 12a5 5 0 110-10 5 5 0 010 10z"/></svg>
-        </div>
-        <h3 class="font-semibold">Transparency by Default</h3>
-        <p class="mt-2 text-sm text-slate-600">Every architectural choice and AI recommendation is visible and explainable. No black boxes.</p>
+       <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-forge-navy">
+        <!-- eye icon -->
+        <svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+         <path d="M12 5c-7 0-10 7-10 7s3 7 10 7 10-7 10-7-3-7-10-7zm0 12a5 5 0 110-10 5 5 0 010 10z">
+         </path>
+        </svg>
+       </div>
+       <h3 class="font-semibold">
+        Transparency by Default
+       </h3>
+       <p class="mt-2 text-sm text-slate-600">
+        Every architectural choice and AI recommendation is visible and explainable. No black boxes.
+       </p>
       </div>
       <!-- 6 -->
       <div class="rounded-2xl border border-slate-200 p-6">
-        <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white">
-          <!-- rocket icon -->
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3l7 7-4 1-3 3-1 4-7-7 4-1 3-3 1-4zM5 19l2-2 2 2-2 2-2-2z"/></svg>
-        </div>
-        <h3 class="font-semibold">Adaptive Cadence</h3>
-        <p class="mt-2 text-sm text-slate-600">Ship when ready. Feature flags, CI, and tests replace calendar-driven delivery.</p>
+       <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-forge-navy">
+        <!-- rocket icon -->
+        <svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+         <path d="M14 3l7 7-4 1-3 3-1 4-7-7 4-1 3-3 1-4zM5 19l2-2 2 2-2 2-2-2z">
+         </path>
+        </svg>
+       </div>
+       <h3 class="font-semibold">
+        Adaptive Cadence
+       </h3>
+       <p class="mt-2 text-sm text-slate-600">
+        Ship when ready. Feature flags, CI, and tests replace calendar-driven delivery.
+       </p>
       </div>
-    </div>
-  </section>
-
-  <!-- How AI powers RAD -->
-  <section class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-    <div class="grid gap-10 lg:grid-cols-2">
+     </div>
+    </section>
+    <section class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+     <div class="grid gap-10 lg:grid-cols-2">
       <div>
-        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">BabbleBeaver: AI that amplifies the team</h2>
-        <p class="mt-3 text-slate-600">
-          Inside <a href="https://labs.buildly.io" class="text-slate-900 underline decoration-slate-300 underline-offset-4 hover:decoration-slate-500">Buildly Labs</a>, BabbleBeaver acts as a collaborative layer: planning, surfacing risk, keeping decisions attached to code, and turning daily signals into live retrospectives.
-        </p>
-        <ul class="mt-6 space-y-3 text-slate-700">
-          <li class="flex gap-3"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span><span><strong>Project planning:</strong> realistic timelines, dependency detection, resource hints.</span></li>
-          <li class="flex gap-3"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span><span><strong>Task intelligence:</strong> auto-categorization, effort estimation, progress prediction.</span></li>
-          <li class="flex gap-3"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span><span><strong>Team analytics:</strong> load balance, productivity patterns, skill gap insights.</span></li>
-          <li class="flex gap-3"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span><span><strong>Continuous reflection:</strong> summarized decisions and micro-retros in flow.</span></li>
-        </ul>
-        <div class="mt-8">
-          <a href="https://docs.buildly.io/docs/" class="inline-flex items-center rounded-xl border border-slate-200 px-5 py-3 text-slate-800 hover:border-slate-300">
-            Read the Docs
-          </a>
-        </div>
+       <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">
+        BabbleBeaver: AI that amplifies the team
+       </h2>
+       <p class="mt-3 text-slate-600">
+        Inside
+        <a class="text-slate-900 underline decoration-slate-300 underline-offset-4 hover:decoration-slate-500" href="https://collab.buildly.io/">
+         ProductLabs
+        </a>
+        , BabbleBeaver acts as a collaborative layer: planning, surfacing risk, keeping decisions attached to code, and turning daily signals into live retrospectives.
+       </p>
+       <ul class="mt-6 space-y-3 text-slate-700">
+        <li class="flex gap-3">
+         <span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500">
+         </span>
+         <span>
+          <strong>
+           Project planning:
+          </strong>
+          realistic timelines, dependency detection, resource hints.
+         </span>
+        </li>
+        <li class="flex gap-3">
+         <span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500">
+         </span>
+         <span>
+          <strong>
+           Task intelligence:
+          </strong>
+          auto-categorization, effort estimation, progress prediction.
+         </span>
+        </li>
+        <li class="flex gap-3">
+         <span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500">
+         </span>
+         <span>
+          <strong>
+           Team analytics:
+          </strong>
+          load balance, productivity patterns, skill gap insights.
+         </span>
+        </li>
+        <li class="flex gap-3">
+         <span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500">
+         </span>
+         <span>
+          <strong>
+           Continuous reflection:
+          </strong>
+          summarized decisions and micro-retros in flow.
+         </span>
+        </li>
+       </ul>
+       <div class="mt-8">
+        <a class="inline-flex items-center rounded-xl border border-slate-200 px-5 py-3 text-slate-800 hover:border-slate-300" href="https://docs.buildly.io/docs/">
+         Read the Docs
+        </a>
+       </div>
       </div>
       <div class="rounded-3xl border border-slate-200 p-6">
-        <h3 class="text-lg font-semibold">RAD in one glance</h3>
-        <dl class="mt-4 divide-y divide-slate-100">
-          <div class="grid grid-cols-3 gap-3 py-3">
-            <dt class="text-sm text-slate-500">Cadence</dt>
-            <dd class="col-span-2 text-sm font-medium">Adaptive, continuous “radical intervals”</dd>
-          </div>
-          <div class="grid grid-cols-3 gap-3 py-3">
-            <dt class="text-sm text-slate-500">Planning</dt>
-            <dd class="col-span-2 text-sm font-medium">AI-assisted decomposition; ship when ready</dd>
-          </div>
-          <div class="grid grid-cols-3 gap-3 py-3">
-            <dt class="text-sm text-slate-500">Documentation</dt>
-            <dd class="col-span-2 text-sm font-medium">Decision trace linked to code & design</dd>
-          </div>
-          <div class="grid grid-cols-3 gap-3 py-3">
-            <dt class="text-sm text-slate-500">Quality</dt>
-            <dd class="col-span-2 text-sm font-medium">CI, tests, feature flags, telemetry</dd>
-          </div>
-          <div class="grid grid-cols-3 gap-3 py-3">
-            <dt class="text-sm text-slate-500">Governance</dt>
-            <dd class="col-span-2 text-sm font-medium">Transparency & explainability by default</dd>
-          </div>
-        </dl>
+       <h3 class="text-lg font-semibold">
+        RAD in one glance
+       </h3>
+       <dl class="mt-4 divide-y divide-slate-100">
+        <div class="grid grid-cols-3 gap-3 py-3">
+         <dt class="text-sm text-slate-500">
+          Cadence
+         </dt>
+         <dd class="col-span-2 text-sm font-medium">
+          Adaptive, continuous “radical intervals”
+         </dd>
+        </div>
+        <div class="grid grid-cols-3 gap-3 py-3">
+         <dt class="text-sm text-slate-500">
+          Planning
+         </dt>
+         <dd class="col-span-2 text-sm font-medium">
+          AI-assisted decomposition; ship when ready
+         </dd>
+        </div>
+        <div class="grid grid-cols-3 gap-3 py-3">
+         <dt class="text-sm text-slate-500">
+          Documentation
+         </dt>
+         <dd class="col-span-2 text-sm font-medium">
+          Decision trace linked to code &amp; design
+         </dd>
+        </div>
+        <div class="grid grid-cols-3 gap-3 py-3">
+         <dt class="text-sm text-slate-500">
+          Quality
+         </dt>
+         <dd class="col-span-2 text-sm font-medium">
+          CI, tests, feature flags, telemetry
+         </dd>
+        </div>
+        <div class="grid grid-cols-3 gap-3 py-3">
+         <dt class="text-sm text-slate-500">
+          Governance
+         </dt>
+         <dd class="col-span-2 text-sm font-medium">
+          Transparency &amp; explainability by default
+         </dd>
+        </div>
+       </dl>
       </div>
-    </div>
-  </section>
-
-  <!-- Callout -->
-  <section class="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
-    <div class="rounded-3xl bg-slate-50 p-8 ring-1 ring-inset ring-slate-200">
+     </div>
+    </section>
+    <section class="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
+     <div class="rounded-3xl bg-slate-50 p-8 ring-1 ring-inset ring-slate-200">
       <div class="grid gap-8 lg:grid-cols-3">
-        <div class="lg:col-span-2">
-          <h2 class="text-2xl font-bold tracking-tight">Why RAD, not capital-A Agile?</h2>
-          <p class="mt-3 text-slate-700">
-            Agile was right for a pre-AI, pre-automation era. RAD keeps the values—collaboration, responsiveness, continuous improvement—and removes the ceremony. It’s how teams work <em>now</em>.
-          </p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="https://www.buildly.io/articles/time-to-kill-agile.html" class="inline-flex items-center rounded-xl bg-slate-900 px-5 py-3 text-white hover:bg-slate-800">
-              Read the perspective
-            </a>
-            <a href="https://www.apress.com/gp/book/9781484294933" class="inline-flex items-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-slate-800 hover:border-slate-300">
-              Book: Radical Therapy for Software Teams
-            </a>
-          </div>
+       <div class="lg:col-span-2">
+        <h2 class="text-2xl font-bold tracking-tight">
+         Why RAD, not capital-A Agile?
+        </h2>
+        <p class="mt-3 text-slate-700">
+         Agile was right for a pre-AI, pre-automation era. RAD keeps the values—collaboration, responsiveness, continuous improvement—and removes the ceremony. It’s how teams work
+         <em>
+          now
+         </em>
+         .
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+         <a class="inline-flex items-center rounded-xl bg-slate-900 px-5 py-3 text-forge-navy hover:bg-slate-800" href="https://www.buildly.io/articles/time-to-kill-agile.html">
+          Read the perspective
+         </a>
+         <a class="inline-flex items-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-slate-800 hover:border-slate-300" href="https://www.apress.com/gp/book/9781484294933">
+          Book: Radical Therapy for Software Teams
+         </a>
         </div>
-        <div class="lg:pl-6">
-          <h3 class="font-semibold">References</h3>
-          <ul class="mt-3 list-inside list-disc text-sm text-slate-600">
-            <li><a class="underline decoration-slate-300 hover:decoration-slate-500" href="https://pragdave.me/blog/2014/03/04/time-to-kill-agile.html">Dave Thomas — “Time to Kill Agile”</a></li>
-            <li><a class="underline decoration-slate-300 hover:decoration-slate-500" href="https://hbr.org/2021/04/have-we-taken-agile-too-far">Harvard Business Review — “Have We Taken Agile Too Far?”</a></li>
-            <li><a class="underline decoration-slate-300 hover:decoration-slate-500" href="https://techbeacon.com/app-dev-testing/end-agile-why-agile-should-be-replaced">TechBeacon — “The End of Agile”</a></li>
-            <li><a class="underline decoration-slate-300 hover:decoration-slate-500" href="https://docs.buildly.io/docs/">Buildly Docs — AI & RAD overview</a></li>
-          </ul>
-        </div>
+       </div>
+       <div class="lg:pl-6">
+        <h3 class="font-semibold">
+         References
+        </h3>
+        <ul class="mt-3 list-inside list-disc text-sm text-slate-600">
+         <li>
+          <a class="underline decoration-slate-300 hover:decoration-slate-500" href="https://pragdave.me/blog/2014/03/04/time-to-kill-agile.html">
+           Dave Thomas — “Time to Kill Agile”
+          </a>
+         </li>
+         <li>
+          <a class="underline decoration-slate-300 hover:decoration-slate-500" href="https://hbr.org/2021/04/have-we-taken-agile-too-far">
+           Harvard Business Review — “Have We Taken Agile Too Far?”
+          </a>
+         </li>
+         <li>
+          <a class="underline decoration-slate-300 hover:decoration-slate-500" href="https://techbeacon.com/app-dev-testing/end-agile-why-agile-should-be-replaced">
+           TechBeacon — “The End of Agile”
+          </a>
+         </li>
+         <li>
+          <a class="underline decoration-slate-300 hover:decoration-slate-500" href="https://docs.buildly.io/docs/">
+           Buildly Docs — AI &amp; RAD overview
+          </a>
+         </li>
+        </ul>
+       </div>
       </div>
+     </div>
+    </section>
+   </div>
+   <section class="collective-section section-rule py-16 bg-[#f8fbfd]" id="join">
+    <div class="max-w-7xl mx-auto px-6">
+     <div class="max-w-3xl mb-9">
+      <div class="mini-label mb-4">
+       Start a conversation
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-forge-navy">
+       Your next project starts with people.
+      </h2>
+     </div>
+     <p class="max-w-3xl text-lg leading-8 text-gunmetal">
+      Find collaborators, share what you are working on, or bring a project to the collective.
+     </p>
+     <div class="mt-7 flex flex-wrap gap-3">
+      <a class="btn-primary" href="https://collab.buildly.io/onboarding/register/">
+       Join CollabHub
+      </a>
+      <a class="btn-outline" href="https://collab.buildly.io/work-with-buildly/">
+       Bring a project
+      </a>
+     </div>
     </div>
-  </section>
-    <!-- Footer -->
-    <footer class="bg-buildly-dark text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="text-center">
-                <img src="/media/buildly-logo.svg" alt="Buildly" class="h-8 w-auto mx-auto mb-4 brightness-0 invert">
-                <p>&copy; 2024 Buildly. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-    // Mobile menu toggle functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileNav = document.querySelector('.mobile-nav');
-        
-        if (mobileMenuButton && mobileNav) {
-            mobileMenuButton.addEventListener('click', function() {
-                mobileNav.classList.toggle('hidden');
-            });
-        }
-    });
-    </script>
-</body>
+   </section>
+  </main>
+  <footer class="collective-footer bg-white">
+   <div class="max-w-7xl mx-auto px-6">
+    <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-4 text-sm">
+     <div>
+      <img alt="Buildly" class="h-9 w-auto mb-4" src="/media/buildly-logo.svg"/>
+      <p>
+       Independent builders.
+       <br/>
+       Shared possibilities.
+      </p>
+     </div>
+     <div>
+      <h2 class="font-display font-bold mb-3">
+       Connect
+      </h2>
+      <ul>
+       <li>
+        <a class="hover:text-tech-teal" href="https://collab.buildly.io/onboarding/register/">
+         Join CollabHub
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="https://collab.buildly.io/work-with-buildly/">
+         Bring a project
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="https://www.firstcityfoundry.com/">
+         First City Foundry
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h2 class="font-display font-bold mb-3">
+       Explore
+      </h2>
+      <ul>
+       <li>
+        <a class="hover:text-tech-teal" href="/labs.html">
+         ProductLabs
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/open-source-impact.html">
+         Why community matters
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/pricing.html">
+         Membership &amp; services
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h2 class="font-display font-bold mb-3">
+       Our story
+      </h2>
+      <ul>
+       <li>
+        <a class="hover:text-tech-teal" href="/team.html">
+         People &amp; history
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/articles.html">
+         Articles &amp; blog
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-tech-teal" href="/vlog.html">
+         Videos &amp; conversations
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="mt-8 flex flex-wrap justify-between gap-4 text-sm">
+     <p>
+      © 2026 Buildly.
+     </p>
+     <div class="flex gap-5">
+      <a class="" href="/privacy.html">
+       Privacy
+      </a>
+      <a class="" href="/terms.html">
+       Terms
+      </a>
+      <a class="" href="https://docs.buildly.io">
+       Docs
+      </a>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script defer="" src="/js/collective.js">
+  </script>
+ </body>
 </html>
